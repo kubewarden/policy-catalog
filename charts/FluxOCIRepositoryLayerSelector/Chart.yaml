@@ -18,8 +18,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: OCIRepository layer selector must only reference predefined media/operation
   type.
 home: https://github.com/kubewarden/rego-policies-library
@@ -27,5 +27,5 @@ keywords:
 - flux
 name: ocirepository-layer-selector
 sources:
-- ghcr.io/kubewarden/policies/ocirepository-layer-selector:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/ocirepository-layer-selector:v1.0.1
+version: 1.0.1
