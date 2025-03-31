@@ -18,8 +18,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: OCIRepository resources must include specific suffixes in the spec.ignore
   field which determines the files to be ignored before making a commit..
 home: https://github.com/kubewarden/rego-policies-library
@@ -29,5 +29,5 @@ keywords:
 - suffixes
 name: ocirepository-ignore-suffixes
 sources:
-- ghcr.io/kubewarden/policies/ocirepository-ignore-suffixes:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/ocirepository-ignore-suffixes:v1.0.1
+version: 1.0.1
