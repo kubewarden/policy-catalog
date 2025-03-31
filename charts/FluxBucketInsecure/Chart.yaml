@@ -18,13 +18,13 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: Ensure that Bucket objects do not use insecure connections
 home: https://github.com/kubewarden/rego-policies-library
 keywords:
 - flux
 name: bucket-insecure-connections
 sources:
-- ghcr.io/kubewarden/policies/bucket-insecure-connections:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/bucket-insecure-connections:v1.0.1
+version: 1.0.1
