@@ -42,8 +42,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: The reconcile interval of a Resource must be set between a lower and
   upper bound, lower_bound & upper_bound must be in seconds .
 home: https://github.com/kubewarden/rego-policies-library
@@ -51,5 +51,5 @@ keywords:
 - flux
 name: resource-reconcile-interval
 sources:
-- ghcr.io/kubewarden/policies/resource-reconcile-interval:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/resource-reconcile-interval:v1.0.1
+version: 1.0.1
