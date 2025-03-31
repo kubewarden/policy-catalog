@@ -19,8 +19,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: "This Policy prohibits various resources from being set with wildcards
   for Role or ClusterRole resources, except for the `cluster-admin` ClusterRole. It
   will check each resource specified for the verb specified. The wildcards will be
@@ -36,5 +36,5 @@ description: "This Policy prohibits various resources from being set with wildca
 home: https://github.com/kubewarden/rego-policies-library
 name: rbac-prohibit-wildcards-policyrule-resources
 sources:
-- ghcr.io/kubewarden/policies/rbac-prohibit-wildcards-policyrule-resources:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/rbac-prohibit-wildcards-policyrule-resources:v1.0.1
+version: 1.0.1
