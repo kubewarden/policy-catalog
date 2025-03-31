@@ -41,8 +41,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: |
   This Policy checks if the container is missing securityContext while there is no securityContext defined on the Pod level as well. The security settings that are specified on the Pod level apply to all containers in the Pod.
 home: https://github.com/kubewarden/rego-policies-library
@@ -55,5 +55,5 @@ keywords:
 - default
 name: containers-missing-security-context
 sources:
-- ghcr.io/kubewarden/policies/containers-missing-security-context:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/containers-missing-security-context:v1.0.1
+version: 1.0.1
