@@ -18,13 +18,13 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: "# Istio-Injected Namespaces\nSpecify namespaces you would like to be
   labeld with `istio-injected: enabled`. Namespaces with this label with automatically
   deploy a Istio sidecar with each pod. \n"
 home: https://github.com/kubewarden/rego-policies-library
 name: istio-injected-namespaces
 sources:
-- ghcr.io/kubewarden/policies/istio-injected-namespaces:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/istio-injected-namespaces:v1.0.1
+version: 1.0.1
