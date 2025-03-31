@@ -18,13 +18,13 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: Bucket region must be one of the approved regions.
 home: https://github.com/kubewarden/rego-policies-library
 keywords:
 - flux
 name: bucket-approved-region
 sources:
-- ghcr.io/kubewarden/policies/bucket-approved-region:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/bucket-approved-region:v1.0.1
+version: 1.0.1
