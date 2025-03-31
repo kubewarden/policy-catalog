@@ -41,8 +41,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: "Custom labels can help enforce organizational standards for each artifact
   deployed. This Policy ensure a custom label key is set in the entity's `metadata`.
   The Policy detects the presence of the following: \n\n### owner\nA label key of
@@ -57,5 +57,5 @@ description: "Custom labels can help enforce organizational standards for each a
 home: https://github.com/kubewarden/rego-policies-library
 name: missing-kubernetes-app-component-label
 sources:
-- ghcr.io/kubewarden/policies/missing-kubernetes-app-component-label:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/missing-kubernetes-app-component-label:v1.0.1
+version: 1.0.1
