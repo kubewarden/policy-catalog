@@ -19,12 +19,12 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: |
   This Policy will violate if any RBAC ClusterRoles or Roles are designated with 'watch' verb on 'secrets' resource.
 home: https://github.com/kubewarden/rego-policies-library
 name: rbac-prohibit-watch-secrets
 sources:
-- ghcr.io/kubewarden/policies/rbac-prohibit-watch-secrets:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/rbac-prohibit-watch-secrets:v1.0.1
+version: 1.0.1
