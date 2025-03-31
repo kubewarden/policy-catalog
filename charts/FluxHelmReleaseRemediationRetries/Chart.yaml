@@ -18,8 +18,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: HelmRelease remediation retries must be within the specified lower and
   upper bounds.
 home: https://github.com/kubewarden/rego-policies-library
@@ -27,5 +27,5 @@ keywords:
 - flux
 name: helm-release-remediation-retries
 sources:
-- ghcr.io/kubewarden/policies/helm-release-remediation-retries:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/helm-release-remediation-retries:v1.0.1
+version: 1.0.1
