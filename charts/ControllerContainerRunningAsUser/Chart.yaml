@@ -41,8 +41,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: "Containers has a feature in which you specify the ID of the user which
   all processes in the container will run with. This Policy enforces that the `securityContext.runAsUser`
   attribute is set to a uid greater than root uid. Running as root user gives the
@@ -58,5 +58,5 @@ keywords:
 - default
 name: container-running-as-user
 sources:
-- ghcr.io/kubewarden/policies/container-running-as-user:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/container-running-as-user:v1.0.1
+version: 1.0.1
