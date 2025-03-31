@@ -39,12 +39,12 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: "This Policy prohibits images with certain image names from being deployed
   by specifying a list of unapproved names. \n"
 home: https://github.com/kubewarden/rego-policies-library
 name: containers-block-specific-image-names
 sources:
-- ghcr.io/kubewarden/policies/containers-block-specific-image-names:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/containers-block-specific-image-names:v1.0.1
+version: 1.0.1
