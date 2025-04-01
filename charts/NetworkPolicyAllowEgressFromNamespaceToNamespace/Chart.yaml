@@ -18,8 +18,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: "If you are using a CNI that allows for Network Policies, you can use
   this Policy to allow Egress traffic from one namespace to another.\n\nBy default,
   if no policies exist in a namespace, then all ingress and egress traffic is allowed
@@ -27,5 +27,5 @@ description: "If you are using a CNI that allows for Network Policies, you can u
 home: https://github.com/kubewarden/rego-policies-library
 name: network-allow-egress-traffic-from-namespace-to-another
 sources:
-- ghcr.io/kubewarden/policies/network-allow-egress-traffic-from-namespace-to-another:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/network-allow-egress-traffic-from-namespace-to-another:v1.0.1
+version: 1.0.1
