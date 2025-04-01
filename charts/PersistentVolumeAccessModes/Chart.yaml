@@ -18,8 +18,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: |
   A PersistentVolume can be mounted on a host in any way supported by the resource provider. As shown in the table below, providers will have different capabilities and each PV's access modes are set to the specific modes supported by that particular volume. For example, NFS can support multiple read/write clients, but a specific NFS PV might be exported on the server as read-only. Each PV gets its own set of access modes describing that specific PV's capabilities.
 
@@ -32,5 +32,5 @@ description: |
 home: https://github.com/kubewarden/rego-policies-library
 name: persistent-volume-access-modes
 sources:
-- ghcr.io/kubewarden/policies/persistent-volume-access-modes:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/persistent-volume-access-modes:v1.0.1
+version: 1.0.1
