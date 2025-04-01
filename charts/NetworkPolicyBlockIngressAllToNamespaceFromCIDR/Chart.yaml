@@ -19,8 +19,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: "If you are using a CNI that allows for Network Policies, you can use
   this Policy to block all Egress traffic from a specified namespace to a CIDR block
   of IP addresses. \n\nBy default, if no policies exist in a namespace, then all ingress
@@ -28,5 +28,5 @@ description: "If you are using a CNI that allows for Network Policies, you can u
 home: https://github.com/kubewarden/rego-policies-library
 name: network-block-all-ingress-traffic-to-namespace-from-cidr-block
 sources:
-- ghcr.io/kubewarden/policies/network-block-all-ingress-traffic-to-namespace-from-cidr-block:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/network-block-all-ingress-traffic-to-namespace-from-cidr-block:v1.0.1
+version: 1.0.1
