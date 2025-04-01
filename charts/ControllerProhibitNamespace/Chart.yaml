@@ -42,8 +42,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: "This Policy ensure workloads are not running in a specified namespace.
   \n"
 home: https://github.com/kubewarden/rego-policies-library
@@ -52,5 +52,5 @@ keywords:
 - soc2-type1
 name: containers-should-not-run-in-namespace
 sources:
-- ghcr.io/kubewarden/policies/containers-should-not-run-in-namespace:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/containers-should-not-run-in-namespace:v1.0.1
+version: 1.0.1
