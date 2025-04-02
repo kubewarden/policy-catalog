@@ -1,0 +1,35 @@
+annotations:
+  artifacthub.io/repository: do-not-expose-admission-controller-webhook-services
+  catalog.cattle.io/hidden: "true"
+  catalog.cattle.io/type: kubewarden-policy
+  catalog.cattle.io/ui-component: kubewarden
+  kubewarden/contextAwareResources: |
+    - apiVersion: networking.k8s.io/v1
+      kind: Ingress
+  kubewarden/displayName: Do not expose admission controller webhook services
+  kubewarden/mutation: "false"
+  kubewarden/registry: ghcr.io
+  kubewarden/repository: kubewarden/policies/do-not-expose-admission-controller-webhook-services
+  kubewarden/resources: ValidatingWebhookConfiguration, MutatingWebhookConfiguration
+  kubewarden/rules: |
+    - apiGroups:
+      - admissionregistration.k8s.io
+      apiVersions:
+      - v1
+      resources:
+      - validatingwebhookconfigurations
+      - mutatingwebhookconfigurations
+      operations:
+      - CREATE
+      - UPDATE
+  kubewarden/tag: v0.1.0
+appVersion: 0.1.0
+description: A policy that detects webhook services used by admission controllers
+  that are accidentally exposed outside of the cluster
+home: https://github.com/yourorg/do-not-expose-admission-controller-webhook-services
+keywords:
+- webhooks
+name: do-not-expose-admission-controller-webhook-services
+sources:
+- ghcr.io/kubewarden/policies/do-not-expose-admission-controller-webhook-services:v0.1.0
+version: 0.1.0
