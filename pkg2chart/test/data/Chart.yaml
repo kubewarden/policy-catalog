@@ -1,0 +1,33 @@
+annotations:
+  artifacthub.io/repository: allowed-fsgroups-psp-policy
+  catalog.cattle.io/hidden: "true"
+  catalog.cattle.io/type: kubewarden-policy
+  catalog.cattle.io/ui-component: kubewarden
+  kubewarden/displayName: Allowed Fs Groups PSP
+  kubewarden/mutation: "true"
+  kubewarden/registry: ghcr.io
+  kubewarden/repository: kubewarden/policies/allowed-fsgroups-psp
+  kubewarden/resources: Pod
+  kubewarden/rules: |
+    - apiGroups:
+      - ''
+      apiVersions:
+      - v1
+      resources:
+      - pods
+      operations:
+      - CREATE
+      - UPDATE
+  kubewarden/tag: v0.1.10
+appVersion: 0.1.10
+description: Replacement for the Kubernetes Pod Security Policy that controls the
+  usage of fsGroups in the pod security context
+home: https://github.com/kubewarden/allowed-fsgroups-psp-policy
+keywords:
+- psp
+- container
+- runtime
+name: allowed-fsgroups-psp
+sources:
+- ghcr.io/kubewarden/policies/allowed-fsgroups-psp:v0.1.10
+version: 0.1.10
