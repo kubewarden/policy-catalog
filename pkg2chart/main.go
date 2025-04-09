@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"net/url"
 	"os"
 	"path/filepath"
 
@@ -15,7 +16,13 @@ import (
 	"helm.sh/helm/v3/pkg/chartutil"
 )
 
-// ArtifactHubPkg represents the structure of an artifacthub-pkg.yml file
+const (
+	artifactHubBaseURL = "https://artifacthub.io/api/v1"
+	orgName            = "kubewarden"
+	limit              = 60
+)
+
+// ArtifactHubPkg represents the structure of an artifacthub-pkg.yml file.
 type ArtifactHubPkg struct {
 	Name             string            `yaml:"name"`
 	DisplayName      string            `yaml:"displayName"`
@@ -27,18 +34,18 @@ type ArtifactHubPkg struct {
 	ContainersImages []ContainerImage  `yaml:"containersImages"`
 }
 
-// ArtifactHubRepo represents the structure of an artifacthub-repo.yml file
+// ArtifactHubRepo represents the structure of an artifacthub-repo.yml file.
 type ArtifactHubRepo struct {
 	RepositoryID string `yaml:"repositoryID"`
 }
 
-// RepositoryResponse represents the structure of a response from the ArtifactHub API
+// RepositoryResponse represents the structure of a response from the ArtifactHub API.
 type RepositoryResponse struct {
 	RepositoryID string `json:"repository_id"`
 	Name         string `json:"name"`
 }
 
-// ContainerImage represents the structure of a container image in an artifacthub-pkg.yml file
+// ContainerImage represents the structure of a container image in an artifacthub-pkg.yml file.
 type ContainerImage struct {
 	Name  string `yaml:"name"`
 	Image string `yaml:"image"`
@@ -57,7 +64,18 @@ func main() {
 		os.Exit(1)
 	}
 
-	data, err := os.ReadFile(*pkgPath)
+	err := pkgToChart(*pkgPath, *repoPath, *outputPath, artifactHubBaseURL)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+		os.Exit(1)
+	}
+
+	fmt.Fprintf(os.Stdout, "Successfully converted %s to %s\n", *pkgPath, *outputPath)
+}
+
+// pkgToChart converts an artifacthub-pkg.yml file to a Chart.yaml file.
+func pkgToChart(pkgPath, repoPath, outputPath, baseURL string) error {
+	data, err := os.ReadFile(pkgPath)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error reading input file: %v\n", err)
 		os.Exit(1)
@@ -66,26 +84,22 @@ func main() {
 	var pkg ArtifactHubPkg
 	err = yaml.Unmarshal(data, &pkg)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error parsing YAML: %v\n", err)
-		os.Exit(1)
+		return fmt.Errorf("error parsing YAML: %w", err)
 	}
 
 	var pkgRepo ArtifactHubRepo
-	data, err = os.ReadFile(*repoPath)
+	data, err = os.ReadFile(repoPath)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error reading input file: %v\n", err)
-		os.Exit(1)
+		return fmt.Errorf("error reading input file: %w", err)
 	}
 	err = yaml.Unmarshal(data, &pkgRepo)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error parsing YAML: %v\n", err)
-		os.Exit(1)
+		return fmt.Errorf("error parsing YAML: %w", err)
 	}
 
-	repositoryName, err := getRepositoryNameByID(pkgRepo.RepositoryID)
+	repositoryName, err := getRepositoryNameByID(baseURL, pkgRepo.RepositoryID)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error getting repository name: %v\n", err)
-		os.Exit(1)
+		return fmt.Errorf("error getting repository name: %w", err)
 	}
 
 	// Delete the `kubewarden/questions-ui` annotation.
@@ -129,49 +143,50 @@ func main() {
 		Annotations: pkg.Annotations,
 	}
 
-	outputDir := filepath.Dir(*outputPath)
+	outputDir := filepath.Dir(outputPath)
 	if outputDir != "." {
-		err = os.MkdirAll(outputDir, 0o755)
+		err = os.MkdirAll(outputDir, 0o750)
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "Error creating output directory: %v\n", err)
-			os.Exit(1)
+			return fmt.Errorf("error creating output directory: %w", err)
 		}
 	}
 
-	err = chartutil.SaveChartfile(*outputPath, &metadata)
+	err = chartutil.SaveChartfile(outputPath, &metadata)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error saving Chart.yaml: %v\n", err)
-		os.Exit(1)
+		return fmt.Errorf("error saving Chart.yaml: %w", err)
 	}
 
-	fmt.Printf("Successfully converted %s to %s\n", *pkgPath, *outputPath)
+	return nil
 }
 
-const (
-	orgName = "kubewarden"
-	limit   = 60
-)
-
-func getRepositoryNameByID(repoID string) (string, error) {
+// getRepositoryNameByID retrieves the name of a repository by its ID from the ArtifactHub API.
+func getRepositoryNameByID(baseURL, repoID string) (string, error) {
 	offset := 0
 
 	for {
 		// Since the ArtifactHub API does not provide a way to search for a repository by ID,
 		// we need to retrieve all repositories from the organization and search for the repository by ID.
 		// The limit is set to 60 because it is the maximum number of repositories that can be retrieved in a single request.
-		url := fmt.Sprintf("https://artifacthub.io/api/v1/repositories/search?org=%s&limit=%d&offset=%d",
-			orgName, limit, offset)
+		repoURL := fmt.Sprintf("%s/repositories/search?org=%s&limit=%d&offset=%d",
+			baseURL, orgName, limit, offset)
 
-		resp, err := http.Get(url)
+		url, err := url.Parse(repoURL)
+		if err != nil {
+			return "", fmt.Errorf("invalid URL: %w", err)
+		}
+
+		resp, err := http.Get(url.String()) //nolint:noctx // it is fine to not use a context here
 		if err != nil {
 			return "", fmt.Errorf("HTTP request failed: %w", err)
 		}
 
 		body, err := io.ReadAll(resp.Body)
-		resp.Body.Close()
-
 		if err != nil {
 			return "", fmt.Errorf("failed to read response body: %w", err)
+		}
+
+		if err := resp.Body.Close(); err != nil {
+			return "", fmt.Errorf("failed to close response body: %w", err)
 		}
 
 		if resp.StatusCode != http.StatusOK {
