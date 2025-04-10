@@ -49,8 +49,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v0.3.2
-appVersion: 0.3.2
+  kubewarden/tag: v0.3.3-rc1
+appVersion: 0.3.3-rc1
 description: A Kubewarden Policy that verifies all the signatures of the container
   images referenced by a Pod
 home: https://github.com/kubewarden/verify-image-signatures
@@ -61,5 +61,5 @@ keywords:
 - trusted
 name: verify-image-signatures
 sources:
-- ghcr.io/kubewarden/policies/verify-image-signatures:v0.3.2
-version: 0.3.2
+- ghcr.io/kubewarden/policies/verify-image-signatures:v0.3.3-rc1
+version: 0.3.3-rc1
