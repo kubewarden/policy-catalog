@@ -48,8 +48,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v0.2.7
-appVersion: 0.2.7
+  kubewarden/tag: v1.0.0
+appVersion: 1.0.0
 description: Replacement for the Kubernetes Pod Security Policy that controls the
   allowance of privilege escalation in containers and init containers of a pod
 home: https://github.com/kubewarden/allow-privilege-escalation-psp-policy
@@ -58,5 +58,5 @@ keywords:
 - privilege escalation
 name: allow-privilege-escalation-psp
 sources:
-- ghcr.io/kubewarden/policies/allow-privilege-escalation-psp:v0.2.7
-version: 0.2.7
+- ghcr.io/kubewarden/policies/allow-privilege-escalation-psp:v1.0.0
+version: 1.0.0
