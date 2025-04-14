@@ -48,8 +48,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v0.1.8
-appVersion: 0.1.8
+  kubewarden/tag: v1.0.0
+appVersion: 1.0.0
 description: Policy that inspects env vars and rejects a request if a secret was found
 home: https://github.com/kubewarden/env-variable-secrets-scanner-policy
 keywords:
@@ -61,5 +61,5 @@ keywords:
 - confidential data leak
 name: env-variable-secrets-scanner
 sources:
-- ghcr.io/kubewarden/policies/env-variable-secrets-scanner:v0.1.8
-version: 0.1.8
+- ghcr.io/kubewarden/policies/env-variable-secrets-scanner:v1.0.0
+version: 1.0.0
