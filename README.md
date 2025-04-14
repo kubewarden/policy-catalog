@@ -15,6 +15,8 @@ The workflow can be triggered in two ways:
    - `owner`: Repository owner
    - `repo`: Repository name
    - `tag`: Tag to release
+   - `policy-working-dir`: Working directory of the policy. Useful for repos with policies in folders (optional)
+   - `chart-dir`: Override the chart directory name (optional, defaults to repo name)
 
 2. **Automatically via repository dispatch** - requires this payload:
    ```jsonc
@@ -24,7 +26,7 @@ The workflow can be triggered in two ways:
        "owner": "org-name",
        "repo": "repo-name",
        "tag": "v1.0.0",
-       "artifacthub-pkg": "path/to/artifacthub-pkg.yml", // Optional, defaults to `./artifacthub-pkg.yml`
+       "policy_working_dir": "path/to/policy", // Optional, defaults to root directory
        "chart_dir": "MyPolicy", // Optional, defaults to repo name
      },
    }
