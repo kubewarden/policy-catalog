@@ -17,8 +17,8 @@ annotations:
       - pods
       operations:
       - CREATE
-  kubewarden/tag: v0.1.12
-appVersion: 0.1.12
+  kubewarden/tag: v1.0.0
+appVersion: 1.0.0
 description: A Pod Security Policy that controls usage of sysctls in pods
 home: https://github.com/kubewarden/sysctl-psp-policy
 keywords:
@@ -27,5 +27,5 @@ keywords:
 - pod
 name: sysctl-psp
 sources:
-- ghcr.io/kubewarden/policies/sysctl-psp:v0.1.12
-version: 0.1.12
+- ghcr.io/kubewarden/policies/sysctl-psp:v1.0.0
+version: 1.0.0
