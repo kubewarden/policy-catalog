@@ -17,8 +17,8 @@ annotations:
       - persistentvolumeclaims
       operations:
       - CREATE
-  kubewarden/tag: v0.1.1
-appVersion: 0.1.1
+  kubewarden/tag: v1.0.0
+appVersion: 1.0.0
 description: Policy that validates and adjusts the usage of StorageClasses in PersistentVolumeClaims
 home: https://github.com/kubewarden/persistentvolumeclaim-storageclass-policy
 keywords:
@@ -27,5 +27,5 @@ keywords:
 - kubewarden
 name: persistentvolumeclaim-storageclass-policy
 sources:
-- ghcr.io/kubewarden/policies/persistentvolumeclaim-storageclass-policy:v0.1.1
-version: 0.1.1
+- ghcr.io/kubewarden/policies/persistentvolumeclaim-storageclass-policy:v1.0.0
+version: 1.0.0
