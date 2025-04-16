@@ -18,8 +18,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.2
-appVersion: 1.0.2
+  kubewarden/tag: v1.0.3
+appVersion: 1.0.3
 description: GitRepository resources must include specific suffixes in the spec.ignore
   field which determines the files to be ignored before making a commit.
 home: https://github.com/kubewarden/rego-policies-library
@@ -27,5 +27,5 @@ keywords:
 - flux
 name: gitrepository-ignore-suffixes
 sources:
-- ghcr.io/kubewarden/policies/gitrepository-ignore-suffixes:v1.0.2
-version: 1.0.2
+- ghcr.io/kubewarden/policies/gitrepository-ignore-suffixes:v1.0.3
+version: 1.0.3
