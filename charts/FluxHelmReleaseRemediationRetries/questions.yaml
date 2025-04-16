@@ -1,0 +1,13 @@
+questions:
+  - variable: lower_bound
+    default: 1
+    required: true
+    group: Settings
+    type: integer
+    label: Lower bound
+  - variable: upper_bound
+    default: 10
+    required: true
+    group: Settings
+    type: integer
+    label: Upper bound
