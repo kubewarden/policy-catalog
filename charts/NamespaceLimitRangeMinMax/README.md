@@ -1,24 +1,40 @@
-# Rego policies library
+# Namespace Resources Limitrange
 
-This repository contains a collection of Rego policies that can be used with
-Kubewarden to enforce security and compliance best practices.
+When setting up default CPU and Memory values for your namespace, this policy will check if both requests and limits are set. This policy checks for the following:
 
-These policies have been adapted from https://github.com/weaveworks/policy-library.
+| Resource Setting | Resource Type |
+| ---------------- | ------------- |
+| default          | cpu           |
+| default          | memory        |
+| defaultRequest   | cpu           |
+| defaultRequest   | memory        |
+| min              | memory        |
+| min              | cpu           |
+| max              | cpu           |
+| max              | memory        |
 
-Weaveworks has been a pioneer in the field of Kubernetes security and
-compliance. They transitioned to a community-driven project with the closure of
-their start-up company at the beginning of 2024, which was a sad moment in the
-cloud native sphere. We thank Weaveworks and their contributors for their work
-on these policies, and we believe they are a good asset for Kubernetes users.
+Ensure you are specifying both CPU and Memory requests and limits in your LimitRange
 
-The policies are organized as:
-- `policies/`: Production ready, tested policies, released via tags to
-  `ghcr.io/kubewarden/policies` and artifacthub.io.
-- `staging/`: Policies under evaluation, not yet released.
+```
+spec:
+limits:
+- <resource_setting>:
+    <resource_type>: value
+```
 
-## Releasing a policy
+https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/
+https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/
 
-Push a new tag with the pattern `PolicyName/vX.Y.Z`, with the policy in the
-folder `policies/PolicyName`. The release job will test, build and push the
-policy to `ghcr.io/kubewarden/policies`, create the corresponding GH release,
-as well as updating the `artifacthub` branch in this repository.
+# Settings
+
+```yaml
+settings:
+  resource_type: "resource_type"
+  resource_setting: "resource_setting"
+  namespace: "magalix" # default: "magalix"
+```
+
+# Resources
+
+Policy applies to resources kinds:
+`LimitRange`
