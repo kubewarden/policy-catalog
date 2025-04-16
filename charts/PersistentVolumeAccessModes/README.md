@@ -1,24 +1,35 @@
-# Rego policies library
+# Persistent Volume Access Modes
 
-This repository contains a collection of Rego policies that can be used with
-Kubewarden to enforce security and compliance best practices.
+A PersistentVolume can be mounted on a host in any way supported by the resource provider. As shown in the table below, providers will have different capabilities and each PV's access modes are set to the specific modes supported by that particular volume. For example, NFS can support multiple read/write clients, but a specific NFS PV might be exported on the server as read-only. Each PV gets its own set of access modes describing that specific PV's capabilities.
 
-These policies have been adapted from https://github.com/weaveworks/policy-library.
+The access modes are:
 
-Weaveworks has been a pioneer in the field of Kubernetes security and
-compliance. They transitioned to a community-driven project with the closure of
-their start-up company at the beginning of 2024, which was a sad moment in the
-cloud native sphere. We thank Weaveworks and their contributors for their work
-on these policies, and we believe they are a good asset for Kubernetes users.
+- ReadWriteOnce
+- ReadOnlyMany
+- ReadWriteMany
+- ReadWriteOncePod
 
-The policies are organized as:
-- `policies/`: Production ready, tested policies, released via tags to
-  `ghcr.io/kubewarden/policies` and artifacthub.io.
-- `staging/`: Policies under evaluation, not yet released.
+Ensure the <name> of your Persistent Volume and <access_mode> set in your Policy match the PV you want to check.
 
-## Releasing a policy
+```
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: <name>
+spec:
+  accessModes:
+    - <access_mode>
+```
 
-Push a new tag with the pattern `PolicyName/vX.Y.Z`, with the policy in the
-folder `policies/PolicyName`. The release job will test, build and push the
-policy to `ghcr.io/kubewarden/policies`, create the corresponding GH release,
-as well as updating the `artifacthub` branch in this repository.
+# Settings
+
+```yaml
+settings:
+  name: "name"
+  access_mode: "access_mode"
+```
+
+# Resources
+
+Policy applies to resources kinds:
+`PersistentVolume`
