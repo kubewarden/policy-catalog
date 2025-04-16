@@ -1,24 +1,25 @@
-# Rego policies library
+# Block Workloads Created Without Specifying Namespace
 
-This repository contains a collection of Rego policies that can be used with
-Kubewarden to enforce security and compliance best practices.
+Using this Policy, you can prohibit workloads from being created in a default namespace due to the lack of a namespace label.
 
-These policies have been adapted from https://github.com/weaveworks/policy-library.
+Specify a `namespace` label.
 
-Weaveworks has been a pioneer in the field of Kubernetes security and
-compliance. They transitioned to a community-driven project with the closure of
-their start-up company at the beginning of 2024, which was a sad moment in the
-cloud native sphere. We thank Weaveworks and their contributors for their work
-on these policies, and we believe they are a good asset for Kubernetes users.
+```
+metadata:
+  namespace:
+```
 
-The policies are organized as:
-- `policies/`: Production ready, tested policies, released via tags to
-  `ghcr.io/kubewarden/policies` and artifacthub.io.
-- `staging/`: Policies under evaluation, not yet released.
+https://kubernetes.io/docs/tasks/administer-cluster/namespaces/#understanding-the-motivation-for-using-namespaces
 
-## Releasing a policy
+# Settings
 
-Push a new tag with the pattern `PolicyName/vX.Y.Z`, with the policy in the
-folder `policies/PolicyName`. The release job will test, build and push the
-policy to `ghcr.io/kubewarden/policies`, create the corresponding GH release,
-as well as updating the `artifacthub` branch in this repository.
+```yaml
+settings:
+  exclude_label_key: "" # optional
+  exclude_label_value: "" # optional
+```
+
+# Resources
+
+Policy applies to resources kinds:
+`Deployment`, `Job`, `ReplicationController`, `ReplicaSet`, `DaemonSet`, `StatefulSet`, `CronJob`
