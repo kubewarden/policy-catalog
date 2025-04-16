@@ -1,24 +1,26 @@
-# Rego policies library
+# Containers Should Not Run In Namespace
 
-This repository contains a collection of Rego policies that can be used with
-Kubewarden to enforce security and compliance best practices.
+This Policy ensure workloads are not running in a specified namespace.
 
-These policies have been adapted from https://github.com/weaveworks/policy-library.
+Use a `namespace` that differs from the one specified in the Policy.
 
-Weaveworks has been a pioneer in the field of Kubernetes security and
-compliance. They transitioned to a community-driven project with the closure of
-their start-up company at the beginning of 2024, which was a sad moment in the
-cloud native sphere. We thank Weaveworks and their contributors for their work
-on these policies, and we believe they are a good asset for Kubernetes users.
+```
+metadata:
+  namespace: <custom_namespace>
+```
 
-The policies are organized as:
-- `policies/`: Production ready, tested policies, released via tags to
-  `ghcr.io/kubewarden/policies` and artifacthub.io.
-- `staging/`: Policies under evaluation, not yet released.
+https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
 
-## Releasing a policy
+# Settings
 
-Push a new tag with the pattern `PolicyName/vX.Y.Z`, with the policy in the
-folder `policies/PolicyName`. The release job will test, build and push the
-policy to `ghcr.io/kubewarden/policies`, create the corresponding GH release,
-as well as updating the `artifacthub` branch in this repository.
+```yaml
+settings:
+  custom_namespace: "default" # default: "default"
+  exclude_label_key: "" # optional
+  exclude_label_value: "" # optional
+```
+
+# Resources
+
+Policy applies to resources kinds:
+`Pod`, `Deployment`, `Job`, `ReplicationController`, `ReplicaSet`, `DaemonSet`, `StatefulSet`, `CronJob`
