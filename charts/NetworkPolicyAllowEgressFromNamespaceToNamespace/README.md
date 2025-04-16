@@ -1,24 +1,24 @@
-# Rego policies library
+# Network Allow Egress Traffic From Namespace To Another
 
-This repository contains a collection of Rego policies that can be used with
-Kubewarden to enforce security and compliance best practices.
+If you are using a CNI that allows for Network Policies, you can use this Policy to allow Egress traffic from one namespace to another.
 
-These policies have been adapted from https://github.com/weaveworks/policy-library.
+By default, if no policies exist in a namespace, then all ingress and egress traffic is allowed to and from pods in that namespace.
 
-Weaveworks has been a pioneer in the field of Kubernetes security and
-compliance. They transitioned to a community-driven project with the closure of
-their start-up company at the beginning of 2024, which was a sad moment in the
-cloud native sphere. We thank Weaveworks and their contributors for their work
-on these policies, and we believe they are a good asset for Kubernetes users.
+Validate your use case and check network policies for traffic blocking.
 
-The policies are organized as:
-- `policies/`: Production ready, tested policies, released via tags to
-  `ghcr.io/kubewarden/policies` and artifacthub.io.
-- `staging/`: Policies under evaluation, not yet released.
+https://kubernetes.io/docs/concepts/services-networking/network-policies/
 
-## Releasing a policy
+# Settings
 
-Push a new tag with the pattern `PolicyName/vX.Y.Z`, with the policy in the
-folder `policies/PolicyName`. The release job will test, build and push the
-policy to `ghcr.io/kubewarden/policies`, create the corresponding GH release,
-as well as updating the `artifacthub` branch in this repository.
+```yaml
+settings:
+  src_namespace: "src_namespace"
+  dst_namespace: "dst_namespace"
+  exclude_label_key: "" # optional
+  exclude_label_value: "" # optional
+```
+
+# Resources
+
+Policy applies to resources kinds:
+`NetworkPolicy`
