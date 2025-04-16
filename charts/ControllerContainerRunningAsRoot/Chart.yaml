@@ -41,8 +41,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.2
-appVersion: 1.0.2
+  kubewarden/tag: v1.0.3
+appVersion: 1.0.3
 description: "Running as root gives the container full access to all resources in
   the VM it is running on. Containers should not run with such access rights unless
   required by design. This Policy enforces that the `securityContext.runAsNonRoot`
@@ -57,5 +57,5 @@ keywords:
 - default
 name: container-running-as-root
 sources:
-- ghcr.io/kubewarden/policies/container-running-as-root:v1.0.2
-version: 1.0.2
+- ghcr.io/kubewarden/policies/container-running-as-root:v1.0.3
+version: 1.0.3
