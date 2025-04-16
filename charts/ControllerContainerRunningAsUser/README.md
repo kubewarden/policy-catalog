@@ -1,24 +1,29 @@
-# Rego policies library
+# Container Running As User
 
-This repository contains a collection of Rego policies that can be used with
-Kubewarden to enforce security and compliance best practices.
+Containers has a feature in which you specify the ID of the user which all processes in the container will run with. This Policy enforces that the `securityContext.runAsUser` attribute is set to a uid greater than root uid. Running as root user gives the container full access to all resources in the VM it is running on. Containers should not run with such access rights unless required by design.
 
-These policies have been adapted from https://github.com/weaveworks/policy-library.
+You should set `securityContext.runAsUser` uid to something greater than root uid. Not setting it will default to giving the container root user rights on the VM that it is running on.
 
-Weaveworks has been a pioneer in the field of Kubernetes security and
-compliance. They transitioned to a community-driven project with the closure of
-their start-up company at the beginning of 2024, which was a sad moment in the
-cloud native sphere. We thank Weaveworks and their contributors for their work
-on these policies, and we believe they are a good asset for Kubernetes users.
+```
+...
+  spec:
+    securityContext:
+      runAsUser: <uid>
+```
 
-The policies are organized as:
-- `policies/`: Production ready, tested policies, released via tags to
-  `ghcr.io/kubewarden/policies` and artifacthub.io.
-- `staging/`: Policies under evaluation, not yet released.
+https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
 
-## Releasing a policy
+# Settings
 
-Push a new tag with the pattern `PolicyName/vX.Y.Z`, with the policy in the
-folder `policies/PolicyName`. The release job will test, build and push the
-policy to `ghcr.io/kubewarden/policies`, create the corresponding GH release,
-as well as updating the `artifacthub` branch in this repository.
+```yaml
+settings:
+  uid: 0 # default: 0
+  exclude_namespaces: [] # optional, default: ["kube-system"]
+  exclude_label_key: "" # optional
+  exclude_label_value: "" # optional
+```
+
+# Resources
+
+Policy applies to resources kinds:
+`Deployment`, `Job`, `ReplicationController`, `ReplicaSet`, `DaemonSet`, `StatefulSet`, `CronJob`
