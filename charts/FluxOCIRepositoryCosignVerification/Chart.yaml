@@ -18,8 +18,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.2
-appVersion: 1.0.2
+  kubewarden/tag: v1.0.3
+appVersion: 1.0.3
 description: OCIRepository resources must provide Cosign verification and reference
   a specific key.
 home: https://github.com/kubewarden/rego-policies-library
@@ -27,5 +27,5 @@ keywords:
 - flux
 name: ocirepository-cosign-verification
 sources:
-- ghcr.io/kubewarden/policies/ocirepository-cosign-verification:v1.0.2
-version: 1.0.2
+- ghcr.io/kubewarden/policies/ocirepository-cosign-verification:v1.0.3
+version: 1.0.3
