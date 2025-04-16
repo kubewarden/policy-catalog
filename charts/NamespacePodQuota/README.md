@@ -1,24 +1,20 @@
-# Rego policies library
+# Namespace Pod Quota
 
-This repository contains a collection of Rego policies that can be used with
-Kubewarden to enforce security and compliance best practices.
+When using a pod quota ensure setting the proper value for the quantity of pods you wish to have in your namespace.
 
-These policies have been adapted from https://github.com/weaveworks/policy-library.
+Specify a value for the maximum number of pods you'd like in a namespace.
 
-Weaveworks has been a pioneer in the field of Kubernetes security and
-compliance. They transitioned to a community-driven project with the closure of
-their start-up company at the beginning of 2024, which was a sad moment in the
-cloud native sphere. We thank Weaveworks and their contributors for their work
-on these policies, and we believe they are a good asset for Kubernetes users.
+https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/quota-pod-namespace/
 
-The policies are organized as:
-- `policies/`: Production ready, tested policies, released via tags to
-  `ghcr.io/kubewarden/policies` and artifacthub.io.
-- `staging/`: Policies under evaluation, not yet released.
+# Settings
 
-## Releasing a policy
+```yaml
+settings:
+  pod_quota: 2 # default: 2
+  namespace: "magalix" # default: "magalix"
+```
 
-Push a new tag with the pattern `PolicyName/vX.Y.Z`, with the policy in the
-folder `policies/PolicyName`. The release job will test, build and push the
-policy to `ghcr.io/kubewarden/policies`, create the corresponding GH release,
-as well as updating the `artifacthub` branch in this repository.
+# Resources
+
+Policy applies to resources kinds:
+`ResourceQuota`
