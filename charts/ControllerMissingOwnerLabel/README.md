@@ -1,24 +1,66 @@
-# Rego policies library
+# Missing Owner Label
 
-This repository contains a collection of Rego policies that can be used with
-Kubewarden to enforce security and compliance best practices.
+Custom labels can help enforce organizational standards for each artifact deployed. This Policy ensure a custom label key is set in the entity's `metadata`. The Policy detects the presence of the following:
 
-These policies have been adapted from https://github.com/weaveworks/policy-library.
+### owner
 
-Weaveworks has been a pioneer in the field of Kubernetes security and
-compliance. They transitioned to a community-driven project with the closure of
-their start-up company at the beginning of 2024, which was a sad moment in the
-cloud native sphere. We thank Weaveworks and their contributors for their work
-on these policies, and we believe they are a good asset for Kubernetes users.
+A label key of `owner` will help identify who the owner of this entity is.
 
-The policies are organized as:
-- `policies/`: Production ready, tested policies, released via tags to
-  `ghcr.io/kubewarden/policies` and artifacthub.io.
-- `staging/`: Policies under evaluation, not yet released.
+### app.kubernetes.io/name
 
-## Releasing a policy
+The name of the application
 
-Push a new tag with the pattern `PolicyName/vX.Y.Z`, with the policy in the
-folder `policies/PolicyName`. The release job will test, build and push the
-policy to `ghcr.io/kubewarden/policies`, create the corresponding GH release,
-as well as updating the `artifacthub` branch in this repository.
+### app.kubernetes.io/instance
+
+A unique name identifying the instance of an application
+
+### app.kubernetes.io/version
+
+The current version of the application (e.g., a semantic version, revision hash, etc.)
+
+### app.kubernetes.io/part-of
+
+The name of a higher level application this one is part of
+
+### app.kubernetes.io/managed-by
+
+The tool being used to manage the operation of an application
+
+### app.kubernetes.io/created-by
+
+The controller/user who created this resource
+
+Add these custom labels to `metadata`.
+
+- owner
+- app.kubernetes.io/name
+- app.kubernetes.io/instance
+- app.kubernetes.io/version
+- app.kubernetes.io/name
+- app.kubernetes.io/part-of
+- app.kubernetes.io/managed-by
+- app.kubernetes.io/created-by
+
+```
+metadata:
+  labels:
+    <label>: value
+```
+
+For additional information, please check
+
+- https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels
+
+# Settings
+
+```yaml
+settings:
+  exclude_namespaces: [] # optional
+  exclude_label_key: "" # optional
+  exclude_label_value: "" # optional
+```
+
+# Resources
+
+Policy applies to resources kinds:
+`Deployment`, `Job`, `ReplicationController`, `ReplicaSet`, `DaemonSet`, `StatefulSet`, `CronJob`
