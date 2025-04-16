@@ -18,8 +18,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v0.1.3
-appVersion: 0.1.3
+  kubewarden/tag: v1.0.0
+appVersion: 1.0.0
 description: Policy to ensure that namespaces have the required PSA labels configuration
   for deployment in the cluster.
 home: https://github.com/kubewarden/psa-label-enforcer
@@ -29,5 +29,5 @@ keywords:
 - kubewarden
 name: psa-label-enforcer
 sources:
-- ghcr.io/kubewarden/policies/psa-label-enforcer:v0.1.3
-version: 0.1.3
+- ghcr.io/kubewarden/policies/psa-label-enforcer:v1.0.0
+version: 1.0.0
