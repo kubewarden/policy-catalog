@@ -18,13 +18,13 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.2
-appVersion: 1.0.2
+  kubewarden/tag: v1.0.3
+appVersion: 1.0.3
 description: spec.path cannot be one of excludedPathsList[]
 home: https://github.com/kubewarden/rego-policies-library
 keywords:
 - flux
 name: kustomization-excluded-paths
 sources:
-- ghcr.io/kubewarden/policies/kustomization-excluded-paths:v1.0.2
-version: 1.0.2
+- ghcr.io/kubewarden/policies/kustomization-excluded-paths:v1.0.3
+version: 1.0.3
