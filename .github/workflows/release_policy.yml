@@ -135,7 +135,7 @@ jobs:
           go run main.go \
             --pkg "../$SOURCE_DIR/artifacthub-pkg.yml" \
             --repo "../policy-source/artifacthub-repo.yml" \
-            --output "../$TARGET_DIR/Chart.yaml"
+            --output "../$TARGET_DIR"
 
       - name: Create Pull Request
         env:

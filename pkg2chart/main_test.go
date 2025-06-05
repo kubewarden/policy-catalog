@@ -44,18 +44,28 @@ func TestPkgToChart(t *testing.T) {
 
 	pkgPath := "./test/data/artifacthub-pkg.yml"
 	repoPath := "./test/data/artifacthub-repo.yml"
-	outputPath := filepath.Join(tmpDir, "Chart.yaml")
+	outputDir := tmpDir
+	chartPath := filepath.Join(outputDir, "Chart.yaml")
+	valuesPath := filepath.Join(outputDir, "values.yaml")
 
-	err := pkgToChart(pkgPath, repoPath, outputPath, server.URL)
+	err := pkgToChart(pkgPath, repoPath, outputDir, server.URL)
 	require.NoError(t, err)
 
-	_, err = os.Stat(outputPath)
-	require.NoError(t, err, "Output file was not created")
+	_, err = os.Stat(chartPath)
+	require.NoError(t, err, "Output Chart.yaml file was not created")
 
-	actual, err := os.ReadFile(outputPath)
+	actual, err := os.ReadFile(chartPath)
 	require.NoError(t, err)
 	expected, err := os.ReadFile("./test/data/Chart.yaml")
 	require.NoError(t, err)
-
 	assert.Equal(t, string(expected), string(actual), "Generated Chart.yaml does not match expected fixture")
+
+	_, err = os.Stat(valuesPath)
+	require.NoError(t, err, "Output values.yaml file was not created")
+
+	actualValues, err := os.ReadFile(valuesPath)
+	require.NoError(t, err)
+	expectedValues, err := os.ReadFile("./test/data/values.yaml")
+	require.NoError(t, err)
+	assert.Equal(t, string(expectedValues), string(actualValues), "Generated values.yaml does not match expected fixture")
 }

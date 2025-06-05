@@ -11,7 +11,7 @@ import (
 	"path/filepath"
 
 	"github.com/google/go-containerregistry/pkg/name"
-	"gopkg.in/yaml.v3"
+	"github.com/yaml/go-yaml"
 	"helm.sh/helm/v3/pkg/chart"
 	"helm.sh/helm/v3/pkg/chartutil"
 )
@@ -51,11 +51,23 @@ type ContainerImage struct {
 	Image string `yaml:"image"`
 }
 
+type Values struct {
+	Global struct {
+		Cattle struct {
+			SystemDefaultRegistry string `yaml:"systemDefaultRegistry"`
+		} `yaml:"cattle"`
+	} `yaml:"global"`
+	Module struct {
+		Repository string `yaml:"repository"`
+		Tag        string `yaml:"tag"`
+	} `yaml:"module"`
+}
+
 func main() {
 	pkgPath := flag.String("pkg", "artifacthub-pkg.yml", "Path to the artifacthub-pkg.yml file")
 	repoPath := flag.String("repo", "artifacthub-repo.yml", "Path to the artifacthub-repo.yml file")
 
-	outputPath := flag.String("output", "Chart.yaml", "Path to output Chart.yaml file")
+	outputDir := flag.String("output", "chart", "Directory to output Chart.yaml and values.yaml files")
 
 	flag.Parse()
 
@@ -64,17 +76,19 @@ func main() {
 		os.Exit(1)
 	}
 
-	err := pkgToChart(*pkgPath, *repoPath, *outputPath, artifactHubBaseURL)
+	err := pkgToChart(*pkgPath, *repoPath, *outputDir, artifactHubBaseURL)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 		os.Exit(1)
 	}
 
-	fmt.Fprintf(os.Stdout, "Successfully converted %s to %s\n", *pkgPath, *outputPath)
+	fmt.Fprintf(os.Stdout, "Successfully converted %s to %s/Chart.yaml and %s/values.yaml\n", *pkgPath, *outputDir, *outputDir)
 }
 
-// pkgToChart converts an artifacthub-pkg.yml file to a Chart.yaml file.
-func pkgToChart(pkgPath, repoPath, outputPath, baseURL string) error {
+// pkgToChart converts an artifacthub-pkg.yml file to Chart.yaml and values.yaml files.
+//
+//nolint:funlen // Function is readable as-is, doesn't even have nested logic..
+func pkgToChart(pkgPath, repoPath, outputDir, baseURL string) error {
 	data, err := os.ReadFile(pkgPath)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error reading input file: %v\n", err)
@@ -121,6 +135,7 @@ func pkgToChart(pkgPath, repoPath, outputPath, baseURL string) error {
 		os.Exit(1)
 	}
 
+	// TODO deprecated, remove once they aren't needed
 	annotations["kubewarden/registry"] = ref.Context().RegistryStr()
 	annotations["kubewarden/repository"] = ref.Context().RepositoryStr()
 	annotations["kubewarden/tag"] = ref.TagStr()
@@ -143,7 +158,6 @@ func pkgToChart(pkgPath, repoPath, outputPath, baseURL string) error {
 		Annotations: pkg.Annotations,
 	}
 
-	outputDir := filepath.Dir(outputPath)
 	if outputDir != "." {
 		err = os.MkdirAll(outputDir, 0o750)
 		if err != nil {
@@ -151,9 +165,24 @@ func pkgToChart(pkgPath, repoPath, outputPath, baseURL string) error {
 		}
 	}
 
-	err = chartutil.SaveChartfile(outputPath, &metadata)
+	chartPath := filepath.Join(outputDir, "Chart.yaml")
+	err = chartutil.SaveChartfile(chartPath, &metadata)
 	if err != nil {
 		return fmt.Errorf("error saving Chart.yaml: %w", err)
+	}
+
+	valuesPath := filepath.Join(outputDir, "values.yaml")
+	valuesContent := Values{}
+	valuesContent.Global.Cattle.SystemDefaultRegistry = ref.Context().RegistryStr()
+	valuesContent.Module.Repository = ref.Context().RepositoryStr()
+	valuesContent.Module.Tag = ref.TagStr()
+	data, err = yaml.Marshal(valuesContent)
+	if err != nil {
+		return fmt.Errorf("error when creating values.yaml: %w", err)
+	}
+	err = os.WriteFile(valuesPath, data, 0o600)
+	if err != nil {
+		return fmt.Errorf("error writing values.yaml: %w", err)
 	}
 
 	return nil
