@@ -5,7 +5,7 @@ go 1.24.2
 require (
 	github.com/google/go-containerregistry v0.20.5
 	github.com/stretchr/testify v1.10.0
-	github.com/yaml/go-yaml v2.1.0+incompatible
+	github.com/yaml/go-yaml/v3 v3.0.3
 	helm.sh/helm/v3 v3.18.1
 )
 
