@@ -1,0 +1,6 @@
+global:
+  cattle:
+    systemDefaultRegistry: ghcr.io
+module:
+  repository: kubewarden/policies/verify-image-signatures
+  tag: v1.0.2
