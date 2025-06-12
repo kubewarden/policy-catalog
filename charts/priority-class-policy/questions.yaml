@@ -1,0 +1,20 @@
+questions:
+- default: null
+  description: >-
+    This policy ensures that the priorityClassName defined in a pod is only
+    one of the expected ones. Enforce a set of allowed `PriorityClass` names, rejecting
+    deployments if users try to create a Pod with an unexpected `priorityClassName`.
+  group: Settings
+  required: false
+  hide_input: true
+  type: string
+  variable: description
+- default: []
+  description: ''
+  tooltip: >-
+    List of the PriorityClass names that users can use in the Pod's priorityClassName field
+  group: Settings
+  label: Allowed priority classes
+  required: true
+  type: array[
+  variable: allowed_priority_classes
