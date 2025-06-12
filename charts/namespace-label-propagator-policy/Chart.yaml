@@ -45,8 +45,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.2
+appVersion: 1.0.2
 description: Kubewarden policy designed to automatically propagate labels defined
   in a Kubernetes namespace to the associated resources within that namespace
 home: https://github.com/kubewarden/namespace-label-propagator-policy
@@ -57,5 +57,5 @@ keywords:
 - label
 name: namespace-label-propagator-policy
 sources:
-- ghcr.io/kubewarden/policies/namespace-label-propagator:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/namespace-label-propagator:v1.0.2
+version: 1.0.2
