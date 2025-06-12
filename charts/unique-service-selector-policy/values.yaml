@@ -1,0 +1,6 @@
+global:
+  cattle:
+    systemDefaultRegistry: ghcr.io
+module:
+  repository: kubewarden/policies/unique-service-selector-policy
+  tag: v1.0.2
