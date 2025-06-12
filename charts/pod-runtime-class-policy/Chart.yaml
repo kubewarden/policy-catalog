@@ -18,8 +18,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.2
+appVersion: 1.0.2
 description: Policy that controls the usage of Pod runtimeClass
 home: https://github.com/kubewarden/pod-runtime-class-policy
 keywords:
@@ -28,5 +28,5 @@ keywords:
 - container runtime
 name: pod-runtime
 sources:
-- ghcr.io/kubewarden/policies/pod-runtime:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/pod-runtime:v1.0.2
+version: 1.0.2
