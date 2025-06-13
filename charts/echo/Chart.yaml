@@ -20,8 +20,8 @@ annotations:
       - UPDATE
       - DELETE
       - CONNECT
-  kubewarden/tag: v0.1.6
-appVersion: 0.1.6
+  kubewarden/tag: v0.1.8
+appVersion: 0.1.8
 description: A policy that echoes back Kubernetes' AdmissionReview - useful for Policy
   Authors
 home: https://github.com/kubewarden/echo
@@ -29,5 +29,5 @@ keywords:
 - developer
 name: echo
 sources:
-- ghcr.io/kubewarden/policies/echo:v0.1.6
-version: 0.1.6
+- ghcr.io/kubewarden/policies/echo:v0.1.8
+version: 0.1.8
