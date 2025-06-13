@@ -17281,6 +17281,76 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.2
+    apiVersion: v1
+    appVersion: 1.0.2
+    created: "2025-06-13T18:54:47.475462438Z"
+    description: A Kubewarden Policy that verifies all the signatures of the container
+      images referenced by a Pod
+    digest: 3be8254e01a69926b255d957152f87b7f988f28a86ee25f84c523684652d8e38
+    home: https://github.com/kubewarden/verify-image-signatures
+    keywords:
+    - pod
+    - signature
+    - sigstore
+    - trusted
+    name: verify-image-signatures
+    sources:
+    - ghcr.io/kubewarden/policies/verify-image-signatures:v1.0.2
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/verify-image-signatures-1.0.2/verify-image-signatures-1.0.2.tgz
+    version: 1.0.2
+  - annotations:
+      artifacthub.io/repository: verify-image-signatures
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Verify Image Signatures
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/verify-image-signatures
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.0
     apiVersion: v1
     appVersion: 1.0.0
@@ -17692,4 +17762,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-06-13T18:52:00.44913643Z"
+generated: "2025-06-13T18:54:47.475966636Z"
