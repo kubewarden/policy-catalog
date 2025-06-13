@@ -18,13 +18,13 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.2
+appVersion: 1.0.2
 description: A policy that validates Kubernetes' resource labels
 home: https://github.com/kubewarden/safe-labels-policy
 keywords:
 - labels
 name: safe-labels
 sources:
-- ghcr.io/kubewarden/policies/safe-labels:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/safe-labels:v1.0.2
+version: 1.0.2
