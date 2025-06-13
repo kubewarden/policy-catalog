@@ -3,10 +3,10 @@ module github.com/kubewarden/policy-catalog/pkg2chart
 go 1.24.2
 
 require (
-	github.com/google/go-containerregistry v0.20.5
+	github.com/google/go-containerregistry v0.20.6
 	github.com/stretchr/testify v1.10.0
-	github.com/yaml/go-yaml v2.1.0+incompatible
-	helm.sh/helm/v3 v3.18.1
+	github.com/yaml/go-yaml v2.4.2+incompatible
+	helm.sh/helm/v3 v3.18.2
 )
 
 require (
