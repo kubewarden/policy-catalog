@@ -5271,6 +5271,81 @@ entries:
           - pods
           operations:
           - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v2.0.0
+    apiVersion: v1
+    appVersion: 2.0.0
+    created: "2025-06-23T12:47:24.747000449Z"
+    description: A Kubewarden Policy that controls the usage of environment variables
+    digest: dda76cee3f3f7c7f6f2026e9d6a0d500c57e545b8f94f89ff1c4305e5cd977c2
+    home: https://github.com/kubewarden/environment-variable-policy
+    keywords:
+    - deployment
+    - replicaset
+    - statefulset
+    - daemonset
+    - replicationcontroller
+    - job
+    - cronjob
+    - pod
+    - container
+    - environment-variables
+    name: environment-variable-policy
+    sources:
+    - ghcr.io/kubewarden/policies/environment-variable-policy:v2.0.0
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/environment-variable-policy-2.0.0/environment-variable-policy-2.0.0.tgz
+    version: 2.0.0
+  - annotations:
+      artifacthub.io/repository: environment-variable-policy
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Environment Variable Policy
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/environment-variable-policy
+      kubewarden/resources: Deployment,Replicaset,Statefulset,Daemonset,Replicationcontroller,Job,Cronjob,Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
         - apiGroups:
           - ''
           apiVersions:
@@ -18498,4 +18573,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-06-18T13:22:38.058908201Z"
+generated: "2025-06-23T12:47:24.74797166Z"
