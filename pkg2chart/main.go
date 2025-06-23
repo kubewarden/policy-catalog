@@ -11,7 +11,7 @@ import (
 	"path/filepath"
 
 	"github.com/google/go-containerregistry/pkg/name"
-	"github.com/yaml/go-yaml"
+	"go.yaml.in/yaml/v3"
 	"helm.sh/helm/v3/pkg/chart"
 	"helm.sh/helm/v3/pkg/chartutil"
 )
