@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -20,6 +21,7 @@ const (
 	artifactHubBaseURL = "https://artifacthub.io/api/v1"
 	orgName            = "kubewarden"
 	limit              = 60
+	yamlIndentSpaces   = 2
 )
 
 // ArtifactHubPkg represents the structure of an artifacthub-pkg.yml file.
@@ -176,11 +178,15 @@ func pkgToChart(pkgPath, repoPath, outputDir, baseURL string) error {
 	valuesContent.Global.Cattle.SystemDefaultRegistry = ref.Context().RegistryStr()
 	valuesContent.Module.Repository = ref.Context().RepositoryStr()
 	valuesContent.Module.Tag = ref.TagStr()
-	data, err = yaml.Marshal(valuesContent)
+
+	var buf bytes.Buffer
+	encoder := yaml.NewEncoder(&buf)
+	encoder.SetIndent(yamlIndentSpaces)
+	err = encoder.Encode(valuesContent)
 	if err != nil {
 		return fmt.Errorf("error when creating values.yaml: %w", err)
 	}
-	err = os.WriteFile(valuesPath, data, 0o600)
+	err = os.WriteFile(valuesPath, buf.Bytes(), 0o600)
 	if err != nil {
 		return fmt.Errorf("error writing values.yaml: %w", err)
 	}
