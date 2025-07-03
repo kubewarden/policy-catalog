@@ -12639,6 +12639,40 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2025-07-03T13:37:51.900807203Z"
+    description: 'When using a pod quota ensure setting the proper value for the quantity
+      of pods you wish to have in your namespace.  '
+    digest: 6b2261cf7f445e8df75f38ab83cc05f1279de1855fc2beaf0cd0909fccede780
+    home: https://github.com/kubewarden/rego-policies-library
+    name: namespace-pod-quota
+    sources:
+    - ghcr.io/kubewarden/policies/namespace-pod-quota:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/namespace-pod-quota-1.0.4/namespace-pod-quota-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Namespace Pod Quota
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/namespace-pod-quota
+      kubewarden/resources: ResourceQuota
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - resourcequotas
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -15926,6 +15960,51 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2025-07-03T13:37:52.047293704Z"
+    description: 'This Policy prohibits various resources from being set with wildcards
+      for Role or ClusterRole resources, except for the `cluster-admin` ClusterRole.
+      It will check each resource specified for the verb specified. The wildcards
+      will be checked in:  ### Resources In the Kubernetes API, most resources are
+      represented and accessed using a string representation of their object name,
+      such as pods for a Pod. RBAC refers to resources using exactly the same name
+      that appears in the URL for the relevant API endpoint.   ### Verbs API verbs
+      like get, list, create, update, patch, watch, delete, and deletecollection are
+      used for resource requests.   ### API Groups The API Group being accessed (for
+      resource requests only).  ### Non Resource URLs Requests to endpoints other
+      than /api/v1/... or /apis/<group>/<version>/... are considered "non-resource
+      requests", and use the lower-cased HTTP method of the request as the verb. '
+    digest: f573161a084aee8af067ef9e7e7ff6c8f718bf8c42ca469ad2ab2f2efe282008
+    home: https://github.com/kubewarden/rego-policies-library
+    name: rbac-prohibit-wildcards-policyrule-resources
+    sources:
+    - ghcr.io/kubewarden/policies/rbac-prohibit-wildcards-policyrule-resources:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/rbac-prohibit-wildcards-policyrule-resources-1.0.4/rbac-prohibit-wildcards-policyrule-resources-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Rbac Prohibit Wildcards on Policy Rule Resources
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/rbac-prohibit-wildcards-policyrule-resources
+      kubewarden/resources: Role, ClusterRole
+      kubewarden/rules: |
+        - apiGroups:
+          - rbac.authorization.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - roles
+          - clusterroles
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -18819,4 +18898,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-07-03T13:37:39.763868916Z"
+generated: "2025-07-03T13:37:52.047859587Z"
