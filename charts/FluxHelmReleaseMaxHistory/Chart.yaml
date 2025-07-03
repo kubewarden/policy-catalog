@@ -18,13 +18,13 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.3
-appVersion: 1.0.3
+  kubewarden/tag: v1.0.4
+appVersion: 1.0.4
 description: HelmRelease maxHistory cannot exceed the specified value.
 home: https://github.com/kubewarden/rego-policies-library
 keywords:
 - flux
 name: helm-release-max-history
 sources:
-- ghcr.io/kubewarden/policies/helm-release-max-history:v1.0.3
-version: 1.0.3
+- ghcr.io/kubewarden/policies/helm-release-max-history:v1.0.4
+version: 1.0.4
