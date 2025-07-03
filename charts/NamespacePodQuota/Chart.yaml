@@ -18,12 +18,12 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.3
-appVersion: 1.0.3
+  kubewarden/tag: v1.0.4
+appVersion: 1.0.4
 description: "When using a pod quota ensure setting the proper value for the quantity
   of pods you wish to have in your namespace. \n"
 home: https://github.com/kubewarden/rego-policies-library
 name: namespace-pod-quota
 sources:
-- ghcr.io/kubewarden/policies/namespace-pod-quota:v1.0.3
-version: 1.0.3
+- ghcr.io/kubewarden/policies/namespace-pod-quota:v1.0.4
+version: 1.0.4
