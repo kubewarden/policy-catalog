@@ -2,7 +2,7 @@
 
 This policy identifies Kubernetes Services that are:
 
-- Exposed externally via Ingress resources.
+- Exposed externally via Ingress resources, NodePort services, or LoadBalancer services.
 - Used internally by [Dynamic Admission Controllers](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/) as webhook endpoints.
 
 Exposing webhook endpoints externally increases the attack surface,
@@ -14,7 +14,7 @@ misconfiguration.
 1. The policy scans all services referenced by `ValidatingWebhookConfiguration`
    and `MutatingWebhookConfiguration`.
 2. It queries the Kubernetes API to identify services exposed externally via
-   `Ingress` resources.
+   `Ingress` resources, or via NodePort or LoadBalancer services.
 3. Any misconfigured `(Validating|Mutating)WebhookConfiguration` is identified.
 
 ## Settings
