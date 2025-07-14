@@ -20482,6 +20482,77 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.3
+    apiVersion: v1
+    appVersion: 1.0.3
+    created: "2025-07-14T17:33:09.982208134Z"
+    description: Policy that inspects containers, init containers, and ephemeral containers,
+      and restricts their usage of volumes by  checking the `volume` name being used
+      in `volumeMounts[*].name`
+    digest: 21592f446856d6c051f68a60633aa0f25b84783190b3c41200f33ba20dbbca2d
+    home: https://github.com/kubewarden/volumemounts-policy
+    keywords:
+    - container
+    - volumeMounts
+    - volume
+    - pod
+    - workload resources
+    name: volumemounts
+    sources:
+    - ghcr.io/kubewarden/policies/volumemounts:v1.0.3
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/volumemounts-1.0.3/volumemounts-1.0.3.tgz
+    version: 1.0.3
+  - annotations:
+      artifacthub.io/repository: volumemounts-policy
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: volumeMounts
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/volumemounts
+      kubewarden/resources: Pod,Deployment,Replicaset,Statefulset,Daemonset,Replicationcontroller,Job,Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.2
     apiVersion: v1
     appVersion: 1.0.2
@@ -20790,4 +20861,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-07-14T17:32:29.900481955Z"
+generated: "2025-07-14T17:33:09.983073915Z"
