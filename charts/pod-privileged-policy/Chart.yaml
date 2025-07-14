@@ -48,8 +48,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.2
-appVersion: 1.0.2
+  kubewarden/tag: v1.0.3
+appVersion: 1.0.3
 description: Limit the ability to create privileged containers
 home: https://github.com/kubewarden/pod-privileged-policy
 keywords:
@@ -59,5 +59,5 @@ keywords:
 - privileged
 name: pod-privileged-policy
 sources:
-- ghcr.io/kubewarden/policies/pod-privileged:v1.0.2
-version: 1.0.2
+- ghcr.io/kubewarden/policies/pod-privileged:v1.0.3
+version: 1.0.3
