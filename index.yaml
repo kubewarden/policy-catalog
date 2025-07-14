@@ -391,6 +391,44 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.3
+    apiVersion: v1
+    appVersion: 1.0.3
+    created: "2025-07-14T17:15:22.306690073Z"
+    description: Replacement for the Kubernetes Pod Security Policy that controls
+      the usage of fsGroups in the pod security context
+    digest: 6c1ab681345a01d7aaf14c69fd4977c8aee620c009c281ceb43596a2331aaf5b
+    home: https://github.com/kubewarden/allowed-fsgroups-psp-policy
+    keywords:
+    - psp
+    - container
+    - runtime
+    name: allowed-fsgroups-psp
+    sources:
+    - ghcr.io/kubewarden/policies/allowed-fsgroups-psp:v1.0.3
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/allowed-fsgroups-psp-1.0.3/allowed-fsgroups-psp-1.0.3.tgz
+    version: 1.0.3
+  - annotations:
+      artifacthub.io/repository: allowed-fsgroups-psp-policy
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Allowed Fs Groups PSP
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/allowed-fsgroups-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.2
     apiVersion: v1
     appVersion: 1.0.2
@@ -19638,4 +19676,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-07-14T17:15:01.908262804Z"
+generated: "2025-07-14T17:15:22.307611378Z"
