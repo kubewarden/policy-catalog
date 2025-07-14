@@ -18060,6 +18060,41 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.3
+    apiVersion: v1
+    appVersion: 1.0.3
+    created: "2025-07-14T17:20:16.065497335Z"
+    description: A policy that validates Kubernetes' resource labels
+    digest: 1c1f9ae3e52be3974cf4fea91c732dad500de0cdce11d5bdfe72e5b4153fbda5
+    home: https://github.com/kubewarden/safe-labels-policy
+    keywords:
+    - labels
+    name: safe-labels
+    sources:
+    - ghcr.io/kubewarden/policies/safe-labels:v1.0.3
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/safe-labels-1.0.3/safe-labels-1.0.3.tgz
+    version: 1.0.3
+  - annotations:
+      artifacthub.io/repository: safe-labels
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Safe Labels
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/safe-labels
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - '*'
+          apiVersions:
+          - '*'
+          resources:
+          - '*'
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.2
     apiVersion: v1
     appVersion: 1.0.2
@@ -19993,4 +20028,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-07-14T17:19:51.222695013Z"
+generated: "2025-07-14T17:20:16.066264769Z"
