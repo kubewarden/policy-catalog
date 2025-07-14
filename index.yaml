@@ -18552,6 +18552,42 @@ entries:
           - pods
           operations:
           - CREATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2025-07-14T17:18:45.380954874Z"
+    description: A Pod Security Policy that controls usage of sysctls in pods
+    digest: 115e665e68fc8ae27df69ea071860d8636ec17313fc70179fc3a09b0be7247a9
+    home: https://github.com/kubewarden/sysctl-psp-policy
+    keywords:
+    - sysctl
+    - psp
+    - pod
+    name: sysctl-psp
+    sources:
+    - ghcr.io/kubewarden/policies/sysctl-psp:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/sysctl-psp-1.0.4/sysctl-psp-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: sysctl-psp
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Sysctl PSP
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/sysctl-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -19855,4 +19891,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-07-14T17:18:15.248246936Z"
+generated: "2025-07-14T17:18:45.38146684Z"
