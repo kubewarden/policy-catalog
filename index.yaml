@@ -9129,6 +9129,41 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.3
+    apiVersion: v1
+    appVersion: 1.0.3
+    created: "2025-07-14T17:26:33.654692287Z"
+    description: Enforce requirements on Ingress resources
+    digest: 5860e7ce19c41f6ba2dea674901704e4d3becad69da3506818f60149298ac630
+    home: https://github.com/kubewarden/ingress-policy
+    keywords:
+    - ingress
+    name: ingress-policy
+    sources:
+    - ghcr.io/kubewarden/policies/ingress:v1.0.3
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/ingress-policy-1.0.3/ingress-policy-1.0.3.tgz
+    version: 1.0.3
+  - annotations:
+      artifacthub.io/repository: ingress-policy
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Ingress Policy
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/ingress
+      kubewarden/resources: Ingress
+      kubewarden/rules: |
+        - apiGroups:
+          - networking.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - ingresses
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.2
     apiVersion: v1
     appVersion: 1.0.2
@@ -20280,4 +20315,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-07-14T17:26:05.453753197Z"
+generated: "2025-07-14T17:26:33.655795233Z"
