@@ -48,8 +48,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.2
-appVersion: 1.0.2
+  kubewarden/tag: v1.0.3
+appVersion: 1.0.3
 description: Policy that inspects containers, init containers, and ephemeral containers,
   and restricts their usage of volumes by  checking the `volume` name being used in
   `volumeMounts[*].name`
@@ -62,5 +62,5 @@ keywords:
 - workload resources
 name: volumemounts
 sources:
-- ghcr.io/kubewarden/policies/volumemounts:v1.0.2
-version: 1.0.2
+- ghcr.io/kubewarden/policies/volumemounts:v1.0.3
+version: 1.0.3
