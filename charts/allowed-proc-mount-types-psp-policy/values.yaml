@@ -3,4 +3,4 @@ global:
     systemDefaultRegistry: ghcr.io
 module:
   repository: kubewarden/policies/allowed-proc-mount-types-psp
-  tag: v1.0.2
+  tag: v1.0.3
