@@ -8808,6 +8808,42 @@ entries:
           - pods
           operations:
           - CREATE
+      kubewarden/tag: v1.0.3
+    apiVersion: v1
+    appVersion: 1.0.3
+    created: "2025-07-14T17:17:12.749150335Z"
+    description: A Pod Security Policy that controls usage of hostPath volumes
+    digest: 329cbceb6281df92d04f5f5d27a63db0c1eab7df8eb4c83f40879eabfd92bda7
+    home: https://github.com/kubewarden/hostpaths-psp-policy
+    keywords:
+    - psp
+    - hostpaths
+    - pod
+    name: hostpaths-psp
+    sources:
+    - ghcr.io/kubewarden/policies/hostpaths-psp:v1.0.3
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/hostpaths-psp-1.0.3/hostpaths-psp-1.0.3.tgz
+    version: 1.0.3
+  - annotations:
+      artifacthub.io/repository: hostpaths-psp
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Hostpaths PSP
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/hostpaths-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
       kubewarden/tag: v1.0.2
     apiVersion: v1
     appVersion: 1.0.2
@@ -19742,4 +19778,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-07-14T17:15:50.153318674Z"
+generated: "2025-07-14T17:17:12.750103741Z"
