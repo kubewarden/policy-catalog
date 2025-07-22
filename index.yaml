@@ -10855,6 +10855,42 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2025-07-22T17:50:24.891833022Z"
+    description: Kustomization targetNamespace must be one of the allowed targetNamespace
+      list.
+    digest: 467b9c160bebcacd4788f092f76a45f52c8a30b2f874c882bdafaaacf4f9dd0d
+    home: https://github.com/kubewarden/rego-policies-library
+    keywords:
+    - flux
+    name: kustomization-target-namespace
+    sources:
+    - ghcr.io/kubewarden/policies/kustomization-target-namespace:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-target-namespace-1.0.4/kustomization-target-namespace-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Kustomization Target Namespace
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/kustomization-target-namespace
+      kubewarden/resources: Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -21003,4 +21039,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-07-14T17:34:59.933152463Z"
+generated: "2025-07-22T17:50:24.892890475Z"
