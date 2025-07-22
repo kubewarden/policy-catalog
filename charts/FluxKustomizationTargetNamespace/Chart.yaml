@@ -18,8 +18,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.3
-appVersion: 1.0.3
+  kubewarden/tag: v1.0.4
+appVersion: 1.0.4
 description: Kustomization targetNamespace must be one of the allowed targetNamespace
   list.
 home: https://github.com/kubewarden/rego-policies-library
@@ -27,5 +27,5 @@ keywords:
 - flux
 name: kustomization-target-namespace
 sources:
-- ghcr.io/kubewarden/policies/kustomization-target-namespace:v1.0.3
-version: 1.0.3
+- ghcr.io/kubewarden/policies/kustomization-target-namespace:v1.0.4
+version: 1.0.4
