@@ -1,0 +1,44 @@
+questions:
+  - default: null
+    description: >-
+      This policy allow operator to check if a service account used in some workload has some forbidden permissions
+    group: Settings
+    label: Description
+    required: false
+    hide_input: true
+    type: string
+    variable: description
+  - default: []
+    description: A list of the blocked rules permissions
+    groups: Settings
+    label: Blocked rules
+    required: true
+    type: sequence[
+    variable: blockRules
+    sequence_questions:
+      - group: Settings
+        label: API Groups
+        tooltip: API Group of the resource that you want to block
+        type: array[
+        default: []
+        variable: apiGroups
+        required: true
+      - group: Settings
+        label: Resources
+        tooltip: Resources from the API Groups that you want to block
+        type: array[
+        default: []
+        variable: "resources"
+        required: true
+      - group: Settings
+        label: Verbs
+        tooltip: Verbs of the resources that you want to block
+        type: array[
+        default: []
+        variable: "verbs"
+        required: true
+      - group: Settings
+        default: ""
+        type: string
+        variable: "namespace"
+        tooltip: Scope the block rule to a namespace. Empty namespace means all namespace
