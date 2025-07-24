@@ -1,0 +1,62 @@
+annotations:
+  artifacthub.io/repository: high-risk-service-account
+  catalog.cattle.io/hidden: "true"
+  catalog.cattle.io/type: kubewarden-policy
+  catalog.cattle.io/ui-component: kubewarden
+  kubewarden/displayName: High Risk Service Account
+  kubewarden/mutation: "false"
+  kubewarden/registry: ghcr.io
+  kubewarden/repository: kubewarden/policies/high-risk-service-account
+  kubewarden/resources: Pod
+  kubewarden/rules: |
+    - apiGroups:
+      - ''
+      apiVersions:
+      - v1
+      resources:
+      - pods
+      operations:
+      - CREATE
+    - apiGroups:
+      - ''
+      apiVersions:
+      - v1
+      resources:
+      - replicationcontrollers
+      operations:
+      - CREATE
+      - UPDATE
+    - apiGroups:
+      - apps
+      apiVersions:
+      - v1
+      resources:
+      - deployments
+      - replicasets
+      - statefulsets
+      - daemonsets
+      operations:
+      - CREATE
+      - UPDATE
+    - apiGroups:
+      - batch
+      apiVersions:
+      - v1
+      resources:
+      - jobs
+      - cronjobs
+      operations:
+      - CREATE
+      - UPDATE
+  kubewarden/tag: v0.1.1
+appVersion: 0.1.1
+description: Policy to prevent the usage of serviceaccount with too many permissions
+home: https://github.com/kubewarden/high-risk-service-account-policy
+keywords:
+- pod
+- security
+- serviceaccount
+name: high-risk-service-account
+sources:
+- ghcr.io/kubewarden/policies/high-risk-service-account:v0.1.1
+version: 0.1.1
