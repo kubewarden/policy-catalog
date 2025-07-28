@@ -9130,6 +9130,73 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v0.1.2
+    apiVersion: v1
+    appVersion: 0.1.2
+    created: "2025-07-28T09:49:32.163268012Z"
+    description: Policy to prevent the usage of serviceaccount with too many permissions
+    digest: f629dd3e8bd082d5cb8a5cff7109019d394d19c76ab4ea4fb17c3ee0a3e8e3c3
+    home: https://github.com/kubewarden/high-risk-service-account-policy
+    keywords:
+    - pod
+    - security
+    - serviceaccount
+    name: high-risk-service-account
+    sources:
+    - ghcr.io/kubewarden/policies/high-risk-service-account:v0.1.2
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/high-risk-service-account-0.1.2/high-risk-service-account-0.1.2.tgz
+    version: 0.1.2
+  - annotations:
+      artifacthub.io/repository: high-risk-service-account
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: High Risk Service Account
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/high-risk-service-account
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v0.1.1
     apiVersion: v1
     appVersion: 0.1.1
@@ -21143,4 +21210,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-07-25T13:55:44.570325775Z"
+generated: "2025-07-28T09:49:32.163902533Z"
