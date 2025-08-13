@@ -12435,6 +12435,72 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-var-substitution-1.0.0/kustomization-var-substitution-1.0.0.tgz
     version: 1.0.0
+  labels:
+  - annotations:
+      artifacthub.io/repository: labels-policy
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Labels
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/labels
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v0.1.0
+    apiVersion: v1
+    appVersion: 0.1.0
+    created: "2025-08-13T15:25:05.609414001Z"
+    description: A policy that validates labels of Kubernetes' resources
+    digest: a3a372549d7b8975ced2458c904f85090ee5d6597ede569450b65aa0f05c860d
+    home: https://github.com/kubewarden/labels-policy
+    keywords:
+    - labels
+    name: labels
+    sources:
+    - ghcr.io/kubewarden/policies/labels:v0.1.0
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/labels-0.1.0/labels-0.1.0.tgz
+    version: 0.1.0
   metadata-missing-label-and-value:
   - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
@@ -23269,4 +23335,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-08-13T14:33:17.720718482Z"
+generated: "2025-08-13T15:25:05.609925401Z"
