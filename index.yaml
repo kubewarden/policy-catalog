@@ -551,6 +551,51 @@ entries:
           - pods
           operations:
           - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2025-08-13T13:57:59.177863716Z"
+    description: Replacement for the Kubernetes Pod Security Policy that controls
+      the usage of /proc mount types
+    digest: abe53b4fa4c5e4740f43b7cac1b41efc6c572ed07434e7918958b88ed7c37492
+    home: https://github.com/kubewarden/allowed-proc-mount-types-psp-policy
+    keywords:
+    - psp
+    - container
+    - runtime
+    name: allowed-proc-mount-types-psp
+    sources:
+    - ghcr.io/kubewarden/policies/allowed-proc-mount-types-psp:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/allowed-proc-mount-types-psp-1.0.4/allowed-proc-mount-types-psp-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: allowed-proc-mount-types-psp
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Allowed Proc Mount Types PSP
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/allowed-proc-mount-types-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - UPDATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -6735,6 +6780,45 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/environment-variable-policy-0.1.7/environment-variable-policy-0.1.7.tgz
     version: 0.1.7
   flexvolume-drivers-psp:
+  - annotations:
+      artifacthub.io/repository: flexvolume-drivers-psp
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Flexvolume Drivers Psp
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/flexvolume-drivers-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2025-08-13T13:57:59.332165399Z"
+    description: Replacement for the Kubernetes Pod Security Policy that controls
+      the allowed `flexVolume` drivers
+    digest: d0bc1d9c25af051d0f9062804df8d8f23caf53f05bdbfb3ec457fcd1adc9c551
+    home: https://github.com/kubewarden/flexvolume-drivers-psp-policy
+    keywords:
+    - psp
+    - container
+    - runtime
+    - flex volume
+    - flex
+    name: flexvolume-drivers-psp
+    sources:
+    - ghcr.io/kubewarden/policies/flexvolume-drivers-psp:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/flexvolume-drivers-psp-1.0.4/flexvolume-drivers-psp-1.0.4.tgz
+    version: 1.0.4
   - annotations:
       artifacthub.io/repository: flexvolume-drivers-psp
       catalog.cattle.io/hidden: "true"
@@ -21683,4 +21767,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-08-13T13:57:46.805045992Z"
+generated: "2025-08-13T13:57:59.332804818Z"
