@@ -1,0 +1,22 @@
+questions:
+  - default: "containsAnyOf"
+    description: "Annotations validation criteria"
+    group: Settings
+    required: true
+    label: "Criteria"
+    variable: "criteria"
+    type: enum
+    options:
+      - "containsAnyOf"
+      - "doesNotContainAnyOf"
+      - "containsAllOf"
+      - "doesNotContainAllOf"
+      - "containsOtherThan"
+      - "doesNotContainOtherThan"
+  - default: []
+    label: "Annotations"
+    description: "Annotation names to be validated with the resources definition"
+    group: Settings
+    variable: values
+    required: true
+    type: array[
