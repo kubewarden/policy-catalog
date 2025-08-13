@@ -16757,6 +16757,43 @@ entries:
           - persistentvolumeclaims
           operations:
           - CREATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2025-08-13T14:31:17.105966883Z"
+    description: Policy that validates and adjusts the usage of StorageClasses in
+      PersistentVolumeClaims
+    digest: 6035a7586c1b6ce8a367829dc6dbcb9f724fcc17493332b58be512240824664c
+    home: https://github.com/kubewarden/persistentvolumeclaim-storageclass-policy
+    keywords:
+    - persistentvolumeclaim
+    - pvc
+    - kubewarden
+    name: persistentvolumeclaim-storageclass-policy
+    sources:
+    - ghcr.io/kubewarden/policies/persistentvolumeclaim-storageclass-policy:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/persistentvolumeclaim-storageclass-policy-1.0.4/persistentvolumeclaim-storageclass-policy-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: pvc-storageclass-validator
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: PVC StorageClass Validator
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/persistentvolumeclaim-storageclass-policy
+      kubewarden/resources: PersistentVolumeClaim
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - persistentvolumeclaims
+          operations:
+          - CREATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -22892,4 +22929,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-08-13T14:30:55.064726085Z"
+generated: "2025-08-13T14:31:17.106753992Z"
