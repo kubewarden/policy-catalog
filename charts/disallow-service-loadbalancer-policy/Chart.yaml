@@ -18,13 +18,13 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.5
-appVersion: 1.0.5
+  kubewarden/tag: v1.0.6
+appVersion: 1.0.6
 description: A policy that prevents the creation of Service resources of type `LoadBalancer`
 home: https://github.com/kubewarden/disallow-service-loadbalancer-policy
 keywords:
 - service
 name: disallow-service-loadbalancer
 sources:
-- ghcr.io/kubewarden/policies/disallow-service-loadbalancer:v1.0.5
-version: 1.0.5
+- ghcr.io/kubewarden/policies/disallow-service-loadbalancer:v1.0.6
+version: 1.0.6
