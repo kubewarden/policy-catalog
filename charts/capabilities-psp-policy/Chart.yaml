@@ -46,8 +46,8 @@ annotations:
       - cronjobs
       operations:
       - CREATE
-  kubewarden/tag: v1.0.3
-appVersion: 1.0.3
+  kubewarden/tag: v1.0.4
+appVersion: 1.0.4
 description: Replacement for the Kubernetes Pod Security Policy that controls the
   usage of capabilities
 home: https://github.com/kubewarden/capabilities-psp-policy
@@ -58,5 +58,5 @@ keywords:
 - capabilities
 name: capabilities-psp
 sources:
-- ghcr.io/kubewarden/policies/capabilities-psp:v1.0.3
-version: 1.0.3
+- ghcr.io/kubewarden/policies/capabilities-psp:v1.0.4
+version: 1.0.4
