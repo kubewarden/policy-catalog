@@ -48,8 +48,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.3
-appVersion: 1.0.3
+  kubewarden/tag: v1.0.4
+appVersion: 1.0.4
 description: Policy validates pods sharing processes PID namespace
 home: https://github.com/kubewarden/share-pid-namespace-policy
 keywords:
@@ -57,5 +57,5 @@ keywords:
 - pid
 name: share-pid-namespace-policy
 sources:
-- ghcr.io/kubewarden/policies/share-pid-namespace-policy:v1.0.3
-version: 1.0.3
+- ghcr.io/kubewarden/policies/share-pid-namespace-policy:v1.0.4
+version: 1.0.4
