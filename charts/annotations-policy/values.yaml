@@ -1,0 +1,6 @@
+global:
+  cattle:
+    systemDefaultRegistry: ghcr.io
+module:
+  repository: kubewarden/policies/annotations
+  tag: v0.1.0
