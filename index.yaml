@@ -16985,6 +16985,74 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2025-08-13T14:27:51.58881453Z"
+    description: Limit the ability to create privileged containers
+    digest: cdfe452c5b5d02b1b2a5aa5c090dbcb3691ab5b433b0acb78442b7080b00c00b
+    home: https://github.com/kubewarden/pod-privileged-policy
+    keywords:
+    - psp
+    - pod
+    - container
+    - privileged
+    name: pod-privileged-policy
+    sources:
+    - ghcr.io/kubewarden/policies/pod-privileged:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/pod-privileged-policy-1.0.4/pod-privileged-policy-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: pod-privileged-policy
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Pod Privileged Policy
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/pod-privileged
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -22414,4 +22482,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-08-13T14:27:21.109507487Z"
+generated: "2025-08-13T14:27:51.589364675Z"
