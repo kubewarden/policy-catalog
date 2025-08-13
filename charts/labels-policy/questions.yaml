@@ -1,0 +1,22 @@
+questions:
+  - default: "containsAnyOf"
+    description: "Labels validation criteria"
+    group: Settings
+    required: true
+    label: "Criteria"
+    variable: "criteria"
+    type: enum
+    options:
+      - "containsAnyOf"
+      - "doesNotContainAnyOf"
+      - "containsAllOf"
+      - "doesNotContainAllOf"
+      - "containsOtherThan"
+      - "doesNotContainOtherThan"
+  - default: []
+    label: "Labels"
+    description: "Label names to be validated with the resources definition"
+    group: Settings
+    variable: values
+    required: true
+    type: array[
