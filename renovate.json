@@ -1,9 +1,11 @@
 {
   "extends": [
-    "config:base",
+    "config:recommended",
     "group:allNonMajor",
     "schedule:earlyMondays",
     "helpers:pinGitHubActionDigests"
   ],
-  "labels": ["area/dependencies"]
+  "labels": [
+    "area/dependencies"
+  ]
 }
