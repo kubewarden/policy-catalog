@@ -807,6 +807,72 @@ entries:
           - pods
           operations:
           - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v0.1.1
+    apiVersion: v1
+    appVersion: 0.1.1
+    created: "2025-08-14T15:29:44.657611359Z"
+    description: A policy that validates annotations of Kubernetes' resources
+    digest: 6ac144495de37c1ab04048e1f3b6f25d3b13d15b5afa1752692c97247d680c0f
+    home: https://github.com/kubewarden/annotations-policy
+    keywords:
+    - annotations
+    name: annotations
+    sources:
+    - ghcr.io/kubewarden/policies/annotations:v0.1.1
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/annotations-0.1.1/annotations-0.1.1.tgz
+    version: 0.1.1
+  - annotations:
+      artifacthub.io/repository: annotations-policy
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Annotations
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/annotations
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
         - apiGroups:
           - ''
           apiVersions:
@@ -23485,4 +23551,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-08-14T11:02:08.363347815Z"
+generated: "2025-08-14T15:29:44.658303829Z"
