@@ -2695,6 +2695,75 @@ entries:
           - pods
           operations:
           - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.5
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2025-08-15T12:34:15.168436362Z"
+    description: Policy is designed to enforce constraints on the resource requirements
+      of Kubernetes containers
+    digest: 21ba94def046b7443182020fe2eaa8f965a18661188b781b6cf1d48fa0bf3417
+    home: https://github.com/kubewarden/container-resources-policy
+    keywords:
+    - container
+    - resources
+    name: container-resources
+    sources:
+    - ghcr.io/kubewarden/policies/container-resources:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/container-resources-1.0.5/container-resources-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
+      artifacthub.io/repository: container-resources
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Container Resources
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/container-resources
+      kubewarden/resources: Pod, Replicationcontroller, Deployments, Replicaset, Statefulset,
+        Daemonset, Job, Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
         - apiGroups:
           - ''
           apiVersions:
@@ -24149,4 +24218,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-08-15T12:34:00.20106549Z"
+generated: "2025-08-15T12:34:15.169061436Z"
