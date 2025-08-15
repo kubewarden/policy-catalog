@@ -253,6 +253,75 @@ entries:
           - pods
           operations:
           - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.2
+    apiVersion: v1
+    appVersion: 1.0.2
+    created: "2025-08-15T13:08:15.119550318Z"
+    description: Replacement for the Kubernetes Pod Security Policy that controls
+      the allowance of privilege escalation in containers and init containers of a
+      pod
+    digest: 61c037950bda91879c08049d859237220aff31253c3abd16463e0152425b57df
+    home: https://github.com/kubewarden/allow-privilege-escalation-psp-policy
+    keywords:
+    - PSP
+    - privilege escalation
+    name: allow-privilege-escalation-psp
+    sources:
+    - ghcr.io/kubewarden/policies/allow-privilege-escalation-psp:v1.0.2
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/allow-privilege-escalation-psp-1.0.2/allow-privilege-escalation-psp-1.0.2.tgz
+    version: 1.0.2
+  - annotations:
+      artifacthub.io/repository: allow-privilege-escalation-psp
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Allow Privilege Escalation PSP
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/allow-privilege-escalation-psp
+      kubewarden/resources: Deployment,Replicaset,Statefulset,Daemonset,Replicationcontroller,Job,Cronjob,Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
         - apiGroups:
           - ''
           apiVersions:
@@ -24324,4 +24393,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-08-15T12:35:34.88059475Z"
+generated: "2025-08-15T13:08:15.120252071Z"
