@@ -22373,6 +22373,75 @@ entries:
           - pods
           operations:
           - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.5
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2025-08-15T12:30:09.49042606Z"
+    description: Kubewarden Policy that controls containers user and groups
+    digest: 45627761a0e311cf3865aef0dd7ac6acebcc25f3ec7ee7fc59d94bbb3dfadaeb
+    home: https://github.com/kubewarden/user-group-psp-policy
+    keywords:
+    - psp
+    - container
+    - user
+    - group
+    name: user-group-psp
+    sources:
+    - ghcr.io/kubewarden/policies/user-group-psp:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/user-group-psp-1.0.5/user-group-psp-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
+      artifacthub.io/repository: user-group-psp
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: User Group PSP
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/user-group-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
         - apiGroups:
           - ''
           apiVersions:
@@ -23617,4 +23686,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-08-14T15:29:58.760000237Z"
+generated: "2025-08-15T12:30:09.490921601Z"
