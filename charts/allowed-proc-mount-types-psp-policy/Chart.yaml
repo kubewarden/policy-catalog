@@ -17,16 +17,9 @@ annotations:
       - pods
       operations:
       - CREATE
-    - apiGroups:
-      - ''
-      apiVersions:
-      - v1
-      resources:
-      - pods
-      operations:
       - UPDATE
-  kubewarden/tag: v1.0.4
-appVersion: 1.0.4
+  kubewarden/tag: v1.0.5
+appVersion: 1.0.5
 description: Replacement for the Kubernetes Pod Security Policy that controls the
   usage of /proc mount types
 home: https://github.com/kubewarden/allowed-proc-mount-types-psp-policy
@@ -36,5 +29,5 @@ keywords:
 - runtime
 name: allowed-proc-mount-types-psp
 sources:
-- ghcr.io/kubewarden/policies/allowed-proc-mount-types-psp:v1.0.4
-version: 1.0.4
+- ghcr.io/kubewarden/policies/allowed-proc-mount-types-psp:v1.0.5
+version: 1.0.5
