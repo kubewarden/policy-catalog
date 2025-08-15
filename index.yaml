@@ -7599,6 +7599,46 @@ entries:
           - pods
           operations:
           - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.5
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2025-08-15T12:34:00.200333755Z"
+    description: Replacement for the Kubernetes Pod Security Policy that controls
+      the allowed `flexVolume` drivers
+    digest: a1de4f09d6586ebb7a623067a1f9a82e1efa7b7f18ce5da486677517a60e3cad
+    home: https://github.com/kubewarden/flexvolume-drivers-psp-policy
+    keywords:
+    - psp
+    - container
+    - runtime
+    - flex volume
+    - flex
+    name: flexvolume-drivers-psp
+    sources:
+    - ghcr.io/kubewarden/policies/flexvolume-drivers-psp:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/flexvolume-drivers-psp-1.0.5/flexvolume-drivers-psp-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
+      artifacthub.io/repository: flexvolume-drivers-psp
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Flexvolume Drivers Psp
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/flexvolume-drivers-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
       kubewarden/tag: v1.0.4
     apiVersion: v1
     appVersion: 1.0.4
@@ -24109,4 +24149,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-08-15T12:33:45.243324108Z"
+generated: "2025-08-15T12:34:00.20106549Z"
