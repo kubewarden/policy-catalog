@@ -49,8 +49,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.4
-appVersion: 1.0.4
+  kubewarden/tag: v2.0.0
+appVersion: 2.0.0
 description: Kubewarden policy that restricts what registries, tags and images can
   pods on your cluster refer to
 home: https://github.com/kubewarden/trusted-repos-policy
@@ -60,5 +60,5 @@ keywords:
 - tag
 name: trusted-repos
 sources:
-- ghcr.io/kubewarden/policies/trusted-repos:v1.0.4
-version: 1.0.4
+- ghcr.io/kubewarden/policies/trusted-repos:v2.0.0
+version: 2.0.0
