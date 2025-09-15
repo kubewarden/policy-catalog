@@ -3223,6 +3223,75 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.1.1
+    apiVersion: v1
+    appVersion: 1.1.1
+    created: "2025-09-15T09:48:08.226314346Z"
+    description: Policy is designed to enforce constraints on the resource requirements
+      of Kubernetes containers
+    digest: 074d4a3d285c0c66515f6c61308e1b0b5b32bc7c9b6b353edafecad4a1aa5196
+    home: https://github.com/kubewarden/container-resources-policy
+    keywords:
+    - container
+    - resources
+    name: container-resources
+    sources:
+    - ghcr.io/kubewarden/policies/container-resources:v1.1.1
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/container-resources-1.1.1/container-resources-1.1.1.tgz
+    version: 1.1.1
+  - annotations:
+      artifacthub.io/repository: container-resources
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Container Resources
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/container-resources
+      kubewarden/resources: Pod, Replicationcontroller, Deployments, Replicaset, Statefulset,
+        Daemonset, Job, Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.1.0
     apiVersion: v1
     appVersion: 1.1.0
@@ -22942,6 +23011,45 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.5
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2025-09-15T09:48:08.502675463Z"
+    description: Replacement for the Kubernetes Pod Security Policy that controls
+      the usage of SELinux
+    digest: 92721321821bf192b50bf2514cb4fe847af502fa7ff1820ae066f424744b185d
+    home: https://github.com/kubewarden/selinux-psp-policy
+    keywords:
+    - psp
+    - container
+    - runtime
+    - selinux
+    name: selinux-psp
+    sources:
+    - ghcr.io/kubewarden/policies/selinux-psp:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/selinux-psp-1.0.5/selinux-psp-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
+      artifacthub.io/repository: selinux-psp
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Selinux PSP
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/selinux-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.4
     apiVersion: v1
     appVersion: 1.0.4
@@ -26217,4 +26325,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-09-15T09:47:53.759824345Z"
+generated: "2025-09-15T09:48:08.503549472Z"
