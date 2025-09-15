@@ -1728,6 +1728,74 @@ entries:
           - cronjobs
           operations:
           - CREATE
+      kubewarden/tag: v1.0.6
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2025-09-15T08:33:43.427124786Z"
+    description: Replacement for the Kubernetes Pod Security Policy that controls
+      the usage of capabilities
+    digest: ffcdbf897415bcdb8ad613f0e55d12fc78f6c12582bf1103134e2852333ef122
+    home: https://github.com/kubewarden/capabilities-psp-policy
+    keywords:
+    - psp
+    - container
+    - capability
+    - capabilities
+    name: capabilities-psp
+    sources:
+    - ghcr.io/kubewarden/policies/capabilities-psp:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/capabilities-psp-1.0.6/capabilities-psp-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: capabilities-psp
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Capabilities PSP
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/capabilities-psp
+      kubewarden/resources: Pod,Deployment,ReplicaSet,StatefulSet,DaemonSet,Job,CronJob,ReplicationController
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
       kubewarden/tag: v1.0.5
     apiVersion: v1
     appVersion: 1.0.5
@@ -24913,4 +24981,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-09-15T08:33:22.820641097Z"
+generated: "2025-09-15T08:33:43.428026929Z"
