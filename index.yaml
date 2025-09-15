@@ -7446,6 +7446,81 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v3.0.2
+    apiVersion: v1
+    appVersion: 3.0.2
+    created: "2025-09-15T09:42:41.149187433Z"
+    description: A Kubewarden Policy that controls the usage of environment variables
+    digest: 4a799c90192245ef7ed19161bb025811b7e4bb3964e6e42dc72607713f430d96
+    home: https://github.com/kubewarden/environment-variable-policy
+    keywords:
+    - deployment
+    - replicaset
+    - statefulset
+    - daemonset
+    - replicationcontroller
+    - job
+    - cronjob
+    - pod
+    - container
+    - environment-variables
+    name: environment-variable-policy
+    sources:
+    - ghcr.io/kubewarden/policies/environment-variable-policy:v3.0.2
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/environment-variable-policy-3.0.2/environment-variable-policy-3.0.2.tgz
+    version: 3.0.2
+  - annotations:
+      artifacthub.io/repository: environment-variable-policy
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Environment Variable Policy
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/environment-variable-policy
+      kubewarden/resources: Deployment,Replicaset,Statefulset,Daemonset,Replicationcontroller,Job,Cronjob,Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v3.0.1
     apiVersion: v1
     appVersion: 3.0.1
@@ -25231,4 +25306,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-09-15T09:42:29.062801649Z"
+generated: "2025-09-15T09:42:41.149827383Z"
