@@ -2279,6 +2279,48 @@ entries:
           - CREATE
           - UPDATE
           - DELETE
+      kubewarden/tag: v1.3.6
+    apiVersion: v1
+    appVersion: 1.3.6
+    created: "2025-09-15T09:46:39.815925966Z"
+    description: A policy that evaluates CEL expressions
+    digest: 624239004ddc7114e8b87bd740ab964ffa8dcd1f93a2844a1c09ead53e471822
+    home: https://github.com/kubewarden/cel-policy
+    keywords:
+    - compliance
+    - CEL
+    - ValidatingAdmissionPolicy
+    - Common Expression Language
+    name: cel-policy
+    sources:
+    - ghcr.io/kubewarden/policies/cel-policy:v1.3.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/cel-policy-1.3.6/cel-policy-1.3.6.tgz
+    version: 1.3.6
+  - annotations:
+      artifacthub.io/repository: cel-policy
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: v1
+          kind: Namespace
+      kubewarden/displayName: CEL Policy
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/cel-policy
+      kubewarden/resources: Any
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+          - UPDATE
+          - DELETE
       kubewarden/tag: v1.3.5
     apiVersion: v1
     appVersion: 1.3.5
@@ -19528,6 +19570,43 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.5
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2025-09-15T09:46:39.975290042Z"
+    description: Policy that controls the usage of Pod runtimeClass
+    digest: e07e448be3dad5db8d25d1cee3b79f641afdc160ca3a602a74793940a03ab20c
+    home: https://github.com/kubewarden/pod-runtime-class-policy
+    keywords:
+    - pod
+    - runtime
+    - container runtime
+    name: pod-runtime
+    sources:
+    - ghcr.io/kubewarden/policies/pod-runtime:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/pod-runtime-1.0.5/pod-runtime-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
+      artifacthub.io/repository: pod-runtime
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Pod Runtime
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/pod-runtime
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.4
     apiVersion: v1
     appVersion: 1.0.4
@@ -25885,4 +25964,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-09-15T09:46:26.985800466Z"
+generated: "2025-09-15T09:46:39.976147233Z"
