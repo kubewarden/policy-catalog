@@ -19932,6 +19932,43 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.5
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2025-09-15T09:44:58.239907449Z"
+    description: Replacement for the Kubernetes Pod Security Policy that controls
+      the usage of AppArmor profiles
+    digest: 1532eda15ea1a7313b2136f6c208f0a4f21cb05f179059d7264791fdaffdd6d1
+    home: https://github.com/kubewarden/apparmor-psp-policy
+    keywords:
+    - psp
+    - apparmor
+    name: psp-apparmor
+    sources:
+    - ghcr.io/kubewarden/policies/apparmor-psp:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/psp-apparmor-1.0.5/psp-apparmor-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
+      artifacthub.io/repository: apparmor-psp
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Apparmor PSP
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/apparmor-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.4
     apiVersion: v1
     appVersion: 1.0.4
@@ -25494,4 +25531,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-09-15T09:44:48.836431624Z"
+generated: "2025-09-15T09:44:58.240625853Z"
