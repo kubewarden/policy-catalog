@@ -12767,6 +12767,45 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.7
+    apiVersion: v1
+    appVersion: 1.0.7
+    created: "2025-10-20T15:04:38.740289026Z"
+    description: Requires all Ingress rule hosts to be unique
+    digest: 5026bcdea59c04c5a9e69f1220abfe006f733d249275f685884e66dbb18d4f8b
+    home: https://github.com/kubewarden/unique-ingress-policy
+    keywords:
+    - ingress
+    - kubewarden
+    name: ingress-unique-host
+    sources:
+    - ghcr.io/kubewarden/policies/unique-ingress-policy:v1.0.7
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/ingress-unique-host-1.0.7/ingress-unique-host-1.0.7.tgz
+    version: 1.0.7
+  - annotations:
+      artifacthub.io/repository: unique-ingress-policy
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: networking.k8s.io/v1
+          kind: Ingress
+      kubewarden/displayName: Unique Ingress host
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/unique-ingress-policy
+      kubewarden/resources: Ingress
+      kubewarden/rules: |
+        - apiGroups:
+          - networking.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - ingresses
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.6
     apiVersion: v1
     appVersion: 1.0.6
@@ -27026,4 +27065,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-10-20T15:04:27.165002551Z"
+generated: "2025-10-20T15:04:38.741031412Z"
