@@ -18,8 +18,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.5
-appVersion: 1.0.5
+  kubewarden/tag: v1.0.6
+appVersion: 1.0.6
 description: A Kubewarden policy that enforces root filesystem to be readonly
 home: https://github.com/kubewarden/readonly-root-filesystem-psp-policy
 keywords:
@@ -29,5 +29,5 @@ keywords:
 - volume
 name: readonly-root-filesystem-psp
 sources:
-- ghcr.io/kubewarden/policies/readonly-root-filesystem-psp:v1.0.5
-version: 1.0.5
+- ghcr.io/kubewarden/policies/readonly-root-filesystem-psp:v1.0.6
+version: 1.0.6
