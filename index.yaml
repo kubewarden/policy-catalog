@@ -6689,6 +6689,42 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.8
+    apiVersion: v1
+    appVersion: 1.0.8
+    created: "2025-10-20T15:03:22.106941092Z"
+    description: A policy that prevents the creation of Service resources of type
+      `LoadBalancer`
+    digest: 525a50355d3a3ea64f8a469e650215cd6f44057ffd89be0cbcc32ff5239cee31
+    home: https://github.com/kubewarden/disallow-service-loadbalancer-policy
+    keywords:
+    - service
+    name: disallow-service-loadbalancer
+    sources:
+    - ghcr.io/kubewarden/policies/disallow-service-loadbalancer:v1.0.8
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/disallow-service-loadbalancer-1.0.8/disallow-service-loadbalancer-1.0.8.tgz
+    version: 1.0.8
+  - annotations:
+      artifacthub.io/repository: disallow-service-loadbalancer
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Disallow Service Loadbalancer
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/disallow-service-loadbalancer
+      kubewarden/resources: Service
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - services
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.7
     apiVersion: v1
     appVersion: 1.0.7
@@ -26950,4 +26986,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-10-20T15:03:08.481765388Z"
+generated: "2025-10-20T15:03:22.108410428Z"
