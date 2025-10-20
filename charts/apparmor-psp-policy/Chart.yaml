@@ -18,8 +18,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.5
-appVersion: 1.0.5
+  kubewarden/tag: v1.0.6
+appVersion: 1.0.6
 description: Replacement for the Kubernetes Pod Security Policy that controls the
   usage of AppArmor profiles
 home: https://github.com/kubewarden/apparmor-psp-policy
@@ -28,5 +28,5 @@ keywords:
 - apparmor
 name: psp-apparmor
 sources:
-- ghcr.io/kubewarden/policies/apparmor-psp:v1.0.5
-version: 1.0.5
+- ghcr.io/kubewarden/policies/apparmor-psp:v1.0.6
+version: 1.0.6

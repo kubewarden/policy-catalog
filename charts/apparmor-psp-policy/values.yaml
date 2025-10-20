@@ -3,4 +3,4 @@ global:
     systemDefaultRegistry: ghcr.io
 module:
   repository: kubewarden/policies/apparmor-psp
-  tag: v1.0.5
+  tag: v1.0.6
