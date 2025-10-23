@@ -20667,6 +20667,74 @@ entries:
       catalog.cattle.io/type: kubewarden-policy
       catalog.cattle.io/ui-component: kubewarden
       kubewarden/displayName: Priority class policy
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/priority-class-policy
+      kubewarden/resources: Pod, Replicationcontroller, Deployments, Replicaset, Statefulset,
+        Daemonset, Job, Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.1.0
+    apiVersion: v1
+    appVersion: 1.1.0
+    created: "2025-10-23T13:13:29.233092184Z"
+    description: Validates Pod's priority class
+    digest: 32893ae8fb6821d8d12b6b08fe6a344572c54b885ee19032a027cbd6f489d466
+    home: https://github.com/kubewarden/priority-class-policy
+    keywords:
+    - pod
+    - priority-class
+    name: priority-class-policy
+    sources:
+    - ghcr.io/kubewarden/policies/priority-class-policy:v1.1.0
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/priority-class-policy-1.1.0/priority-class-policy-1.1.0.tgz
+    version: 1.1.0
+  - annotations:
+      artifacthub.io/repository: priority-class-policy
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Priority class policy
       kubewarden/mutation: "false"
       kubewarden/registry: ghcr.io
       kubewarden/repository: kubewarden/policies/priority-class-policy
@@ -27214,4 +27282,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-10-20T15:05:07.030486016Z"
+generated: "2025-10-23T13:13:29.233886511Z"
