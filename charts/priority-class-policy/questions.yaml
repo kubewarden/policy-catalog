@@ -15,7 +15,7 @@ questions:
       List of the PriorityClass names that users can use in the Pod's priorityClassName field
     group: Settings
     label: Allowed priority classes
-    required: true
+    required: false
     type: array[
     variable: allowed_priority_classes
   - default: []
@@ -24,7 +24,7 @@ questions:
       List of the PriorityClass names that users can not use in the Pod's priorityClassName field
     group: Settings
     label: Denied priority classes
-    required: true
+    required: false
     type: array[
     variable: denied_priority_classes
   - default: ""
