@@ -20755,6 +20755,74 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.1.1
+    apiVersion: v1
+    appVersion: 1.1.1
+    created: "2025-10-27T15:55:59.863617656Z"
+    description: Validates Pod's priority class
+    digest: cbc3faea5462ff1e902826a5a62d485b34912b7a2fe11a0e70f36b50bbe6fa4d
+    home: https://github.com/kubewarden/priority-class-policy
+    keywords:
+    - pod
+    - priority-class
+    name: priority-class-policy
+    sources:
+    - ghcr.io/kubewarden/policies/priority-class-policy:v1.1.1
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/priority-class-policy-1.1.1/priority-class-policy-1.1.1.tgz
+    version: 1.1.1
+  - annotations:
+      artifacthub.io/repository: priority-class-policy
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Priority class policy
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/priority-class-policy
+      kubewarden/resources: Pod, Replicationcontroller, Deployments, Replicaset, Statefulset,
+        Daemonset, Job, Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.1.0
     apiVersion: v1
     appVersion: 1.1.0
@@ -27324,4 +27392,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-10-27T15:43:44.225487547Z"
+generated: "2025-10-27T15:55:59.864399708Z"
