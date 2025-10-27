@@ -3,4 +3,4 @@ global:
     systemDefaultRegistry: ghcr.io
 module:
   repository: kubewarden/policies/priority-class-policy
-  tag: v1.1.0
+  tag: v1.1.1
