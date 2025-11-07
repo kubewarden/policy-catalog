@@ -12654,6 +12654,80 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/hostpaths-psp-0.1.11/hostpaths-psp-0.1.11.tgz
     version: 0.1.11
+  image-cve-policy:
+  - annotations:
+      artifacthub.io/repository: image-cve
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: storage.sbomscanner.kubewarden.io/v1alpha1
+          kind: VulnerabilityReport
+      kubewarden/displayName: image-cve
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/image-cve-policy
+      kubewarden/resources: Pod, ReplicaSet, Deployment, DaemonSet, StatefulSet, Job,
+        CronJob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v0.5.2
+    apiVersion: v1
+    appVersion: 0.5.2
+    created: "2025-11-07T15:38:43.609528239Z"
+    description: Validate workloads based on the vulnerabilities of the images they
+      make use of
+    digest: 9077afdfed52b2a9c6ba1652cf3acf4eb620f9485c7ca5e69a5ced2442a22a87
+    home: https://github.com/kubewarden/image-cve-policy
+    keywords:
+    - pod
+    - cool policy
+    - kubewarden
+    name: image-cve-policy
+    sources:
+    - ghcr.io/kubewarden/policies/image-cve-policy:v0.5.2
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/image-cve-policy-0.5.2/image-cve-policy-0.5.2.tgz
+    version: 0.5.2
   ingress-policy:
   - annotations:
       artifacthub.io/repository: ingress-policy
@@ -27434,4 +27508,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-10-31T14:02:12.490293932Z"
+generated: "2025-11-07T15:38:43.610168556Z"
