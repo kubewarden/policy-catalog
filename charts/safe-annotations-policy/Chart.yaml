@@ -18,13 +18,13 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: A policy that validates Kubernetes' resource annotations
 home: https://github.com/kubewarden/safe-annotations-policy
 keywords:
 - annotations
 name: safe-annotations
 sources:
-- ghcr.io/kubewarden/policies/safe-annotations:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/safe-annotations:v1.0.1
+version: 1.0.1
