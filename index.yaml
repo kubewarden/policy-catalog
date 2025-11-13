@@ -17226,6 +17226,72 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.6
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2025-11-13T13:28:08.875096609Z"
+    description: Kubewarden policy designed to automatically propagate labels defined
+      in a Kubernetes namespace to the associated resources within that namespace
+    digest: 7e02990a5662f6a19f31eb4a2aab3d6a8d8147767367e644fba01c7d112e72e4
+    home: https://github.com/kubewarden/namespace-label-propagator-policy
+    keywords:
+    - policy
+    - kubewarden
+    - namespace
+    - label
+    name: namespace-label-propagator-policy
+    sources:
+    - ghcr.io/kubewarden/policies/namespace-label-propagator:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/namespace-label-propagator-policy-1.0.6/namespace-label-propagator-policy-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: namespace-label-propagator-policy
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: v1
+          kind: Namespace
+      kubewarden/displayName: Namespace label propagator
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/namespace-label-propagator
+      kubewarden/resources: Pod, ReplicationController, Deployment, ReplicaSet, StatefulSet,
+        DaemonSet, Job, CronJob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.5
     apiVersion: v1
     appVersion: 1.0.5
@@ -27649,4 +27715,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-11-13T13:27:38.167456484Z"
+generated: "2025-11-13T13:28:08.876082774Z"
