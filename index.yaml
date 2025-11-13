@@ -24157,6 +24157,45 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.6
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2025-11-13T13:28:40.104122893Z"
+    description: Replacement for the Kubernetes Pod Security Policy that controls
+      the usage of SELinux
+    digest: d55e6e7feac2b72e011bf2fdda1ae61c272d866d53c6bc7c7666ee28efc56598
+    home: https://github.com/kubewarden/selinux-psp-policy
+    keywords:
+    - psp
+    - container
+    - runtime
+    - selinux
+    name: selinux-psp
+    sources:
+    - ghcr.io/kubewarden/policies/selinux-psp:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/selinux-psp-1.0.6/selinux-psp-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: selinux-psp
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Selinux PSP
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/selinux-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.5
     apiVersion: v1
     appVersion: 1.0.5
@@ -27715,4 +27754,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-11-13T13:28:08.876082774Z"
+generated: "2025-11-13T13:28:40.10512504Z"
