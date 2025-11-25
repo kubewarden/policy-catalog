@@ -1,0 +1,27 @@
+annotations:
+  artifacthub.io/repository: probes-policy
+  catalog.cattle.io/hidden: "true"
+  catalog.cattle.io/type: kubewarden-policy
+  catalog.cattle.io/ui-component: kubewarden
+  kubewarden/displayName: Probes validator policy
+  kubewarden/mutation: "false"
+  kubewarden/registry: ghcr.io
+  kubewarden/repository: kubewarden/policies/probes-policy
+  kubewarden/rules: |
+    - apiGroups:
+      - ''
+      apiVersions:
+      - v1
+      resources:
+      - pods
+      operations:
+      - CREATE
+  kubewarden/tag: v1.0.0
+appVersion: 1.0.0
+description: This policy validates that all containers have livenessProbe and readinessProbe
+  defined.
+home: https://github.com/kubewarden/probes-policy
+name: probes-policy
+sources:
+- ghcr.io/kubewarden/policies/probes-policy:v1.0.0
+version: 1.0.0
