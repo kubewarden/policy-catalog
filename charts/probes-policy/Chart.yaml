@@ -16,12 +16,12 @@ annotations:
       - pods
       operations:
       - CREATE
-  kubewarden/tag: v1.0.1
-appVersion: 1.0.1
+  kubewarden/tag: v1.0.2
+appVersion: 1.0.2
 description: This policy validates that all containers have livenessProbe and readinessProbe
   defined.
 home: https://github.com/kubewarden/probes-policy
 name: probes-policy
 sources:
-- ghcr.io/kubewarden/policies/probes:v1.0.1
-version: 1.0.1
+- ghcr.io/kubewarden/policies/probes:v1.0.2
+version: 1.0.2
