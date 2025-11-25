@@ -2,5 +2,5 @@ global:
   cattle:
     systemDefaultRegistry: ghcr.io
 module:
-  repository: kubewarden/policies/probes-policy
-  tag: v1.0.0
+  repository: kubewarden/policies/probes
+  tag: v1.0.1

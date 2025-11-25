@@ -6,7 +6,7 @@ annotations:
   kubewarden/displayName: Probes validator policy
   kubewarden/mutation: "false"
   kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/probes-policy
+  kubewarden/repository: kubewarden/policies/probes
   kubewarden/rules: |
     - apiGroups:
       - ''
@@ -16,12 +16,12 @@ annotations:
       - pods
       operations:
       - CREATE
-  kubewarden/tag: v1.0.0
-appVersion: 1.0.0
+  kubewarden/tag: v1.0.1
+appVersion: 1.0.1
 description: This policy validates that all containers have livenessProbe and readinessProbe
   defined.
 home: https://github.com/kubewarden/probes-policy
 name: probes-policy
 sources:
-- ghcr.io/kubewarden/policies/probes-policy:v1.0.0
-version: 1.0.0
+- ghcr.io/kubewarden/policies/probes:v1.0.1
+version: 1.0.1
