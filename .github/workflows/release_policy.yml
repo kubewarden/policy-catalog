@@ -36,7 +36,7 @@ jobs:
 
     steps:
       - name: Checkout current repository
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
       - name: Extract repository info
         id: repo-info
@@ -71,14 +71,14 @@ jobs:
           fi
 
       - name: Clone source repository
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           repository: ${{ steps.repo-info.outputs.owner }}/${{ steps.repo-info.outputs.repo }}
           ref: ${{ steps.repo-info.outputs.tag }}
           path: policy-source
 
       - name: Clone source repository at artifacthub branch
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           repository: ${{ steps.repo-info.outputs.owner }}/${{ steps.repo-info.outputs.repo }}
           ref: artifacthub
