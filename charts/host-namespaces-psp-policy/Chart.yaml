@@ -49,8 +49,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.1.5
-appVersion: 1.1.5
+  kubewarden/tag: v1.1.6
+appVersion: 1.1.6
 description: A Kubewarden policy that controls the usage of host namespaces
 home: https://github.com/kubewarden/host-namespaces-psp-policy
 keywords:
@@ -59,5 +59,5 @@ keywords:
 - network
 name: host-namespaces-psp
 sources:
-- ghcr.io/kubewarden/policies/host-namespaces-psp:v1.1.5
-version: 1.1.5
+- ghcr.io/kubewarden/policies/host-namespaces-psp:v1.1.6
+version: 1.1.6
