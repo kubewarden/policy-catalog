@@ -3,4 +3,4 @@ global:
     systemDefaultRegistry: ghcr.io
 module:
   repository: kubewarden/policies/safe-annotations
-  tag: v1.0.1
+  tag: v1.0.2
