@@ -26195,6 +26195,73 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.8
+    apiVersion: v1
+    appVersion: 1.0.8
+    created: "2025-12-15T10:01:26.218742734Z"
+    description: Policy validates pods sharing processes PID namespace
+    digest: 0cd974ed11e3f51af39cb0593ac3b24289a622ee42d1e29ad2bf2b0be0123d82
+    home: https://github.com/kubewarden/share-pid-namespace-policy
+    keywords:
+    - pod
+    - pid
+    name: share-pid-namespace-policy
+    sources:
+    - ghcr.io/kubewarden/policies/share-pid-namespace-policy:v1.0.8
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/share-pid-namespace-policy-1.0.8/share-pid-namespace-policy-1.0.8.tgz
+    version: 1.0.8
+  - annotations:
+      artifacthub.io/repository: share-pid-namespace
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Share PID namespace
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/share-pid-namespace-policy
+      kubewarden/resources: Pod,Replicationcontroller,Deployment,Replicaset,Statefulset,Daemonset,Job,Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.7
     apiVersion: v1
     appVersion: 1.0.7
@@ -27041,6 +27108,75 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/sysctl-psp-0.1.12/sysctl-psp-0.1.12.tgz
     version: 0.1.12
   trusted-repos:
+  - annotations:
+      artifacthub.io/repository: trusted-repos
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Trusted Repos
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/trusted-repos
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v2.0.4
+    apiVersion: v1
+    appVersion: 2.0.4
+    created: "2025-12-15T10:01:26.460430309Z"
+    description: Kubewarden policy that restricts what registries, tags and images
+      can pods on your cluster refer to
+    digest: b501aa6efb713507ab0350c3fe6979873ae326f3e1119e8e5ac1168afe01bea6
+    home: https://github.com/kubewarden/trusted-repos-policy
+    keywords:
+    - image
+    - registry
+    - tag
+    name: trusted-repos
+    sources:
+    - ghcr.io/kubewarden/policies/trusted-repos:v2.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/trusted-repos-2.0.4/trusted-repos-2.0.4.tgz
+    version: 2.0.4
   - annotations:
       artifacthub.io/repository: trusted-repos
       catalog.cattle.io/hidden: "true"
@@ -29886,4 +30022,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2025-12-15T10:01:13.145704827Z"
+generated: "2025-12-15T10:01:26.461215695Z"
