@@ -81,14 +81,16 @@ in order to avoid unexpectedly exempting images from an untrusted repository.
 
 ### Policy settings verification
 
-The policy verifies the consistency of the values provided:
+The policy verifies the consistency of the values provided.
 
-- `defaultRequest` must be >= `minRequest`, <= `maxRequest`, <= `maxLimit`
-- `defaultLimit` must be >= `minLimit`, <= `maxLimit`
-- `minLimit` must be <= `defaultLimit`, <= `defaultRequest`
-- `maxRequest` must be >= `defaultLimit`, >= `defaultRequest`
-- `maxRequest` must be <= `maxLimit` (when both are configured)
-- `minLimit` must be <= `minRequest` (when both are configured)
+When all values are configured (non‑zero), they must satisfy the following
+overall ordering:
+
+- `minRequest` ≤ `defaultRequest` ≤ `maxRequest` ≤ `minLimit` ≤ `defaultLimit` ≤ `maxLimit`
+
+Only comparisons between values that are **both** configured (non‑zero) are
+enforced. If a value is left at zero, it is treated as "not configured" for the
+purposes of these checks.
 
 Full example of policy definition:
 
@@ -132,23 +134,13 @@ The policy skips all the containers that are using an image that is part of the
 `ignoreImages` list. These containers are always considered valid and are never
 mutated.
 
-When the CPU/Memory request is specified:
-- If `minRequest` is configured: the request must be >= `minRequest`, otherwise the policy rejects.
-- If `maxRequest` is configured: the request must be <= `maxRequest`, otherwise the policy rejects.
-- If both conditions are satisfied, the policy accepts.
-Note: when the requested CPU/Memory is higher than the limit the Pod will not be
-scheduled by Kubernetes (e.g. the approach of the `LimitRange` admission
-controller bundled with Kubernetes).
-
-When the CPU/Memory request is not specified: the container is mutated to use the
-`defaultRequest`.
-
-When the CPU/Memory limit is specified:
-- If `maxLimit` is configured: the limit must be <= `maxLimit`, otherwise the policy rejects.
-- If `minLimit` is configured: the limit must be >= `minLimit`, otherwise the policy rejects.
-- If both conditions are satisfied, the policy accepts.
-In this way the end user becomes aware of the issue and can ask the Kubernetes
-administrator to add the container image to the `ignoreImages` list.
-
-When the CPU/Memory limit is not specified: the container is mutated to use the
-`defaultLimit`.
+For containers that are **not** skipped:
+- **Limits**:
+  - If the limit is missing and `defaultLimit` is configured, the limit is mutated to `defaultLimit`.
+  - If the limit is present, it must fall within the configured range (`minLimit`/`maxLimit`), when these are set.
+- **Requests**:
+  - If the request is missing and `defaultRequest` is configured, the request is mutated to `defaultRequest`.
+  - If the request is present, it must fall within the configured range (`minRequest`/`maxRequest`), when these are set.
+- **Consistency between request and limit**:
+  - After any mutation, the effective limit must be **greater than or equal to** the effective request for each resource.
+  - If this is not the case, the request is rejected so that Kubernetes will not receive an inconsistent Pod spec.
