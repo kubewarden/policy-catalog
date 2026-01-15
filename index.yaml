@@ -3874,6 +3874,75 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.3.1
+    apiVersion: v1
+    appVersion: 1.3.1
+    created: "2026-01-15T08:16:50.793848443Z"
+    description: Policy is designed to enforce constraints on the resource requirements
+      of Kubernetes containers
+    digest: de7c66969e566d886867536f777eda4dec4cab551cc49b73c839a07d29f2ae85
+    home: https://github.com/kubewarden/container-resources-policy
+    keywords:
+    - container
+    - resources
+    name: container-resources
+    sources:
+    - ghcr.io/kubewarden/policies/container-resources:v1.3.1
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/container-resources-1.3.1/container-resources-1.3.1.tgz
+    version: 1.3.1
+  - annotations:
+      artifacthub.io/repository: container-resources
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Container Resources
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/container-resources
+      kubewarden/resources: Pod, Replicationcontroller, Deployments, Replicaset, Statefulset,
+        Daemonset, Job, Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.3.0
     apiVersion: v1
     appVersion: 1.3.0
@@ -30831,4 +30900,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-09T11:32:15.124059594Z"
+generated: "2026-01-15T08:16:50.794717903Z"
