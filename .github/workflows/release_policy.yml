@@ -92,27 +92,34 @@ jobs:
       - name: Create directory structure
         run: |
           TARGET_DIR="charts/${{ steps.repo-info.outputs.chart_dir }}"
+          ROOT_DIR="policy-source"
           POLICY_WORKING_DIR="${{ steps.repo-info.outputs.policy_working_dir }}"
-          SOURCE_DIR="policy-source"
 
-          if [[ -n "$POLICY_WORKING_DIR" ]]; then
-            SOURCE_DIR="$SOURCE_DIR/$POLICY_WORKING_DIR"
+          if [ -n "$POLICY_WORKING_DIR" ]; then
+            SOURCE_DIR="$ROOT_DIR/$POLICY_WORKING_DIR"
+          else
+            SOURCE_DIR="$ROOT_DIR"
           fi
 
           mkdir -p "$TARGET_DIR"
 
-          if [ ! -f "$SOURCE_DIR/README.md" ]; then
+          if [ -f "$SOURCE_DIR/README.md" ]; then
+            cp "$SOURCE_DIR/README.md" "$TARGET_DIR/"
+          else
             echo "::error::README.md file not found in the source repository"
             exit 1
           fi
 
-          if [ ! -f "policy-source/LICENSE" ]; then
-            echo "::error::LICENSE file not found in the source repository"
-            exit 1
+          if [ -f "policy-source/LICENSE" ]; then
+            cp "policy-source/LICENSE" "$TARGET_DIR/"
+          else
+            if [ -f "$ROOT_DIR/LICENSE" ]; then
+              cp "$ROOT_DIR/LICENSE" "$TARGET_DIR/"
+            else 
+              echo "::error::LICENSE file not found neither in the source nor the root repository"
+              exit 1
+            fi
           fi
-
-          cp "$SOURCE_DIR/README.md" "$TARGET_DIR/"
-          cp "policy-source/LICENSE" "$TARGET_DIR/"
 
           if [ -f "$SOURCE_DIR/questions-ui.yml" ]; then
             cp "$SOURCE_DIR/questions-ui.yml" "$TARGET_DIR/questions.yaml"
