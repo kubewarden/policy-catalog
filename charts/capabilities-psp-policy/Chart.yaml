@@ -1,5 +1,5 @@
 annotations:
-  artifacthub.io/repository: capabilities-psp
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
