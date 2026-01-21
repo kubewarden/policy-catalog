@@ -1,5 +1,5 @@
 annotations:
-  artifacthub.io/repository: env-variable-secrets-scanner
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
@@ -49,8 +49,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.9
-appVersion: 1.0.9
+  kubewarden/tag: v1.0.10
+appVersion: 1.0.10
 description: Policy that inspects env vars and rejects a request if a secret was found
 home: https://github.com/kubewarden/env-variable-secrets-scanner-policy
 keywords:
@@ -62,5 +62,5 @@ keywords:
 - confidential data leak
 name: env-variable-secrets-scanner
 sources:
-- ghcr.io/kubewarden/policies/env-variable-secrets-scanner:v1.0.9
-version: 1.0.9
+- ghcr.io/kubewarden/policies/env-variable-secrets-scanner:v1.0.10
+version: 1.0.10
