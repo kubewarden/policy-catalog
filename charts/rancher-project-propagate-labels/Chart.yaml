@@ -1,0 +1,35 @@
+annotations:
+  artifacthub.io/repository: kubewarden-policy-library
+  catalog.cattle.io/hidden: "true"
+  catalog.cattle.io/type: kubewarden-policy
+  catalog.cattle.io/ui-component: kubewarden
+  kubewarden/contextAwareResources: |
+    - apiVersion: management.cattle.io/v3
+      kind: Project
+  kubewarden/displayName: Rancher Project propagate labels
+  kubewarden/mutation: "true"
+  kubewarden/registry: ghcr.io
+  kubewarden/repository: kubewarden/policies/rancher-project-propagate-labels
+  kubewarden/resources: Namespace
+  kubewarden/rules: |
+    - apiGroups:
+      - ''
+      apiVersions:
+      - v1
+      resources:
+      - namespaces
+      operations:
+      - CREATE
+      - UPDATE
+  kubewarden/tag: v0.1.2
+appVersion: 0.1.2
+description: Propagate labels from a Rancher Project to all the Namespaces that belong
+  to it
+home: https://github.com/kubewaden/rancher-project-propagate-labels
+keywords:
+- namespace
+- rancher project
+name: rancher-project-propagate-labels
+sources:
+- ghcr.io/kubewarden/policies/rancher-project-propagate-labels:v0.1.2
+version: 0.1.2
