@@ -1,5 +1,5 @@
 annotations:
-  artifacthub.io/repository: labels-policy
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
@@ -49,13 +49,13 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v0.1.4
-appVersion: 0.1.4
+  kubewarden/tag: v0.1.5
+appVersion: 0.1.5
 description: A policy that validates labels of Kubernetes' resources
 home: https://github.com/kubewarden/labels-policy
 keywords:
 - labels
 name: labels
 sources:
-- ghcr.io/kubewarden/policies/labels:v0.1.4
-version: 0.1.4
+- ghcr.io/kubewarden/policies/labels:v0.1.5
+version: 0.1.5
