@@ -1,5 +1,5 @@
 annotations:
-  artifacthub.io/repository: deprecated-api-versions-policy
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
@@ -176,8 +176,8 @@ annotations:
       - '*'
       operations:
       - CREATE
-  kubewarden/tag: v1.0.4
-appVersion: 1.0.4
+  kubewarden/tag: v1.0.6
+appVersion: 1.0.6
 description: Find deprecated and removed Kubernetes resources
 home: https://github.com/kubewarden/deprecated-api-versions-policy
 keywords:
@@ -185,5 +185,5 @@ keywords:
 - deprecated API
 name: deprecated-api-versions
 sources:
-- ghcr.io/kubewarden/policies/deprecated-api-versions:v1.0.4
-version: 1.0.4
+- ghcr.io/kubewarden/policies/deprecated-api-versions:v1.0.6
+version: 1.0.6
