@@ -25124,6 +25124,47 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/psp-apparmor-0.1.13/psp-apparmor-0.1.13.tgz
     version: 0.1.13
+  rancher-project-propagate-labels:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: management.cattle.io/v3
+          kind: Project
+      kubewarden/displayName: Rancher Project propagate labels
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/rancher-project-propagate-labels
+      kubewarden/resources: Namespace
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - namespaces
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v0.1.2
+    apiVersion: v1
+    appVersion: 0.1.2
+    created: "2026-01-21T19:32:41.452837172Z"
+    description: Propagate labels from a Rancher Project to all the Namespaces that
+      belong to it
+    digest: 46cc415135c8126dcdce6f816c716474adb9c58c0e697778ef25a4159ff872d6
+    home: https://github.com/kubewaden/rancher-project-propagate-labels
+    keywords:
+    - namespace
+    - rancher project
+    name: rancher-project-propagate-labels
+    sources:
+    - ghcr.io/kubewarden/policies/rancher-project-propagate-labels:v0.1.2
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/rancher-project-propagate-labels-0.1.2/rancher-project-propagate-labels-0.1.2.tgz
+    version: 0.1.2
   rbac-prohibit-list-secrets:
   - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
@@ -32198,4 +32239,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-21T19:15:02.56841998Z"
+generated: "2026-01-21T19:32:41.454052151Z"
