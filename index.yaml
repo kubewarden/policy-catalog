@@ -25165,6 +25165,47 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/rancher-project-propagate-labels-0.1.2/rancher-project-propagate-labels-0.1.2.tgz
     version: 0.1.2
+  rancher-project-quotas-namespace-validator:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: management.cattle.io/v3
+          kind: Project
+      kubewarden/displayName: Rancher Project quotas namespace validator
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/rancher-project-quotas-namespace-validator
+      kubewarden/resources: management.cattle.io/Project
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - namespace
+          operations:
+          - CREATE
+      kubewarden/tag: v1.0.8
+    apiVersion: v1
+    appVersion: 1.0.8
+    created: "2026-01-21T19:32:56.602345645Z"
+    description: Prevent the creation of Namespace under a Rancher Project that doesn't
+      have any resource quota left
+    digest: a7b81ad1023d72be748ed96e0c9df408e76139f0b73af16144f10a3e5eb95dc2
+    home: https://github.com/kubewarden/rancher-project-quotas-namespace-validator
+    keywords:
+    - rancher
+    - project
+    - quotas
+    name: rancher-project-quotas-namespace-validator
+    sources:
+    - ghcr.io/kubewarden/policies/rancher-project-quotas-namespace-validator:v1.0.8
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/rancher-project-quotas-namespace-validator-1.0.8/rancher-project-quotas-namespace-validator-1.0.8.tgz
+    version: 1.0.8
   rbac-prohibit-list-secrets:
   - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
@@ -32239,4 +32280,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-21T19:32:41.454052151Z"
+generated: "2026-01-21T19:32:56.603465619Z"
