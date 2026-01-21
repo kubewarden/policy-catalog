@@ -1,5 +1,5 @@
 annotations:
-  artifacthub.io/repository: apparmor-psp
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
@@ -18,8 +18,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.7
-appVersion: 1.0.7
+  kubewarden/tag: v1.0.9
+appVersion: 1.0.9
 description: Replacement for the Kubernetes Pod Security Policy that controls the
   usage of AppArmor profiles
 home: https://github.com/kubewarden/apparmor-psp-policy
@@ -28,5 +28,5 @@ keywords:
 - apparmor
 name: psp-apparmor
 sources:
-- ghcr.io/kubewarden/policies/apparmor-psp:v1.0.7
-version: 1.0.7
+- ghcr.io/kubewarden/policies/apparmor-psp:v1.0.9
+version: 1.0.9
