@@ -1,5 +1,5 @@
 annotations:
-  artifacthub.io/repository: ingress-policy
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
@@ -18,13 +18,13 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.4
-appVersion: 1.0.4
+  kubewarden/tag: v1.0.6
+appVersion: 1.0.6
 description: Enforce requirements on Ingress resources
 home: https://github.com/kubewarden/ingress-policy
 keywords:
 - ingress
 name: ingress-policy
 sources:
-- ghcr.io/kubewarden/policies/ingress:v1.0.4
-version: 1.0.4
+- ghcr.io/kubewarden/policies/ingress:v1.0.6
+version: 1.0.6
