@@ -1,5 +1,5 @@
 annotations:
-  artifacthub.io/repository: verify-image-signatures
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
@@ -49,8 +49,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.4
-appVersion: 1.0.4
+  kubewarden/tag: v1.0.6
+appVersion: 1.0.6
 description: A Kubewarden Policy that verifies all the signatures of the container
   images referenced by a Pod
 home: https://github.com/kubewarden/verify-image-signatures
@@ -61,5 +61,5 @@ keywords:
 - trusted
 name: verify-image-signatures
 sources:
-- ghcr.io/kubewarden/policies/verify-image-signatures:v1.0.4
-version: 1.0.4
+- ghcr.io/kubewarden/policies/verify-image-signatures:v1.0.6
+version: 1.0.6
