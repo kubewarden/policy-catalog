@@ -1,5 +1,5 @@
 annotations:
-  artifacthub.io/repository: disallow-service-nodeport
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
@@ -18,13 +18,13 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v0.1.7
-appVersion: 0.1.7
+  kubewarden/tag: v0.1.9
+appVersion: 0.1.9
 description: A policy that prevents the creation of Service resources of type `NodePort`
 home: https://github.com/kubewarden/disallow-service-nodeport-policy
 keywords:
 - service
 name: disallow-service-nodeport
 sources:
-- ghcr.io/kubewarden/policies/disallow-service-nodeport:v0.1.7
-version: 0.1.7
+- ghcr.io/kubewarden/policies/disallow-service-nodeport:v0.1.9
+version: 0.1.9
