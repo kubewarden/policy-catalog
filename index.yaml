@@ -16482,6 +16482,72 @@ entries:
     version: 1.0.0
   labels:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Labels
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/labels
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v0.1.5
+    apiVersion: v1
+    appVersion: 0.1.5
+    created: "2026-01-21T18:39:47.843672177Z"
+    description: A policy that validates labels of Kubernetes' resources
+    digest: 3902ac1b363e025b7738544710ee3def0eb4f850e220d556b367e7549fdbc0dc
+    home: https://github.com/kubewarden/labels-policy
+    keywords:
+    - labels
+    name: labels
+    sources:
+    - ghcr.io/kubewarden/policies/labels:v0.1.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/labels-0.1.5/labels-0.1.5.tgz
+    version: 0.1.5
+  - annotations:
       artifacthub.io/repository: labels-policy
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -21576,6 +21642,43 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/persistent-volume-claim-snapshot-1.0.0/persistent-volume-claim-snapshot-1.0.0.tgz
     version: 1.0.0
   persistentvolumeclaim-storageclass-policy:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: PVC StorageClass Validator
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/persistentvolumeclaim-storageclass-policy
+      kubewarden/resources: PersistentVolumeClaim
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - persistentvolumeclaims
+          operations:
+          - CREATE
+      kubewarden/tag: v1.1.3
+    apiVersion: v1
+    appVersion: 1.1.3
+    created: "2026-01-21T18:39:48.022752881Z"
+    description: Policy that validates and adjusts the usage of StorageClasses in
+      PersistentVolumeClaims
+    digest: bd1bde3a015b6040842ad4f489cda1f01e3d5007cc98dcf6a19c5beac8f65baa
+    home: https://github.com/kubewarden/persistentvolumeclaim-storageclass-policy
+    keywords:
+    - persistentvolumeclaim
+    - pvc
+    - kubewarden
+    name: persistentvolumeclaim-storageclass-policy
+    sources:
+    - ghcr.io/kubewarden/policies/persistentvolumeclaim-storageclass-policy:v1.1.3
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/persistentvolumeclaim-storageclass-policy-1.1.3/persistentvolumeclaim-storageclass-policy-1.1.3.tgz
+    version: 1.1.3
   - annotations:
       artifacthub.io/repository: pvc-storageclass-validator
       catalog.cattle.io/hidden: "true"
@@ -31180,4 +31283,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-21T18:39:06.372977244Z"
+generated: "2026-01-21T18:39:48.023460058Z"
