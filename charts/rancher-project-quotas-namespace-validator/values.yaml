@@ -1,0 +1,6 @@
+global:
+  cattle:
+    systemDefaultRegistry: ghcr.io
+module:
+  repository: kubewarden/policies/rancher-project-quotas-namespace-validator
+  tag: v1.0.8

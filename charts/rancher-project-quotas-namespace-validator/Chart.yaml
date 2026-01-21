@@ -1,0 +1,35 @@
+annotations:
+  artifacthub.io/repository: kubewarden-policy-library
+  catalog.cattle.io/hidden: "true"
+  catalog.cattle.io/type: kubewarden-policy
+  catalog.cattle.io/ui-component: kubewarden
+  kubewarden/contextAwareResources: |
+    - apiVersion: management.cattle.io/v3
+      kind: Project
+  kubewarden/displayName: Rancher Project quotas namespace validator
+  kubewarden/mutation: "false"
+  kubewarden/registry: ghcr.io
+  kubewarden/repository: kubewarden/policies/rancher-project-quotas-namespace-validator
+  kubewarden/resources: management.cattle.io/Project
+  kubewarden/rules: |
+    - apiGroups:
+      - ''
+      apiVersions:
+      - v1
+      resources:
+      - namespace
+      operations:
+      - CREATE
+  kubewarden/tag: v1.0.8
+appVersion: 1.0.8
+description: Prevent the creation of Namespace under a Rancher Project that doesn't
+  have any resource quota left
+home: https://github.com/kubewarden/rancher-project-quotas-namespace-validator
+keywords:
+- rancher
+- project
+- quotas
+name: rancher-project-quotas-namespace-validator
+sources:
+- ghcr.io/kubewarden/policies/rancher-project-quotas-namespace-validator:v1.0.8
+version: 1.0.8
