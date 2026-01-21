@@ -3125,6 +3125,48 @@ entries:
     version: 0.1.16
   cel-policy:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: v1
+          kind: Namespace
+      kubewarden/displayName: CEL Policy
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/cel-policy
+      kubewarden/resources: Any
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+          - UPDATE
+          - DELETE
+      kubewarden/tag: v1.5.4
+    apiVersion: v1
+    appVersion: 1.5.4
+    created: "2026-01-21T18:42:04.663840887Z"
+    description: A policy that evaluates CEL expressions
+    digest: d8b9e31b5b21121e1be2c104bcec7d142f157f4e2d07a847b5a28b03abf4e8f8
+    home: https://github.com/kubewarden/cel-policy
+    keywords:
+    - compliance
+    - CEL
+    - ValidatingAdmissionPolicy
+    - Common Expression Language
+    name: cel-policy
+    sources:
+    - ghcr.io/kubewarden/policies/cel-policy:v1.5.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/cel-policy-1.5.4/cel-policy-1.5.4.tgz
+    version: 1.5.4
+  - annotations:
       artifacthub.io/repository: cel-policy
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -14462,6 +14504,79 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/hostpaths-psp-0.1.11/hostpaths-psp-0.1.11.tgz
     version: 0.1.11
   image-cve-policy:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: storage.sbomscanner.kubewarden.io/v1alpha1
+          kind: VulnerabilityReport
+      kubewarden/displayName: image-cve
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/image-cve-policy
+      kubewarden/resources: Pod, ReplicaSet, Deployment, DaemonSet, StatefulSet, Job,
+        CronJob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v0.5.6
+    apiVersion: v1
+    appVersion: 0.5.6
+    created: "2026-01-21T18:42:04.957763052Z"
+    description: Validate workloads based on the vulnerabilities of the images they
+      make use of
+    digest: 632f849b0b0e00b500184f5346a61223b91ab33e38841d5ec017142991d1fe01
+    home: https://github.com/kubewarden/image-cve-policy
+    keywords:
+    - pod
+    - cool policy
+    - kubewarden
+    name: image-cve-policy
+    sources:
+    - ghcr.io/kubewarden/policies/image-cve-policy:v0.5.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/image-cve-policy-0.5.6/image-cve-policy-0.5.6.tgz
+    version: 0.5.6
   - annotations:
       artifacthub.io/repository: image-cve
       catalog.cattle.io/hidden: "true"
@@ -31497,4 +31612,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-21T18:41:20.572242622Z"
+generated: "2026-01-21T18:42:04.958599713Z"
