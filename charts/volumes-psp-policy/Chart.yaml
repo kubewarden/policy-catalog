@@ -1,5 +1,5 @@
 annotations:
-  artifacthub.io/repository: volumes-psp
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
@@ -18,15 +18,15 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.1.5
-appVersion: 1.1.5
+  kubewarden/tag: v1.1.6
+appVersion: 1.1.6
 description: Pod Security Policy that controls usage of volumes
-home: https://github.com/kubewarden/volumes-psp-policy
+home: https://github.com/kubewarden/policies
 keywords:
 - psp
 - pod
 - volumes
 name: volumes-psp
 sources:
-- ghcr.io/kubewarden/policies/volumes-psp:v1.1.5
-version: 1.1.5
+- ghcr.io/kubewarden/policies/volumes-psp:v1.1.6
+version: 1.1.6
