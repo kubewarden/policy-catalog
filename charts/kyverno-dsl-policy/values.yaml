@@ -1,0 +1,6 @@
+global:
+  cattle:
+    systemDefaultRegistry: ghcr.io
+module:
+  repository: kubewarden/policies/kyverno-validator
+  tag: v0.1.7
