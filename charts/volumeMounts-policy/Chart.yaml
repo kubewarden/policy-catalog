@@ -1,5 +1,5 @@
 annotations:
-  artifacthub.io/repository: volumemounts-policy
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
@@ -49,12 +49,12 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.6
-appVersion: 1.0.6
+  kubewarden/tag: v1.0.7
+appVersion: 1.0.7
 description: Policy that inspects containers, init containers, and ephemeral containers,
   and restricts their usage of volumes by  checking the `volume` name being used in
   `volumeMounts[*].name`
-home: https://github.com/kubewarden/volumemounts-policy
+home: https://github.com/kubewarden/policies
 keywords:
 - container
 - volumeMounts
@@ -63,5 +63,5 @@ keywords:
 - workload resources
 name: volumemounts
 sources:
-- ghcr.io/kubewarden/policies/volumemounts:v1.0.6
-version: 1.0.6
+- ghcr.io/kubewarden/policies/volumemounts:v1.0.7
+version: 1.0.7
