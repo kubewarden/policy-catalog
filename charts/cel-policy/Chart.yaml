@@ -22,10 +22,10 @@ annotations:
       - CREATE
       - UPDATE
       - DELETE
-  kubewarden/tag: v1.5.4
-appVersion: 1.5.4
+  kubewarden/tag: v1.5.5
+appVersion: 1.5.5
 description: A policy that evaluates CEL expressions
-home: https://github.com/kubewarden/cel-policy
+home: https://github.com/kubewarden/policies
 keywords:
 - compliance
 - CEL
@@ -33,5 +33,5 @@ keywords:
 - Common Expression Language
 name: cel-policy
 sources:
-- ghcr.io/kubewarden/policies/cel-policy:v1.5.4
-version: 1.5.4
+- ghcr.io/kubewarden/policies/cel-policy:v1.5.5
+version: 1.5.5
