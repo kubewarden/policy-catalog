@@ -1,5 +1,5 @@
 annotations:
-  artifacthub.io/repository: pod-runtime
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
@@ -18,15 +18,15 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.7
-appVersion: 1.0.7
+  kubewarden/tag: v1.0.8
+appVersion: 1.0.8
 description: Policy that controls the usage of Pod runtimeClass
-home: https://github.com/kubewarden/pod-runtime-class-policy
+home: https://github.com/kubewarden/policies
 keywords:
 - pod
 - runtime
 - container runtime
 name: pod-runtime
 sources:
-- ghcr.io/kubewarden/policies/pod-runtime:v1.0.7
-version: 1.0.7
+- ghcr.io/kubewarden/policies/pod-runtime:v1.0.8
+version: 1.0.8
