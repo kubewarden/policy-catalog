@@ -1,5 +1,5 @@
 annotations:
-  artifacthub.io/repository: echo
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
@@ -20,14 +20,14 @@ annotations:
       - UPDATE
       - DELETE
       - CONNECT
-  kubewarden/tag: v0.1.14
-appVersion: 0.1.14
+  kubewarden/tag: v0.1.15
+appVersion: 0.1.15
 description: A policy that echoes back Kubernetes' AdmissionReview - useful for Policy
   Authors
-home: https://github.com/kubewarden/echo
+home: https://github.com/kubewarden/policies
 keywords:
 - developer
 name: echo
 sources:
-- ghcr.io/kubewarden/policies/echo:v0.1.14
-version: 0.1.14
+- ghcr.io/kubewarden/policies/echo:v0.1.15
+version: 0.1.15
