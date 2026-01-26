@@ -1,5 +1,5 @@
 annotations:
-  artifacthub.io/repository: host-namespaces-psp
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
@@ -49,15 +49,15 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.1.6
-appVersion: 1.1.6
+  kubewarden/tag: v1.1.7
+appVersion: 1.1.7
 description: A Kubewarden policy that controls the usage of host namespaces
-home: https://github.com/kubewarden/host-namespaces-psp-policy
+home: https://github.com/kubewarden/policies
 keywords:
 - psp
 - container
 - network
 name: host-namespaces-psp
 sources:
-- ghcr.io/kubewarden/policies/host-namespaces-psp:v1.1.6
-version: 1.1.6
+- ghcr.io/kubewarden/policies/host-namespaces-psp:v1.1.7
+version: 1.1.7
