@@ -34154,6 +34154,43 @@ entries:
     version: 0.1.7
   volumes-psp:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Volumes PSP
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/volumes-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.1.6
+    apiVersion: v1
+    appVersion: 1.1.6
+    created: "2026-01-26T09:07:27.081831998Z"
+    description: Pod Security Policy that controls usage of volumes
+    digest: 8d9bca94738783b244abc76ba533387625312a84e3ee5696f02e259e54f5c6f2
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - pod
+    - volumes
+    name: volumes-psp
+    sources:
+    - ghcr.io/kubewarden/policies/volumes-psp:v1.1.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-1.1.6/volumes-psp-1.1.6.tgz
+    version: 1.1.6
+  - annotations:
       artifacthub.io/repository: volumes-psp
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -34517,4 +34554,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-26T09:07:15.981162065Z"
+generated: "2026-01-26T09:07:27.082707757Z"
