@@ -3,4 +3,4 @@ global:
     systemDefaultRegistry: ghcr.io
 module:
   repository: kubewarden/policies/do-not-expose-admission-controller-webhook-services
-  tag: v1.1.3
+  tag: v1.1.4
