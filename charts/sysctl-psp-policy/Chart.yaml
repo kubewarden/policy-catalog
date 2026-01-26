@@ -1,5 +1,5 @@
 annotations:
-  artifacthub.io/repository: sysctl-psp
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
@@ -18,15 +18,15 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.9
-appVersion: 1.0.9
+  kubewarden/tag: v1.0.10
+appVersion: 1.0.10
 description: A Pod Security Policy that controls usage of sysctls in pods
-home: https://github.com/kubewarden/sysctl-psp-policy
+home: https://github.com/kubewarden/policies
 keywords:
 - sysctl
 - psp
 - pod
 name: sysctl-psp
 sources:
-- ghcr.io/kubewarden/policies/sysctl-psp:v1.0.9
-version: 1.0.9
+- ghcr.io/kubewarden/policies/sysctl-psp:v1.0.10
+version: 1.0.10
