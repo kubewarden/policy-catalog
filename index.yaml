@@ -26553,6 +26553,44 @@ entries:
     version: 1.0.0
   readonly-root-filesystem-psp:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Readonly Root Filesystem PSP
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/readonly-root-filesystem-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.9
+    apiVersion: v1
+    appVersion: 1.0.9
+    created: "2026-01-26T08:59:54.350283252Z"
+    description: A Kubewarden policy that enforces root filesystem to be readonly
+    digest: 96d05e8a4a8d5430c37d10fdf76f6376c0c66bf22a99431fe0fc6c6138da17fc
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - container
+    - filesystem
+    - volume
+    name: readonly-root-filesystem-psp
+    sources:
+    - ghcr.io/kubewarden/policies/readonly-root-filesystem-psp:v1.0.9
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/readonly-root-filesystem-psp-1.0.9/readonly-root-filesystem-psp-1.0.9.tgz
+    version: 1.0.9
+  - annotations:
       artifacthub.io/repository: readonly-root-filesystem-psp
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -32896,4 +32934,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-26T08:59:43.302685633Z"
+generated: "2026-01-26T08:59:54.351202046Z"
