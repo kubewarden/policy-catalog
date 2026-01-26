@@ -1,5 +1,5 @@
 annotations:
-  artifacthub.io/repository: environment-variable-policy
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
@@ -49,10 +49,10 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v3.0.3
-appVersion: 3.0.3
+  kubewarden/tag: v3.0.4
+appVersion: 3.0.4
 description: A Kubewarden Policy that controls the usage of environment variables
-home: https://github.com/kubewarden/environment-variable-policy
+home: https://github.com/kubewarden/policies
 keywords:
 - deployment
 - replicaset
@@ -66,5 +66,5 @@ keywords:
 - environment-variables
 name: environment-variable-policy
 sources:
-- ghcr.io/kubewarden/policies/environment-variable-policy:v3.0.3
-version: 3.0.3
+- ghcr.io/kubewarden/policies/environment-variable-policy:v3.0.4
+version: 3.0.4
