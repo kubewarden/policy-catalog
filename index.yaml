@@ -23970,6 +23970,43 @@ entries:
     version: 0.3.3
   pod-runtime:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Pod Runtime
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/pod-runtime
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.8
+    apiVersion: v1
+    appVersion: 1.0.8
+    created: "2026-01-26T09:00:07.667085337Z"
+    description: Policy that controls the usage of Pod runtimeClass
+    digest: ebe03ff8224c04f198432dbf50740353f4992bd40c437a957cdde8c2f6c28e4b
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - pod
+    - runtime
+    - container runtime
+    name: pod-runtime
+    sources:
+    - ghcr.io/kubewarden/policies/pod-runtime:v1.0.8
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/pod-runtime-1.0.8/pod-runtime-1.0.8.tgz
+    version: 1.0.8
+  - annotations:
       artifacthub.io/repository: pod-runtime
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -32934,4 +32971,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-26T08:59:54.351202046Z"
+generated: "2026-01-26T09:00:07.667822417Z"
