@@ -9241,6 +9241,44 @@ entries:
     version: 0.1.0
   echo:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Echo
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/echo
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - '*'
+          apiVersions:
+          - '*'
+          resources:
+          - '*'
+          operations:
+          - CREATE
+          - UPDATE
+          - DELETE
+          - CONNECT
+      kubewarden/tag: v0.1.15
+    apiVersion: v1
+    appVersion: 0.1.15
+    created: "2026-01-26T09:06:14.919100996Z"
+    description: A policy that echoes back Kubernetes' AdmissionReview - useful for
+      Policy Authors
+    digest: d6bb27f2403738befa676f97127550420295dc099110cd14165388d745a122f2
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - developer
+    name: echo
+    sources:
+    - ghcr.io/kubewarden/policies/echo:v0.1.15
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/echo-0.1.15/echo-0.1.15.tgz
+    version: 0.1.15
+  - annotations:
       artifacthub.io/repository: echo
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -34220,4 +34258,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-26T09:06:02.656567465Z"
+generated: "2026-01-26T09:06:14.919909346Z"
