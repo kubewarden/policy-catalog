@@ -9526,6 +9526,78 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.11
+    apiVersion: v1
+    appVersion: 1.0.11
+    created: "2026-01-26T09:02:09.95015722Z"
+    description: Policy that inspects env vars and rejects a request if a secret was
+      found
+    digest: 5889faae6f96e3ba8a2d677747a002a47e710dcf6ea7559f58ddbf1a402426ff
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - secrets
+    - api keys
+    - tokens
+    - secret leak
+    - confidential data
+    - confidential data leak
+    name: env-variable-secrets-scanner
+    sources:
+    - ghcr.io/kubewarden/policies/env-variable-secrets-scanner:v1.0.11
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/env-variable-secrets-scanner-1.0.11/env-variable-secrets-scanner-1.0.11.tgz
+    version: 1.0.11
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Environment Variable Secrets Scanner
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/env-variable-secrets-scanner
+      kubewarden/resources: Pod,Deployment,Replicaset,Statefulset,Daemonset,Replicationcontroller,Job,Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.10
     apiVersion: v1
     appVersion: 1.0.10
@@ -33542,4 +33614,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-26T09:01:55.495553731Z"
+generated: "2026-01-26T09:02:09.951075877Z"
