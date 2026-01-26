@@ -8896,6 +8896,42 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v0.1.10
+    apiVersion: v1
+    appVersion: 0.1.10
+    created: "2026-01-26T09:08:00.119093433Z"
+    description: A policy that prevents the creation of Service resources of type
+      `NodePort`
+    digest: 4ea7a6deb51a58b5b2a78fbdf463385a7a6dfd1594df0cdd035e2c23a1b943f9
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - service
+    name: disallow-service-nodeport
+    sources:
+    - ghcr.io/kubewarden/policies/disallow-service-nodeport:v0.1.10
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/disallow-service-nodeport-0.1.10/disallow-service-nodeport-0.1.10.tgz
+    version: 0.1.10
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Disallow Service Nodeport
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/disallow-service-nodeport
+      kubewarden/resources: Service
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - services
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v0.1.9
     apiVersion: v1
     appVersion: 0.1.9
@@ -34690,4 +34726,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-26T09:07:50.347278873Z"
+generated: "2026-01-26T09:08:00.119998471Z"
