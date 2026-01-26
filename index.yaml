@@ -24468,6 +24468,44 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.10
+    apiVersion: v1
+    appVersion: 1.0.10
+    created: "2026-01-26T08:53:17.579445673Z"
+    description: Policy to ensure that namespaces have the required PSA labels configuration
+      for deployment in the cluster.
+    digest: 9ccd1d0e40cbda69da873527eb156a408bbe3e30a7cf2b8dba55a2e46d095dfe
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - namespace
+    - psa
+    - kubewarden
+    name: psa-label-enforcer
+    sources:
+    - ghcr.io/kubewarden/policies/psa-label-enforcer:v1.0.10
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/psa-label-enforcer-1.0.10/psa-label-enforcer-1.0.10.tgz
+    version: 1.0.10
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: PSA Label Enforcer
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/psa-label-enforcer
+      kubewarden/resources: Namespace
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - namespaces
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.9
     apiVersion: v1
     appVersion: 1.0.9
@@ -32280,4 +32318,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-21T19:32:56.603465619Z"
+generated: "2026-01-26T08:53:17.580230719Z"
