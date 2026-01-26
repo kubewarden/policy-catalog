@@ -1,5 +1,5 @@
 annotations:
-  artifacthub.io/repository: pod-privileged-policy
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
@@ -49,10 +49,10 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.8
-appVersion: 1.0.8
+  kubewarden/tag: v1.0.9
+appVersion: 1.0.9
 description: Limit the ability to create privileged containers
-home: https://github.com/kubewarden/pod-privileged-policy
+home: https://github.com/kubewarden/policies
 keywords:
 - psp
 - pod
@@ -60,5 +60,5 @@ keywords:
 - privileged
 name: pod-privileged-policy
 sources:
-- ghcr.io/kubewarden/policies/pod-privileged:v1.0.8
-version: 1.0.8
+- ghcr.io/kubewarden/policies/pod-privileged:v1.0.9
+version: 1.0.9
