@@ -21117,6 +21117,72 @@ entries:
     version: 1.0.0
   namespace-label-propagator-policy:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: v1
+          kind: Namespace
+      kubewarden/displayName: Namespace label propagator
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/namespace-label-propagator
+      kubewarden/resources: Pod, ReplicationController, Deployment, ReplicaSet, StatefulSet,
+        DaemonSet, Job, CronJob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.8
+    apiVersion: v1
+    appVersion: 1.0.8
+    created: "2026-01-26T09:07:39.269235186Z"
+    description: Kubewarden policy designed to automatically propagate labels defined
+      in a Kubernetes namespace to the associated resources within that namespace
+    digest: af72df2e54d0d4de98a3696b4c5d5ec7a1b65b858ee0140776294b95be228422
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - policy
+    - kubewarden
+    - namespace
+    - label
+    name: namespace-label-propagator-policy
+    sources:
+    - ghcr.io/kubewarden/policies/namespace-label-propagator:v1.0.8
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/namespace-label-propagator-policy-1.0.8/namespace-label-propagator-policy-1.0.8.tgz
+    version: 1.0.8
+  - annotations:
       artifacthub.io/repository: namespace-label-propagator-policy
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -28843,6 +28909,41 @@ entries:
     version: 1.0.0
   safe-annotations:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Safe Annotations
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/safe-annotations
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - '*'
+          apiVersions:
+          - '*'
+          resources:
+          - '*'
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.3
+    apiVersion: v1
+    appVersion: 1.0.3
+    created: "2026-01-26T09:07:39.427368773Z"
+    description: A policy that validates Kubernetes' resource annotations
+    digest: 5012e0b047ac808fb44998a09ffa3b2bc950fc9ef51cc613a0f8a17c5dff9a13
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - annotations
+    name: safe-annotations
+    sources:
+    - ghcr.io/kubewarden/policies/safe-annotations:v1.0.3
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/safe-annotations-1.0.3/safe-annotations-1.0.3.tgz
+    version: 1.0.3
+  - annotations:
       artifacthub.io/repository: safe-annotations
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -34554,4 +34655,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-26T09:07:27.082707757Z"
+generated: "2026-01-26T09:07:39.428188477Z"
