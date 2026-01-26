@@ -30690,6 +30690,75 @@ entries:
     version: 0.1.12
   trusted-repos:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Trusted Repos
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/trusted-repos
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v2.0.5
+    apiVersion: v1
+    appVersion: 2.0.5
+    created: "2026-01-26T09:03:31.183768505Z"
+    description: Kubewarden policy that restricts what registries, tags and images
+      can pods on your cluster refer to
+    digest: e4fe1341a71e811196162c280f10db73e054e385322f9671cbcb7ef389348ae9
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - image
+    - registry
+    - tag
+    name: trusted-repos
+    sources:
+    - ghcr.io/kubewarden/policies/trusted-repos:v2.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/trusted-repos-2.0.5/trusted-repos-2.0.5.tgz
+    version: 2.0.5
+  - annotations:
       artifacthub.io/repository: trusted-repos
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -33892,4 +33961,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-26T09:03:05.632447345Z"
+generated: "2026-01-26T09:03:31.184457635Z"
