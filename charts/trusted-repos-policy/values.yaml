@@ -3,4 +3,4 @@ global:
     systemDefaultRegistry: ghcr.io
 module:
   repository: kubewarden/policies/trusted-repos
-  tag: v2.0.5
+  tag: v2.0.6
