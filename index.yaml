@@ -33358,6 +33358,46 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.10
+    apiVersion: v1
+    appVersion: 1.0.10
+    created: "2026-01-27T15:27:50.76805383Z"
+    description: Policy validates that there are no services with the same set of
+      selectors
+    digest: 63806c6623f8eb0f9b6f63029c433ea5ee69be24827f302131d012c6ac8c5778
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - service
+    - selector
+    name: unique-service-selector-policy
+    sources:
+    - ghcr.io/kubewarden/policies/unique-service-selector-policy:v1.0.10
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/unique-service-selector-policy-1.0.10/unique-service-selector-policy-1.0.10.tgz
+    version: 1.0.10
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: v1
+          kind: Service
+      kubewarden/displayName: Unique service selector
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/unique-service-selector-policy
+      kubewarden/resources: Service
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - services
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.9
     apiVersion: v1
     appVersion: 1.0.9
@@ -33736,6 +33776,75 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/unique-service-selector-policy-0.1.0/unique-service-selector-policy-0.1.0.tgz
     version: 0.1.0
   user-group-psp:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: User Group PSP
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/user-group-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.1.5
+    apiVersion: v1
+    appVersion: 1.1.5
+    created: "2026-01-27T15:27:50.945870474Z"
+    description: Kubewarden Policy that controls containers user and groups
+    digest: 51216c8f456022ec74936c07246f5c9c4b55024ecabd0eb78d650587f6d0bd80
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - container
+    - user
+    - group
+    name: user-group-psp
+    sources:
+    - ghcr.io/kubewarden/policies/user-group-psp:v1.1.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/user-group-psp-1.1.5/user-group-psp-1.1.5.tgz
+    version: 1.1.5
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -36204,4 +36313,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-27T15:27:27.543721566Z"
+generated: "2026-01-27T15:27:50.947403177Z"
