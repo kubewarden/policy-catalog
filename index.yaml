@@ -24724,6 +24724,42 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.9
+    apiVersion: v1
+    appVersion: 1.0.9
+    created: "2026-01-27T15:28:36.055644175Z"
+    description: Enforce a minimum value for the ndots option in the resolv.conf file
+      of a Pod.
+    digest: dda93a2591738c0c09e6693f29376059a9c91d523f24732791042e405823dddb
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - pod
+    name: pod-ndots
+    sources:
+    - ghcr.io/kubewarden/policies/pod-ndots:v1.0.9
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/pod-ndots-1.0.9/pod-ndots-1.0.9.tgz
+    version: 1.0.9
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Pod ndots
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/pod-ndots
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.8
     apiVersion: v1
     appVersion: 1.0.8
@@ -36390,4 +36426,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-27T15:28:10.7609897Z"
+generated: "2026-01-27T15:28:36.057630956Z"
