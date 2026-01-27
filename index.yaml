@@ -4589,6 +4589,75 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.3.3
+    apiVersion: v1
+    appVersion: 1.3.3
+    created: "2026-01-27T15:31:02.635612436Z"
+    description: Policy is designed to enforce constraints on the resource requirements
+      of Kubernetes containers
+    digest: 70e8ec44f2d0e3a2f88fc95065de2adf597b0a455bf65b5b85053a7c67360b88
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - container
+    - resources
+    name: container-resources
+    sources:
+    - ghcr.io/kubewarden/policies/container-resources:v1.3.3
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/container-resources-1.3.3/container-resources-1.3.3.tgz
+    version: 1.3.3
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Container Resources
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/container-resources
+      kubewarden/resources: Pod, Replicationcontroller, Deployments, Replicaset, Statefulset,
+        Daemonset, Job, Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.3.2
     apiVersion: v1
     appVersion: 1.3.2
@@ -9388,6 +9457,48 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.1.5
+    apiVersion: v1
+    appVersion: 1.1.5
+    created: "2026-01-27T15:31:02.821503825Z"
+    description: A policy that detects webhook services used by admission controllers
+      that are accidentally exposed outside of the cluster
+    digest: 4423b584e88eb9b2345971d10c73aebeeb147f98bc0c61d802498722b8ea178e
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - webhooks
+    name: do-not-expose-admission-controller-webhook-services
+    sources:
+    - ghcr.io/kubewarden/policies/do-not-expose-admission-controller-webhook-services:v1.1.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/do-not-expose-admission-controller-webhook-services-1.1.5/do-not-expose-admission-controller-webhook-services-1.1.5.tgz
+    version: 1.1.5
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: networking.k8s.io/v1
+          kind: Ingress
+        - apiVersion: v1
+          kind: Service
+      kubewarden/displayName: Do not expose admission controller webhook services
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/do-not-expose-admission-controller-webhook-services
+      kubewarden/resources: ValidatingWebhookConfiguration, MutatingWebhookConfiguration
+      kubewarden/rules: |
+        - apiGroups:
+          - admissionregistration.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - validatingwebhookconfigurations
+          - mutatingwebhookconfigurations
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.1.4
     apiVersion: v1
     appVersion: 1.1.4
@@ -9653,6 +9764,44 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/do-not-expose-admission-controller-webhook-services-0.1.0/do-not-expose-admission-controller-webhook-services-0.1.0.tgz
     version: 0.1.0
   echo:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Echo
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/echo
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - '*'
+          apiVersions:
+          - '*'
+          resources:
+          - '*'
+          operations:
+          - CREATE
+          - UPDATE
+          - DELETE
+          - CONNECT
+      kubewarden/tag: v0.1.16
+    apiVersion: v1
+    appVersion: 0.1.16
+    created: "2026-01-27T15:31:03.061880308Z"
+    description: A policy that echoes back Kubernetes' AdmissionReview - useful for
+      Policy Authors
+    digest: 8d5f7894aede2f066fd2a187d19d4e439dee2792f16c7fc753cb276f42b7b77f
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - developer
+    name: echo
+    sources:
+    - ghcr.io/kubewarden/policies/echo:v0.1.16
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/echo-0.1.16/echo-0.1.16.tgz
+    version: 0.1.16
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -36814,4 +36963,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-27T15:30:07.582537229Z"
+generated: "2026-01-27T15:31:03.062971467Z"
