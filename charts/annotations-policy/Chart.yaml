@@ -49,13 +49,13 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v0.1.7
-appVersion: 0.1.7
+  kubewarden/tag: v0.1.8
+appVersion: 0.1.8
 description: A policy that validates annotations of Kubernetes' resources
 home: https://github.com/kubewarden/policies
 keywords:
 - annotations
 name: annotations
 sources:
-- ghcr.io/kubewarden/policies/annotations:v0.1.7
-version: 0.1.7
+- ghcr.io/kubewarden/policies/annotations:v0.1.8
+version: 0.1.8
