@@ -18,8 +18,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.13
-appVersion: 1.0.13
+  kubewarden/tag: v1.0.14
+appVersion: 1.0.14
 description: Replacement for the Kubernetes Pod Security Policy that controls the
   allowed `flexVolume` drivers
 home: https://github.com/kubewarden/policies
@@ -31,5 +31,5 @@ keywords:
 - flex
 name: flexvolume-drivers-psp
 sources:
-- ghcr.io/kubewarden/policies/flexvolume-drivers-psp:v1.0.13
-version: 1.0.13
+- ghcr.io/kubewarden/policies/flexvolume-drivers-psp:v1.0.14
+version: 1.0.14
