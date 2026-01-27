@@ -10639,6 +10639,81 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v3.0.5
+    apiVersion: v1
+    appVersion: 3.0.5
+    created: "2026-01-27T15:24:38.241985523Z"
+    description: A Kubewarden Policy that controls the usage of environment variables
+    digest: 39172f2ea56a888dfa2ba192f159e0dbb4675cabd183aaff3f25b72b0a33082b
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - deployment
+    - replicaset
+    - statefulset
+    - daemonset
+    - replicationcontroller
+    - job
+    - cronjob
+    - pod
+    - container
+    - environment-variables
+    name: environment-variable-policy
+    sources:
+    - ghcr.io/kubewarden/policies/environment-variable-policy:v3.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/environment-variable-policy-3.0.5/environment-variable-policy-3.0.5.tgz
+    version: 3.0.5
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Environment Variable Policy
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/environment-variable-policy
+      kubewarden/resources: Deployment,Replicaset,Statefulset,Daemonset,Replicationcontroller,Job,Cronjob,Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v3.0.4
     apiVersion: v1
     appVersion: 3.0.4
@@ -29740,6 +29815,41 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.9
+    apiVersion: v1
+    appVersion: 1.0.9
+    created: "2026-01-27T15:24:38.425812075Z"
+    description: A policy that validates Kubernetes' resource labels
+    digest: 1c8f848a98a5eca1a25426c2575a8da42910c87a736290fe066bf6b6e7a629ca
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - labels
+    name: safe-labels
+    sources:
+    - ghcr.io/kubewarden/policies/safe-labels:v1.0.9
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/safe-labels-1.0.9/safe-labels-1.0.9.tgz
+    version: 1.0.9
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Safe Labels
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/safe-labels
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - '*'
+          apiVersions:
+          - '*'
+          resources:
+          - '*'
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.8
     apiVersion: v1
     appVersion: 1.0.8
@@ -35362,4 +35472,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-27T15:24:21.77377857Z"
+generated: "2026-01-27T15:24:38.426941131Z"
