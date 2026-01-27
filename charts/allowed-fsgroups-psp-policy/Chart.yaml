@@ -18,16 +18,16 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.8
-appVersion: 1.0.8
+  kubewarden/tag: v1.0.9
+appVersion: 1.0.9
 description: Replacement for the Kubernetes Pod Security Policy that controls the
   usage of fsGroups in the pod security context
-home: https://github.com/kubewarden/allowed-fsgroups-psp-policy
+home: https://github.com/kubewarden/policies
 keywords:
 - psp
 - container
 - runtime
 name: allowed-fsgroups-psp
 sources:
-- ghcr.io/kubewarden/policies/allowed-fsgroups-psp:v1.0.8
-version: 1.0.8
+- ghcr.io/kubewarden/policies/allowed-fsgroups-psp:v1.0.9
+version: 1.0.9
