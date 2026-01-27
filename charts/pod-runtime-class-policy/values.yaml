@@ -3,4 +3,4 @@ global:
     systemDefaultRegistry: ghcr.io
 module:
   repository: kubewarden/policies/pod-runtime
-  tag: v1.0.8
+  tag: v1.0.9
