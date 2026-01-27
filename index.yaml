@@ -29457,6 +29457,41 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2026-01-27T15:24:07.595985194Z"
+    description: A policy that validates Kubernetes' resource annotations
+    digest: e10ee4cd03cc0ff8dbe38bdbac08e5bbb645f3066a9a3ba01cb0c218abf56c5b
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - annotations
+    name: safe-annotations
+    sources:
+    - ghcr.io/kubewarden/policies/safe-annotations:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/safe-annotations-1.0.4/safe-annotations-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Safe Annotations
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/safe-annotations
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - '*'
+          apiVersions:
+          - '*'
+          resources:
+          - '*'
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -29929,6 +29964,42 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/safe-labels-0.1.14/safe-labels-0.1.14.tgz
     version: 0.1.14
   seccomp-psp:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Seccomp PSP
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/seccomp-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.12
+    apiVersion: v1
+    appVersion: 1.0.12
+    created: "2026-01-27T15:24:07.784782672Z"
+    description: Pod Security Policy that controls usage of Seccomp profile
+    digest: 488b8e381581a53664b8915605450bed48dd7c32518a6ab86be1e0e45c532e54
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - seccomp
+    name: seccomp-psp
+    sources:
+    - ghcr.io/kubewarden/policies/seccomp-psp:v1.0.12
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/seccomp-psp-1.0.12/seccomp-psp-1.0.12.tgz
+    version: 1.0.12
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -35219,4 +35290,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-27T15:23:50.011091422Z"
+generated: "2026-01-27T15:24:07.785545999Z"
