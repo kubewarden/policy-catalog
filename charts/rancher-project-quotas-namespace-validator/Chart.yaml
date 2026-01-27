@@ -20,8 +20,8 @@ annotations:
       - namespace
       operations:
       - CREATE
-  kubewarden/tag: v1.0.9
-appVersion: 1.0.9
+  kubewarden/tag: v1.0.10
+appVersion: 1.0.10
 description: Prevent the creation of Namespace under a Rancher Project that doesn't
   have any resource quota left
 home: https://github.com/kubewarden/policies
@@ -31,5 +31,5 @@ keywords:
 - quotas
 name: rancher-project-quotas-namespace-validator
 sources:
-- ghcr.io/kubewarden/policies/rancher-project-quotas-namespace-validator:v1.0.9
-version: 1.0.9
+- ghcr.io/kubewarden/policies/rancher-project-quotas-namespace-validator:v1.0.10
+version: 1.0.10
