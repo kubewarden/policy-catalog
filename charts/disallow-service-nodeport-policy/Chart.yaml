@@ -18,13 +18,13 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v0.1.10
-appVersion: 0.1.10
+  kubewarden/tag: v0.1.11
+appVersion: 0.1.11
 description: A policy that prevents the creation of Service resources of type `NodePort`
 home: https://github.com/kubewarden/policies
 keywords:
 - service
 name: disallow-service-nodeport
 sources:
-- ghcr.io/kubewarden/policies/disallow-service-nodeport:v0.1.10
-version: 0.1.10
+- ghcr.io/kubewarden/policies/disallow-service-nodeport:v0.1.11
+version: 0.1.11
