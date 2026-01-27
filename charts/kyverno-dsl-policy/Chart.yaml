@@ -1,0 +1,32 @@
+annotations:
+  artifacthub.io/repository: kubewarden-policy-library
+  catalog.cattle.io/hidden: "true"
+  catalog.cattle.io/type: kubewarden-policy
+  catalog.cattle.io/ui-component: kubewarden
+  kubewarden/displayName: Kyverno DSL policy
+  kubewarden/mutation: "false"
+  kubewarden/registry: ghcr.io
+  kubewarden/repository: kubewarden/policies/kyverno-dsl
+  kubewarden/resources: Pod
+  kubewarden/rules: |
+    - apiGroups:
+      - ''
+      apiVersions:
+      - v1
+      resources:
+      - pods
+      operations:
+      - CREATE
+      - UPDATE
+  kubewarden/tag: v0.1.8
+appVersion: 0.1.8
+description: An experimental Kubewarden policy that runs Kyverno policies
+home: https://github.com/kubewarden/policies
+keywords:
+- psp
+- container
+- runtime
+name: kyverno-dsl
+sources:
+- ghcr.io/kubewarden/policies/kyverno-dsl:v0.1.8
+version: 0.1.8
