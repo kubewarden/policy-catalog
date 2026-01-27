@@ -9237,6 +9237,42 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v0.1.11
+    apiVersion: v1
+    appVersion: 0.1.11
+    created: "2026-01-27T15:30:06.453939633Z"
+    description: A policy that prevents the creation of Service resources of type
+      `NodePort`
+    digest: 5b7933efeee7e45c85f3f74d74522bd1480ee7642e9ca913a8f71531e7fca979
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - service
+    name: disallow-service-nodeport
+    sources:
+    - ghcr.io/kubewarden/policies/disallow-service-nodeport:v0.1.11
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/disallow-service-nodeport-0.1.11/disallow-service-nodeport-0.1.11.tgz
+    version: 0.1.11
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Disallow Service Nodeport
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/disallow-service-nodeport
+      kubewarden/resources: Service
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - services
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v0.1.10
     apiVersion: v1
     appVersion: 0.1.10
@@ -11903,6 +11939,46 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/environment-variable-policy-0.1.7/environment-variable-policy-0.1.7.tgz
     version: 0.1.7
   flexvolume-drivers-psp:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Flexvolume Drivers Psp
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/flexvolume-drivers-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.14
+    apiVersion: v1
+    appVersion: 1.0.14
+    created: "2026-01-27T15:30:06.7440894Z"
+    description: Replacement for the Kubernetes Pod Security Policy that controls
+      the allowed `flexVolume` drivers
+    digest: c48d05ebe28d06f158653b8e9495ef21783d6603166466f05b445b6f704d8968
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - container
+    - runtime
+    - flex volume
+    - flex
+    name: flexvolume-drivers-psp
+    sources:
+    - ghcr.io/kubewarden/policies/flexvolume-drivers-psp:v1.0.14
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/flexvolume-drivers-psp-1.0.14/flexvolume-drivers-psp-1.0.14.tgz
+    version: 1.0.14
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -14918,6 +14994,74 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v0.1.6
+    apiVersion: v1
+    appVersion: 0.1.6
+    created: "2026-01-27T15:30:07.048683948Z"
+    description: Policy to prevent the usage of serviceaccount with too many permissions
+    digest: b327d439ee3a08fea78875c20eeaed5fed1d8e75426aacb39f0e7b2e74a3969f
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - pod
+    - security
+    - serviceaccount
+    name: high-risk-service-account
+    sources:
+    - ghcr.io/kubewarden/policies/high-risk-service-account:v0.1.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/high-risk-service-account-0.1.6/high-risk-service-account-0.1.6.tgz
+    version: 0.1.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: High Risk Service Account
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/high-risk-service-account
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v0.1.5
     apiVersion: v1
     appVersion: 0.1.5
@@ -15944,6 +16088,74 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.1.7
+    apiVersion: v1
+    appVersion: 1.1.7
+    created: "2026-01-27T15:30:07.330031617Z"
+    description: A Pod Security Policy that controls usage of hostPath volumes
+    digest: 405457e3bd18a6a55d6cfb4d4730e29db46fb1ca805b4779e9dd25005d0645f1
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - hostpaths
+    - pod
+    name: hostpaths-psp
+    sources:
+    - ghcr.io/kubewarden/policies/hostpaths-psp:v1.1.7
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/hostpaths-psp-1.1.7/hostpaths-psp-1.1.7.tgz
+    version: 1.1.7
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Hostpaths PSP
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/hostpaths-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.1.6
     apiVersion: v1
     appVersion: 1.1.6
@@ -16519,6 +16731,79 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/hostpaths-psp-0.1.11/hostpaths-psp-0.1.11.tgz
     version: 0.1.11
   image-cve-policy:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: storage.sbomscanner.kubewarden.io/v1alpha1
+          kind: VulnerabilityReport
+      kubewarden/displayName: image-cve
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/image-cve-policy
+      kubewarden/resources: Pod, ReplicaSet, Deployment, DaemonSet, StatefulSet, Job,
+        CronJob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v0.5.8
+    apiVersion: v1
+    appVersion: 0.5.8
+    created: "2026-01-27T15:30:07.581507518Z"
+    description: Validate workloads based on the vulnerabilities of the images they
+      make use of
+    digest: bbeae4906adbde104e8f4907221c2bd390f935b019a9f50dc393535f6ecf1571
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - pod
+    - cool policy
+    - kubewarden
+    name: image-cve-policy
+    sources:
+    - ghcr.io/kubewarden/policies/image-cve-policy:v0.5.8
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/image-cve-policy-0.5.8/image-cve-policy-0.5.8.tgz
+    version: 0.5.8
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -36529,4 +36814,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-27T15:29:44.429770966Z"
+generated: "2026-01-27T15:30:07.582537229Z"
