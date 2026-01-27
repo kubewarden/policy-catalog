@@ -18,8 +18,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.8
-appVersion: 1.0.8
+  kubewarden/tag: v1.0.9
+appVersion: 1.0.9
 description: Enforce a minimum value for the ndots option in the resolv.conf file
   of a Pod.
 home: https://github.com/kubewarden/policies
@@ -27,5 +27,5 @@ keywords:
 - pod
 name: pod-ndots
 sources:
-- ghcr.io/kubewarden/policies/pod-ndots:v1.0.8
-version: 1.0.8
+- ghcr.io/kubewarden/policies/pod-ndots:v1.0.9
+version: 1.0.9
