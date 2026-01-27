@@ -27403,6 +27403,46 @@ entries:
           - namespace
           operations:
           - CREATE
+      kubewarden/tag: v1.0.10
+    apiVersion: v1
+    appVersion: 1.0.10
+    created: "2026-01-27T15:23:50.010271101Z"
+    description: Prevent the creation of Namespace under a Rancher Project that doesn't
+      have any resource quota left
+    digest: 3508dc95761182ce517dce58f26782984a7da5b81435b114c06881c6ef0d3285
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - rancher
+    - project
+    - quotas
+    name: rancher-project-quotas-namespace-validator
+    sources:
+    - ghcr.io/kubewarden/policies/rancher-project-quotas-namespace-validator:v1.0.10
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/rancher-project-quotas-namespace-validator-1.0.10/rancher-project-quotas-namespace-validator-1.0.10.tgz
+    version: 1.0.10
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: management.cattle.io/v3
+          kind: Project
+      kubewarden/displayName: Rancher Project quotas namespace validator
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/rancher-project-quotas-namespace-validator
+      kubewarden/resources: management.cattle.io/Project
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - namespace
+          operations:
+          - CREATE
       kubewarden/tag: v1.0.9
     apiVersion: v1
     appVersion: 1.0.9
@@ -35179,4 +35219,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-27T15:23:35.430057461Z"
+generated: "2026-01-27T15:23:50.011091422Z"
