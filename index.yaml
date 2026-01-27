@@ -14701,6 +14701,74 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.1.8
+    apiVersion: v1
+    appVersion: 1.1.8
+    created: "2026-01-27T14:55:52.138599613Z"
+    description: A Kubewarden policy that controls the usage of host namespaces
+    digest: 6550dc2c060fc33d8e2a30fecf76d7b16580652e8e9399c61722de06810b0d3e
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - container
+    - network
+    name: host-namespaces-psp
+    sources:
+    - ghcr.io/kubewarden/policies/host-namespaces-psp:v1.1.8
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/host-namespaces-psp-1.1.8/host-namespaces-psp-1.1.8.tgz
+    version: 1.1.8
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Host Namespaces PSP
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/host-namespaces-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.1.7
     apiVersion: v1
     appVersion: 1.1.7
@@ -34929,4 +34997,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-27T14:53:01.991007864Z"
+generated: "2026-01-27T14:55:52.139486719Z"
