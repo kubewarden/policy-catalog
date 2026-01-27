@@ -21,8 +21,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.9
-appVersion: 1.0.9
+  kubewarden/tag: v1.0.10
+appVersion: 1.0.10
 description: Policy validates that there are no services with the same set of selectors
 home: https://github.com/kubewarden/policies
 keywords:
@@ -30,5 +30,5 @@ keywords:
 - selector
 name: unique-service-selector-policy
 sources:
-- ghcr.io/kubewarden/policies/unique-service-selector-policy:v1.0.9
-version: 1.0.9
+- ghcr.io/kubewarden/policies/unique-service-selector-policy:v1.0.10
+version: 1.0.10
