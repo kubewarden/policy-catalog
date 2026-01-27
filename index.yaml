@@ -34397,6 +34397,76 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.8
+    apiVersion: v1
+    appVersion: 1.0.8
+    created: "2026-01-27T15:26:28.003442558Z"
+    description: A Kubewarden Policy that verifies all the signatures of the container
+      images referenced by a Pod
+    digest: e67d1da6e24d4b4eeee1e8702911d53dc1806d8b378c72b2ab6d52ebf849ae3c
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - pod
+    - signature
+    - sigstore
+    - trusted
+    name: verify-image-signatures
+    sources:
+    - ghcr.io/kubewarden/policies/verify-image-signatures:v1.0.8
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/verify-image-signatures-1.0.8/verify-image-signatures-1.0.8.tgz
+    version: 1.0.8
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Verify Image Signatures
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/verify-image-signatures
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.7
     apiVersion: v1
     appVersion: 1.0.7
@@ -35499,6 +35569,43 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.1.7
+    apiVersion: v1
+    appVersion: 1.1.7
+    created: "2026-01-27T15:26:28.205868602Z"
+    description: Pod Security Policy that controls usage of volumes
+    digest: 257c4df6db5c1d5692786dc57ccc318db7e06b0a53af91d2bb88f28c381497e5
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - pod
+    - volumes
+    name: volumes-psp
+    sources:
+    - ghcr.io/kubewarden/policies/volumes-psp:v1.1.7
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-1.1.7/volumes-psp-1.1.7.tgz
+    version: 1.1.7
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Volumes PSP
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/volumes-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.1.6
     apiVersion: v1
     appVersion: 1.1.6
@@ -35880,4 +35987,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-01-27T15:25:54.72162809Z"
+generated: "2026-01-27T15:26:28.206856558Z"
