@@ -3,4 +3,4 @@ global:
     systemDefaultRegistry: ghcr.io
 module:
   repository: kubewarden/policies/environment-variable-policy
-  tag: v3.0.4
+  tag: v3.0.5

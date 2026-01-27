@@ -49,8 +49,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v3.0.4
-appVersion: 3.0.4
+  kubewarden/tag: v3.0.5
+appVersion: 3.0.5
 description: A Kubewarden Policy that controls the usage of environment variables
 home: https://github.com/kubewarden/policies
 keywords:
@@ -66,5 +66,5 @@ keywords:
 - environment-variables
 name: environment-variable-policy
 sources:
-- ghcr.io/kubewarden/policies/environment-variable-policy:v3.0.4
-version: 3.0.4
+- ghcr.io/kubewarden/policies/environment-variable-policy:v3.0.5
+version: 3.0.5
