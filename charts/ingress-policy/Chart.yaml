@@ -18,13 +18,13 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.7
-appVersion: 1.0.7
+  kubewarden/tag: v1.0.8
+appVersion: 1.0.8
 description: Enforce requirements on Ingress resources
 home: https://github.com/kubewarden/policies
 keywords:
 - ingress
 name: ingress-policy
 sources:
-- ghcr.io/kubewarden/policies/ingress:v1.0.7
-version: 1.0.7
+- ghcr.io/kubewarden/policies/ingress:v1.0.8
+version: 1.0.8
