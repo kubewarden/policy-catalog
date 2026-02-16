@@ -7,7 +7,7 @@ require (
 	github.com/stretchr/testify v1.11.1
 	go.yaml.in/yaml/v3 v3.0.4
 	helm.sh/helm/v3 v3.20.0
-	helm.sh/helm/v4 v4.1.0
+	helm.sh/helm/v4 v4.1.1
 )
 
 require (

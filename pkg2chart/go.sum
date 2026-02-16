@@ -186,6 +186,7 @@ helm.sh/helm/v4 v4.0.0/go.mod h1:G1Y5AE+lJPQSAjh7nbXnhZrtGtxo+I6POSu9DruYiGI=
 helm.sh/helm/v4 v4.0.1/go.mod h1:G1Y5AE+lJPQSAjh7nbXnhZrtGtxo+I6POSu9DruYiGI=
 helm.sh/helm/v4 v4.0.4/go.mod h1:fMyG9onvVK6HOBjjkzhhHORAsgEWlRMqDY84lvX7GvY=
 helm.sh/helm/v4 v4.1.0/go.mod h1:yH4qpYvTNBTHnkRSenhi1m7oEFKoN6iK3/rYyFJ00IQ=
+helm.sh/helm/v4 v4.1.1/go.mod h1:yH4qpYvTNBTHnkRSenhi1m7oEFKoN6iK3/rYyFJ00IQ=
 k8s.io/api v0.33.0 h1:yTgZVn1XEe6opVpP1FylmNrIFWuDqe2H0V8CT5gxfIU=
 k8s.io/api v0.33.0/go.mod h1:CTO61ECK/KU7haa3qq8sarQ0biLq2ju405IZAd9zsiM=
 k8s.io/api v0.33.1 h1:tA6Cf3bHnLIrUK4IqEgb2v++/GYUtqiu9sRVk3iBXyw=
