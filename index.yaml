@@ -13409,6 +13409,41 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2026-04-01T13:19:46.852414727Z"
+    description: GitRepository resources must only be from allowed organization domains.
+    digest: 96c0a682d7fe1c1d87ceeaba009906c847805988fdb6be0b7aea4d60cf192b2e
+    home: https://github.com/kubewarden/rego-policies-library
+    keywords:
+    - flux
+    name: gitrepository-organization-domains
+    sources:
+    - ghcr.io/kubewarden/policies/gitrepository-organization-domains:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/gitrepository-organization-domains-1.0.4/gitrepository-organization-domains-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: GitRepository Organization Domains
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/gitrepository-organization-domains
+      kubewarden/resources: GitRepository
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - gitrepositories
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -13671,6 +13706,41 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/gitrepository-specific-branch-1.0.0/gitrepository-specific-branch-1.0.0.tgz
     version: 1.0.0
   gitrepository-untrusted-domains:
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: GitRepository Untrusted Domains
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/gitrepository-untrusted-domains
+      kubewarden/resources: GitRepository
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - gitrepositories
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2026-04-01T13:19:47.024712273Z"
+    description: GitRepository resources must not use targets from untrusted domains.
+    digest: ab83c3e9ea82d656ec1470624054d5a346aa3e13764f40074b2c2007a8ab6f27
+    home: https://github.com/kubewarden/rego-policies-library
+    keywords:
+    - flux
+    name: gitrepository-untrusted-domains
+    sources:
+    - ghcr.io/kubewarden/policies/gitrepository-untrusted-domains:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/gitrepository-untrusted-domains-1.0.4/gitrepository-untrusted-domains-1.0.4.tgz
+    version: 1.0.4
   - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
@@ -38140,4 +38210,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-04-01T13:19:18.049035043Z"
+generated: "2026-04-01T13:19:47.025650415Z"
