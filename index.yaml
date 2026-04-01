@@ -20950,6 +20950,72 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2026-04-01T12:54:14.898890678Z"
+    description: 'Custom labels can help enforce organizational standards for each
+      artifact deployed. This Policy ensure a custom label key is set in the entity''s
+      `metadata`. The Policy detects the presence of the following:   ### owner A
+      label key of `owner` will help identify who the owner of this entity is.   ###
+      app.kubernetes.io/name The name of the application   ### app.kubernetes.io/instance
+      A unique name identifying the instance of an application     ### app.kubernetes.io/version
+      The current version of the application (e.g., a semantic version, revision hash,
+      etc.)  ### app.kubernetes.io/part-of The name of a higher level application
+      this one is part of   ### app.kubernetes.io/managed-by The tool being used to
+      manage the operation of an application   ### app.kubernetes.io/created-by The
+      controller/user who created this resource  '
+    digest: 205531c859f1da4464ebe59c5a3221d7ccec03b067f2680c32e37ea629548e98
+    home: https://github.com/kubewarden/rego-policies-library
+    name: missing-kubernetes-app-created-by-label
+    sources:
+    - ghcr.io/kubewarden/policies/missing-kubernetes-app-created-by-label:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/missing-kubernetes-app-created-by-label-1.0.4/missing-kubernetes-app-created-by-label-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Missing Kubernetes App Created By Label
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/missing-kubernetes-app-created-by-label
+      kubewarden/resources: Deployment, Job, ReplicationController, ReplicaSet, DaemonSet,
+        StatefulSet, CronJob
+      kubewarden/rules: |
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - daemonsets
+          - statefulsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -37480,4 +37546,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-04-01T12:46:11.340623537Z"
+generated: "2026-04-01T12:54:14.899947511Z"
