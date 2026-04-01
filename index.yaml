@@ -2907,6 +2907,41 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2026-04-01T13:19:18.046900702Z"
+    description: Ensure that Bucket objects do not use insecure connections
+    digest: e55675de96373fa9d35ddc65c37f7806ce3b45a9b317c60a1cf102adc2530265
+    home: https://github.com/kubewarden/rego-policies-library
+    keywords:
+    - flux
+    name: bucket-insecure-connections
+    sources:
+    - ghcr.io/kubewarden/policies/bucket-insecure-connections:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/bucket-insecure-connections-1.0.4/bucket-insecure-connections-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Bucket Insecure Connections
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/bucket-insecure-connections
+      kubewarden/resources: Bucket
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - buckets
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -38105,4 +38140,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-04-01T13:18:29.594269164Z"
+generated: "2026-04-01T13:19:18.049035043Z"
