@@ -19137,6 +19137,41 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2026-04-01T13:26:34.181226063Z"
+    description: '# Istio-Injected Namespaces Specify namespaces you would like to
+      be labeld with `istio-injected: enabled`. Namespaces with this label with automatically
+      deploy a Istio sidecar with each pod.  '
+    digest: d2d9a4a417a12d30729f2dfaf89b4a9829d4a5a2d6d40d5160233d02a687b650
+    home: https://github.com/kubewarden/rego-policies-library
+    name: istio-injected-namespaces
+    sources:
+    - ghcr.io/kubewarden/policies/istio-injected-namespaces:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/istio-injected-namespaces-1.0.4/istio-injected-namespaces-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Istio Injected Namespaces
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/istio-injected-namespaces
+      kubewarden/resources: Namespace
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - namespaces
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -25140,6 +25175,42 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2026-04-01T13:26:34.400416877Z"
+    description: 'If you are using a CNI that allows for Network Policies, you can
+      use this Policy to allow Ingress traffic from one namespace to another.  By
+      default, if no policies exist in a namespace, then all ingress and egress traffic
+      is allowed to and from pods in that namespace.  '
+    digest: df5a67bdd636d2df5b44efa122226897e62f9d134724eb0fe1a62472a398ebd7
+    home: https://github.com/kubewarden/rego-policies-library
+    name: network-allow-ingress-traffic-from-namespace-to-another
+    sources:
+    - ghcr.io/kubewarden/policies/network-allow-ingress-traffic-from-namespace-to-another:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/network-allow-ingress-traffic-from-namespace-to-another-1.0.4/network-allow-ingress-traffic-from-namespace-to-another-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Network Allow Ingress Traffic From Namespace To Another
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/network-allow-ingress-traffic-from-namespace-to-another
+      kubewarden/resources: NetworkPolicy
+      kubewarden/rules: |
+        - apiGroups:
+          - networking.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - networkpolicies
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -26245,6 +26316,42 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/ocirepository-organization-domains-1.0.0/ocirepository-organization-domains-1.0.0.tgz
     version: 1.0.0
   ocirepository-patch-annotation:
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: OCIRepository Patch Annotation
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/ocirepository-patch-annotation
+      kubewarden/resources: OCIRepository
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1beta2
+          resources:
+          - ocirepositories
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2026-04-01T13:26:34.591022427Z"
+    description: OCIRepository resources must have a patch annotation that matches
+      the provider.
+    digest: 584914b35d8bf34c42599a46f74312801bbc4e3bc02b47a66438dbd9c6c8aa89
+    home: https://github.com/kubewarden/rego-policies-library
+    keywords:
+    - flux
+    name: ocirepository-patch-annotation
+    sources:
+    - ghcr.io/kubewarden/policies/ocirepository-patch-annotation:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/ocirepository-patch-annotation-1.0.4/ocirepository-patch-annotation-1.0.4.tgz
+    version: 1.0.4
   - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
@@ -38983,4 +39090,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-04-01T13:25:59.37750866Z"
+generated: "2026-04-01T13:26:34.593376526Z"
