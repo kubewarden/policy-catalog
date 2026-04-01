@@ -15748,6 +15748,41 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2026-04-01T13:25:16.345609403Z"
+    description: The type of a Helm repository should be OCI.
+    digest: 0fc4c8e004a6c14e9003ad66708807b44233ea8abb00330c5774921f45fae4f5
+    home: https://github.com/kubewarden/rego-policies-library
+    keywords:
+    - flux
+    name: helm-repo-type
+    sources:
+    - ghcr.io/kubewarden/policies/helm-repo-type:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-repo-type-1.0.4/helm-repo-type-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Helm Repo Type Should Be OCI
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/helm-repo-type
+      kubewarden/resources: HelmRepository
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - helmrepositories
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -19716,6 +19751,42 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-image-tag-standards-1.0.0/kustomization-image-tag-standards-1.0.0.tgz
     version: 1.0.0
   kustomization-images-requirement:
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Kustomization Images Requirement
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/kustomization-images-requirement
+      kubewarden/resources: Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2026-04-01T13:25:16.645070395Z"
+    description: The 'spec.images' field in a Kustomization object must be enabled
+      or disabled based on the policy input images_required.
+    digest: 08a5484f082a1eb4b33f16178d1b8e41db9fbe2ee997fcfa2c720f69fadcad3f
+    home: https://github.com/kubewarden/rego-policies-library
+    keywords:
+    - flux
+    name: kustomization-images-requirement
+    sources:
+    - ghcr.io/kubewarden/policies/kustomization-images-requirement:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-images-requirement-1.0.4/kustomization-images-requirement-1.0.4.tgz
+    version: 1.0.4
   - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
@@ -31858,6 +31929,66 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.5
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-04-01T13:25:16.951162413Z"
+    description: The reconcile interval of a Resource must be set between a lower
+      and upper bound, lower_bound & upper_bound must be in seconds .
+    digest: 27638ee8e1328d7dc07511ca9857fadbdd0fb1dc3c3353ca6903e9f410e77c86
+    home: https://github.com/kubewarden/rego-policies-library
+    keywords:
+    - flux
+    name: resource-reconcile-interval
+    sources:
+    - ghcr.io/kubewarden/policies/resource-reconcile-interval:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/resource-reconcile-interval-1.0.5/resource-reconcile-interval-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Resource Reconcile Interval Must Be Set Between Lower
+        and Upper Bound
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/resource-reconcile-interval
+      kubewarden/resources: HelmRelease, GitRepository, OCIRepository, Bucket, HelmChart,
+        HelmRepository, Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - helm.toolkit.fluxcd.io
+          apiVersions:
+          - v2
+          resources:
+          - helmreleases
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - gitrepositories
+          - ocirepositories
+          - buckets
+          - helmcharts
+          - helmrepositories
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.4
     apiVersion: v1
     appVersion: 1.0.4
@@ -38736,4 +38867,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-04-01T13:24:57.322199029Z"
+generated: "2026-04-01T13:25:16.952430552Z"
