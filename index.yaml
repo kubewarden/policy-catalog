@@ -15889,6 +15889,42 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2026-04-01T13:23:22.270646114Z"
+    description: The URL of a Helm repository should only be from the specified organisation
+      domain.
+    digest: 0b6f6c9d2e7c9208cd2202896b120ccf89be1c1f865652b0d3da30b68f690075
+    home: https://github.com/kubewarden/rego-policies-library
+    keywords:
+    - flux
+    name: helm-repo-url
+    sources:
+    - ghcr.io/kubewarden/policies/helm-repo-url:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-repo-url-1.0.4/helm-repo-url-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Helm Repo URL Should Be in Organisation Domain
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/helm-repo-url
+      kubewarden/resources: HelmRepository
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - helmrepositories
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -19504,6 +19540,41 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-excluded-paths-1.0.0/kustomization-excluded-paths-1.0.0.tgz
     version: 1.0.0
   kustomization-image-tag-standards:
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Kustomization Image Tag Standards
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/kustomization-image-tag-standards
+      kubewarden/resources: Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2026-04-01T13:23:22.488368226Z"
+    description: spec.Images must comply with image tag/semver reference standards.
+    digest: b9ff49f514cf9f9ce68b2c18cef16c0f2d2336163584cd84809de0f2a61a7760
+    home: https://github.com/kubewarden/rego-policies-library
+    keywords:
+    - flux
+    name: kustomization-image-tag-standards
+    sources:
+    - ghcr.io/kubewarden/policies/kustomization-image-tag-standards:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-image-tag-standards-1.0.4/kustomization-image-tag-standards-1.0.4.tgz
+    version: 1.0.4
   - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
@@ -38492,4 +38563,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-04-01T13:23:04.925101899Z"
+generated: "2026-04-01T13:23:22.489303141Z"
