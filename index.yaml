@@ -26089,6 +26089,41 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2026-04-01T13:25:59.204995308Z"
+    description: OCIRepository resources must only be from allowed organization domains.
+    digest: 91e9b997be8048e01fa9f818af73116aa0b99a83064d78f89e4492585a007799
+    home: https://github.com/kubewarden/rego-policies-library
+    keywords:
+    - flux
+    name: ocirepository-organization-domains
+    sources:
+    - ghcr.io/kubewarden/policies/ocirepository-organization-domains:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/ocirepository-organization-domains-1.0.4/ocirepository-organization-domains-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: OCIRepository Organization Domains
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/ocirepository-organization-domains
+      kubewarden/resources: OCIRepository
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1beta2
+          resources:
+          - ocirepositories
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -30905,6 +30940,51 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/rbac-prohibit-wildcard-secrets-1.0.0/rbac-prohibit-wildcard-secrets-1.0.0.tgz
     version: 1.0.0
   rbac-prohibit-wildcards-policyrule-resources:
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Rbac Prohibit Wildcards on Policy Rule Resources
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/rbac-prohibit-wildcards-policyrule-resources
+      kubewarden/resources: Role, ClusterRole
+      kubewarden/rules: |
+        - apiGroups:
+          - rbac.authorization.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - roles
+          - clusterroles
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.5
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-04-01T13:25:59.376314483Z"
+    description: 'This Policy prohibits various resources from being set with wildcards
+      for Role or ClusterRole resources, except for the `cluster-admin` ClusterRole.
+      It will check each resource specified for the verb specified. The wildcards
+      will be checked in:  ### Resources In the Kubernetes API, most resources are
+      represented and accessed using a string representation of their object name,
+      such as pods for a Pod. RBAC refers to resources using exactly the same name
+      that appears in the URL for the relevant API endpoint.   ### Verbs API verbs
+      like get, list, create, update, patch, watch, delete, and deletecollection are
+      used for resource requests.   ### API Groups The API Group being accessed (for
+      resource requests only).  ### Non Resource URLs Requests to endpoints other
+      than /api/v1/... or /apis/<group>/<version>/... are considered "non-resource
+      requests", and use the lower-cased HTTP method of the request as the verb. '
+    digest: c643e4a8964158863b1b5cafd4e72505f93746d871a47ae1309ca7a7dc8b825f
+    home: https://github.com/kubewarden/rego-policies-library
+    name: rbac-prohibit-wildcards-policyrule-resources
+    sources:
+    - ghcr.io/kubewarden/policies/rbac-prohibit-wildcards-policyrule-resources:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/rbac-prohibit-wildcards-policyrule-resources-1.0.5/rbac-prohibit-wildcards-policyrule-resources-1.0.5.tgz
+    version: 1.0.5
   - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
@@ -38903,4 +38983,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-04-01T13:25:33.344629134Z"
+generated: "2026-04-01T13:25:59.37750866Z"
