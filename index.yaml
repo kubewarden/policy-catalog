@@ -19207,6 +19207,41 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2026-04-01T13:23:04.734105884Z"
+    description: Spec.decryption.provider must be set to one of decryption_providers.
+    digest: e09ae8a01abaa1a192cc06f2eabb91507f1921bb2a6fca02d9938ba737352c0c
+    home: https://github.com/kubewarden/rego-policies-library
+    keywords:
+    - flux
+    name: kustomization-decryption-provider
+    sources:
+    - ghcr.io/kubewarden/policies/kustomization-decryption-provider:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-decryption-provider-1.0.4/kustomization-decryption-provider-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Kustomization Decryption Provider
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/kustomization-decryption-provider
+      kubewarden/resources: Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -19755,6 +19790,41 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-images-requirement-1.0.0/kustomization-images-requirement-1.0.0.tgz
     version: 1.0.0
   kustomization-patches-requirement:
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Kustomization Patches
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/kustomization-patches-requirement
+      kubewarden/resources: Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2026-04-01T13:23:04.923935559Z"
+    description: Kustomization patches should be enabled or disabled based on input.
+    digest: fa38478176e6899f8006915ecf80a58ed8ba20b692da03912749c44850bb9cca
+    home: https://github.com/kubewarden/rego-policies-library
+    keywords:
+    - flux
+    name: kustomization-patches-requirement
+    sources:
+    - ghcr.io/kubewarden/policies/kustomization-patches-requirement:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-patches-requirement-1.0.4/kustomization-patches-requirement-1.0.4.tgz
+    version: 1.0.4
   - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
@@ -38422,4 +38492,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-04-01T13:22:46.303820905Z"
+generated: "2026-04-01T13:23:04.925101899Z"
