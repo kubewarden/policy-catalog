@@ -14435,6 +14435,41 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2026-04-01T13:21:17.565033239Z"
+    description: HelmRelease storageNamespace and targetNamespace must match.
+    digest: 57b38d04f24d3909012e4055a2ba4165e5730879c14649d52a7a4d3f9e443483
+    home: https://github.com/kubewarden/rego-policies-library
+    keywords:
+    - flux
+    name: helm-release-namespace-match
+    sources:
+    - ghcr.io/kubewarden/policies/helm-release-namespace-match:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-release-namespace-match-1.0.4/helm-release-namespace-match-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Helm Release Namespace Match
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/helm-release-namespace-match
+      kubewarden/resources: HelmRelease
+      kubewarden/rules: |
+        - apiGroups:
+          - helm.toolkit.fluxcd.io
+          apiVersions:
+          - v2
+          resources:
+          - helmreleases
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -38281,4 +38316,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-04-01T13:20:57.536722541Z"
+generated: "2026-04-01T13:21:17.566666616Z"
