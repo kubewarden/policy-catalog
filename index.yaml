@@ -31003,6 +31003,41 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.4
+    apiVersion: v1
+    appVersion: 1.0.4
+    created: "2026-04-01T13:27:21.122407127Z"
+    description: 'This Policy will violate if any RBAC ClusterRoles or Roles are designated
+      with ''wildcard'' verb on ''secrets'' resource. '
+    digest: 4d597dc2c1c31d68c7f79b0f234d29cfc928480c72c6bf8a91051fed2622b6fd
+    home: https://github.com/kubewarden/rego-policies-library
+    name: rbac-prohibit-wildcard-secrets
+    sources:
+    - ghcr.io/kubewarden/policies/rbac-prohibit-wildcard-secrets:v1.0.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/rbac-prohibit-wildcard-secrets-1.0.4/rbac-prohibit-wildcard-secrets-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/repository: kubewarden-rego-policies-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Rbac Prohibit Wildcard On Secrets
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/rbac-prohibit-wildcard-secrets
+      kubewarden/resources: Role, ClusterRole
+      kubewarden/rules: |
+        - apiGroups:
+          - rbac.authorization.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - roles
+          - clusterroles
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.3
     apiVersion: v1
     appVersion: 1.0.3
@@ -39224,4 +39259,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-04-01T13:27:00.9841525Z"
+generated: "2026-04-01T13:27:21.123250273Z"
