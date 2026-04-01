@@ -18,11 +18,11 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.3
-appVersion: 1.0.3
+  kubewarden/tag: v1.0.4
+appVersion: 1.0.4
 description: "This Policy checks for a PVC Snapshot. \n"
 home: https://github.com/kubewarden/rego-policies-library
 name: persistent-volume-claim-snapshot
 sources:
-- ghcr.io/kubewarden/policies/persistent-volume-claim-snapshot:v1.0.3
-version: 1.0.3
+- ghcr.io/kubewarden/policies/persistent-volume-claim-snapshot:v1.0.4
+version: 1.0.4
