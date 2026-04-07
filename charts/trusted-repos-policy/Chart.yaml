@@ -49,16 +49,17 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v2.0.6
-appVersion: 2.0.6
-description: Kubewarden policy that restricts what registries, tags and images can
-  pods on your cluster refer to
+  kubewarden/tag: v2.1.0
+appVersion: 2.1.0
+description: Kubewarden policy that restricts which registries, tags, and images pods
+  in your cluster can refer to, with wildcard pattern support
 home: https://github.com/kubewarden/policies
 keywords:
 - image
 - registry
 - tag
+- wildcard
 name: trusted-repos
 sources:
-- ghcr.io/kubewarden/policies/trusted-repos:v2.0.6
-version: 2.0.6
+- ghcr.io/kubewarden/policies/trusted-repos:v2.1.0
+version: 2.1.0
