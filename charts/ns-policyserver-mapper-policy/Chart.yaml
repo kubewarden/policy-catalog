@@ -1,0 +1,39 @@
+annotations:
+  artifacthub.io/repository: kubewarden-policy-library
+  catalog.cattle.io/hidden: "true"
+  catalog.cattle.io/type: kubewarden-policy
+  catalog.cattle.io/ui-component: kubewarden
+  kubewarden/contextAwareResources: |
+    - apiVersion: v1
+      kind: Namespace
+  kubewarden/displayName: Namespace to PolicyServer mapper
+  kubewarden/mutation: "true"
+  kubewarden/registry: ghcr.io
+  kubewarden/repository: kubewarden/policies/ns-policyserver-mapper
+  kubewarden/resources: AdmissionPolicy,AdmissionPolicyGroup
+  kubewarden/rules: |
+    - apiGroups:
+      - policies.kubewarden.io
+      apiVersions:
+      - v1
+      resources:
+      - admissionpolicies
+      - admissionpolicygroups
+      operations:
+      - CREATE
+      - UPDATE
+  kubewarden/tag: v0.1.0
+appVersion: 0.1.0
+description: |
+  Mutates AdmissionPolicy and AdmissionPolicyGroup resources to enforce the PolicyServer they run on. The target PolicyServer is read from the `admission.kubewarden.io/policy-server` label of the Namespace where the policy is being created or updated. Requests are rejected when the label is absent, preventing policies from being scheduled on an unintended PolicyServer.
+home: https://github.com/kubewarden/policies
+keywords:
+- namespace
+- policies
+- policyserver
+- admissionpolicy
+- admissionpolicygroup
+name: ns-policyserver-mapper
+sources:
+- ghcr.io/kubewarden/policies/ns-policyserver-mapper:v0.1.0
+version: 0.1.0
