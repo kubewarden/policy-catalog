@@ -18,8 +18,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v0.1.8
-appVersion: 0.1.8
+  kubewarden/tag: v0.1.9
+appVersion: 0.1.9
 description: An experimental Kubewarden policy that runs Kyverno policies
 home: https://github.com/kubewarden/policies
 keywords:
@@ -28,5 +28,5 @@ keywords:
 - runtime
 name: kyverno-dsl
 sources:
-- ghcr.io/kubewarden/policies/kyverno-dsl:v0.1.8
-version: 0.1.8
+- ghcr.io/kubewarden/policies/kyverno-dsl:v0.1.9
+version: 0.1.9
