@@ -18478,6 +18478,41 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.9
+    apiVersion: v1
+    appVersion: 1.0.9
+    created: "2026-06-12T15:07:04.675249201Z"
+    description: Enforce requirements on Ingress resources
+    digest: a591e86387cd1278383bfb5d41c2b84ab1e44414cfac25f2c68930fe18ef7ca5
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - ingress
+    name: ingress-policy
+    sources:
+    - ghcr.io/kubewarden/policies/ingress:v1.0.9
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/ingress-policy-1.0.9/ingress-policy-1.0.9.tgz
+    version: 1.0.9
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Ingress Policy
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/ingress
+      kubewarden/resources: Ingress
+      kubewarden/rules: |
+        - apiGroups:
+          - networking.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - ingresses
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.8
     apiVersion: v1
     appVersion: 1.0.8
@@ -20910,6 +20945,72 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/kyverno-dsl-0.1.8/kyverno-dsl-0.1.8.tgz
     version: 0.1.8
   labels:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Labels
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/labels
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v0.1.8
+    apiVersion: v1
+    appVersion: 0.1.8
+    created: "2026-06-12T15:07:04.842024461Z"
+    description: A policy that validates labels of Kubernetes' resources
+    digest: 8c441c6366524e3ddaddbf27f0bec558be654a671e9462c4aecf62837d345623
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - labels
+    name: labels
+    sources:
+    - ghcr.io/kubewarden/policies/labels:v0.1.8
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/labels-0.1.8/labels-0.1.8.tgz
+    version: 0.1.8
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -40506,4 +40607,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-06-12T15:06:50.416620799Z"
+generated: "2026-06-12T15:07:04.843159609Z"
