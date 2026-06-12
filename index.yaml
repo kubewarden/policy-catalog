@@ -30606,6 +30606,46 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v0.1.5
+    apiVersion: v1
+    appVersion: 0.1.5
+    created: "2026-06-12T13:14:04.181225723Z"
+    description: Propagate labels from a Rancher Project to all the Namespaces that
+      belong to it
+    digest: 73c87bbbcd392af0b35e32957bce4d1da48e98bb7501e2a05a5e326cbe8930d2
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - namespace
+    - rancher project
+    name: rancher-project-propagate-labels
+    sources:
+    - ghcr.io/kubewarden/policies/rancher-project-propagate-labels:v0.1.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/rancher-project-propagate-labels-0.1.5/rancher-project-propagate-labels-0.1.5.tgz
+    version: 0.1.5
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: management.cattle.io/v3
+          kind: Project
+      kubewarden/displayName: Rancher Project propagate labels
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/rancher-project-propagate-labels
+      kubewarden/resources: Namespace
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - namespaces
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v0.1.4
     apiVersion: v1
     appVersion: 0.1.4
@@ -40065,4 +40105,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-06-12T12:26:36.074966216Z"
+generated: "2026-06-12T13:14:04.181951256Z"
