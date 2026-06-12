@@ -3831,6 +3831,48 @@ entries:
           - CREATE
           - UPDATE
           - DELETE
+      kubewarden/tag: v1.6.1
+    apiVersion: v1
+    appVersion: 1.6.1
+    created: "2026-06-12T15:08:00.156262127Z"
+    description: A policy that evaluates CEL expressions
+    digest: 73bbaedc3ac818377c2e43d7c43a1e9f31d528dfbf4aec96c8160daadc83cc3a
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - compliance
+    - CEL
+    - ValidatingAdmissionPolicy
+    - Common Expression Language
+    name: cel-policy
+    sources:
+    - ghcr.io/kubewarden/policies/cel-policy:v1.6.1
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/cel-policy-1.6.1/cel-policy-1.6.1.tgz
+    version: 1.6.1
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: v1
+          kind: Namespace
+      kubewarden/displayName: CEL Policy
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/cel-policy
+      kubewarden/resources: Any
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+          - UPDATE
+          - DELETE
       kubewarden/tag: v1.6.0
     apiVersion: v1
     appVersion: 1.6.0
@@ -9549,6 +9591,42 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.12
+    apiVersion: v1
+    appVersion: 1.0.12
+    created: "2026-06-12T15:08:00.355137259Z"
+    description: A policy that prevents the creation of Service resources of type
+      `LoadBalancer`
+    digest: cf5d26c36d4f9eb29a24f5e501663a25f269c138e3a4f02b7b8521ecd9dc74e3
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - service
+    name: disallow-service-loadbalancer
+    sources:
+    - ghcr.io/kubewarden/policies/disallow-service-loadbalancer:v1.0.12
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/disallow-service-loadbalancer-1.0.12/disallow-service-loadbalancer-1.0.12.tgz
+    version: 1.0.12
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Disallow Service Loadbalancer
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/disallow-service-loadbalancer
+      kubewarden/resources: Service
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - services
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.11
     apiVersion: v1
     appVersion: 1.0.11
@@ -10035,6 +10113,48 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/disallow-service-nodeport-0.1.7/disallow-service-nodeport-0.1.7.tgz
     version: 0.1.7
   do-not-expose-admission-controller-webhook-services:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: networking.k8s.io/v1
+          kind: Ingress
+        - apiVersion: v1
+          kind: Service
+      kubewarden/displayName: Do not expose admission controller webhook services
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/do-not-expose-admission-controller-webhook-services
+      kubewarden/resources: ValidatingWebhookConfiguration, MutatingWebhookConfiguration
+      kubewarden/rules: |
+        - apiGroups:
+          - admissionregistration.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - validatingwebhookconfigurations
+          - mutatingwebhookconfigurations
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.1.6
+    apiVersion: v1
+    appVersion: 1.1.6
+    created: "2026-06-12T15:08:00.554355633Z"
+    description: A policy that detects webhook services used by admission controllers
+      that are accidentally exposed outside of the cluster
+    digest: e107811bd55ccb94b68295399f6bfc6b4c1c37f150f405ea95e7b88c3f4bf27e
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - webhooks
+    name: do-not-expose-admission-controller-webhook-services
+    sources:
+    - ghcr.io/kubewarden/policies/do-not-expose-admission-controller-webhook-services:v1.1.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/do-not-expose-admission-controller-webhook-services-1.1.6/do-not-expose-admission-controller-webhook-services-1.1.6.tgz
+    version: 1.1.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -40828,4 +40948,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-06-12T15:07:41.391076049Z"
+generated: "2026-06-12T15:08:00.555353713Z"
