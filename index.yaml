@@ -1070,6 +1070,44 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.10
+    apiVersion: v1
+    appVersion: 1.0.10
+    created: "2026-06-12T15:10:37.575860961Z"
+    description: Replacement for the Kubernetes Pod Security Policy that controls
+      the usage of fsGroups in the pod security context
+    digest: 2a268a18259814b3b144411c96f0fb619fdbeb87ada696da9abb1275e18bddd0
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - container
+    - runtime
+    name: allowed-fsgroups-psp
+    sources:
+    - ghcr.io/kubewarden/policies/allowed-fsgroups-psp:v1.0.10
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/allowed-fsgroups-psp-1.0.10/allowed-fsgroups-psp-1.0.10.tgz
+    version: 1.0.10
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Allowed Fs Groups PSP
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/allowed-fsgroups-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.9
     apiVersion: v1
     appVersion: 1.0.9
@@ -1847,6 +1885,72 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/allowed-proc-mount-types-psp-0.1.11/allowed-proc-mount-types-psp-0.1.11.tgz
     version: 0.1.11
   annotations:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Annotations
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/annotations
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v0.1.9
+    apiVersion: v1
+    appVersion: 0.1.9
+    created: "2026-06-12T15:10:37.768368136Z"
+    description: A policy that validates annotations of Kubernetes' resources
+    digest: 7621553a049572e1c3c764b92824a61c21aaaa58bf6f8cb6af4b414741dccf4d
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - annotations
+    name: annotations
+    sources:
+    - ghcr.io/kubewarden/policies/annotations:v0.1.9
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/annotations-0.1.9/annotations-0.1.9.tgz
+    version: 0.1.9
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -10368,6 +10472,42 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/disallow-service-loadbalancer-0.1.8/disallow-service-loadbalancer-0.1.8.tgz
     version: 0.1.8
   disallow-service-nodeport:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Disallow Service Nodeport
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/disallow-service-nodeport
+      kubewarden/resources: Service
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - services
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.0
+    apiVersion: v1
+    appVersion: 1.0.0
+    created: "2026-06-12T15:10:37.977620536Z"
+    description: A policy that prevents the creation of Service resources of type
+      `NodePort`
+    digest: 3f8be1b50a530e042cceadd63c7d4e175c280df6c9a9ca961a23eac8c8544911
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - service
+    name: disallow-service-nodeport
+    sources:
+    - ghcr.io/kubewarden/policies/disallow-service-nodeport:v1.0.0
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/disallow-service-nodeport-1.0.0/disallow-service-nodeport-1.0.0.tgz
+    version: 1.0.0
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -41629,4 +41769,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-06-12T15:10:18.382983712Z"
+generated: "2026-06-12T15:10:37.978907696Z"
