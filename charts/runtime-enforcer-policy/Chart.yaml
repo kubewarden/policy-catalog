@@ -1,0 +1,64 @@
+annotations:
+  artifacthub.io/repository: kubewarden-policy-library
+  catalog.cattle.io/hidden: "true"
+  catalog.cattle.io/type: kubewarden-policy
+  catalog.cattle.io/ui-component: kubewarden
+  kubewarden/contextAwareResources: |
+    - apiVersion: security.rancher.io/v1alpha1
+      kind: WorkloadPolicy
+  kubewarden/displayName: WorkloadPolicy config verifier
+  kubewarden/mutation: "false"
+  kubewarden/registry: ghcr.io
+  kubewarden/repository: kubewarden/policies/runtime-enforcer
+  kubewarden/resources: Pod, Deployments, Replicaset, Statefulset, Daemonset, Job,
+    Cronjob
+  kubewarden/rules: |
+    - apiGroups:
+      - ''
+      apiVersions:
+      - v1
+      resources:
+      - pods
+      operations:
+      - CREATE
+      - UPDATE
+    - apiGroups:
+      - apps
+      apiVersions:
+      - v1
+      resources:
+      - deployments
+      - replicasets
+      - statefulsets
+      - daemonsets
+      operations:
+      - CREATE
+      - UPDATE
+    - apiGroups:
+      - batch
+      apiVersions:
+      - v1
+      resources:
+      - jobs
+      - cronjobs
+      operations:
+      - CREATE
+      - UPDATE
+  kubewarden/tag: v0.1.2
+appVersion: 0.1.2
+description: Policy that enforces runtime-enforcer policies to be present when a workload
+  is created
+home: https://github.com/kubewarden/policies
+keywords:
+- deployment
+- replicaset
+- statefulset
+- daemonset
+- job
+- cronjob
+- pod
+- runtime-enforcer
+name: runtime-enforcer
+sources:
+- ghcr.io/kubewarden/policies/runtime-enforcer:v0.1.2
+version: 0.1.2
