@@ -1,0 +1,11 @@
+questions:
+- default: null
+  description: >-
+    This policy is designed to enforce runtime-enforcer policies to be
+    present when a Kubernetes workload is deployed.
+  group: Settings
+  label: Description
+  required: false
+  hide_input: true
+  type: string
+  variable: description
