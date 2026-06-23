@@ -34953,6 +34953,76 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/resource-suspend-waiver-1.0.0/resource-suspend-waiver-1.0.0.tgz
     version: 1.0.0
+  runtime-enforcer:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: security.rancher.io/v1alpha1
+          kind: WorkloadPolicy
+      kubewarden/displayName: WorkloadPolicy config verifier
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/runtime-enforcer
+      kubewarden/resources: Pod, Deployments, Replicaset, Statefulset, Daemonset,
+        Job, Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v0.1.2
+    apiVersion: v1
+    appVersion: 0.1.2
+    created: "2026-06-23T13:37:05.825710535Z"
+    description: Policy that enforces runtime-enforcer policies to be present when
+      a workload is created
+    digest: 1eb78f36619bf8047d83ed373bd66ae704171058ae54b666d204c30f28bcfdb1
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - deployment
+    - replicaset
+    - statefulset
+    - daemonset
+    - job
+    - cronjob
+    - pod
+    - runtime-enforcer
+    name: runtime-enforcer
+    sources:
+    - ghcr.io/kubewarden/policies/runtime-enforcer:v0.1.2
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/runtime-enforcer-0.1.2/runtime-enforcer-0.1.2.tgz
+    version: 0.1.2
   safe-annotations:
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
@@ -41950,4 +42020,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-06-12T15:11:30.412765039Z"
+generated: "2026-06-23T13:37:05.826784582Z"
