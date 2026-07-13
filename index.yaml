@@ -37476,6 +37476,73 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.13
+    apiVersion: v1
+    appVersion: 1.0.13
+    created: "2026-07-13T14:04:54.752131576Z"
+    description: Policy validates pods sharing processes PID namespace
+    digest: 6c3cf11dc4c61deeb3212ed015de372b46ff03ba0401a78b962def5c822997b7
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - pod
+    - pid
+    name: share-pid-namespace-policy
+    sources:
+    - ghcr.io/kubewarden/policies/share-pid-namespace-policy:v1.0.13
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/share-pid-namespace-policy-1.0.13/share-pid-namespace-policy-1.0.13.tgz
+    version: 1.0.13
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Share PID namespace
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/share-pid-namespace-policy
+      kubewarden/resources: Pod,Replicationcontroller,Deployment,Replicaset,Statefulset,Daemonset,Job,Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.12
     apiVersion: v1
     appVersion: 1.0.12
@@ -43190,4 +43257,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-07-13T14:04:02.086645928Z"
+generated: "2026-07-13T14:04:54.755859784Z"
