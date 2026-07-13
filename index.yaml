@@ -31647,6 +31647,74 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.1.7
+    apiVersion: v1
+    appVersion: 1.1.7
+    created: "2026-07-13T14:08:33.867676476Z"
+    description: Validates Pod's priority class
+    digest: 0adad5f76cf53f8e7b13daa490c00ae27e092f0173c1acb459eaf408b8651dbb
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - pod
+    - priority-class
+    name: priority-class-policy
+    sources:
+    - ghcr.io/kubewarden/policies/priority-class-policy:v1.1.7
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/priority-class-policy-1.1.7/priority-class-policy-1.1.7.tgz
+    version: 1.1.7
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Priority class policy
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/priority-class-policy
+      kubewarden/resources: Pod, Replicationcontroller, Deployments, Replicaset, Statefulset,
+        Daemonset, Job, Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.1.6
     apiVersion: v1
     appVersion: 1.1.6
@@ -33408,6 +33476,46 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/psp-apparmor-0.1.13/psp-apparmor-0.1.13.tgz
     version: 0.1.13
   rancher-project-propagate-labels:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: management.cattle.io/v3
+          kind: Project
+      kubewarden/displayName: Rancher Project propagate labels
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/rancher-project-propagate-labels
+      kubewarden/resources: Namespace
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - namespaces
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v0.1.6
+    apiVersion: v1
+    appVersion: 0.1.6
+    created: "2026-07-13T14:08:34.310403632Z"
+    description: Propagate labels from a Rancher Project to all the Namespaces that
+      belong to it
+    digest: e3ea169de6fd5be78390ec5208f91896f6d47f3060847f768734bd2976021f44
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - namespace
+    - rancher project
+    name: rancher-project-propagate-labels
+    sources:
+    - ghcr.io/kubewarden/policies/rancher-project-propagate-labels:v0.1.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/rancher-project-propagate-labels-0.1.6/rancher-project-propagate-labels-0.1.6.tgz
+    version: 0.1.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -43547,4 +43655,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-07-13T14:08:19.05186943Z"
+generated: "2026-07-13T14:08:34.312919456Z"
