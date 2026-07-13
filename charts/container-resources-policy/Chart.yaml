@@ -50,8 +50,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.3.4
-appVersion: 1.3.4
+  kubewarden/tag: v1.3.5
+appVersion: 1.3.5
 description: Policy is designed to enforce constraints on the resource requirements
   of Kubernetes containers
 home: https://github.com/kubewarden/policies
@@ -60,5 +60,5 @@ keywords:
 - resources
 name: container-resources
 sources:
-- ghcr.io/kubewarden/policies/container-resources:v1.3.4
-version: 1.3.4
+- ghcr.io/kubewarden/policies/container-resources:v1.3.5
+version: 1.3.5
