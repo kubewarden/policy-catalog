@@ -18,8 +18,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.13
-appVersion: 1.0.13
+  kubewarden/tag: v1.0.14
+appVersion: 1.0.14
 description: Pod Security Policy that controls usage of Seccomp profile
 home: https://github.com/kubewarden/policies
 keywords:
@@ -27,5 +27,5 @@ keywords:
 - seccomp
 name: seccomp-psp
 sources:
-- ghcr.io/kubewarden/policies/seccomp-psp:v1.0.13
-version: 1.0.13
+- ghcr.io/kubewarden/policies/seccomp-psp:v1.0.14
+version: 1.0.14
