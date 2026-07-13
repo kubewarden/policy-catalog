@@ -19303,6 +19303,74 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.1.9
+    apiVersion: v1
+    appVersion: 1.1.9
+    created: "2026-07-13T14:32:10.688281697Z"
+    description: A Pod Security Policy that controls usage of hostPath volumes
+    digest: 8d11561a701438c651f632b1d0f87bca3412fa07e8e56b793458051300efe3b0
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - hostpaths
+    - pod
+    name: hostpaths-psp
+    sources:
+    - ghcr.io/kubewarden/policies/hostpaths-psp:v1.1.9
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/hostpaths-psp-1.1.9/hostpaths-psp-1.1.9.tgz
+    version: 1.1.9
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Hostpaths PSP
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/hostpaths-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.1.8
     apiVersion: v1
     appVersion: 1.1.8
@@ -44159,4 +44227,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-07-13T14:31:55.274689332Z"
+generated: "2026-07-13T14:32:10.69097336Z"
