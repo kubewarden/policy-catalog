@@ -1139,6 +1139,44 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.11
+    apiVersion: v1
+    appVersion: 1.0.11
+    created: "2026-07-13T14:02:33.563118057Z"
+    description: Replacement for the Kubernetes Pod Security Policy that controls
+      the usage of fsGroups in the pod security context
+    digest: 2fb25018871141f3fd0642212342f00fdf6d9f9080a15588abaad2cbbb788094
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - container
+    - runtime
+    name: allowed-fsgroups-psp
+    sources:
+    - ghcr.io/kubewarden/policies/allowed-fsgroups-psp:v1.0.11
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/allowed-fsgroups-psp-1.0.11/allowed-fsgroups-psp-1.0.11.tgz
+    version: 1.0.11
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Allowed Fs Groups PSP
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/allowed-fsgroups-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.10
     apiVersion: v1
     appVersion: 1.0.10
@@ -4193,6 +4231,48 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/capabilities-psp-0.1.16/capabilities-psp-0.1.16.tgz
     version: 0.1.16
   cel-policy:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: v1
+          kind: Namespace
+      kubewarden/displayName: CEL Policy
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/cel-policy
+      kubewarden/resources: Any
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+          - UPDATE
+          - DELETE
+      kubewarden/tag: v1.6.2
+    apiVersion: v1
+    appVersion: 1.6.2
+    created: "2026-07-13T14:02:33.781107195Z"
+    description: A policy that evaluates CEL expressions
+    digest: fee083dc0cb6d1da3feb0c5380296e0cb893e42e9ba4856e0707aeef616e6292
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - compliance
+    - CEL
+    - ValidatingAdmissionPolicy
+    - Common Expression Language
+    name: cel-policy
+    sources:
+    - ghcr.io/kubewarden/policies/cel-policy:v1.6.2
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/cel-policy-1.6.2/cel-policy-1.6.2.tgz
+    version: 1.6.2
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -11602,6 +11682,44 @@ entries:
           - UPDATE
           - DELETE
           - CONNECT
+      kubewarden/tag: v0.1.18
+    apiVersion: v1
+    appVersion: 0.1.18
+    created: "2026-07-13T14:02:33.972727102Z"
+    description: A policy that echoes back Kubernetes' AdmissionReview - useful for
+      Policy Authors
+    digest: 3898ae73e562d1b67c8d3288cc0d4bec4f88e287b53b508c9873f7e852e516b0
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - developer
+    name: echo
+    sources:
+    - ghcr.io/kubewarden/policies/echo:v0.1.18
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/echo-0.1.18/echo-0.1.18.tgz
+    version: 0.1.18
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Echo
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/echo
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - '*'
+          apiVersions:
+          - '*'
+          resources:
+          - '*'
+          operations:
+          - CREATE
+          - UPDATE
+          - DELETE
+          - CONNECT
       kubewarden/tag: v0.1.17
     apiVersion: v1
     appVersion: 0.1.17
@@ -12037,6 +12155,78 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/echo-0.1.5/echo-0.1.5.tgz
     version: 0.1.5
   env-variable-secrets-scanner:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Environment Variable Secrets Scanner
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/env-variable-secrets-scanner
+      kubewarden/resources: Pod,Deployment,Replicaset,Statefulset,Daemonset,Replicationcontroller,Job,Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.14
+    apiVersion: v1
+    appVersion: 1.0.14
+    created: "2026-07-13T14:02:34.159043018Z"
+    description: Policy that inspects env vars and rejects a request if a secret was
+      found
+    digest: 4f7825fa1eed96c60cfb1760e0f9723f1874b99475fc312df1cd072d77688a2f
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - secrets
+    - api keys
+    - tokens
+    - secret leak
+    - confidential data
+    - confidential data leak
+    name: env-variable-secrets-scanner
+    sources:
+    - ghcr.io/kubewarden/policies/env-variable-secrets-scanner:v1.0.14
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/env-variable-secrets-scanner-1.0.14/env-variable-secrets-scanner-1.0.14.tgz
+    version: 1.0.14
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -42641,4 +42831,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-07-13T14:02:13.756815046Z"
+generated: "2026-07-13T14:02:34.160769102Z"
