@@ -44,8 +44,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v0.1.2
-appVersion: 0.1.2
+  kubewarden/tag: v0.1.3
+appVersion: 0.1.3
 description: Policy that enforces runtime-enforcer policies to be present when a workload
   is created
 home: https://github.com/kubewarden/policies
@@ -60,5 +60,5 @@ keywords:
 - runtime-enforcer
 name: runtime-enforcer
 sources:
-- ghcr.io/kubewarden/policies/runtime-enforcer:v0.1.2
-version: 0.1.2
+- ghcr.io/kubewarden/policies/runtime-enforcer:v0.1.3
+version: 0.1.3
