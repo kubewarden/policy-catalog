@@ -5,13 +5,13 @@ go 1.26.0
 require (
 	github.com/google/go-containerregistry v0.21.7
 	github.com/stretchr/testify v1.11.1
-	go.yaml.in/yaml/v3 v3.0.4
-	helm.sh/helm/v3 v3.21.2
+	go.yaml.in/yaml/v3 v3.0.5
+	helm.sh/helm/v3 v3.21.3
 )
 
 require (
 	github.com/Masterminds/semver/v3 v3.5.0 // indirect
-	github.com/cyphar/filepath-securejoin v0.6.1 // indirect
+	github.com/cyphar/filepath-securejoin v0.7.0 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/fxamacker/cbor/v2 v2.9.0 // indirect
 	github.com/go-logr/logr v1.4.3 // indirect
