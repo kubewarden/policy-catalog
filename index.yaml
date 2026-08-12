@@ -35959,6 +35959,46 @@ entries:
           - namespace
           operations:
           - CREATE
+      kubewarden/tag: v1.0.13
+    apiVersion: v1
+    appVersion: 1.0.13
+    created: "2026-08-12T13:04:56.722616993Z"
+    description: Prevent the creation of Namespace under a Rancher Project that doesn't
+      have any resource quota left
+    digest: 07a5a369ffbb40e13d4c66835a62936a8a44e0340a37a67fad1e0475780ac740
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - rancher
+    - project
+    - quotas
+    name: rancher-project-quotas-namespace-validator
+    sources:
+    - ghcr.io/kubewarden/policies/rancher-project-quotas-namespace-validator:v1.0.13
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/rancher-project-quotas-namespace-validator-1.0.13/rancher-project-quotas-namespace-validator-1.0.13.tgz
+    version: 1.0.13
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: management.cattle.io/v3
+          kind: Project
+      kubewarden/displayName: Rancher Project quotas namespace validator
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/rancher-project-quotas-namespace-validator
+      kubewarden/resources: management.cattle.io/Project
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - namespace
+          operations:
+          - CREATE
       kubewarden/tag: v1.0.12
     apiVersion: v1
     appVersion: 1.0.12
@@ -46808,4 +46848,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-08-12T13:04:31.377984852Z"
+generated: "2026-08-12T13:04:56.726246839Z"
