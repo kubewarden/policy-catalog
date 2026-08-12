@@ -38202,6 +38202,41 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.7
+    apiVersion: v1
+    appVersion: 1.0.7
+    created: "2026-08-12T12:50:00.56645768Z"
+    description: A policy that validates Kubernetes' resource annotations
+    digest: c796745435f74e70b0c200f48fbf2c84ef0194a66ece74b4f7f8601a53234733
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - annotations
+    name: safe-annotations
+    sources:
+    - ghcr.io/kubewarden/policies/safe-annotations:v1.0.7
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/safe-annotations-1.0.7/safe-annotations-1.0.7.tgz
+    version: 1.0.7
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Safe Annotations
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/safe-annotations
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - '*'
+          apiVersions:
+          - '*'
+          resources:
+          - '*'
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.6
     apiVersion: v1
     appVersion: 1.0.6
@@ -46222,4 +46257,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-08-12T12:49:44.945001587Z"
+generated: "2026-08-12T12:50:00.56757773Z"
