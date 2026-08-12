@@ -11367,6 +11367,42 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.14
+    apiVersion: v1
+    appVersion: 1.0.14
+    created: "2026-08-12T12:13:53.871015059Z"
+    description: A policy that prevents the creation of Service resources of type
+      `LoadBalancer`
+    digest: a9bfe7b8a6b0c4965cbb1a69c24be835ca91b6055dc2cf3566342a9bae9fc873
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - service
+    name: disallow-service-loadbalancer
+    sources:
+    - ghcr.io/kubewarden/policies/disallow-service-loadbalancer:v1.0.14
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/disallow-service-loadbalancer-1.0.14/disallow-service-loadbalancer-1.0.14.tgz
+    version: 1.0.14
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Disallow Service Loadbalancer
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/disallow-service-loadbalancer
+      kubewarden/resources: Service
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - services
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.13
     apiVersion: v1
     appVersion: 1.0.13
@@ -11961,6 +11997,48 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/disallow-service-nodeport-0.1.7/disallow-service-nodeport-0.1.7.tgz
     version: 0.1.7
   do-not-expose-admission-controller-webhook-services:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: networking.k8s.io/v1
+          kind: Ingress
+        - apiVersion: v1
+          kind: Service
+      kubewarden/displayName: Do not expose admission controller webhook services
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/do-not-expose-admission-controller-webhook-services
+      kubewarden/resources: ValidatingWebhookConfiguration, MutatingWebhookConfiguration
+      kubewarden/rules: |
+        - apiGroups:
+          - admissionregistration.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - validatingwebhookconfigurations
+          - mutatingwebhookconfigurations
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.1.8
+    apiVersion: v1
+    appVersion: 1.1.8
+    created: "2026-08-12T12:13:54.079992497Z"
+    description: A policy that detects webhook services used by admission controllers
+      that are accidentally exposed outside of the cluster
+    digest: 7fd4605bbaca5a08a022e3af1d328986f6e8ed78b9468e58f80042ad68770349
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - webhooks
+    name: do-not-expose-admission-controller-webhook-services
+    sources:
+    - ghcr.io/kubewarden/policies/do-not-expose-admission-controller-webhook-services:v1.1.8
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/do-not-expose-admission-controller-webhook-services-1.1.8/do-not-expose-admission-controller-webhook-services-1.1.8.tgz
+    version: 1.1.8
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -18542,6 +18620,74 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/helm-repo-url-1.0.0/helm-repo-url-1.0.0.tgz
     version: 1.0.0
   high-risk-service-account:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: High Risk Service Account
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/high-risk-service-account
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v0.1.9
+    apiVersion: v1
+    appVersion: 0.1.9
+    created: "2026-08-12T12:13:54.258241536Z"
+    description: Policy to prevent the usage of serviceaccount with too many permissions
+    digest: f2c3de73b0c2c0d535fbb67979095cb0443077e2448ae148eaaf92d1e7d9ac11
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - pod
+    - security
+    - serviceaccount
+    name: high-risk-service-account
+    sources:
+    - ghcr.io/kubewarden/policies/high-risk-service-account:v0.1.9
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/high-risk-service-account-0.1.9/high-risk-service-account-0.1.9.tgz
+    version: 0.1.9
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -45490,4 +45636,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-08-12T12:13:28.852345299Z"
+generated: "2026-08-12T12:13:54.259292211Z"
