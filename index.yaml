@@ -41237,6 +41237,76 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v2.1.4
+    apiVersion: v1
+    appVersion: 2.1.4
+    created: "2026-08-12T12:47:06.710366171Z"
+    description: Kubewarden policy that restricts which registries, tags, and images
+      pods in your cluster can refer to, with wildcard pattern support
+    digest: 2cd80f2f5e4fa20a3c01c78eef59a2ffce31308f5efd8857866750dc5c5fe14b
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - image
+    - registry
+    - tag
+    - wildcard
+    name: trusted-repos
+    sources:
+    - ghcr.io/kubewarden/policies/trusted-repos:v2.1.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/trusted-repos-2.1.4/trusted-repos-2.1.4.tgz
+    version: 2.1.4
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Trusted Repos
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/trusted-repos
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v2.1.3
     apiVersion: v1
     appVersion: 2.1.3
@@ -45930,4 +46000,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-08-12T12:45:53.095323145Z"
+generated: "2026-08-12T12:47:06.712388611Z"
