@@ -24048,6 +24048,43 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v0.1.11
+    apiVersion: v1
+    appVersion: 0.1.11
+    created: "2026-08-12T12:42:41.957437198Z"
+    description: An experimental Kubewarden policy that runs Kyverno policies
+    digest: 7a0c5d851cdfb8f21538e11a20e1b0006b1f44297262bcb7666d72f0c9f433fb
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - container
+    - runtime
+    name: kyverno-dsl
+    sources:
+    - ghcr.io/kubewarden/policies/kyverno-dsl:v0.1.11
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/kyverno-dsl-0.1.11/kyverno-dsl-0.1.11.tgz
+    version: 0.1.11
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Kyverno DSL policy
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/kyverno-dsl
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v0.1.10
     apiVersion: v1
     appVersion: 0.1.10
@@ -45636,4 +45673,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-08-12T12:13:54.259292211Z"
+generated: "2026-08-12T12:42:41.958639246Z"
