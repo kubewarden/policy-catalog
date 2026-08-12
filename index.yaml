@@ -37982,6 +37982,75 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v0.1.4
+    apiVersion: v1
+    appVersion: 0.1.4
+    created: "2026-08-12T12:49:21.69881424Z"
+    description: Policy that enforces runtime-enforcer policies to be present when
+      a workload is created
+    digest: 3a76a0fd99a868126ed5e326e26c484161b74755451b7161629fa3ff7e2bfb9d
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - deployment
+    - replicaset
+    - statefulset
+    - daemonset
+    - job
+    - cronjob
+    - pod
+    - runtime-enforcer
+    name: runtime-enforcer
+    sources:
+    - ghcr.io/kubewarden/policies/runtime-enforcer:v0.1.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/runtime-enforcer-0.1.4/runtime-enforcer-0.1.4.tgz
+    version: 0.1.4
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: security.rancher.io/v1alpha1
+          kind: WorkloadPolicy
+      kubewarden/displayName: WorkloadPolicy config verifier
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/runtime-enforcer
+      kubewarden/resources: Pod, Deployments, Replicaset, Statefulset, Daemonset,
+        Job, Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v0.1.3
     apiVersion: v1
     appVersion: 0.1.3
@@ -46115,4 +46184,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-08-12T12:48:24.128977469Z"
+generated: "2026-08-12T12:49:21.69995176Z"
