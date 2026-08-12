@@ -38832,6 +38832,42 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.15
+    apiVersion: v1
+    appVersion: 1.0.15
+    created: "2026-08-12T12:48:06.53906521Z"
+    description: Pod Security Policy that controls usage of Seccomp profile
+    digest: 244839a69eaf5f9d06436ec1d91e4770e4a989e9c8d186cf4adf19f4092db89e
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - seccomp
+    name: seccomp-psp
+    sources:
+    - ghcr.io/kubewarden/policies/seccomp-psp:v1.0.15
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/seccomp-psp-1.0.15/seccomp-psp-1.0.15.tgz
+    version: 1.0.15
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Seccomp PSP
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/seccomp-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.14
     apiVersion: v1
     appVersion: 1.0.14
@@ -46040,4 +46076,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-08-12T12:47:25.962790212Z"
+generated: "2026-08-12T12:48:06.541543265Z"
