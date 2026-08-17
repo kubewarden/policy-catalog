@@ -6,7 +6,7 @@ require (
 	github.com/google/go-containerregistry v0.21.9
 	github.com/stretchr/testify v1.11.1
 	go.yaml.in/yaml/v3 v3.0.5
-	helm.sh/helm/v3 v3.21.3
+	helm.sh/helm/v3 v3.21.4
 )
 
 require (
@@ -27,8 +27,8 @@ require (
 	github.com/santhosh-tekuri/jsonschema/v6 v6.0.2 // indirect
 	github.com/x448/float16 v0.8.4 // indirect
 	go.yaml.in/yaml/v2 v2.4.4 // indirect
-	golang.org/x/net v0.55.0 // indirect
-	golang.org/x/text v0.38.0 // indirect
+	golang.org/x/net v0.56.0 // indirect
+	golang.org/x/text v0.40.0 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	k8s.io/api v0.36.2 // indirect
