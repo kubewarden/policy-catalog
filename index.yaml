@@ -1734,6 +1734,44 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.16
+    apiVersion: v1
+    appVersion: 1.0.16
+    created: "2026-09-14T12:41:00.809558643Z"
+    description: Replacement for the Kubernetes Pod Security Policy that controls
+      the usage of /proc mount types
+    digest: 73e27bcc0271b1ad0c8ff258546f93701a8579ef6f8cd1117e52c6082035103c
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - container
+    - runtime
+    name: allowed-proc-mount-types-psp
+    sources:
+    - ghcr.io/kubewarden/policies/allowed-proc-mount-types-psp:v1.0.16
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/allowed-proc-mount-types-psp-1.0.16/allowed-proc-mount-types-psp-1.0.16.tgz
+    version: 1.0.16
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Allowed Proc Mount Types PSP
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/allowed-proc-mount-types-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.15
     apiVersion: v1
     appVersion: 1.0.15
@@ -47956,4 +47994,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-09-14T12:40:44.074002801Z"
+generated: "2026-09-14T12:41:00.810878847Z"
