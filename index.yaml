@@ -13430,6 +13430,78 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.16
+    apiVersion: v1
+    appVersion: 1.0.16
+    created: "2026-09-14T12:41:34.671701489Z"
+    description: Policy that inspects env vars and rejects a request if a secret was
+      found
+    digest: c4263692ed596a4f6e88363b51a9fd219a8e7d8349bab6932e9e3e8937d5af21
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - secrets
+    - api keys
+    - tokens
+    - secret leak
+    - confidential data
+    - confidential data leak
+    name: env-variable-secrets-scanner
+    sources:
+    - ghcr.io/kubewarden/policies/env-variable-secrets-scanner:v1.0.16
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/env-variable-secrets-scanner-1.0.16/env-variable-secrets-scanner-1.0.16.tgz
+    version: 1.0.16
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Environment Variable Secrets Scanner
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/env-variable-secrets-scanner
+      kubewarden/resources: Pod,Deployment,Replicaset,Statefulset,Daemonset,Replicationcontroller,Job,Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.15
     apiVersion: v1
     appVersion: 1.0.15
@@ -20658,6 +20730,74 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/host-namespaces-psp-0.1.7/host-namespaces-psp-0.1.7.tgz
     version: 0.1.7
   hostpaths-psp:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Hostpaths PSP
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/hostpaths-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.1.11
+    apiVersion: v1
+    appVersion: 1.1.11
+    created: "2026-09-14T12:41:34.894785305Z"
+    description: A Pod Security Policy that controls usage of hostPath volumes
+    digest: eb6b3902d1c30dfb7c547d544876dea8d901003252eeb011c3165868d5bd053d
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - hostpaths
+    - pod
+    name: hostpaths-psp
+    sources:
+    - ghcr.io/kubewarden/policies/hostpaths-psp:v1.1.11
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/hostpaths-psp-1.1.11/hostpaths-psp-1.1.11.tgz
+    version: 1.1.11
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -48060,4 +48200,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-09-14T12:41:16.784669992Z"
+generated: "2026-09-14T12:41:34.896086629Z"
