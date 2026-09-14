@@ -18,8 +18,8 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.1.10
-appVersion: 1.1.10
+  kubewarden/tag: v1.1.11
+appVersion: 1.1.11
 description: Pod Security Policy that controls usage of volumes
 home: https://github.com/kubewarden/policies
 keywords:
@@ -28,5 +28,5 @@ keywords:
 - volumes
 name: volumes-psp
 sources:
-- ghcr.io/kubewarden/policies/volumes-psp:v1.1.10
-version: 1.1.10
+- ghcr.io/kubewarden/policies/volumes-psp:v1.1.11
+version: 1.1.11
