@@ -21573,6 +21573,79 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v0.6.4
+    apiVersion: v1
+    appVersion: 0.6.4
+    created: "2026-09-14T12:40:44.07283185Z"
+    description: Validate workloads based on the vulnerabilities of the images they
+      make use of
+    digest: 1659a1b1e76f6382b3ae9dfce880bab68a699fb037e6d775c58cd0f9699936e5
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - pod
+    - cool policy
+    - kubewarden
+    name: image-cve-policy
+    sources:
+    - ghcr.io/kubewarden/policies/image-cve-policy:v0.6.4
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/image-cve-policy-0.6.4/image-cve-policy-0.6.4.tgz
+    version: 0.6.4
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: storage.sbomscanner.kubewarden.io/v1alpha1
+          kind: VulnerabilityReport
+      kubewarden/displayName: image-cve
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/image-cve-policy
+      kubewarden/resources: Pod, ReplicaSet, Deployment, DaemonSet, StatefulSet, Job,
+        CronJob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v0.6.3
     apiVersion: v1
     appVersion: 0.6.3
@@ -47883,4 +47956,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-09-14T12:40:30.528501627Z"
+generated: "2026-09-14T12:40:44.074002801Z"
