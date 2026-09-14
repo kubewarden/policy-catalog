@@ -19101,6 +19101,74 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v0.1.10
+    apiVersion: v1
+    appVersion: 0.1.10
+    created: "2026-09-14T12:40:30.346197779Z"
+    description: Policy to prevent the usage of serviceaccount with too many permissions
+    digest: b50b19d42841aeff3c3360f83aeee4c486113548b06e0c6c58357d537d7fcf91
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - pod
+    - security
+    - serviceaccount
+    name: high-risk-service-account
+    sources:
+    - ghcr.io/kubewarden/policies/high-risk-service-account:v0.1.10
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/high-risk-service-account-0.1.10/high-risk-service-account-0.1.10.tgz
+    version: 0.1.10
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: High Risk Service Account
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/high-risk-service-account
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v0.1.9
     apiVersion: v1
     appVersion: 0.1.9
@@ -35945,6 +36013,43 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.15
+    apiVersion: v1
+    appVersion: 1.0.15
+    created: "2026-09-14T12:40:30.526421604Z"
+    description: Replacement for the Kubernetes Pod Security Policy that controls
+      the usage of AppArmor profiles
+    digest: e212bd6aa838161f3c8d8ac2d9da133a5c30f98acaee7a3928be86f6a6c10afe
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - apparmor
+    name: psp-apparmor
+    sources:
+    - ghcr.io/kubewarden/policies/apparmor-psp:v1.0.15
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/psp-apparmor-1.0.15/psp-apparmor-1.0.15.tgz
+    version: 1.0.15
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Apparmor PSP
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/apparmor-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.14
     apiVersion: v1
     appVersion: 1.0.14
@@ -47778,4 +47883,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-09-14T12:40:13.425855296Z"
+generated: "2026-09-14T12:40:30.528501627Z"
