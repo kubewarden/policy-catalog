@@ -9596,6 +9596,200 @@ entries:
           - '*'
           operations:
           - CREATE
+      kubewarden/tag: v1.0.12
+    apiVersion: v1
+    appVersion: 1.0.12
+    created: "2026-09-14T12:42:43.857123756Z"
+    description: Find deprecated and removed Kubernetes resources
+    digest: b2718a493b97f7c139232856fc49a50b4347192af92935bcedd5aa6b8e126fe8
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - compliance
+    - deprecated API
+    name: deprecated-api-versions
+    sources:
+    - ghcr.io/kubewarden/policies/deprecated-api-versions:v1.0.12
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/deprecated-api-versions-1.0.12/deprecated-api-versions-1.0.12.tgz
+    version: 1.0.12
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Deprecated API Versions
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/deprecated-api-versions
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - admissionregistration.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - apiextensions.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - apiregistration.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1beta1
+          - v1beta2
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - audit.k8s.io
+          apiVersions:
+          - v1alpha1
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - authentication.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - autoscaling
+          apiVersions:
+          - v2beta1
+          - v2beta2
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - certificates.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - coordination.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - discovery.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - events.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - extensions
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - flowcontrol.apiserver.k8s.io
+          apiVersions:
+          - v1beta1
+          - v1beta2
+          - v1beta3
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - networking.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - node.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - policy
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - rbac.authorization.k8s.io
+          apiVersions:
+          - v1alpha1
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - scheduling.k8s.io
+          apiVersions:
+          - v1alpha1
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - storage.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
       kubewarden/tag: v1.0.11
     apiVersion: v1
     appVersion: 1.0.11
@@ -15647,6 +15841,46 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/environment-variable-policy-0.1.7/environment-variable-policy-0.1.7.tgz
     version: 0.1.7
   flexvolume-drivers-psp:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Flexvolume Drivers Psp
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/flexvolume-drivers-psp
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+      kubewarden/tag: v1.0.18
+    apiVersion: v1
+    appVersion: 1.0.18
+    created: "2026-09-14T12:42:44.05264976Z"
+    description: Replacement for the Kubernetes Pod Security Policy that controls
+      the allowed `flexVolume` drivers
+    digest: a4a897d1ac3442ec23456fdfa5dcdb3bf5525a3ff66703d029a7668f286a7a75
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - container
+    - runtime
+    - flex volume
+    - flex
+    name: flexvolume-drivers-psp
+    sources:
+    - ghcr.io/kubewarden/policies/flexvolume-drivers-psp:v1.0.18
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/flexvolume-drivers-psp-1.0.18/flexvolume-drivers-psp-1.0.18.tgz
+    version: 1.0.18
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -48235,4 +48469,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-09-14T12:42:07.943743844Z"
+generated: "2026-09-14T12:42:44.054535578Z"
