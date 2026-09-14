@@ -35251,6 +35251,74 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.1.9
+    apiVersion: v1
+    appVersion: 1.1.9
+    created: "2026-09-14T12:48:45.510970659Z"
+    description: Validates Pod's priority class
+    digest: de3c4861378a509d873afce68f56282eed2d6399dfbcb62eaf3b545591f0a266
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - pod
+    - priority-class
+    name: priority-class-policy
+    sources:
+    - ghcr.io/kubewarden/policies/priority-class-policy:v1.1.9
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/priority-class-policy-1.1.9/priority-class-policy-1.1.9.tgz
+    version: 1.1.9
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Priority class policy
+      kubewarden/mutation: "true"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/priority-class-policy
+      kubewarden/resources: Pod, Replicationcontroller, Deployments, Replicaset, Statefulset,
+        Daemonset, Job, Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.1.8
     apiVersion: v1
     appVersion: 1.1.8
@@ -36016,6 +36084,38 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/priority-class-policy-1.0.0/priority-class-policy-1.0.0.tgz
     version: 1.0.0
   probes-policy:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Probes validator policy
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/probes
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+      kubewarden/tag: v1.0.8
+    apiVersion: v1
+    appVersion: 1.0.8
+    created: "2026-09-14T12:48:45.719080883Z"
+    description: This policy validates that all containers have livenessProbe and
+      readinessProbe defined.
+    digest: de991e3a63bef194be3b1430ad6f8d5bc6c3d403fe253f2826e69c74b4287cee
+    home: https://github.com/kubewarden/policies
+    name: probes-policy
+    sources:
+    - ghcr.io/kubewarden/policies/probes:v1.0.8
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/probes-policy-1.0.8/probes-policy-1.0.8.tgz
+    version: 1.0.8
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -48774,4 +48874,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-09-14T12:48:25.780848449Z"
+generated: "2026-09-14T12:48:45.720307671Z"
