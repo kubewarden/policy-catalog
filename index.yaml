@@ -11951,6 +11951,42 @@ entries:
           operations:
           - CREATE
           - UPDATE
+      kubewarden/tag: v1.0.15
+    apiVersion: v1
+    appVersion: 1.0.15
+    created: "2026-09-14T12:49:36.670775056Z"
+    description: A policy that prevents the creation of Service resources of type
+      `LoadBalancer`
+    digest: f4fbfc5eecc4411b964fc01fc0b7f33617a56aa5799f220ac5f66bd029e6031d
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - service
+    name: disallow-service-loadbalancer
+    sources:
+    - ghcr.io/kubewarden/policies/disallow-service-loadbalancer:v1.0.15
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/disallow-service-loadbalancer-1.0.15/disallow-service-loadbalancer-1.0.15.tgz
+    version: 1.0.15
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Disallow Service Loadbalancer
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/disallow-service-loadbalancer
+      kubewarden/resources: Service
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - services
+          operations:
+          - CREATE
+          - UPDATE
       kubewarden/tag: v1.0.14
     apiVersion: v1
     appVersion: 1.0.14
@@ -37803,6 +37839,46 @@ entries:
           - namespace
           operations:
           - CREATE
+      kubewarden/tag: v1.0.14
+    apiVersion: v1
+    appVersion: 1.0.14
+    created: "2026-09-14T12:49:36.985729292Z"
+    description: Prevent the creation of Namespace under a Rancher Project that doesn't
+      have any resource quota left
+    digest: 82702b6177fa1ae643eee94b56842b1b9a570df78efa682789c7ee4dab8a526c
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - rancher
+    - project
+    - quotas
+    name: rancher-project-quotas-namespace-validator
+    sources:
+    - ghcr.io/kubewarden/policies/rancher-project-quotas-namespace-validator:v1.0.14
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/rancher-project-quotas-namespace-validator-1.0.14/rancher-project-quotas-namespace-validator-1.0.14.tgz
+    version: 1.0.14
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: management.cattle.io/v3
+          kind: Project
+      kubewarden/displayName: Rancher Project quotas namespace validator
+      kubewarden/mutation: "false"
+      kubewarden/registry: ghcr.io
+      kubewarden/repository: kubewarden/policies/rancher-project-quotas-namespace-validator
+      kubewarden/resources: management.cattle.io/Project
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - namespace
+          operations:
+          - CREATE
       kubewarden/tag: v1.0.13
     apiVersion: v1
     appVersion: 1.0.13
@@ -48874,4 +48950,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-09-14T12:48:45.720307671Z"
+generated: "2026-09-14T12:49:36.98706785Z"
