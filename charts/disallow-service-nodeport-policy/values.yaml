@@ -3,4 +3,4 @@ global:
     systemDefaultRegistry: ghcr.io
 module:
   repository: kubewarden/policies/disallow-service-nodeport
-  tag: v1.0.0
+  tag: v1.0.8
