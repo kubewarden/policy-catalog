@@ -137,11 +137,6 @@ func pkgToChart(pkgPath, repoPath, outputDir, baseURL string) error {
 		os.Exit(1)
 	}
 
-	// TODO deprecated, remove once they aren't needed
-	annotations["kubewarden/registry"] = ref.Context().RegistryStr()
-	annotations["kubewarden/repository"] = ref.Context().RepositoryStr()
-	annotations["kubewarden/tag"] = ref.TagStr()
-
 	// Add annotations required by Rancher
 	annotations["catalog.cattle.io/ui-component"] = "kubewarden"
 	annotations["catalog.cattle.io/hidden"] = "true"

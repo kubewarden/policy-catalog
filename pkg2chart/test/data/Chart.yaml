@@ -5,8 +5,6 @@ annotations:
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Allowed Fs Groups PSP
   kubewarden/mutation: "true"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/allowed-fsgroups-psp
   kubewarden/resources: Pod
   kubewarden/rules: |
     - apiGroups:
@@ -18,7 +16,6 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v0.1.10
 appVersion: 0.1.10
 description: Replacement for the Kubernetes Pod Security Policy that controls the
   usage of fsGroups in the pod security context
