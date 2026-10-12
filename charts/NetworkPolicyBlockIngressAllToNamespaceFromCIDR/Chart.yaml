@@ -1,13 +1,11 @@
 annotations:
-  artifacthub.io/repository: kubewarden-rego-policies-library
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Network Block All Ingress Traffic To Namespace From CIDR
     Block
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/network-block-all-ingress-traffic-to-namespace-from-cidr-block
   kubewarden/resources: NetworkPolicy
   kubewarden/rules: |
     - apiGroups:
@@ -19,13 +17,12 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.4
 appVersion: 1.0.4
 description: "If you are using a CNI that allows for Network Policies, you can use
   this Policy to block all Egress traffic from a specified namespace to a CIDR block
   of IP addresses. \n\nBy default, if no policies exist in a namespace, then all ingress
   and egress traffic is allowed to and from pods in that namespace. \n"
-home: https://github.com/kubewarden/rego-policies-library
+home: https://github.com/kubewarden/policies
 name: network-block-all-ingress-traffic-to-namespace-from-cidr-block
 sources:
 - ghcr.io/kubewarden/policies/network-block-all-ingress-traffic-to-namespace-from-cidr-block:v1.0.4
