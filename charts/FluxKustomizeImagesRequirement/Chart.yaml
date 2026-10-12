@@ -1,12 +1,10 @@
 annotations:
-  artifacthub.io/repository: kubewarden-rego-policies-library
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Kustomization Images Requirement
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/kustomization-images-requirement
   kubewarden/resources: Kustomization
   kubewarden/rules: |
     - apiGroups:
@@ -18,11 +16,10 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.4
 appVersion: 1.0.4
 description: The 'spec.images' field in a Kustomization object must be enabled or
   disabled based on the policy input images_required.
-home: https://github.com/kubewarden/rego-policies-library
+home: https://github.com/kubewarden/policies
 keywords:
 - flux
 name: kustomization-images-requirement
