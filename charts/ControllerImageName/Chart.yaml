@@ -1,12 +1,10 @@
 annotations:
-  artifacthub.io/repository: kubewarden-rego-policies-library
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Containers Block Specific Image Names
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/containers-block-specific-image-names
   kubewarden/resources: CronJob, DaemonSet, Deployment, Job, Pod, StatefulSet
   kubewarden/rules: |
     - apiGroups:
@@ -39,11 +37,10 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.4
 appVersion: 1.0.4
 description: "This Policy prohibits images with certain image names from being deployed
   by specifying a list of unapproved names. \n"
-home: https://github.com/kubewarden/rego-policies-library
+home: https://github.com/kubewarden/policies
 name: containers-block-specific-image-names
 sources:
 - ghcr.io/kubewarden/policies/containers-block-specific-image-names:v1.0.4
