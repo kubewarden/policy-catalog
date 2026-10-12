@@ -1,12 +1,10 @@
 annotations:
-  artifacthub.io/repository: kubewarden-rego-policies-library
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Containers Block Ssh Port
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/containers-block-ssh-port
   kubewarden/resources: Deployment, Job, ReplicationController, ReplicaSet, DaemonSet,
     StatefulSet, CronJob
   kubewarden/rules: |
@@ -41,14 +39,13 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.4
-appVersion: 1.0.4
+appVersion: 1.0.5
 description: |
   This Policy checks if the container is exposing ssh port.
-home: https://github.com/kubewarden/rego-policies-library
+home: https://github.com/kubewarden/policies
 keywords:
 - pci-dss
 name: containers-block-ssh-port
 sources:
-- ghcr.io/kubewarden/policies/containers-block-ssh-port:v1.0.4
-version: 1.0.4
+- ghcr.io/kubewarden/policies/containers-block-ssh-port:v1.0.5
+version: 1.0.5
