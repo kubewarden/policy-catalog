@@ -1,12 +1,10 @@
 annotations:
-  artifacthub.io/repository: kubewarden-rego-policies-library
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Namespace Resources Limitrange
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/namespace-resources-limitrange
   kubewarden/resources: LimitRange
   kubewarden/rules: |
     - apiGroups:
@@ -18,8 +16,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.3
-appVersion: 1.0.3
+appVersion: 1.0.4
 description: |
   When setting up default CPU and Memory values for your namespace, this policy will check if both requests and limits are set. This policy checks for the following:
 
@@ -33,10 +30,10 @@ description: |
   |  min | cpu  |
   |  max | cpu |
   |  max | memory  |
-home: https://github.com/kubewarden/rego-policies-library
+home: https://github.com/kubewarden/policies
 keywords:
 - soc2-type1
 name: namespace-resources-limitrange
 sources:
-- ghcr.io/kubewarden/policies/namespace-resources-limitrange:v1.0.3
-version: 1.0.3
+- ghcr.io/kubewarden/policies/namespace-resources-limitrange:v1.0.4
+version: 1.0.4
