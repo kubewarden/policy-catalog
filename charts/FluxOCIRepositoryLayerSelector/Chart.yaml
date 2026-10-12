@@ -1,12 +1,10 @@
 annotations:
-  artifacthub.io/repository: kubewarden-rego-policies-library
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: OCIRepository Layer Selector
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/ocirepository-layer-selector
   kubewarden/resources: OCIRepository
   kubewarden/rules: |
     - apiGroups:
@@ -18,11 +16,10 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.4
 appVersion: 1.0.4
 description: OCIRepository layer selector must only reference predefined media/operation
   type.
-home: https://github.com/kubewarden/rego-policies-library
+home: https://github.com/kubewarden/policies
 keywords:
 - flux
 name: ocirepository-layer-selector
