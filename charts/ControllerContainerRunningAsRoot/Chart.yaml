@@ -1,12 +1,10 @@
 annotations:
-  artifacthub.io/repository: kubewarden-rego-policies-library
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Container Running As Root
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/container-running-as-root
   kubewarden/resources: Deployment, Job, ReplicationController, ReplicaSet, DaemonSet,
     StatefulSet, CronJob
   kubewarden/rules: |
@@ -41,13 +39,12 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.5
 appVersion: 1.0.5
 description: "Running as root gives the container full access to all resources in
   the VM it is running on. Containers should not run with such access rights unless
   required by design. This Policy enforces that the `securityContext.runAsNonRoot`
   attribute is set to `true`. \n"
-home: https://github.com/kubewarden/rego-policies-library
+home: https://github.com/kubewarden/policies
 keywords:
 - pci-dss
 - cis-benchmark
