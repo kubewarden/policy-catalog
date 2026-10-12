@@ -1,13 +1,11 @@
 annotations:
-  artifacthub.io/repository: kubewarden-rego-policies-library
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Resource Reconcile Interval Must Be Set Between Lower and
     Upper Bound
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/resource-reconcile-interval
   kubewarden/resources: HelmRelease, GitRepository, OCIRepository, Bucket, HelmChart,
     HelmRepository, Kustomization
   kubewarden/rules: |
@@ -42,11 +40,10 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.5
 appVersion: 1.0.5
 description: The reconcile interval of a Resource must be set between a lower and
   upper bound, lower_bound & upper_bound must be in seconds .
-home: https://github.com/kubewarden/rego-policies-library
+home: https://github.com/kubewarden/policies
 keywords:
 - flux
 name: resource-reconcile-interval
