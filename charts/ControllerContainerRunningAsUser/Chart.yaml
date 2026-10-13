@@ -1,12 +1,10 @@
 annotations:
-  artifacthub.io/repository: kubewarden-rego-policies-library
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Container Running As User
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/container-running-as-user
   kubewarden/resources: Deployment, Job, ReplicationController, ReplicaSet, DaemonSet,
     StatefulSet, CronJob
   kubewarden/rules: |
@@ -41,14 +39,13 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.5
-appVersion: 1.0.5
+appVersion: 1.0.6
 description: "Containers has a feature in which you specify the ID of the user which
   all processes in the container will run with. This Policy enforces that the `securityContext.runAsUser`
   attribute is set to a uid greater than root uid. Running as root user gives the
   container full access to all resources in the VM it is running on. Containers should
   not run with such access rights unless required by design. \n"
-home: https://github.com/kubewarden/rego-policies-library
+home: https://github.com/kubewarden/policies
 keywords:
 - pci-dss
 - cis-benchmark
@@ -58,5 +55,5 @@ keywords:
 - default
 name: container-running-as-user
 sources:
-- ghcr.io/kubewarden/policies/container-running-as-user:v1.0.5
-version: 1.0.5
+- ghcr.io/kubewarden/policies/container-running-as-user:v1.0.6
+version: 1.0.6
