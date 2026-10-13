@@ -1,13 +1,11 @@
 annotations:
-  artifacthub.io/repository: kubewarden-rego-policies-library
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Containers Missing Security Context
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/containers-missing-security-context
-  kubewarden/resources: Deployment, Job, ReplicationController, ReplicaSet, DaemonSet,
+  kubewarden/resources: Deployment, Job, Pod, ReplicationController, ReplicaSet, DaemonSet,
     StatefulSet, CronJob
   kubewarden/rules: |
     - apiGroups:
@@ -37,15 +35,15 @@ annotations:
       apiVersions:
       - v1
       resources:
+      - pods
       - replicationcontrollers
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.3
-appVersion: 1.0.3
+appVersion: 1.0.5
 description: |
   This Policy checks if the container is missing securityContext while there is no securityContext defined on the Pod level as well. The security settings that are specified on the Pod level apply to all containers in the Pod.
-home: https://github.com/kubewarden/rego-policies-library
+home: https://github.com/kubewarden/policies
 keywords:
 - pci-dss
 - cis-benchmark
@@ -55,5 +53,5 @@ keywords:
 - default
 name: containers-missing-security-context
 sources:
-- ghcr.io/kubewarden/policies/containers-missing-security-context:v1.0.3
-version: 1.0.3
+- ghcr.io/kubewarden/policies/containers-missing-security-context:v1.0.5
+version: 1.0.5
