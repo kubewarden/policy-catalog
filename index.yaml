@@ -19694,6 +19694,38 @@ entries:
     version: 1.0.0
   helm-release-values-from-configmaps:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Helm Release Values From
+      kubewarden/mutation: "false"
+      kubewarden/resources: HelmRelease
+      kubewarden/rules: |
+        - apiGroups:
+          - helm.toolkit.fluxcd.io
+          apiVersions:
+          - v2
+          resources:
+          - helmreleases
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T16:03:56.515968142Z"
+    description: HelmRelease valuesFrom must use correctly configured ConfigMaps.
+    digest: 53066895bb41a3ea2f5cd573153547fec48dddb77291ccffbb85f71c79ecbdb8
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: helm-release-values-from-configmaps
+    sources:
+    - ghcr.io/kubewarden/policies/helm-release-values-from-configmaps:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-release-values-from-configmaps-1.0.5/helm-release-values-from-configmaps-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -51742,4 +51774,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T16:03:37.206816666Z"
+generated: "2026-10-14T16:03:56.521966717Z"
