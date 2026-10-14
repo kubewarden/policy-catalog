@@ -20577,6 +20577,71 @@ entries:
       catalog.cattle.io/ui-component: kubewarden
       kubewarden/displayName: High Risk Service Account
       kubewarden/mutation: "false"
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 0.1.11
+    created: "2026-10-14T19:40:25.485163453Z"
+    description: Policy to prevent the usage of serviceaccount with too many permissions
+    digest: 37b59e0d56f3c34f086e48ad8cc9f0a9884a2bf182b9367e13faab4264164526
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - pod
+    - security
+    - serviceaccount
+    name: high-risk-service-account
+    sources:
+    - ghcr.io/kubewarden/policies/high-risk-service-account:v0.1.11
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/high-risk-service-account-0.1.11/high-risk-service-account-0.1.11.tgz
+    version: 0.1.11
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: High Risk Service Account
+      kubewarden/mutation: "false"
       kubewarden/registry: ghcr.io
       kubewarden/repository: kubewarden/policies/high-risk-service-account
       kubewarden/resources: Pod
@@ -52967,4 +53032,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T19:40:10.796396638Z"
+generated: "2026-10-14T19:40:25.487420352Z"
