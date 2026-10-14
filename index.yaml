@@ -41917,6 +41917,61 @@ entries:
     version: 1.0.0
   resource-suspend-waiver:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Resource Suspend Waiver
+      kubewarden/mutation: "false"
+      kubewarden/resources: HelmRelease, GitRepository, OCIRepository, Bucket, HelmChart,
+        HelmRepository, Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - helm.toolkit.fluxcd.io
+          apiVersions:
+          - v2
+          resources:
+          - helmreleases
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - gitrepositories
+          - ocirepositories
+          - buckets
+          - helmcharts
+          - helmrepositories
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T15:46:57.478537423Z"
+    description: Resource cannot be suspended unless it's on the waiver list.
+    digest: 536f2039036e5992f61e7d717553069227e1f4179bcb3ab5b4ba8837925035f3
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: resource-suspend-waiver
+    sources:
+    - ghcr.io/kubewarden/policies/resource-suspend-waiver:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/resource-suspend-waiver-1.0.5/resource-suspend-waiver-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -51440,4 +51495,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T15:46:40.514310653Z"
+generated: "2026-10-14T15:46:57.479862793Z"
