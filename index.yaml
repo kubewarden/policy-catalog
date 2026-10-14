@@ -10200,6 +10200,197 @@ entries:
       catalog.cattle.io/ui-component: kubewarden
       kubewarden/displayName: Deprecated API Versions
       kubewarden/mutation: "false"
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - admissionregistration.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - apiextensions.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - apiregistration.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1beta1
+          - v1beta2
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - audit.k8s.io
+          apiVersions:
+          - v1alpha1
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - authentication.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - autoscaling
+          apiVersions:
+          - v2beta1
+          - v2beta2
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - certificates.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - coordination.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - discovery.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - events.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - extensions
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - flowcontrol.apiserver.k8s.io
+          apiVersions:
+          - v1beta1
+          - v1beta2
+          - v1beta3
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - networking.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - node.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - policy
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - rbac.authorization.k8s.io
+          apiVersions:
+          - v1alpha1
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - scheduling.k8s.io
+          apiVersions:
+          - v1alpha1
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - storage.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+    apiVersion: v1
+    appVersion: 1.0.13
+    created: "2026-10-14T19:42:16.429784202Z"
+    description: Find deprecated and removed Kubernetes resources
+    digest: d386e4eb3cfa567cb52aaf8fd7188b922d596a3358e47f0baf5a4e3c39b3fec7
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - compliance
+    - deprecated API
+    name: deprecated-api-versions
+    sources:
+    - ghcr.io/kubewarden/policies/deprecated-api-versions:v1.0.13
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/deprecated-api-versions-1.0.13/deprecated-api-versions-1.0.13.tgz
+    version: 1.0.13
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Deprecated API Versions
+      kubewarden/mutation: "false"
       kubewarden/registry: ghcr.io
       kubewarden/repository: kubewarden/policies/deprecated-api-versions
       kubewarden/resources: '*'
@@ -33644,6 +33835,50 @@ entries:
           kind: Namespace
       kubewarden/displayName: Namespace to PolicyServer mapper
       kubewarden/mutation: "true"
+      kubewarden/resources: AdmissionPolicy,AdmissionPolicyGroup
+      kubewarden/rules: |
+        - apiGroups:
+          - policies.kubewarden.io
+          apiVersions:
+          - v1
+          resources:
+          - admissionpolicies
+          - admissionpolicygroups
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 0.1.5
+    created: "2026-10-14T19:42:16.790536869Z"
+    description: 'Mutates AdmissionPolicy and AdmissionPolicyGroup resources to enforce
+      the PolicyServer they run on. The target PolicyServer is read from the `admission.kubewarden.io/policy-server`
+      label of the Namespace where the policy is being created or updated. Requests
+      are rejected when the label is absent, preventing policies from being scheduled
+      on an unintended PolicyServer. '
+    digest: fca75fcbbd2e7fc1c9cb21b25c596bdfe902a51eb7e2483c1e17fe1856d41cb2
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - namespace
+    - policies
+    - policyserver
+    - admissionpolicy
+    - admissionpolicygroup
+    name: ns-policyserver-mapper
+    sources:
+    - ghcr.io/kubewarden/policies/ns-policyserver-mapper:v0.1.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/ns-policyserver-mapper-0.1.5/ns-policyserver-mapper-0.1.5.tgz
+    version: 0.1.5
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: v1
+          kind: Namespace
+      kubewarden/displayName: Namespace to PolicyServer mapper
+      kubewarden/mutation: "true"
       kubewarden/registry: ghcr.io
       kubewarden/repository: kubewarden/policies/ns-policyserver-mapper
       kubewarden/resources: AdmissionPolicy,AdmissionPolicyGroup
@@ -53331,4 +53566,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T19:41:55.970792797Z"
+generated: "2026-10-14T19:42:16.79284671Z"
