@@ -3701,6 +3701,38 @@ entries:
     version: 1.0.0
   bucket-endpoint-domain:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Bucket Endpoint Domain
+      kubewarden/mutation: "false"
+      kubewarden/resources: Bucket
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - buckets
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T14:35:43.361576083Z"
+    description: Bucket endpoint domain must be one of the trusted domains.
+    digest: b0a150d8c053551b4ddd8fa3ed364ce39b18b5d33d7713affebb7407fcdcc4af
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: bucket-endpoint-domain
+    sources:
+    - ghcr.io/kubewarden/policies/bucket-endpoint-domain:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/bucket-endpoint-domain-1.0.5/bucket-endpoint-domain-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -50601,4 +50633,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T14:35:27.938825106Z"
+generated: "2026-10-14T14:35:43.362824436Z"
