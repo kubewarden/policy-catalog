@@ -25044,6 +25044,38 @@ entries:
     version: 1.0.0
   kustomization-decryption-provider:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Kustomization Decryption Provider
+      kubewarden/mutation: "false"
+      kubewarden/resources: Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T15:48:06.220992961Z"
+    description: Spec.decryption.provider must be set to one of decryption_providers.
+    digest: 8ed0b81605cb3b2201d3a1efb26480faf9efa7f1ee630862cc689a7e73aff603
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: kustomization-decryption-provider
+    sources:
+    - ghcr.io/kubewarden/policies/kustomization-decryption-provider:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-decryption-provider-1.0.5/kustomization-decryption-provider-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -51589,4 +51621,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T15:47:43.043754645Z"
+generated: "2026-10-14T15:48:06.222238851Z"
