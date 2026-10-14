@@ -19981,6 +19981,39 @@ entries:
     version: 1.0.0
   helm-repo-url:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Helm Repo URL Should Be in Organisation Domain
+      kubewarden/mutation: "false"
+      kubewarden/resources: HelmRepository
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - helmrepositories
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T15:00:39.099568492Z"
+    description: The URL of a Helm repository should only be from the specified organisation
+      domain.
+    digest: 5aed70d54179984ddc672bdc82cf79cf85ce1a5f22ac82d9c425ea35cc6a4496
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: helm-repo-url
+    sources:
+    - ghcr.io/kubewarden/policies/helm-repo-url:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-repo-url-1.0.5/helm-repo-url-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -51309,4 +51342,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T14:59:11.143018354Z"
+generated: "2026-10-14T15:00:39.101921853Z"
