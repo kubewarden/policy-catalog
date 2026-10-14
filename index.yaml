@@ -32226,6 +32226,39 @@ entries:
     version: 1.0.0
   network-allow-ingress-traffic-from-namespace-to-another:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Network Allow Ingress Traffic From Namespace To Another
+      kubewarden/mutation: "false"
+      kubewarden/resources: NetworkPolicy
+      kubewarden/rules: |
+        - apiGroups:
+          - networking.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - networkpolicies
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T15:47:43.042177631Z"
+    description: 'If you are using a CNI that allows for Network Policies, you can
+      use this Policy to allow Ingress traffic from one namespace to another.  By
+      default, if no policies exist in a namespace, then all ingress and egress traffic
+      is allowed to and from pods in that namespace.  '
+    digest: a7f88ad70b539446454e616a3c543deecabd041cb10117427c1797bf0427b10f
+    home: https://github.com/kubewarden/policies
+    name: network-allow-ingress-traffic-from-namespace-to-another
+    sources:
+    - ghcr.io/kubewarden/policies/network-allow-ingress-traffic-from-namespace-to-another:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/network-allow-ingress-traffic-from-namespace-to-another-1.0.5/network-allow-ingress-traffic-from-namespace-to-another-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -51556,4 +51589,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T15:47:28.553626558Z"
+generated: "2026-10-14T15:47:43.043754645Z"
