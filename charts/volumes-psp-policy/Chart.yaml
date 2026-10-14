@@ -5,8 +5,6 @@ annotations:
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Volumes PSP
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/volumes-psp
   kubewarden/resources: Pod
   kubewarden/rules: |
     - apiGroups:
@@ -18,8 +16,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.1.11
-appVersion: 1.1.11
+appVersion: 1.1.12
 description: Pod Security Policy that controls usage of volumes
 home: https://github.com/kubewarden/policies
 keywords:
@@ -28,5 +25,5 @@ keywords:
 - volumes
 name: volumes-psp
 sources:
-- ghcr.io/kubewarden/policies/volumes-psp:v1.1.11
-version: 1.1.11
+- ghcr.io/kubewarden/policies/volumes-psp:v1.1.12
+version: 1.1.12
