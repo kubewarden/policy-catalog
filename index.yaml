@@ -46852,6 +46852,43 @@ entries:
           kind: Service
       kubewarden/displayName: Unique service selector
       kubewarden/mutation: "false"
+      kubewarden/resources: Service
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - services
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.15
+    created: "2026-10-14T14:36:18.593903254Z"
+    description: Policy validates that there are no services with the same set of
+      selectors
+    digest: 5124362392d341da1f729fda96dc776a36fc80ce8e68937e2c500aef921f814a
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - service
+    - selector
+    name: unique-service-selector-policy
+    sources:
+    - ghcr.io/kubewarden/policies/unique-service-selector-policy:v1.0.15
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/unique-service-selector-policy-1.0.15/unique-service-selector-policy-1.0.15.tgz
+    version: 1.0.15
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: v1
+          kind: Service
+      kubewarden/displayName: Unique service selector
+      kubewarden/mutation: "false"
       kubewarden/registry: ghcr.io
       kubewarden/repository: kubewarden/policies/unique-service-selector-policy
       kubewarden/resources: Service
@@ -50696,4 +50733,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T14:35:58.55969983Z"
+generated: "2026-10-14T14:36:18.596339994Z"
