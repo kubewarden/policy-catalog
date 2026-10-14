@@ -5,8 +5,6 @@ annotations:
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Echo
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/echo
   kubewarden/resources: '*'
   kubewarden/rules: |
     - apiGroups:
@@ -20,8 +18,7 @@ annotations:
       - UPDATE
       - DELETE
       - CONNECT
-  kubewarden/tag: v0.1.20
-appVersion: 0.1.20
+appVersion: 0.1.21
 description: A policy that echoes back Kubernetes' AdmissionReview - useful for Policy
   Authors
 home: https://github.com/kubewarden/policies
@@ -29,5 +26,5 @@ keywords:
 - developer
 name: echo
 sources:
-- ghcr.io/kubewarden/policies/echo:v0.1.20
-version: 0.1.20
+- ghcr.io/kubewarden/policies/echo:v0.1.21
+version: 0.1.21
