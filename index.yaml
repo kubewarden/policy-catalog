@@ -32019,6 +32019,42 @@ entries:
     version: 1.0.0
   namespace-resources-limitrange:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Namespace Resources Limitrange
+      kubewarden/mutation: "false"
+      kubewarden/resources: LimitRange
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - limitranges
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T16:05:41.106794916Z"
+    description: 'When setting up default CPU and Memory values for your namespace,
+      this policy will check if both requests and limits are set. This policy checks
+      for the following:  | Resource Setting | Resource Type  | |---|---| |  default
+      | cpu  | |  default  | memory  | |  defaultRequest |  cpu | |  defaultRequest
+      | memory  | |  min | memory  | |  min | cpu  | |  max | cpu | |  max | memory  | '
+    digest: 854e40b725ea9ba1f679c991aae18b912a7d2e9282b2900c16f1b66ca8ef61d3
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - soc2-type1
+    name: namespace-resources-limitrange
+    sources:
+    - ghcr.io/kubewarden/policies/namespace-resources-limitrange:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/namespace-resources-limitrange-1.0.5/namespace-resources-limitrange-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -51806,4 +51842,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T16:04:22.567822067Z"
+generated: "2026-10-14T16:05:41.108515336Z"
