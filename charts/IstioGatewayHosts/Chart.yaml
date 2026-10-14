@@ -1,12 +1,10 @@
 annotations:
-  artifacthub.io/repository: kubewarden-rego-policies-library
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Istio Gateway Approved Hosts
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/istio-gateway-approved-hosts
   kubewarden/resources: Gateway
   kubewarden/rules: |
     - apiGroups:
@@ -18,12 +16,11 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.3
-appVersion: 1.0.3
+appVersion: 1.0.5
 description: "### Istio Gateway Approved Hosts\nThis ensures you are only serving
   traffic for approved hostnames. \n"
-home: https://github.com/kubewarden/rego-policies-library
+home: https://github.com/kubewarden/policies
 name: istio-gateway-approved-hosts
 sources:
-- ghcr.io/kubewarden/policies/istio-gateway-approved-hosts:v1.0.3
-version: 1.0.3
+- ghcr.io/kubewarden/policies/istio-gateway-approved-hosts:v1.0.5
+version: 1.0.5
