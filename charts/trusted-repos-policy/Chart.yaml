@@ -5,8 +5,6 @@ annotations:
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Trusted Repos
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/trusted-repos
   kubewarden/resources: Pod
   kubewarden/rules: |
     - apiGroups:
@@ -49,8 +47,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v2.1.5
-appVersion: 2.1.5
+appVersion: 2.1.6
 description: Kubewarden policy that restricts which registries, tags, and images pods
   in your cluster can refer to, with wildcard pattern support
 home: https://github.com/kubewarden/policies
@@ -61,5 +58,5 @@ keywords:
 - wildcard
 name: trusted-repos
 sources:
-- ghcr.io/kubewarden/policies/trusted-repos:v2.1.5
-version: 2.1.5
+- ghcr.io/kubewarden/policies/trusted-repos:v2.1.6
+version: 2.1.6
