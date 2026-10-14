@@ -51023,6 +51023,75 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.14
+    created: "2026-10-14T19:38:38.288825052Z"
+    description: Policy that inspects containers, init containers, and ephemeral containers,
+      and restricts their usage of volumes by  checking the `volume` name being used
+      in `volumeMounts[*].name`
+    digest: 35dec39c0f704040956a10a1f9ffe672e0d36d49093ec9b2f111e82f0a7ee9f5
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - container
+    - volumeMounts
+    - volume
+    - pod
+    - workload resources
+    name: volumemounts
+    sources:
+    - ghcr.io/kubewarden/policies/volumemounts:v1.0.14
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/volumemounts-1.0.14/volumemounts-1.0.14.tgz
+    version: 1.0.14
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: volumeMounts
+      kubewarden/mutation: "false"
+      kubewarden/resources: Pod,Deployment,Replicaset,Statefulset,Daemonset,Replicationcontroller,Job,Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.13
     created: "2026-10-14T14:38:01.545485731Z"
     description: Policy that inspects containers, init containers, and ephemeral containers,
@@ -52594,4 +52663,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T19:38:23.973180107Z"
+generated: "2026-10-14T19:38:38.290610686Z"
