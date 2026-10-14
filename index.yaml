@@ -27893,6 +27893,69 @@ entries:
       catalog.cattle.io/ui-component: kubewarden
       kubewarden/displayName: Labels
       kubewarden/mutation: "false"
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 0.1.12
+    created: "2026-10-14T19:43:31.349410016Z"
+    description: A policy that validates labels of Kubernetes' resources
+    digest: dc061d9178a3a757925885225a533993cb887fedce8ad0b428905f97392f1909
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - labels
+    name: labels
+    sources:
+    - ghcr.io/kubewarden/policies/labels:v0.1.12
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/labels-0.1.12/labels-0.1.12.tgz
+    version: 0.1.12
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Labels
+      kubewarden/mutation: "false"
       kubewarden/registry: ghcr.io
       kubewarden/repository: kubewarden/policies/labels
       kubewarden/resources: '*'
@@ -53767,4 +53830,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T19:43:16.571700459Z"
+generated: "2026-10-14T19:43:31.351177732Z"
