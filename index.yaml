@@ -47291,6 +47291,73 @@ entries:
       catalog.cattle.io/ui-component: kubewarden
       kubewarden/displayName: Trusted Repos
       kubewarden/mutation: "false"
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 2.1.6
+    created: "2026-10-14T19:38:52.449473212Z"
+    description: Kubewarden policy that restricts which registries, tags, and images
+      pods in your cluster can refer to, with wildcard pattern support
+    digest: 7d1c531ca66fc19a31b2501f25e93e8ddcdc29cc05d8889188b7799c4272da27
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - image
+    - registry
+    - tag
+    - wildcard
+    name: trusted-repos
+    sources:
+    - ghcr.io/kubewarden/policies/trusted-repos:v2.1.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/trusted-repos-2.1.6/trusted-repos-2.1.6.tgz
+    version: 2.1.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Trusted Repos
+      kubewarden/mutation: "false"
       kubewarden/registry: ghcr.io
       kubewarden/repository: kubewarden/policies/trusted-repos
       kubewarden/resources: Pod
@@ -52663,4 +52730,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T19:38:38.290610686Z"
+generated: "2026-10-14T19:38:52.451090459Z"
