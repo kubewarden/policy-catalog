@@ -1,0 +1,6 @@
+global:
+  cattle:
+    systemDefaultRegistry: ghcr.io
+module:
+  repository: kubewarden/policies/network-allow-egress-traffic-from-namespace-to-another
+  tag: v1.0.5
