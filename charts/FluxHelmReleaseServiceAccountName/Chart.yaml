@@ -1,12 +1,10 @@
 annotations:
-  artifacthub.io/repository: kubewarden-rego-policies-library
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Helm Release Service Account Name
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/helm-release-service-account-name
   kubewarden/resources: HelmRelease
   kubewarden/rules: |
     - apiGroups:
@@ -18,13 +16,12 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.3
-appVersion: 1.0.3
+appVersion: 1.0.5
 description: HelmRelease serviceAccountName must contain a value from parameters.service_account_names
-home: https://github.com/kubewarden/rego-policies-library
+home: https://github.com/kubewarden/policies
 keywords:
 - flux
 name: helm-release-service-account-name
 sources:
-- ghcr.io/kubewarden/policies/helm-release-service-account-name:v1.0.3
-version: 1.0.3
+- ghcr.io/kubewarden/policies/helm-release-service-account-name:v1.0.5
+version: 1.0.5
