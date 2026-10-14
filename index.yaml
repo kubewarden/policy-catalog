@@ -2533,6 +2533,69 @@ entries:
       catalog.cattle.io/ui-component: kubewarden
       kubewarden/displayName: Annotations
       kubewarden/mutation: "false"
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 0.1.13
+    created: "2026-10-14T19:44:03.445630591Z"
+    description: A policy that validates annotations of Kubernetes' resources
+    digest: c84959bacb2c27cc78f944b2f848b326c9620e2e21c1fc3c75a90ce5dfd39a00
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - annotations
+    name: annotations
+    sources:
+    - ghcr.io/kubewarden/policies/annotations:v0.1.13
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/annotations-0.1.13/annotations-0.1.13.tgz
+    version: 0.1.13
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Annotations
+      kubewarden/mutation: "false"
       kubewarden/registry: ghcr.io
       kubewarden/repository: kubewarden/policies/annotations
       kubewarden/resources: '*'
@@ -4139,6 +4202,71 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/bucket-insecure-connections-1.0.0/bucket-insecure-connections-1.0.0.tgz
     version: 1.0.0
   capabilities-psp:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Capabilities PSP
+      kubewarden/mutation: "true"
+      kubewarden/resources: Pod,Deployment,ReplicaSet,StatefulSet,DaemonSet,Job,CronJob,ReplicationController
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+    apiVersion: v1
+    appVersion: 1.0.15
+    created: "2026-10-14T19:44:03.74360314Z"
+    description: Replacement for the Kubernetes Pod Security Policy that controls
+      the usage of capabilities
+    digest: 469680c323dda7b5b228b15ccd35727c283e9fb4306073fae23d2fe088678a68
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - container
+    - capability
+    - capabilities
+    name: capabilities-psp
+    sources:
+    - ghcr.io/kubewarden/policies/capabilities-psp:v1.0.15
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/capabilities-psp-1.0.15/capabilities-psp-1.0.15.tgz
+    version: 1.0.15
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -53869,4 +53997,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T19:43:46.157553827Z"
+generated: "2026-10-14T19:44:03.744557057Z"
