@@ -5165,6 +5165,45 @@ entries:
           kind: Namespace
       kubewarden/displayName: CEL Policy
       kubewarden/mutation: "false"
+      kubewarden/resources: Any
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+          - UPDATE
+          - DELETE
+    apiVersion: v1
+    appVersion: 1.6.5
+    created: "2026-10-14T19:43:46.156639837Z"
+    description: A policy that evaluates CEL expressions
+    digest: 279298116f8dcec4b2f70b9afecb8b3e40ea25260b69652601c49b785ae733ed
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - compliance
+    - CEL
+    - ValidatingAdmissionPolicy
+    - Common Expression Language
+    name: cel-policy
+    sources:
+    - ghcr.io/kubewarden/policies/cel-policy:v1.6.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/cel-policy-1.6.5/cel-policy-1.6.5.tgz
+    version: 1.6.5
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: v1
+          kind: Namespace
+      kubewarden/displayName: CEL Policy
+      kubewarden/mutation: "false"
       kubewarden/registry: ghcr.io
       kubewarden/repository: kubewarden/policies/cel-policy
       kubewarden/resources: Any
@@ -53830,4 +53869,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T19:43:31.351177732Z"
+generated: "2026-10-14T19:43:46.157553827Z"
