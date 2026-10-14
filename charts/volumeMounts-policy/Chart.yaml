@@ -5,8 +5,6 @@ annotations:
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: volumeMounts
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/volumemounts
   kubewarden/resources: Pod,Deployment,Replicaset,Statefulset,Daemonset,Replicationcontroller,Job,Cronjob
   kubewarden/rules: |
     - apiGroups:
@@ -49,8 +47,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.12
-appVersion: 1.0.12
+appVersion: 1.0.13
 description: Policy that inspects containers, init containers, and ephemeral containers,
   and restricts their usage of volumes by  checking the `volume` name being used in
   `volumeMounts[*].name`
@@ -63,5 +60,5 @@ keywords:
 - workload resources
 name: volumemounts
 sources:
-- ghcr.io/kubewarden/policies/volumemounts:v1.0.12
-version: 1.0.12
+- ghcr.io/kubewarden/policies/volumemounts:v1.0.13
+version: 1.0.13
