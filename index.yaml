@@ -18501,6 +18501,38 @@ entries:
     version: 1.0.0
   gitrepository-untrusted-domains:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: GitRepository Untrusted Domains
+      kubewarden/mutation: "false"
+      kubewarden/resources: GitRepository
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - gitrepositories
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T19:45:17.822416636Z"
+    description: GitRepository resources must not use targets from untrusted domains.
+    digest: 7fbea1ab6899e9cd73c8a3346348a50f0d898e28daa1ebef6294ade31d7ebd7b
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: gitrepository-untrusted-domains
+    sources:
+    - ghcr.io/kubewarden/policies/gitrepository-untrusted-domains:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/gitrepository-untrusted-domains-1.0.5/gitrepository-untrusted-domains-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -19063,6 +19095,38 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/helm-chart-values-files-format-1.0.0/helm-chart-values-files-format-1.0.0.tgz
     version: 1.0.0
   helm-release-max-history:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Helm Release Max History
+      kubewarden/mutation: "false"
+      kubewarden/resources: HelmRelease
+      kubewarden/rules: |
+        - apiGroups:
+          - helm.toolkit.fluxcd.io
+          apiVersions:
+          - v2
+          resources:
+          - helmreleases
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-10-14T19:45:17.97648935Z"
+    description: HelmRelease maxHistory cannot exceed the specified value.
+    digest: 71419b55787d1483efd6a3130d7a9acb993ccadf3e758ce1b1fcbdfa6bfabbbd
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: helm-release-max-history
+    sources:
+    - ghcr.io/kubewarden/policies/helm-release-max-history:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-release-max-history-1.0.6/helm-release-max-history-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
@@ -54128,4 +54192,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T19:45:00.661760816Z"
+generated: "2026-10-14T19:45:17.978044018Z"
