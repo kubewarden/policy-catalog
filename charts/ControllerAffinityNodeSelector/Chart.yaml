@@ -37,7 +37,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 1.0.6
+appVersion: 1.0.7
 description: "This Policy allows setting a key and value for `nodeSelector` when assigning
   pods to nodes. \n\n`nodeSelector` is a field of PodSpec. It specifies a map of key-value
   pairs. For the pod to be eligible to scheduled on a node, the node must have each
@@ -46,5 +46,5 @@ description: "This Policy allows setting a key and value for `nodeSelector` when
 home: https://github.com/kubewarden/policies
 name: affinity-node-selector
 sources:
-- ghcr.io/kubewarden/policies/affinity-node-selector:v1.0.6
-version: 1.0.6
+- ghcr.io/kubewarden/policies/affinity-node-selector:v1.0.7
+version: 1.0.7
