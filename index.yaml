@@ -38606,6 +38606,35 @@ entries:
       catalog.cattle.io/ui-component: kubewarden
       kubewarden/displayName: Probes validator policy
       kubewarden/mutation: "false"
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+    apiVersion: v1
+    appVersion: 1.0.9
+    created: "2026-10-14T19:39:36.248371722Z"
+    description: This policy validates that all containers have livenessProbe and
+      readinessProbe defined.
+    digest: 8b218df4f331ea28208a997535d77030d304c6d7e6203e8f1494c643c3195602
+    home: https://github.com/kubewarden/policies
+    name: probes-policy
+    sources:
+    - ghcr.io/kubewarden/policies/probes:v1.0.9
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/probes-policy-1.0.9/probes-policy-1.0.9.tgz
+    version: 1.0.9
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Probes validator policy
+      kubewarden/mutation: "false"
       kubewarden/registry: ghcr.io
       kubewarden/repository: kubewarden/policies/probes
       kubewarden/rules: |
@@ -52802,4 +52831,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T19:39:22.949379922Z"
+generated: "2026-10-14T19:39:36.249963926Z"
