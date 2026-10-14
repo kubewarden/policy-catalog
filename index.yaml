@@ -25794,6 +25794,39 @@ entries:
     version: 1.0.0
   kustomization-images-requirement:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Kustomization Images Requirement
+      kubewarden/mutation: "false"
+      kubewarden/resources: Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T16:38:03.13506041Z"
+    description: The 'spec.images' field in a Kustomization object must be enabled
+      or disabled based on the policy input images_required.
+    digest: 284afa2d1bcc8aa9506770a19c8564b7c64226748d3e75bd41522f282f2303fa
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: kustomization-images-requirement
+    sources:
+    - ghcr.io/kubewarden/policies/kustomization-images-requirement:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-images-requirement-1.0.5/kustomization-images-requirement-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -26396,6 +26429,39 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-prune-1.0.0/kustomization-prune-1.0.0.tgz
     version: 1.0.0
   kustomization-target-namespace:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Kustomization Target Namespace
+      kubewarden/mutation: "false"
+      kubewarden/resources: Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-10-14T16:38:03.345809844Z"
+    description: Kustomization targetNamespace must be one of the allowed targetNamespace
+      list.
+    digest: a8cba2d9334b9d63daf682456de6f4209ea46179624a8dcfde72077740b7d240
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: kustomization-target-namespace
+    sources:
+    - ghcr.io/kubewarden/policies/kustomization-target-namespace:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-target-namespace-1.0.6/kustomization-target-namespace-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
@@ -52272,4 +52338,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T16:37:47.545957608Z"
+generated: "2026-10-14T16:38:03.346647323Z"
