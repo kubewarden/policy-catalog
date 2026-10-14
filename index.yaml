@@ -43511,6 +43511,38 @@ entries:
       catalog.cattle.io/ui-component: kubewarden
       kubewarden/displayName: Safe Labels
       kubewarden/mutation: "false"
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - '*'
+          apiVersions:
+          - '*'
+          resources:
+          - '*'
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.14
+    created: "2026-10-14T16:36:12.987952964Z"
+    description: A policy that validates Kubernetes' resource labels
+    digest: 1bf0c22b15cb00a824ceb0449b02e7112e8a6aa07fe3a8a0e716c751f735a3d0
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - labels
+    name: safe-labels
+    sources:
+    - ghcr.io/kubewarden/policies/safe-labels:v1.0.14
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/safe-labels-1.0.14/safe-labels-1.0.14.tgz
+    version: 1.0.14
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Safe Labels
+      kubewarden/mutation: "false"
       kubewarden/registry: ghcr.io
       kubewarden/repository: kubewarden/policies/safe-labels
       kubewarden/resources: '*'
@@ -52074,4 +52106,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T16:25:55.417150764Z"
+generated: "2026-10-14T16:36:12.990127906Z"
