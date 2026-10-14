@@ -9585,6 +9585,63 @@ entries:
     version: 1.0.0
   containers-should-not-run-in-namespace:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Containers Should Not Run In Namespace
+      kubewarden/mutation: "false"
+      kubewarden/resources: Pod, Deployment, Job, ReplicationController, ReplicaSet,
+        DaemonSet, StatefulSet, CronJob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - daemonsets
+          - statefulsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T14:34:44.402948025Z"
+    description: 'This Policy ensure workloads are not running in a specified namespace.  '
+    digest: f91b8e5f49cb329e427c9c3f7f53d36077a435b000eed3cb84b2bf5bfa40ba44
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - cis-benchmark
+    - soc2-type1
+    name: containers-should-not-run-in-namespace
+    sources:
+    - ghcr.io/kubewarden/policies/containers-should-not-run-in-namespace:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/containers-should-not-run-in-namespace-1.0.5/containers-should-not-run-in-namespace-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -50449,4 +50506,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T14:34:20.177025738Z"
+generated: "2026-10-14T14:34:44.405013253Z"
