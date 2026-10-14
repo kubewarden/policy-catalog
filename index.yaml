@@ -19448,6 +19448,39 @@ entries:
     version: 1.0.0
   helm-release-target-namespace:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Helm Release Target Namespace
+      kubewarden/mutation: "false"
+      kubewarden/resources: HelmRelease
+      kubewarden/rules: |
+        - apiGroups:
+          - helm.toolkit.fluxcd.io
+          apiVersions:
+          - v2
+          resources:
+          - helmreleases
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T15:46:23.777127479Z"
+    description: HelmRelease targetNamespace must be one of the allowed targetNamespace
+      list.
+    digest: 3a94317e320fee11d74cfb1872deb8c872249f176c8cf24d6acb70c7f7d7aa7b
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: helm-release-target-namespace
+    sources:
+    - ghcr.io/kubewarden/policies/helm-release-target-namespace:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-release-target-namespace-1.0.5/helm-release-target-namespace-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -51374,4 +51407,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T15:01:24.399756884Z"
+generated: "2026-10-14T15:46:23.779852589Z"
