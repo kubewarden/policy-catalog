@@ -5,8 +5,6 @@ annotations:
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Container Resources
   kubewarden/mutation: "true"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/container-resources
   kubewarden/resources: Pod, Replicationcontroller, Deployments, Replicaset, Statefulset,
     Daemonset, Job, Cronjob
   kubewarden/rules: |
@@ -50,8 +48,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.3.7
-appVersion: 1.3.7
+appVersion: 1.3.8
 description: Policy is designed to enforce constraints on the resource requirements
   of Kubernetes containers
 home: https://github.com/kubewarden/policies
@@ -60,5 +57,5 @@ keywords:
 - resources
 name: container-resources
 sources:
-- ghcr.io/kubewarden/policies/container-resources:v1.3.7
-version: 1.3.7
+- ghcr.io/kubewarden/policies/container-resources:v1.3.8
+version: 1.3.8
