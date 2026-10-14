@@ -18891,6 +18891,38 @@ entries:
     version: 1.0.0
   helm-chart-values-files-format:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: HelmChart Values File Format
+      kubewarden/mutation: "false"
+      kubewarden/resources: HelmChart
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - helmcharts
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T19:45:00.660130453Z"
+    description: 'HelmChart must reference values files in the following format: ''xxx=values.yaml''.'
+    digest: 3f91f11ae55479f2dd5886d3b07dc90159247c3e53ec8cf1792deb2a468b4c12
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: helm-chart-values-files-format
+    sources:
+    - ghcr.io/kubewarden/policies/helm-chart-values-files-format:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-chart-values-files-format-1.0.5/helm-chart-values-files-format-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -54096,4 +54128,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T19:44:45.585370627Z"
+generated: "2026-10-14T19:45:00.661760816Z"
