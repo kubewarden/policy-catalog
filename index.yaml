@@ -13442,6 +13442,39 @@ entries:
       catalog.cattle.io/ui-component: kubewarden
       kubewarden/displayName: Disallow Service Nodeport
       kubewarden/mutation: "false"
+      kubewarden/resources: Service
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - services
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.9
+    created: "2026-10-14T19:43:01.28317425Z"
+    description: A policy that prevents the creation of Service resources of type
+      `NodePort`
+    digest: 42d5cf6d09eb14f57aeee0833465e3b9298a427ecfba82afcfed7d6a54d98ca0
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - service
+    name: disallow-service-nodeport
+    sources:
+    - ghcr.io/kubewarden/policies/disallow-service-nodeport:v1.0.9
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/disallow-service-nodeport-1.0.9/disallow-service-nodeport-1.0.9.tgz
+    version: 1.0.9
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Disallow Service Nodeport
+      kubewarden/mutation: "false"
       kubewarden/registry: ghcr.io
       kubewarden/repository: kubewarden/policies/disallow-service-nodeport
       kubewarden/resources: Service
@@ -14717,6 +14750,75 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/echo-0.1.5/echo-0.1.5.tgz
     version: 0.1.5
   env-variable-secrets-scanner:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Environment Variable Secrets Scanner
+      kubewarden/mutation: "false"
+      kubewarden/resources: Pod,Deployment,Replicaset,Statefulset,Daemonset,Replicationcontroller,Job,Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.17
+    created: "2026-10-14T19:43:01.627053343Z"
+    description: Policy that inspects env vars and rejects a request if a secret was
+      found
+    digest: 711a20be2d1bc1cf5d94d8823fff46b69700dcf5295dceef6b2e6459680ca107
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - secrets
+    - api keys
+    - tokens
+    - secret leak
+    - confidential data
+    - confidential data leak
+    name: env-variable-secrets-scanner
+    sources:
+    - ghcr.io/kubewarden/policies/env-variable-secrets-scanner:v1.0.17
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/env-variable-secrets-scanner-1.0.17/env-variable-secrets-scanner-1.0.17.tgz
+    version: 1.0.17
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -53631,4 +53733,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T19:42:45.918662913Z"
+generated: "2026-10-14T19:43:01.628897039Z"
