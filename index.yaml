@@ -39517,6 +39517,38 @@ entries:
     version: 1.0.8
   rbac-prohibit-list-secrets:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Rbac Prohibit List On Secrets
+      kubewarden/mutation: "false"
+      kubewarden/resources: Role, ClusterRole
+      kubewarden/rules: |
+        - apiGroups:
+          - rbac.authorization.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - roles
+          - clusterroles
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T14:52:40.468520939Z"
+    description: 'This Policy will violate if any RBAC ClusterRoles or Roles are designated
+      with ''list'' verb on ''secrets'' resource. '
+    digest: 1ec5c552a738997e8ce5278b355b188ab6109c22fb2e38d70acd02dfa29b3bd4
+    home: https://github.com/kubewarden/policies
+    name: rbac-prohibit-list-secrets
+    sources:
+    - ghcr.io/kubewarden/policies/rbac-prohibit-list-secrets:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/rbac-prohibit-list-secrets-1.0.5/rbac-prohibit-list-secrets-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -51149,4 +51181,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T14:44:11.088998991Z"
+generated: "2026-10-14T14:52:40.469595218Z"
