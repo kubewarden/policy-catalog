@@ -8650,6 +8650,58 @@ entries:
     version: 1.0.0
   containers-block-specific-image-names:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Containers Block Specific Image Names
+      kubewarden/mutation: "false"
+      kubewarden/resources: CronJob, DaemonSet, Deployment, Job, Pod, StatefulSet
+      kubewarden/rules: |
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - cronjobs
+          - jobs
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - daemonsets
+          - deployments
+          - statefulsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T14:31:38.123637449Z"
+    description: 'This Policy prohibits images with certain image names from being
+      deployed by specifying a list of unapproved names.  '
+    digest: edfaa25947ebadb175ceb4d8be9fcce09046dad46e881a26e9f2698b3290cf23
+    home: https://github.com/kubewarden/policies
+    name: containers-block-specific-image-names
+    sources:
+    - ghcr.io/kubewarden/policies/containers-block-specific-image-names:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/containers-block-specific-image-names-1.0.5/containers-block-specific-image-names-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -49975,4 +50027,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T14:31:22.185941191Z"
+generated: "2026-10-14T14:31:38.125032794Z"
