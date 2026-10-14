@@ -1,12 +1,10 @@
 annotations:
-  artifacthub.io/repository: kubewarden-rego-policies-library
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Kustomization Prune
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/kustomization-prune
   kubewarden/resources: Kustomization
   kubewarden/rules: |
     - apiGroups:
@@ -18,14 +16,13 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.4
-appVersion: 1.0.4
+appVersion: 1.0.5
 description: The 'spec.prune' field in the Kustomization object must be set according
   to the input parameter 'prune'.
-home: https://github.com/kubewarden/rego-policies-library
+home: https://github.com/kubewarden/policies
 keywords:
 - flux
 name: kustomization-prune
 sources:
-- ghcr.io/kubewarden/policies/kustomization-prune:v1.0.4
-version: 1.0.4
+- ghcr.io/kubewarden/policies/kustomization-prune:v1.0.5
+version: 1.0.5
