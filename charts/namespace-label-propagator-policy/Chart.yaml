@@ -8,8 +8,6 @@ annotations:
       kind: Namespace
   kubewarden/displayName: Namespace label propagator
   kubewarden/mutation: "true"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/namespace-label-propagator
   kubewarden/resources: Pod, ReplicationController, Deployment, ReplicaSet, StatefulSet,
     DaemonSet, Job, CronJob
   kubewarden/rules: |
@@ -45,8 +43,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.13
-appVersion: 1.0.13
+appVersion: 1.0.14
 description: Kubewarden policy designed to automatically propagate labels defined
   in a Kubernetes namespace to the associated resources within that namespace
 home: https://github.com/kubewarden/policies
@@ -57,5 +54,5 @@ keywords:
 - label
 name: namespace-label-propagator-policy
 sources:
-- ghcr.io/kubewarden/policies/namespace-label-propagator:v1.0.13
-version: 1.0.13
+- ghcr.io/kubewarden/policies/namespace-label-propagator:v1.0.14
+version: 1.0.14
