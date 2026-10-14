@@ -18325,6 +18325,38 @@ entries:
     version: 1.0.0
   gitrepository-specific-branch:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: GitRepository Specific Branch
+      kubewarden/mutation: "false"
+      kubewarden/resources: GitRepository
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - gitrepositories
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T19:45:32.440931476Z"
+    description: GitRepository resources must reference a specific branch, e.g. 'main'.
+    digest: d70e84d2fa086eee2b4150a6f05184929d08ef9e5b5f90d6d3f3a0bb9236c814
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: gitrepository-specific-branch
+    sources:
+    - ghcr.io/kubewarden/policies/gitrepository-specific-branch:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/gitrepository-specific-branch-1.0.5/gitrepository-specific-branch-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -54192,4 +54224,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T19:45:17.978044018Z"
+generated: "2026-10-14T19:45:32.442674101Z"
