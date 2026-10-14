@@ -5,8 +5,6 @@ annotations:
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Probes validator policy
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/probes
   kubewarden/rules: |
     - apiGroups:
       - ''
@@ -16,12 +14,11 @@ annotations:
       - pods
       operations:
       - CREATE
-  kubewarden/tag: v1.0.8
-appVersion: 1.0.8
+appVersion: 1.0.9
 description: This policy validates that all containers have livenessProbe and readinessProbe
   defined.
 home: https://github.com/kubewarden/policies
 name: probes-policy
 sources:
-- ghcr.io/kubewarden/policies/probes:v1.0.8
-version: 1.0.8
+- ghcr.io/kubewarden/policies/probes:v1.0.9
+version: 1.0.9
