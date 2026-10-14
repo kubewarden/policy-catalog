@@ -1,12 +1,10 @@
 annotations:
-  artifacthub.io/repository: kubewarden-rego-policies-library
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Persistent Volume Access Modes
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/persistent-volume-access-modes
   kubewarden/resources: PersistentVolume
   kubewarden/rules: |
     - apiGroups:
@@ -18,8 +16,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.4
-appVersion: 1.0.4
+appVersion: 1.0.5
 description: |
   A PersistentVolume can be mounted on a host in any way supported by the resource provider. As shown in the table below, providers will have different capabilities and each PV's access modes are set to the specific modes supported by that particular volume. For example, NFS can support multiple read/write clients, but a specific NFS PV might be exported on the server as read-only. Each PV gets its own set of access modes describing that specific PV's capabilities.
 
@@ -29,8 +26,8 @@ description: |
   * ReadOnlyMany
   * ReadWriteMany
   * ReadWriteOncePod
-home: https://github.com/kubewarden/rego-policies-library
+home: https://github.com/kubewarden/policies
 name: persistent-volume-access-modes
 sources:
-- ghcr.io/kubewarden/policies/persistent-volume-access-modes:v1.0.4
-version: 1.0.4
+- ghcr.io/kubewarden/policies/persistent-volume-access-modes:v1.0.5
+version: 1.0.5
