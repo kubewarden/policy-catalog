@@ -26183,6 +26183,39 @@ entries:
     version: 1.0.0
   kustomization-prune:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Kustomization Prune
+      kubewarden/mutation: "false"
+      kubewarden/resources: Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T16:37:05.615165689Z"
+    description: The 'spec.prune' field in the Kustomization object must be set according
+      to the input parameter 'prune'.
+    digest: ca4433fed596a74e185af6ca0fb303961274a01107a3cc86c614e62ff8275f8b
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: kustomization-prune
+    sources:
+    - ghcr.io/kubewarden/policies/kustomization-prune:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-prune-1.0.5/kustomization-prune-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -52171,4 +52204,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T16:36:47.113277401Z"
+generated: "2026-10-14T16:37:05.61683918Z"
