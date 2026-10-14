@@ -8,8 +8,6 @@ annotations:
       kind: Project
   kubewarden/displayName: Rancher Project quotas namespace validator
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/rancher-project-quotas-namespace-validator
   kubewarden/resources: management.cattle.io/Project
   kubewarden/rules: |
     - apiGroups:
@@ -20,8 +18,7 @@ annotations:
       - namespace
       operations:
       - CREATE
-  kubewarden/tag: v1.0.14
-appVersion: 1.0.14
+appVersion: 1.0.15
 description: Prevent the creation of Namespace under a Rancher Project that doesn't
   have any resource quota left
 home: https://github.com/kubewarden/policies
@@ -31,5 +28,5 @@ keywords:
 - quotas
 name: rancher-project-quotas-namespace-validator
 sources:
-- ghcr.io/kubewarden/policies/rancher-project-quotas-namespace-validator:v1.0.14
-version: 1.0.14
+- ghcr.io/kubewarden/policies/rancher-project-quotas-namespace-validator:v1.0.15
+version: 1.0.15
