@@ -33650,6 +33650,42 @@ entries:
     version: 1.0.0
   persistent-volume-access-modes:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Persistent Volume Access Modes
+      kubewarden/mutation: "false"
+      kubewarden/resources: PersistentVolume
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - persistentvolumes
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T14:41:40.060993641Z"
+    description: 'A PersistentVolume can be mounted on a host in any way supported
+      by the resource provider. As shown in the table below, providers will have different
+      capabilities and each PV''s access modes are set to the specific modes supported
+      by that particular volume. For example, NFS can support multiple read/write
+      clients, but a specific NFS PV might be exported on the server as read-only.
+      Each PV gets its own set of access modes describing that specific PV''s capabilities.  The
+      access modes are:  * ReadWriteOnce * ReadOnlyMany * ReadWriteMany * ReadWriteOncePod '
+    digest: 4e82d59a1fe928d2e290d86e7f88e78d9c1ff305a2ff835054f6dbc605961745
+    home: https://github.com/kubewarden/policies
+    name: persistent-volume-access-modes
+    sources:
+    - ghcr.io/kubewarden/policies/persistent-volume-access-modes:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/persistent-volume-access-modes-1.0.5/persistent-volume-access-modes-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -51071,4 +51107,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T14:40:18.000835977Z"
+generated: "2026-10-14T14:41:40.063765024Z"
