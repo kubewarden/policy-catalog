@@ -19023,6 +19023,38 @@ entries:
     version: 1.0.0
   helm-release-rollback:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Helm Release Rollback Should Be Disabled
+      kubewarden/mutation: "false"
+      kubewarden/resources: HelmRelease
+      kubewarden/rules: |
+        - apiGroups:
+          - helm.toolkit.fluxcd.io
+          apiVersions:
+          - v2
+          resources:
+          - helmreleases
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T16:23:16.940784717Z"
+    description: The rollback feature of a HelmRelease should be disabled.
+    digest: 54ab99461653e6d8cf6f9a00ac0a836974d8334ddc56a8381f96c6c6a8661682
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: helm-release-rollback
+    sources:
+    - ghcr.io/kubewarden/policies/helm-release-rollback:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-release-rollback-1.0.5/helm-release-rollback-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -51908,4 +51940,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T16:23:01.8191785Z"
+generated: "2026-10-14T16:23:16.941659836Z"
