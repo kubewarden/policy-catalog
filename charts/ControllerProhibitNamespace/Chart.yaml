@@ -1,12 +1,10 @@
 annotations:
-  artifacthub.io/repository: kubewarden-rego-policies-library
+  artifacthub.io/repository: kubewarden-policy-library
   catalog.cattle.io/hidden: "true"
   catalog.cattle.io/type: kubewarden-policy
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Containers Should Not Run In Namespace
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/containers-should-not-run-in-namespace
   kubewarden/resources: Pod, Deployment, Job, ReplicationController, ReplicaSet, DaemonSet,
     StatefulSet, CronJob
   kubewarden/rules: |
@@ -42,15 +40,14 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.3
-appVersion: 1.0.3
+appVersion: 1.0.5
 description: "This Policy ensure workloads are not running in a specified namespace.
   \n"
-home: https://github.com/kubewarden/rego-policies-library
+home: https://github.com/kubewarden/policies
 keywords:
 - cis-benchmark
 - soc2-type1
 name: containers-should-not-run-in-namespace
 sources:
-- ghcr.io/kubewarden/policies/containers-should-not-run-in-namespace:v1.0.3
-version: 1.0.3
+- ghcr.io/kubewarden/policies/containers-should-not-run-in-namespace:v1.0.5
+version: 1.0.5
