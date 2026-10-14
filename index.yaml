@@ -16801,6 +16801,43 @@ entries:
       catalog.cattle.io/ui-component: kubewarden
       kubewarden/displayName: Flexvolume Drivers Psp
       kubewarden/mutation: "false"
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.19
+    created: "2026-10-14T19:41:25.076217181Z"
+    description: Replacement for the Kubernetes Pod Security Policy that controls
+      the allowed `flexVolume` drivers
+    digest: 062f50d1c8285685338fb3603c5792017b0cf21223ef9291905fa160e1cb10c2
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - container
+    - runtime
+    - flex volume
+    - flex
+    name: flexvolume-drivers-psp
+    sources:
+    - ghcr.io/kubewarden/policies/flexvolume-drivers-psp:v1.0.19
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/flexvolume-drivers-psp-1.0.19/flexvolume-drivers-psp-1.0.19.tgz
+    version: 1.0.19
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Flexvolume Drivers Psp
+      kubewarden/mutation: "false"
       kubewarden/registry: ghcr.io
       kubewarden/repository: kubewarden/policies/flexvolume-drivers-psp
       kubewarden/resources: Pod
@@ -24181,6 +24218,38 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/image-cve-policy-0.5.2/image-cve-policy-0.5.2.tgz
     version: 0.5.2
   ingress-policy:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Ingress Policy
+      kubewarden/mutation: "false"
+      kubewarden/resources: Ingress
+      kubewarden/rules: |
+        - apiGroups:
+          - networking.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - ingresses
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.13
+    created: "2026-10-14T19:41:25.319566495Z"
+    description: Enforce requirements on Ingress resources
+    digest: e8d78fd9b3c48d1cbb5d0c520adc97d2e40ad3d42ea6888dc9b134226e6cfe2c
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - ingress
+    name: ingress-policy
+    sources:
+    - ghcr.io/kubewarden/policies/ingress:v1.0.13
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/ingress-policy-1.0.13/ingress-policy-1.0.13.tgz
+    version: 1.0.13
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -53134,4 +53203,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T19:41:07.241538086Z"
+generated: "2026-10-14T19:41:25.321642004Z"
