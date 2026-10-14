@@ -24035,6 +24035,42 @@ entries:
           kind: Ingress
       kubewarden/displayName: Unique Ingress host
       kubewarden/mutation: "false"
+      kubewarden/resources: Ingress
+      kubewarden/rules: |
+        - apiGroups:
+          - networking.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - ingresses
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.14
+    created: "2026-10-14T14:38:31.275625213Z"
+    description: Requires all Ingress rule hosts to be unique
+    digest: f6c7202f58898c616038f1aff8a91b953b41aea269527727a2c6e4057ae299a9
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - ingress
+    - kubewarden
+    name: ingress-unique-host
+    sources:
+    - ghcr.io/kubewarden/policies/unique-ingress-policy:v1.0.14
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/ingress-unique-host-1.0.14/ingress-unique-host-1.0.14.tgz
+    version: 1.0.14
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: networking.k8s.io/v1
+          kind: Ingress
+      kubewarden/displayName: Unique Ingress host
+      kubewarden/mutation: "false"
       kubewarden/registry: ghcr.io
       kubewarden/repository: kubewarden/policies/unique-ingress-policy
       kubewarden/resources: Ingress
@@ -50935,4 +50971,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T14:38:01.547112605Z"
+generated: "2026-10-14T14:38:31.277146412Z"
