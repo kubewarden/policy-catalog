@@ -32150,6 +32150,40 @@ entries:
     version: 1.0.0
   network-block-all-ingress-traffic-to-namespace-from-cidr-block:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Network Block All Ingress Traffic To Namespace From
+        CIDR Block
+      kubewarden/mutation: "false"
+      kubewarden/resources: NetworkPolicy
+      kubewarden/rules: |
+        - apiGroups:
+          - networking.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - networkpolicies
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T14:38:55.702431645Z"
+    description: 'If you are using a CNI that allows for Network Policies, you can
+      use this Policy to block all Egress traffic from a specified namespace to a
+      CIDR block of IP addresses.   By default, if no policies exist in a namespace,
+      then all ingress and egress traffic is allowed to and from pods in that namespace.  '
+    digest: c58f16859e96df602fee98cd671af80bbf1a48290c7096f1ebe2e67ebfb97429
+    home: https://github.com/kubewarden/policies
+    name: network-block-all-ingress-traffic-to-namespace-from-cidr-block
+    sources:
+    - ghcr.io/kubewarden/policies/network-block-all-ingress-traffic-to-namespace-from-cidr-block:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/network-block-all-ingress-traffic-to-namespace-from-cidr-block-1.0.5/network-block-all-ingress-traffic-to-namespace-from-cidr-block-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -50971,4 +51005,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T14:38:31.277146412Z"
+generated: "2026-10-14T14:38:55.703658577Z"
