@@ -8,8 +8,6 @@ annotations:
       kind: Namespace
   kubewarden/displayName: Namespace to PolicyServer mapper
   kubewarden/mutation: "true"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/ns-policyserver-mapper
   kubewarden/resources: AdmissionPolicy,AdmissionPolicyGroup
   kubewarden/rules: |
     - apiGroups:
@@ -22,8 +20,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v0.1.4
-appVersion: 0.1.4
+appVersion: 0.1.5
 description: |
   Mutates AdmissionPolicy and AdmissionPolicyGroup resources to enforce the PolicyServer they run on. The target PolicyServer is read from the `admission.kubewarden.io/policy-server` label of the Namespace where the policy is being created or updated. Requests are rejected when the label is absent, preventing policies from being scheduled on an unintended PolicyServer.
 home: https://github.com/kubewarden/policies
@@ -35,5 +32,5 @@ keywords:
 - admissionpolicygroup
 name: ns-policyserver-mapper
 sources:
-- ghcr.io/kubewarden/policies/ns-policyserver-mapper:v0.1.4
-version: 0.1.4
+- ghcr.io/kubewarden/policies/ns-policyserver-mapper:v0.1.5
+version: 0.1.5
