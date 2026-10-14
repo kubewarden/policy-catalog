@@ -6542,6 +6542,72 @@ entries:
       catalog.cattle.io/ui-component: kubewarden
       kubewarden/displayName: Container Resources
       kubewarden/mutation: "true"
+      kubewarden/resources: Pod, Replicationcontroller, Deployments, Replicaset, Statefulset,
+        Daemonset, Job, Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.3.8
+    created: "2026-10-14T14:36:53.809954412Z"
+    description: Policy is designed to enforce constraints on the resource requirements
+      of Kubernetes containers
+    digest: c798d4eec4d19847b940bcb11293c69379398d4cf22eaf26430efb362fdfb49d
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - container
+    - resources
+    name: container-resources
+    sources:
+    - ghcr.io/kubewarden/policies/container-resources:v1.3.8
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/container-resources-1.3.8/container-resources-1.3.8.tgz
+    version: 1.3.8
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Container Resources
+      kubewarden/mutation: "true"
       kubewarden/registry: ghcr.io
       kubewarden/repository: kubewarden/policies/container-resources
       kubewarden/resources: Pod, Replicationcontroller, Deployments, Replicaset, Statefulset,
@@ -50800,4 +50866,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T14:36:36.137842019Z"
+generated: "2026-10-14T14:36:53.812474949Z"
