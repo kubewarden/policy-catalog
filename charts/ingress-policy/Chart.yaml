@@ -5,8 +5,6 @@ annotations:
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Ingress Policy
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/ingress
   kubewarden/resources: Ingress
   kubewarden/rules: |
     - apiGroups:
@@ -18,13 +16,12 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.12
-appVersion: 1.0.12
+appVersion: 1.0.13
 description: Enforce requirements on Ingress resources
 home: https://github.com/kubewarden/policies
 keywords:
 - ingress
 name: ingress-policy
 sources:
-- ghcr.io/kubewarden/policies/ingress:v1.0.12
-version: 1.0.12
+- ghcr.io/kubewarden/policies/ingress:v1.0.13
+version: 1.0.13
