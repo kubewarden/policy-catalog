@@ -5,8 +5,6 @@ annotations:
   catalog.cattle.io/ui-component: kubewarden
   kubewarden/displayName: Annotations
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/annotations
   kubewarden/resources: '*'
   kubewarden/rules: |
     - apiGroups:
@@ -49,13 +47,12 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v0.1.12
-appVersion: 0.1.12
+appVersion: 0.1.13
 description: A policy that validates annotations of Kubernetes' resources
 home: https://github.com/kubewarden/policies
 keywords:
 - annotations
 name: annotations
 sources:
-- ghcr.io/kubewarden/policies/annotations:v0.1.12
-version: 0.1.12
+- ghcr.io/kubewarden/policies/annotations:v0.1.13
+version: 0.1.13
