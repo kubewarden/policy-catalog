@@ -8,6 +8,61 @@ entries:
       catalog.cattle.io/ui-component: kubewarden
       kubewarden/displayName: Affinity Node Selector
       kubewarden/mutation: "false"
+      kubewarden/resources: CronJob, DaemonSet, Deployment, Job, Pod, StatefulSet
+      kubewarden/rules: |
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - cronjobs
+          - jobs
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - daemonsets
+          - deployments
+          - statefulsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-10-14T13:52:48.364360472Z"
+    description: 'This Policy allows setting a key and value for `nodeSelector` when
+      assigning pods to nodes.   `nodeSelector` is a field of PodSpec. It specifies
+      a map of key-value pairs. For the pod to be eligible to scheduled on a node,
+      the node must have each of the indicated key-value pairs as labels (it can have
+      additional labels as well).  '
+    digest: 83ea85d9fb977d7092d224b545932cf6a0b94edbc5c6a57d3e8ba3ae97882157
+    home: https://github.com/kubewarden/policies
+    name: affinity-node-selector
+    sources:
+    - ghcr.io/kubewarden/policies/affinity-node-selector:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/affinity-node-selector-1.0.6/affinity-node-selector-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Affinity Node Selector
+      kubewarden/mutation: "false"
       kubewarden/registry: ghcr.io
       kubewarden/repository: kubewarden/policies/affinity-node-selector
       kubewarden/resources: CronJob, DaemonSet, Deployment, Job, Pod, StatefulSet
@@ -49670,4 +49725,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-13T08:47:10.81809967Z"
+generated: "2026-10-14T13:52:48.365354241Z"
