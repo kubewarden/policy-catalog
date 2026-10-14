@@ -8,8 +8,6 @@ annotations:
       kind: Namespace
   kubewarden/displayName: CEL Policy
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/cel-policy
   kubewarden/resources: Any
   kubewarden/rules: |
     - apiGroups:
@@ -22,8 +20,7 @@ annotations:
       - CREATE
       - UPDATE
       - DELETE
-  kubewarden/tag: v1.6.4
-appVersion: 1.6.4
+appVersion: 1.6.5
 description: A policy that evaluates CEL expressions
 home: https://github.com/kubewarden/policies
 keywords:
@@ -33,5 +30,5 @@ keywords:
 - Common Expression Language
 name: cel-policy
 sources:
-- ghcr.io/kubewarden/policies/cel-policy:v1.6.4
-version: 1.6.4
+- ghcr.io/kubewarden/policies/cel-policy:v1.6.5
+version: 1.6.5
