@@ -25232,6 +25232,38 @@ entries:
     version: 1.0.0
   kustomization-image-tag-standards:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Kustomization Image Tag Standards
+      kubewarden/mutation: "false"
+      kubewarden/resources: Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T14:58:06.019640284Z"
+    description: spec.Images must comply with image tag/semver reference standards.
+    digest: 8ca42db8d05a6005cb974cb946e72c21c62842b8a594ea723ba7205fa4b9f047
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: kustomization-image-tag-standards
+    sources:
+    - ghcr.io/kubewarden/policies/kustomization-image-tag-standards:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-image-tag-standards-1.0.5/kustomization-image-tag-standards-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -51246,4 +51278,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T14:53:45.192818016Z"
+generated: "2026-10-14T14:58:06.021786886Z"
