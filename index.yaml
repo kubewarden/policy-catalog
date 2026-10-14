@@ -23184,6 +23184,76 @@ entries:
           kind: VulnerabilityReport
       kubewarden/displayName: image-cve
       kubewarden/mutation: "false"
+      kubewarden/resources: Pod, ReplicaSet, Deployment, DaemonSet, StatefulSet, Job,
+        CronJob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 0.6.5
+    created: "2026-10-14T19:40:10.531535954Z"
+    description: Validate workloads based on the vulnerabilities of the images they
+      make use of
+    digest: 112fa8c4edc3354e2e62100bb90366e7e8eecddc3f9ebd415787527242e52616
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - pod
+    - cool policy
+    - kubewarden
+    name: image-cve-policy
+    sources:
+    - ghcr.io/kubewarden/policies/image-cve-policy:v0.6.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/image-cve-policy-0.6.5/image-cve-policy-0.6.5.tgz
+    version: 0.6.5
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: storage.sbomscanner.kubewarden.io/v1alpha1
+          kind: VulnerabilityReport
+      kubewarden/displayName: image-cve
+      kubewarden/mutation: "false"
       kubewarden/registry: ghcr.io
       kubewarden/repository: kubewarden/policies/image-cve-policy
       kubewarden/resources: Pod, ReplicaSet, Deployment, DaemonSet, StatefulSet, Job,
@@ -37195,6 +37265,40 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/pod-privileged-policy-0.3.3/pod-privileged-policy-0.3.3.tgz
     version: 0.3.3
   pod-runtime:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Pod Runtime
+      kubewarden/mutation: "true"
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.14
+    created: "2026-10-14T19:40:10.79457754Z"
+    description: Policy that controls the usage of Pod runtimeClass
+    digest: fbd88df8d0e318610e6f329f93c156c0f0e94a5e8580acb7cdbcc95729b6051f
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - pod
+    - runtime
+    - container runtime
+    name: pod-runtime
+    sources:
+    - ghcr.io/kubewarden/policies/pod-runtime:v1.0.14
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/pod-runtime-1.0.14/pod-runtime-1.0.14.tgz
+    version: 1.0.14
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -52863,4 +52967,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T19:39:51.628545676Z"
+generated: "2026-10-14T19:40:10.796396638Z"
