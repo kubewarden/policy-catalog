@@ -34139,6 +34139,36 @@ entries:
     version: 1.0.0
   persistent-volume-claim-snapshot:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Persistent Volume Claim Snapshot
+      kubewarden/mutation: "false"
+      kubewarden/resources: VolumeSnapshot
+      kubewarden/rules: |
+        - apiGroups:
+          - snapshot.storage.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - volumesnapshots
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T15:47:28.551785031Z"
+    description: 'This Policy checks for a PVC Snapshot.  '
+    digest: 93f023de5ea3386c5b2ed0ef0fc863876eaa40e45576c309bc9d50123016eb71
+    home: https://github.com/kubewarden/policies
+    name: persistent-volume-claim-snapshot
+    sources:
+    - ghcr.io/kubewarden/policies/persistent-volume-claim-snapshot:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/persistent-volume-claim-snapshot-1.0.5/persistent-volume-claim-snapshot-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -51526,4 +51556,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T15:47:13.563806597Z"
+generated: "2026-10-14T15:47:28.553626558Z"
