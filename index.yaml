@@ -3493,6 +3493,38 @@ entries:
     version: 1.0.0
   bucket-approved-region:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Bucket Approved Region
+      kubewarden/mutation: "false"
+      kubewarden/resources: Bucket
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - buckets
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T14:35:27.93773081Z"
+    description: Bucket region must be one of the approved regions.
+    digest: a59b7257fcf30b7c00f540a7435a85918254204a26ee7864c636db15f680b0ad
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: bucket-approved-region
+    sources:
+    - ghcr.io/kubewarden/policies/bucket-approved-region:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/bucket-approved-region-1.0.5/bucket-approved-region-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -50569,4 +50601,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T14:35:07.153411706Z"
+generated: "2026-10-14T14:35:27.938825106Z"
