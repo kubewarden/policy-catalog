@@ -18149,6 +18149,38 @@ entries:
     version: 1.0.0
   gitrepository-organization-domains:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: GitRepository Organization Domains
+      kubewarden/mutation: "false"
+      kubewarden/resources: GitRepository
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - gitrepositories
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T19:45:47.319208209Z"
+    description: GitRepository resources must only be from allowed organization domains.
+    digest: e37432158e7f9d5b24e3503262a0db6d5b3491912bfcd2b112ab2c752d54be42
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: gitrepository-organization-domains
+    sources:
+    - ghcr.io/kubewarden/policies/gitrepository-organization-domains:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/gitrepository-organization-domains-1.0.5/gitrepository-organization-domains-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -54224,4 +54256,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T19:45:32.442674101Z"
+generated: "2026-10-14T19:45:47.320274533Z"
