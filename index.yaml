@@ -9388,6 +9388,69 @@ entries:
     version: 1.0.0
   containers-missing-security-context:
   - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Containers Missing Security Context
+      kubewarden/mutation: "false"
+      kubewarden/resources: Deployment, Job, Pod, ReplicationController, ReplicaSet,
+        DaemonSet, StatefulSet, CronJob
+      kubewarden/rules: |
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - daemonsets
+          - statefulsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.5
+    created: "2026-10-14T14:35:58.558056226Z"
+    description: 'This Policy checks if the container is missing securityContext while
+      there is no securityContext defined on the Pod level as well. The security settings
+      that are specified on the Pod level apply to all containers in the Pod. '
+    digest: c360fe5bd2c65c3ca785de85bdbf137c68035874d3524632c563ca3ef2d5fffe
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - pci-dss
+    - cis-benchmark
+    - mitre-attack
+    - nist800-190
+    - gdpr
+    - default
+    name: containers-missing-security-context
+    sources:
+    - ghcr.io/kubewarden/policies/containers-missing-security-context:v1.0.5
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/containers-missing-security-context-1.0.5/containers-missing-security-context-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
       artifacthub.io/repository: kubewarden-rego-policies-library
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/type: kubewarden-policy
@@ -50633,4 +50696,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T14:35:43.362824436Z"
+generated: "2026-10-14T14:35:58.55969983Z"
