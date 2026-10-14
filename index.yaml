@@ -49355,6 +49355,75 @@ entries:
       catalog.cattle.io/ui-component: kubewarden
       kubewarden/displayName: volumeMounts
       kubewarden/mutation: "false"
+      kubewarden/resources: Pod,Deployment,Replicaset,Statefulset,Daemonset,Replicationcontroller,Job,Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.13
+    created: "2026-10-14T14:38:01.545485731Z"
+    description: Policy that inspects containers, init containers, and ephemeral containers,
+      and restricts their usage of volumes by  checking the `volume` name being used
+      in `volumeMounts[*].name`
+    digest: 4b51a4d74a30191fc986f2b9198a7be44c5df1f1f505fc8a3077598576dadf74
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - container
+    - volumeMounts
+    - volume
+    - pod
+    - workload resources
+    name: volumemounts
+    sources:
+    - ghcr.io/kubewarden/policies/volumemounts:v1.0.13
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/volumemounts-1.0.13/volumemounts-1.0.13.tgz
+    version: 1.0.13
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: volumeMounts
+      kubewarden/mutation: "false"
       kubewarden/registry: ghcr.io
       kubewarden/repository: kubewarden/policies/volumemounts
       kubewarden/resources: Pod,Deployment,Replicaset,Statefulset,Daemonset,Replicationcontroller,Job,Cronjob
@@ -50866,4 +50935,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T14:36:53.812474949Z"
+generated: "2026-10-14T14:38:01.547112605Z"
