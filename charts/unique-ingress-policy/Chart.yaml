@@ -8,8 +8,6 @@ annotations:
       kind: Ingress
   kubewarden/displayName: Unique Ingress host
   kubewarden/mutation: "false"
-  kubewarden/registry: ghcr.io
-  kubewarden/repository: kubewarden/policies/unique-ingress-policy
   kubewarden/resources: Ingress
   kubewarden/rules: |
     - apiGroups:
@@ -21,8 +19,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-  kubewarden/tag: v1.0.13
-appVersion: 1.0.13
+appVersion: 1.0.14
 description: Requires all Ingress rule hosts to be unique
 home: https://github.com/kubewarden/policies
 keywords:
@@ -30,5 +27,5 @@ keywords:
 - kubewarden
 name: ingress-unique-host
 sources:
-- ghcr.io/kubewarden/policies/unique-ingress-policy:v1.0.13
-version: 1.0.13
+- ghcr.io/kubewarden/policies/unique-ingress-policy:v1.0.14
+version: 1.0.14
