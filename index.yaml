@@ -24414,6 +24414,76 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 0.6.6
+    created: "2026-10-20T13:07:41.019606444Z"
+    description: Validate workloads based on the vulnerabilities of the images they
+      make use of
+    digest: 965e9a219fff21bce573a706377862fea2e7e9eda857959964db39a81b9f3740
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - pod
+    - cool policy
+    - kubewarden
+    name: image-cve-policy
+    sources:
+    - ghcr.io/kubewarden/policies/image-cve-policy:v0.6.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/image-cve-policy-0.6.6/image-cve-policy-0.6.6.tgz
+    version: 0.6.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: storage.sbomscanner.kubewarden.io/v1alpha1
+          kind: VulnerabilityReport
+      kubewarden/displayName: image-cve
+      kubewarden/mutation: "false"
+      kubewarden/resources: Pod, ReplicaSet, Deployment, DaemonSet, StatefulSet, Job,
+        CronJob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 0.6.5
     created: "2026-10-14T19:40:10.531535954Z"
     description: Validate workloads based on the vulnerabilities of the images they
@@ -54457,4 +54527,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-10-14T19:46:49.404481213Z"
+generated: "2026-10-20T13:07:41.021022901Z"
