@@ -7552,6 +7552,72 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.3.9
+    created: "2026-11-12T18:31:50.938598559Z"
+    description: Policy is designed to enforce constraints on the resource requirements
+      of Kubernetes containers
+    digest: 96696aa1e02e95873c43982211e1d3fdeb51ddc58867cb225e885790d851fe5f
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - container
+    - resources
+    name: container-resources
+    sources:
+    - ghcr.io/kubewarden/policies/container-resources:v1.3.9
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/container-resources-1.3.9/container-resources-1.3.9.tgz
+    version: 1.3.9
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Container Resources
+      kubewarden/mutation: "true"
+      kubewarden/resources: Pod, Replicationcontroller, Deployments, Replicaset, Statefulset,
+        Daemonset, Job, Cronjob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.3.8
     created: "2026-10-14T14:36:53.809954412Z"
     description: Policy is designed to enforce constraints on the resource requirements
@@ -30967,6 +31033,69 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 0.1.13
+    created: "2026-11-12T18:31:51.147613483Z"
+    description: A policy that validates labels of Kubernetes' resources
+    digest: 72e2b7c196ac80a220a6b0bb39aba54293df460525b907d8ba6d6c29fa34141e
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - labels
+    name: labels
+    sources:
+    - ghcr.io/kubewarden/policies/labels:v0.1.13
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/labels-0.1.13/labels-0.1.13.tgz
+    version: 0.1.13
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Labels
+      kubewarden/mutation: "false"
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 0.1.12
     created: "2026-10-14T19:43:31.349410016Z"
     description: A policy that validates labels of Kubernetes' resources
@@ -37921,6 +38050,50 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 0.1.6
+    created: "2026-11-12T18:31:51.327259108Z"
+    description: 'Mutates AdmissionPolicy and AdmissionPolicyGroup resources to enforce
+      the PolicyServer they run on. The target PolicyServer is read from the `admission.kubewarden.io/policy-server`
+      label of the Namespace where the policy is being created or updated. Requests
+      are rejected when the label is absent, preventing policies from being scheduled
+      on an unintended PolicyServer. '
+    digest: b268538211adc360e445ef3372b5e8a81a33f700612c965e4a873c8ee66d65d0
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - namespace
+    - policies
+    - policyserver
+    - admissionpolicy
+    - admissionpolicygroup
+    name: ns-policyserver-mapper
+    sources:
+    - ghcr.io/kubewarden/policies/ns-policyserver-mapper:v0.1.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/ns-policyserver-mapper-0.1.6/ns-policyserver-mapper-0.1.6.tgz
+    version: 0.1.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: v1
+          kind: Namespace
+      kubewarden/displayName: Namespace to PolicyServer mapper
+      kubewarden/mutation: "true"
+      kubewarden/resources: AdmissionPolicy,AdmissionPolicyGroup
+      kubewarden/rules: |
+        - apiGroups:
+          - policies.kubewarden.io
+          apiVersions:
+          - v1
+          resources:
+          - admissionpolicies
+          - admissionpolicygroups
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 0.1.5
     created: "2026-10-14T19:42:16.790536869Z"
     description: 'Mutates AdmissionPolicy and AdmissionPolicyGroup resources to enforce
@@ -40080,6 +40253,40 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/persistent-volume-claim-snapshot-1.0.0/persistent-volume-claim-snapshot-1.0.0.tgz
     version: 1.0.0
   persistentvolumeclaim-storageclass-policy:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: PVC StorageClass Validator
+      kubewarden/mutation: "true"
+      kubewarden/resources: PersistentVolumeClaim
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - persistentvolumeclaims
+          operations:
+          - CREATE
+    apiVersion: v1
+    appVersion: 1.1.11
+    created: "2026-11-12T18:31:51.510657268Z"
+    description: Policy that validates and adjusts the usage of StorageClasses in
+      PersistentVolumeClaims
+    digest: e7dc735c06b6157135056d909aa6607cfc3f8d219f0bef8d5781e85e7dfd054a
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - persistentvolumeclaim
+    - pvc
+    - kubewarden
+    name: persistentvolumeclaim-storageclass-policy
+    sources:
+    - ghcr.io/kubewarden/policies/persistentvolumeclaim-storageclass-policy:v1.1.11
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/persistentvolumeclaim-storageclass-policy-1.1.11/persistentvolumeclaim-storageclass-policy-1.1.11.tgz
+    version: 1.1.11
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -58296,4 +58503,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-11-12T18:31:29.710033617Z"
+generated: "2026-11-12T18:31:51.511931721Z"
