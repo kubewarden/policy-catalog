@@ -47,12 +47,12 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 0.1.12
+appVersion: 0.1.13
 description: A policy that validates labels of Kubernetes' resources
 home: https://github.com/kubewarden/policies
 keywords:
 - labels
 name: labels
 sources:
-- ghcr.io/kubewarden/policies/labels:v0.1.12
-version: 0.1.12
+- ghcr.io/kubewarden/policies/labels:v0.1.13
+version: 0.1.13
