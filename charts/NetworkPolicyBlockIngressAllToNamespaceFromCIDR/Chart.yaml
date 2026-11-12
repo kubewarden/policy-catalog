@@ -17,7 +17,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 1.0.5
+appVersion: 1.0.6
 description: "If you are using a CNI that allows for Network Policies, you can use
   this Policy to block all Egress traffic from a specified namespace to a CIDR block
   of IP addresses. \n\nBy default, if no policies exist in a namespace, then all ingress
@@ -25,5 +25,5 @@ description: "If you are using a CNI that allows for Network Policies, you can u
 home: https://github.com/kubewarden/policies
 name: network-block-all-ingress-traffic-to-namespace-from-cidr-block
 sources:
-- ghcr.io/kubewarden/policies/network-block-all-ingress-traffic-to-namespace-from-cidr-block:v1.0.5
-version: 1.0.5
+- ghcr.io/kubewarden/policies/network-block-all-ingress-traffic-to-namespace-from-cidr-block:v1.0.6
+version: 1.0.6
