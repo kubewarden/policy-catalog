@@ -16,11 +16,11 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 1.0.6
+appVersion: 1.0.7
 description: "When using a pod quota ensure setting the proper value for the quantity
   of pods you wish to have in your namespace. \n"
 home: https://github.com/kubewarden/policies
 name: namespace-pod-quota
 sources:
-- ghcr.io/kubewarden/policies/namespace-pod-quota:v1.0.6
-version: 1.0.6
+- ghcr.io/kubewarden/policies/namespace-pod-quota:v1.0.7
+version: 1.0.7
