@@ -4768,6 +4768,71 @@ entries:
           operations:
           - CREATE
     apiVersion: v1
+    appVersion: 1.0.16
+    created: "2026-11-12T18:30:37.538138889Z"
+    description: Replacement for the Kubernetes Pod Security Policy that controls
+      the usage of capabilities
+    digest: 16a97c8c99b0983aeae458f65b702dba7accc3318ed8e89f044754397cdb5e6a
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - container
+    - capability
+    - capabilities
+    name: capabilities-psp
+    sources:
+    - ghcr.io/kubewarden/policies/capabilities-psp:v1.0.16
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/capabilities-psp-1.0.16/capabilities-psp-1.0.16.tgz
+    version: 1.0.16
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Capabilities PSP
+      kubewarden/mutation: "true"
+      kubewarden/resources: Pod,Deployment,ReplicaSet,StatefulSet,DaemonSet,Job,CronJob,ReplicationController
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+    apiVersion: v1
     appVersion: 1.0.15
     created: "2026-10-14T19:44:03.74360314Z"
     description: Replacement for the Kubernetes Pod Security Policy that controls
@@ -11469,6 +11534,197 @@ entries:
           operations:
           - CREATE
     apiVersion: v1
+    appVersion: 1.0.14
+    created: "2026-11-12T18:30:37.786762542Z"
+    description: Find deprecated and removed Kubernetes resources
+    digest: 739cea25b176a407c4aeba730edee91d988bef457e72582ad49fbd6ec94cb3a8
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - compliance
+    - deprecated API
+    name: deprecated-api-versions
+    sources:
+    - ghcr.io/kubewarden/policies/deprecated-api-versions:v1.0.14
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/deprecated-api-versions-1.0.14/deprecated-api-versions-1.0.14.tgz
+    version: 1.0.14
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Deprecated API Versions
+      kubewarden/mutation: "false"
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - admissionregistration.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - apiextensions.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - apiregistration.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1beta1
+          - v1beta2
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - audit.k8s.io
+          apiVersions:
+          - v1alpha1
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - authentication.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - autoscaling
+          apiVersions:
+          - v2beta1
+          - v2beta2
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - certificates.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - coordination.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - discovery.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - events.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - extensions
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - flowcontrol.apiserver.k8s.io
+          apiVersions:
+          - v1beta1
+          - v1beta2
+          - v1beta3
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - networking.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - node.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - policy
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - rbac.authorization.k8s.io
+          apiVersions:
+          - v1alpha1
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - scheduling.k8s.io
+          apiVersions:
+          - v1alpha1
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+        - apiGroups:
+          - storage.k8s.io
+          apiVersions:
+          - v1beta1
+          resources:
+          - '*'
+          operations:
+          - CREATE
+    apiVersion: v1
     appVersion: 1.0.13
     created: "2026-10-14T19:42:16.429784202Z"
     description: Find deprecated and removed Kubernetes resources
@@ -15309,6 +15565,41 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/do-not-expose-admission-controller-webhook-services-0.1.0/do-not-expose-admission-controller-webhook-services-0.1.0.tgz
     version: 0.1.0
   echo:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Echo
+      kubewarden/mutation: "false"
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - '*'
+          apiVersions:
+          - '*'
+          resources:
+          - '*'
+          operations:
+          - CREATE
+          - UPDATE
+          - DELETE
+          - CONNECT
+    apiVersion: v1
+    appVersion: 0.1.22
+    created: "2026-11-12T18:30:37.954811293Z"
+    description: A policy that echoes back Kubernetes' AdmissionReview - useful for
+      Policy Authors
+    digest: 6456c76de4e0f433b7cba6c7fd9148bbd1e7c39c2a9eeda41c0e76d8c6d26118
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - developer
+    name: echo
+    sources:
+    - ghcr.io/kubewarden/policies/echo:v0.1.22
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/echo-0.1.22/echo-0.1.22.tgz
+    version: 0.1.22
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -24675,6 +24966,71 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/host-namespaces-psp-0.1.7/host-namespaces-psp-0.1.7.tgz
     version: 0.1.7
   hostpaths-psp:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Hostpaths PSP
+      kubewarden/mutation: "false"
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - statefulsets
+          - daemonsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.1.13
+    created: "2026-11-12T18:30:38.121215858Z"
+    description: A Pod Security Policy that controls usage of hostPath volumes
+    digest: f511ce5a7183cb73b82e4283120b5b9fa25e8f000016b12bfb81b628186a26d9
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - hostpaths
+    - pod
+    name: hostpaths-psp
+    sources:
+    - ghcr.io/kubewarden/policies/hostpaths-psp:v1.1.13
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/hostpaths-psp-1.1.13/hostpaths-psp-1.1.13.tgz
+    version: 1.1.13
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -57500,4 +57856,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-11-12T18:30:13.29756544Z"
+generated: "2026-11-12T18:30:38.123901976Z"
