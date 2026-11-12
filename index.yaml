@@ -36081,6 +36081,39 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:28:28.872573266Z"
+    description: 'If you are using a CNI that allows for Network Policies, you can
+      use this Policy to allow Egress traffic from one namespace to another.  By default,
+      if no policies exist in a namespace, then all ingress and egress traffic is
+      allowed to and from pods in that namespace.  '
+    digest: cce6ca84a1377aea8a7748f4966634921dba771ee7a28c10e9da261fd5a7e2c5
+    home: https://github.com/kubewarden/policies
+    name: network-allow-egress-traffic-from-namespace-to-another
+    sources:
+    - ghcr.io/kubewarden/policies/network-allow-egress-traffic-from-namespace-to-another:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/network-allow-egress-traffic-from-namespace-to-another-1.0.6/network-allow-egress-traffic-from-namespace-to-another-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Network Allow Egress Traffic From Namespace To Another
+      kubewarden/mutation: "false"
+      kubewarden/resources: NetworkPolicy
+      kubewarden/rules: |
+        - apiGroups:
+          - networking.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - networkpolicies
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T14:53:45.191177059Z"
     description: 'If you are using a CNI that allows for Network Policies, you can
@@ -36454,6 +36487,40 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/network-allow-ingress-traffic-from-namespace-to-another-1.0.0/network-allow-ingress-traffic-from-namespace-to-another-1.0.0.tgz
     version: 1.0.0
   network-block-all-ingress-traffic-to-namespace-from-cidr-block:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Network Block All Ingress Traffic To Namespace From
+        CIDR Block
+      kubewarden/mutation: "false"
+      kubewarden/resources: NetworkPolicy
+      kubewarden/rules: |
+        - apiGroups:
+          - networking.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - networkpolicies
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:28:29.003802621Z"
+    description: 'If you are using a CNI that allows for Network Policies, you can
+      use this Policy to block all Egress traffic from a specified namespace to a
+      CIDR block of IP addresses.   By default, if no policies exist in a namespace,
+      then all ingress and egress traffic is allowed to and from pods in that namespace.  '
+    digest: 9beae5b59e9522531855918c790bc703e1723337479e5dd208d4aac7bb018137
+    home: https://github.com/kubewarden/policies
+    name: network-block-all-ingress-traffic-to-namespace-from-cidr-block
+    sources:
+    - ghcr.io/kubewarden/policies/network-block-all-ingress-traffic-to-namespace-from-cidr-block:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/network-block-all-ingress-traffic-to-namespace-from-cidr-block-1.0.6/network-block-all-ingress-traffic-to-namespace-from-cidr-block-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -38362,6 +38429,42 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/ocirepository-patch-annotation-1.0.0/ocirepository-patch-annotation-1.0.0.tgz
     version: 1.0.0
   persistent-volume-access-modes:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Persistent Volume Access Modes
+      kubewarden/mutation: "false"
+      kubewarden/resources: PersistentVolume
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - persistentvolumes
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:28:29.128585835Z"
+    description: 'A PersistentVolume can be mounted on a host in any way supported
+      by the resource provider. As shown in the table below, providers will have different
+      capabilities and each PV''s access modes are set to the specific modes supported
+      by that particular volume. For example, NFS can support multiple read/write
+      clients, but a specific NFS PV might be exported on the server as read-only.
+      Each PV gets its own set of access modes describing that specific PV''s capabilities.  The
+      access modes are:  * ReadWriteOnce * ReadOnlyMany * ReadWriteMany * ReadWriteOncePod '
+    digest: 60c5abb89b080e831b95169d286fc2dec1cded642ad2b49f467cb1cc9985a5fb
+    home: https://github.com/kubewarden/policies
+    name: persistent-volume-access-modes
+    sources:
+    - ghcr.io/kubewarden/policies/persistent-volume-access-modes:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/persistent-volume-access-modes-1.0.6/persistent-volume-access-modes-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -56792,4 +56895,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-11-12T18:28:09.945984381Z"
+generated: "2026-11-12T18:28:29.131723279Z"
