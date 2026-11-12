@@ -27,7 +27,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 1.0.5
+appVersion: 1.0.6
 description: "Custom labels can help enforce organizational standards for each artifact
   deployed. This Policy ensures a key and value are set in the entity's `metadata.labels`
   path. The Policy detects the presence of the following: \n\n### label\nA label key
@@ -35,5 +35,5 @@ description: "Custom labels can help enforce organizational standards for each a
 home: https://github.com/kubewarden/policies
 name: metadata-missing-label-and-value
 sources:
-- ghcr.io/kubewarden/policies/metadata-missing-label-and-value:v1.0.5
-version: 1.0.5
+- ghcr.io/kubewarden/policies/metadata-missing-label-and-value:v1.0.6
+version: 1.0.6
