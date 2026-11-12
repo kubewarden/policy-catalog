@@ -16,12 +16,12 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 1.0.5
+appVersion: 1.0.6
 description: Kustomization patches should be enabled or disabled based on input.
 home: https://github.com/kubewarden/policies
 keywords:
 - flux
 name: kustomization-patches-requirement
 sources:
-- ghcr.io/kubewarden/policies/kustomization-patches-requirement:v1.0.5
-version: 1.0.5
+- ghcr.io/kubewarden/policies/kustomization-patches-requirement:v1.0.6
+version: 1.0.6
