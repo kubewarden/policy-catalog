@@ -16,7 +16,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 1.0.15
+appVersion: 1.0.16
 description: A Kubewarden policy that enforces root filesystem to be readonly
 home: https://github.com/kubewarden/policies
 keywords:
@@ -26,5 +26,5 @@ keywords:
 - volume
 name: readonly-root-filesystem-psp
 sources:
-- ghcr.io/kubewarden/policies/readonly-root-filesystem-psp:v1.0.15
-version: 1.0.15
+- ghcr.io/kubewarden/policies/readonly-root-filesystem-psp:v1.0.16
+version: 1.0.16
