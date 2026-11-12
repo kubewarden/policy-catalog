@@ -47,7 +47,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 0.1.11
+appVersion: 0.1.12
 description: Policy to prevent the usage of serviceaccount with too many permissions
 home: https://github.com/kubewarden/policies
 keywords:
@@ -56,5 +56,5 @@ keywords:
 - serviceaccount
 name: high-risk-service-account
 sources:
-- ghcr.io/kubewarden/policies/high-risk-service-account:v0.1.11
-version: 0.1.11
+- ghcr.io/kubewarden/policies/high-risk-service-account:v0.1.12
+version: 0.1.12
