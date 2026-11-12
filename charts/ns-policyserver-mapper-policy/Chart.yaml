@@ -20,7 +20,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 0.1.5
+appVersion: 0.1.6
 description: |
   Mutates AdmissionPolicy and AdmissionPolicyGroup resources to enforce the PolicyServer they run on. The target PolicyServer is read from the `admission.kubewarden.io/policy-server` label of the Namespace where the policy is being created or updated. Requests are rejected when the label is absent, preventing policies from being scheduled on an unintended PolicyServer.
 home: https://github.com/kubewarden/policies
@@ -32,5 +32,5 @@ keywords:
 - admissionpolicygroup
 name: ns-policyserver-mapper
 sources:
-- ghcr.io/kubewarden/policies/ns-policyserver-mapper:v0.1.5
-version: 0.1.5
+- ghcr.io/kubewarden/policies/ns-policyserver-mapper:v0.1.6
+version: 0.1.6
