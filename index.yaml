@@ -4060,6 +4060,38 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:24:57.474344328Z"
+    description: Bucket endpoint domain must be one of the trusted domains.
+    digest: 44fa5e9635c156f0e8bfa26304e70fa53a655f2ea93301eed810d86442d61d28
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: bucket-endpoint-domain
+    sources:
+    - ghcr.io/kubewarden/policies/bucket-endpoint-domain:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/bucket-endpoint-domain-1.0.6/bucket-endpoint-domain-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Bucket Endpoint Domain
+      kubewarden/mutation: "false"
+      kubewarden/resources: Bucket
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - buckets
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T14:35:43.361576083Z"
     description: Bucket endpoint domain must be one of the trusted domains.
@@ -4249,6 +4281,38 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/bucket-endpoint-domain-1.0.0/bucket-endpoint-domain-1.0.0.tgz
     version: 1.0.0
   bucket-insecure-connections:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Bucket Insecure Connections
+      kubewarden/mutation: "false"
+      kubewarden/resources: Bucket
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - buckets
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:24:57.661574232Z"
+    description: Ensure that Bucket objects do not use insecure connections
+    digest: 5b34a24e76c480bdfac98d21a79c57f592eb0d991992b913ced0664d4f767db9
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: bucket-insecure-connections
+    sources:
+    - ghcr.io/kubewarden/policies/bucket-insecure-connections:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/bucket-insecure-connections-1.0.6/bucket-insecure-connections-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -18869,6 +18933,38 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:24:57.840093138Z"
+    description: GitRepository resources must only be from allowed organization domains.
+    digest: c454bab3154dc006e072f182064a7e921845f943a3621853b1db84a0f4c5b819
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: gitrepository-organization-domains
+    sources:
+    - ghcr.io/kubewarden/policies/gitrepository-organization-domains:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/gitrepository-organization-domains-1.0.6/gitrepository-organization-domains-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: GitRepository Organization Domains
+      kubewarden/mutation: "false"
+      kubewarden/resources: GitRepository
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - gitrepositories
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T19:45:47.319208209Z"
     description: GitRepository resources must only be from allowed organization domains.
@@ -19266,6 +19362,38 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/gitrepository-specific-branch-1.0.0/gitrepository-specific-branch-1.0.0.tgz
     version: 1.0.0
   gitrepository-untrusted-domains:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: GitRepository Untrusted Domains
+      kubewarden/mutation: "false"
+      kubewarden/resources: GitRepository
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - gitrepositories
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:24:58.001210052Z"
+    description: GitRepository resources must not use targets from untrusted domains.
+    digest: 3f6688cc8d839e8ac1018b68fa418fa3cd496c5db2c210d8f0376f7f0cd92a0e
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: gitrepository-untrusted-domains
+    sources:
+    - ghcr.io/kubewarden/policies/gitrepository-untrusted-domains:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/gitrepository-untrusted-domains-1.0.6/gitrepository-untrusted-domains-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -55576,4 +55704,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-11-12T18:24:35.853130474Z"
+generated: "2026-11-12T18:24:58.00275861Z"
