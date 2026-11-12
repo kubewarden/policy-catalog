@@ -16,7 +16,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 1.0.5
+appVersion: 1.0.6
 description: OCIRepository resources must have a patch annotation that matches the
   provider.
 home: https://github.com/kubewarden/policies
@@ -24,5 +24,5 @@ keywords:
 - flux
 name: ocirepository-patch-annotation
 sources:
-- ghcr.io/kubewarden/policies/ocirepository-patch-annotation:v1.0.5
-version: 1.0.5
+- ghcr.io/kubewarden/policies/ocirepository-patch-annotation:v1.0.6
+version: 1.0.6
