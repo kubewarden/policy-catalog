@@ -8977,6 +8977,71 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.7
+    created: "2026-11-12T18:23:31.836260565Z"
+    description: 'Containers has a feature in which you specify the ID of the user
+      which all processes in the container will run with. This Policy enforces that
+      the `securityContext.runAsUser` attribute is set to a uid greater than root
+      uid. Running as root user gives the container full access to all resources in
+      the VM it is running on. Containers should not run with such access rights unless
+      required by design.  '
+    digest: c4f499a82b808dcf5f5d2f2cbb70e38b34e267d1fe9c80a773a10998c8578445
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - pci-dss
+    - cis-benchmark
+    - mitre-attack
+    - nist800-190
+    - gdpr
+    - default
+    name: container-running-as-user
+    sources:
+    - ghcr.io/kubewarden/policies/container-running-as-user:v1.0.7
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/container-running-as-user-1.0.7/container-running-as-user-1.0.7.tgz
+    version: 1.0.7
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Container Running As User
+      kubewarden/mutation: "false"
+      kubewarden/resources: Deployment, Job, ReplicationController, ReplicaSet, DaemonSet,
+        StatefulSet, CronJob
+      kubewarden/rules: |
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - daemonsets
+          - statefulsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.6
     created: "2026-10-14T14:31:01.670609083Z"
     description: 'Containers has a feature in which you specify the ID of the user
@@ -9409,6 +9474,58 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/container-running-as-user-1.0.0/container-running-as-user-1.0.0.tgz
     version: 1.0.0
   containers-block-specific-image-names:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Containers Block Specific Image Names
+      kubewarden/mutation: "false"
+      kubewarden/resources: CronJob, DaemonSet, Deployment, Job, Pod, StatefulSet
+      kubewarden/rules: |
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - cronjobs
+          - jobs
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - daemonsets
+          - deployments
+          - statefulsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:23:32.008919415Z"
+    description: 'This Policy prohibits images with certain image names from being
+      deployed by specifying a list of unapproved names.  '
+    digest: e7259eaffee524f809c116bb0ab3ffd3a6ca413f66dbbf803d0f9fb0484266c8
+    home: https://github.com/kubewarden/policies
+    name: containers-block-specific-image-names
+    sources:
+    - ghcr.io/kubewarden/policies/containers-block-specific-image-names:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/containers-block-specific-image-names-1.0.6/containers-block-specific-image-names-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -29869,6 +29986,69 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/metadata-missing-label-and-value-1.0.0/metadata-missing-label-and-value-1.0.0.tgz
     version: 1.0.0
   missing-kubernetes-app-component-label:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Missing Kubernetes App Component Label
+      kubewarden/mutation: "false"
+      kubewarden/resources: Deployment, Job, ReplicationController, ReplicaSet, DaemonSet,
+        StatefulSet, CronJob
+      kubewarden/rules: |
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - daemonsets
+          - statefulsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:23:32.255004303Z"
+    description: 'Custom labels can help enforce organizational standards for each
+      artifact deployed. This Policy ensure a custom label key is set in the entity''s
+      `metadata`. The Policy detects the presence of the following:   ### owner A
+      label key of `owner` will help identify who the owner of this entity is.   ###
+      app.kubernetes.io/name The name of the application   ### app.kubernetes.io/instance
+      A unique name identifying the instance of an application     ### app.kubernetes.io/version
+      The current version of the application (e.g., a semantic version, revision hash,
+      etc.)  ### app.kubernetes.io/part-of The name of a higher level application
+      this one is part of   ### app.kubernetes.io/managed-by The tool being used to
+      manage the operation of an application   ### app.kubernetes.io/created-by The
+      controller/user who created this resource  '
+    digest: 69dbbd1803aac915d2c3327a9ccd8e6c14fb44ab54ce296f17b477d987bbe178
+    home: https://github.com/kubewarden/policies
+    name: missing-kubernetes-app-component-label
+    sources:
+    - ghcr.io/kubewarden/policies/missing-kubernetes-app-component-label:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/missing-kubernetes-app-component-label-1.0.6/missing-kubernetes-app-component-label-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -54759,4 +54939,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-11-12T18:23:07.2941982Z"
+generated: "2026-11-12T18:23:32.257931151Z"
