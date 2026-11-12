@@ -20105,6 +20105,38 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.7
+    created: "2026-11-12T18:25:36.989316991Z"
+    description: HelmRelease maxHistory cannot exceed the specified value.
+    digest: 21362939db0d1ac4682cb3ecc8467f0a1471714dc5c40b9328bdfd3c4fc26caf
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: helm-release-max-history
+    sources:
+    - ghcr.io/kubewarden/policies/helm-release-max-history:v1.0.7
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-release-max-history-1.0.7/helm-release-max-history-1.0.7.tgz
+    version: 1.0.7
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Helm Release Max History
+      kubewarden/mutation: "false"
+      kubewarden/resources: HelmRelease
+      kubewarden/rules: |
+        - apiGroups:
+          - helm.toolkit.fluxcd.io
+          apiVersions:
+          - v2
+          resources:
+          - helmreleases
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.6
     created: "2026-10-14T19:45:17.97648935Z"
     description: HelmRelease maxHistory cannot exceed the specified value.
@@ -20313,6 +20345,38 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:25:37.204886253Z"
+    description: HelmRelease storageNamespace and targetNamespace must match.
+    digest: 9af1ba32f42c85c0ec860a7f2b116ae319f27b3ba74b41e7f929515224d9cbcf
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: helm-release-namespace-match
+    sources:
+    - ghcr.io/kubewarden/policies/helm-release-namespace-match:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-release-namespace-match-1.0.6/helm-release-namespace-match-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Helm Release Namespace Match
+      kubewarden/mutation: "false"
+      kubewarden/resources: HelmRelease
+      kubewarden/rules: |
+        - apiGroups:
+          - helm.toolkit.fluxcd.io
+          apiVersions:
+          - v2
+          resources:
+          - helmreleases
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T19:44:45.582591254Z"
     description: HelmRelease storageNamespace and targetNamespace must match.
@@ -20502,6 +20566,38 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/helm-release-namespace-match-1.0.0/helm-release-namespace-match-1.0.0.tgz
     version: 1.0.0
   helm-release-post-renderer:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Helm Release Post Renderer
+      kubewarden/mutation: "false"
+      kubewarden/resources: HelmRelease
+      kubewarden/rules: |
+        - apiGroups:
+          - helm.toolkit.fluxcd.io
+          apiVersions:
+          - v2
+          resources:
+          - helmreleases
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:25:37.455086992Z"
+    description: HelmRelease must not have post-renderers enabled.
+    digest: fd8a6d64e5bfb2c93cbcf406c450e2a73116eaae77695ce95fd12be19e843665
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: helm-release-post-renderer
+    sources:
+    - ghcr.io/kubewarden/policies/helm-release-post-renderer:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-release-post-renderer-1.0.6/helm-release-post-renderer-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -55801,4 +55897,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-11-12T18:25:17.805209253Z"
+generated: "2026-11-12T18:25:37.456082727Z"
