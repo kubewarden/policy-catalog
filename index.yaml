@@ -44030,6 +44030,35 @@ entries:
           operations:
           - CREATE
     apiVersion: v1
+    appVersion: 1.0.10
+    created: "2026-11-12T18:32:34.142561025Z"
+    description: This policy validates that all containers have livenessProbe and
+      readinessProbe defined.
+    digest: 22ef2e4ed9389aba0826af7ed041470754b84c6fe54796c0ee91a6dd11e3aea9
+    home: https://github.com/kubewarden/policies
+    name: probes-policy
+    sources:
+    - ghcr.io/kubewarden/policies/probes:v1.0.10
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/probes-policy-1.0.10/probes-policy-1.0.10.tgz
+    version: 1.0.10
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Probes validator policy
+      kubewarden/mutation: "false"
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+    apiVersion: v1
     appVersion: 1.0.9
     created: "2026-10-14T19:39:36.248371722Z"
     description: This policy validates that all containers have livenessProbe and
@@ -45898,6 +45927,43 @@ entries:
           operations:
           - CREATE
     apiVersion: v1
+    appVersion: 1.0.16
+    created: "2026-11-12T18:32:34.312893944Z"
+    description: Prevent the creation of Namespace under a Rancher Project that doesn't
+      have any resource quota left
+    digest: b741e2a73c553b6856c367231a028d57d6f61ca2f873f5edc4ac6bfab3c00845
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - rancher
+    - project
+    - quotas
+    name: rancher-project-quotas-namespace-validator
+    sources:
+    - ghcr.io/kubewarden/policies/rancher-project-quotas-namespace-validator:v1.0.16
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/rancher-project-quotas-namespace-validator-1.0.16/rancher-project-quotas-namespace-validator-1.0.16.tgz
+    version: 1.0.16
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/contextAwareResources: |
+        - apiVersion: management.cattle.io/v3
+          kind: Project
+      kubewarden/displayName: Rancher Project quotas namespace validator
+      kubewarden/mutation: "false"
+      kubewarden/resources: management.cattle.io/Project
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - namespace
+          operations:
+          - CREATE
+    apiVersion: v1
     appVersion: 1.0.15
     created: "2026-10-14T19:39:08.374328156Z"
     description: Prevent the creation of Namespace under a Rancher Project that doesn't
@@ -47545,6 +47611,41 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/rbac-prohibit-wildcards-policyrule-verbs-1.0.0/rbac-prohibit-wildcards-policyrule-verbs-1.0.0.tgz
     version: 1.0.0
   readonly-root-filesystem-psp:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Readonly Root Filesystem PSP
+      kubewarden/mutation: "false"
+      kubewarden/resources: Pod
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.16
+    created: "2026-11-12T18:32:34.540045481Z"
+    description: A Kubewarden policy that enforces root filesystem to be readonly
+    digest: 553cc232c9ef8b27c218284909e54466519afcff106bdb7ecc2739817c0ae7d6
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - psp
+    - container
+    - filesystem
+    - volume
+    name: readonly-root-filesystem-psp
+    sources:
+    - ghcr.io/kubewarden/policies/readonly-root-filesystem-psp:v1.0.16
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/readonly-root-filesystem-psp-1.0.16/readonly-root-filesystem-psp-1.0.16.tgz
+    version: 1.0.16
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -49967,6 +50068,38 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/safe-annotations-0.2.10/safe-annotations-0.2.10.tgz
     version: 0.2.10
   safe-labels:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Safe Labels
+      kubewarden/mutation: "false"
+      kubewarden/resources: '*'
+      kubewarden/rules: |
+        - apiGroups:
+          - '*'
+          apiVersions:
+          - '*'
+          resources:
+          - '*'
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.15
+    created: "2026-11-12T18:32:34.757814679Z"
+    description: A policy that validates Kubernetes' resource labels
+    digest: e221bf015fc19b198de7e886fce86b637455c2f64f40bae975e4e696498418ff
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - labels
+    name: safe-labels
+    sources:
+    - ghcr.io/kubewarden/policies/safe-labels:v1.0.15
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/safe-labels-1.0.15/safe-labels-1.0.15.tgz
+    version: 1.0.15
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -58705,4 +58838,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-11-12T18:32:11.744355773Z"
+generated: "2026-11-12T18:32:34.759129026Z"
