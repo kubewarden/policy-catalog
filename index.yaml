@@ -28678,6 +28678,38 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:27:14.486345341Z"
+    description: Kustomization patches should be enabled or disabled based on input.
+    digest: 03fcbced507fb261b07b98429b3f2e6470204f05b371d4e777b254471bd1ac4a
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: kustomization-patches-requirement
+    sources:
+    - ghcr.io/kubewarden/policies/kustomization-patches-requirement:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-patches-requirement-1.0.6/kustomization-patches-requirement-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Kustomization Patches
+      kubewarden/mutation: "false"
+      kubewarden/resources: Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T16:36:47.110798966Z"
     description: Kustomization patches should be enabled or disabled based on input.
@@ -37053,6 +37085,41 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:27:14.669955546Z"
+    description: OCIRepository resources must include specific suffixes in the spec.ignore
+      field which determines the files to be ignored before making a commit..
+    digest: 160de44361edb9650bfb647d9fcb48912f0e3f1b9e2a4b67be554fdca5826689
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    - oci
+    - suffixes
+    name: ocirepository-ignore-suffixes
+    sources:
+    - ghcr.io/kubewarden/policies/ocirepository-ignore-suffixes:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/ocirepository-ignore-suffixes-1.0.6/ocirepository-ignore-suffixes-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: OCIRepository Ignore Suffixes
+      kubewarden/mutation: "false"
+      kubewarden/resources: OCIRepository
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1beta2
+          resources:
+          - ocirepositories
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T16:37:47.544043668Z"
     description: OCIRepository resources must include specific suffixes in the spec.ignore
@@ -37222,6 +37289,39 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/ocirepository-ignore-suffixes-1.0.0/ocirepository-ignore-suffixes-1.0.0.tgz
     version: 1.0.0
   ocirepository-layer-selector:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: OCIRepository Layer Selector
+      kubewarden/mutation: "false"
+      kubewarden/resources: OCIRepository
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1beta2
+          resources:
+          - ocirepositories
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:27:14.872936322Z"
+    description: OCIRepository layer selector must only reference predefined media/operation
+      type.
+    digest: 8596d2be1158da9240f617e4553bba995b41ab341f4af9a6a99b7384c6265747
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: ocirepository-layer-selector
+    sources:
+    - ghcr.io/kubewarden/policies/ocirepository-layer-selector:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/ocirepository-layer-selector-1.0.6/ocirepository-layer-selector-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -56351,4 +56451,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-11-12T18:26:57.2768788Z"
+generated: "2026-11-12T18:27:14.875896627Z"
