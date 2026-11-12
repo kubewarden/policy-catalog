@@ -18,7 +18,7 @@ annotations:
       - UPDATE
       - DELETE
       - CONNECT
-appVersion: 0.1.21
+appVersion: 0.1.22
 description: A policy that echoes back Kubernetes' AdmissionReview - useful for Policy
   Authors
 home: https://github.com/kubewarden/policies
@@ -26,5 +26,5 @@ keywords:
 - developer
 name: echo
 sources:
-- ghcr.io/kubewarden/policies/echo:v0.1.21
-version: 0.1.21
+- ghcr.io/kubewarden/policies/echo:v0.1.22
+version: 0.1.22
