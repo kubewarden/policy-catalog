@@ -39,7 +39,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 1.0.6
+appVersion: 1.0.7
 description: |
   This Policy checks if the container is exposing ssh port.
 home: https://github.com/kubewarden/policies
@@ -47,5 +47,5 @@ keywords:
 - pci-dss
 name: containers-block-ssh-port
 sources:
-- ghcr.io/kubewarden/policies/containers-block-ssh-port:v1.0.6
-version: 1.0.6
+- ghcr.io/kubewarden/policies/containers-block-ssh-port:v1.0.7
+version: 1.0.7
