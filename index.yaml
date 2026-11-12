@@ -27403,6 +27403,37 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:28:09.60988197Z"
+    description: '### Istio Gateway Approved Hosts This ensures you are only serving
+      traffic for approved hostnames.  '
+    digest: ddbd00dd4853b0a6acb5bed842d0849289013449b690f39db85987cb521a031f
+    home: https://github.com/kubewarden/policies
+    name: istio-gateway-approved-hosts
+    sources:
+    - ghcr.io/kubewarden/policies/istio-gateway-approved-hosts:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/istio-gateway-approved-hosts-1.0.6/istio-gateway-approved-hosts-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Istio Gateway Approved Hosts
+      kubewarden/mutation: "false"
+      kubewarden/resources: Gateway
+      kubewarden/rules: |
+        - apiGroups:
+          - networking.istio.io
+          apiVersions:
+          - v1
+          resources:
+          - gateways
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T15:47:13.561313115Z"
     description: '### Istio Gateway Approved Hosts This ensures you are only serving
@@ -27552,6 +27583,38 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/istio-gateway-approved-hosts-1.0.0/istio-gateway-approved-hosts-1.0.0.tgz
     version: 1.0.0
   istio-injected-namespaces:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Istio Injected Namespaces
+      kubewarden/mutation: "false"
+      kubewarden/resources: Namespace
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - namespaces
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:28:09.774162451Z"
+    description: '# Istio-Injected Namespaces Specify namespaces you would like to
+      be labeld with `istio-injected: enabled`. Namespaces with this label with automatically
+      deploy a Istio sidecar with each pod.  '
+    digest: 7531b1ca611d5f1b9806cc6a519f3dd2e8beb8a68d92128d2a21c8d15595393f
+    home: https://github.com/kubewarden/policies
+    name: istio-injected-namespaces
+    sources:
+    - ghcr.io/kubewarden/policies/istio-injected-namespaces:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/istio-injected-namespaces-1.0.6/istio-injected-namespaces-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -46194,6 +46257,39 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:28:09.945015505Z"
+    description: 'When creating resource quotas per namespace, ensure CPU and Memory
+      requests and limits are set. '
+    digest: 10f77149a90ba3ade1f5925318b7f4366c3c684861e8a35ee904392a1f163521
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - soc2-type1
+    name: resource-quota-setting-is-missing
+    sources:
+    - ghcr.io/kubewarden/policies/resource-quota-setting-is-missing:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/resource-quota-setting-is-missing-1.0.6/resource-quota-setting-is-missing-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Resource Quota Setting Is Missing
+      kubewarden/mutation: "false"
+      kubewarden/resources: ResourceQuota
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - resourcequotas
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T15:46:40.511807948Z"
     description: 'When creating resource quotas per namespace, ensure CPU and Memory
@@ -56696,4 +56792,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-11-12T18:27:51.587194374Z"
+generated: "2026-11-12T18:28:09.945984381Z"
