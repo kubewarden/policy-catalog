@@ -16,12 +16,12 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 1.0.9
+appVersion: 1.0.10
 description: A policy that validates Kubernetes' resource annotations
 home: https://github.com/kubewarden/policies
 keywords:
 - annotations
 name: safe-annotations
 sources:
-- ghcr.io/kubewarden/policies/safe-annotations:v1.0.9
-version: 1.0.9
+- ghcr.io/kubewarden/policies/safe-annotations:v1.0.10
+version: 1.0.10
