@@ -3820,6 +3820,38 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:24:35.471512716Z"
+    description: Bucket region must be one of the approved regions.
+    digest: 56654bfe9b13f1e59a2546dd32cb8be32d3c7096a6336c6d62e3f27b79751340
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: bucket-approved-region
+    sources:
+    - ghcr.io/kubewarden/policies/bucket-approved-region:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/bucket-approved-region-1.0.6/bucket-approved-region-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Bucket Approved Region
+      kubewarden/mutation: "false"
+      kubewarden/resources: Bucket
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - buckets
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T14:35:27.93773081Z"
     description: Bucket region must be one of the approved regions.
@@ -10642,6 +10674,63 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/containers-missing-security-context-1.0.0/containers-missing-security-context-1.0.0.tgz
     version: 1.0.0
   containers-should-not-run-in-namespace:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Containers Should Not Run In Namespace
+      kubewarden/mutation: "false"
+      kubewarden/resources: Pod, Deployment, Job, ReplicationController, ReplicaSet,
+        DaemonSet, StatefulSet, CronJob
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - pods
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - daemonsets
+          - statefulsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:24:35.705128387Z"
+    description: 'This Policy ensure workloads are not running in a specified namespace.  '
+    digest: 9c35bf130f4f6a9f0a2c55ff31bb0e2daf49d060436264ec782fabf3e32d945a
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - cis-benchmark
+    - soc2-type1
+    name: containers-should-not-run-in-namespace
+    sources:
+    - ghcr.io/kubewarden/policies/containers-should-not-run-in-namespace:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/containers-should-not-run-in-namespace-1.0.6/containers-should-not-run-in-namespace-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -33268,6 +33357,69 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:24:35.849366378Z"
+    description: 'Custom labels can help enforce organizational standards for each
+      artifact deployed. This Policy ensure a custom label key is set in the entity''s
+      `metadata`. The Policy detects the presence of the following:   ### owner A
+      label key of `owner` will help identify who the owner of this entity is.   ###
+      app.kubernetes.io/name The name of the application   ### app.kubernetes.io/instance
+      A unique name identifying the instance of an application     ### app.kubernetes.io/version
+      The current version of the application (e.g., a semantic version, revision hash,
+      etc.)  ### app.kubernetes.io/part-of The name of a higher level application
+      this one is part of   ### app.kubernetes.io/managed-by The tool being used to
+      manage the operation of an application   ### app.kubernetes.io/created-by The
+      controller/user who created this resource  '
+    digest: 53f015e26d0e09578b77e2b33613108fea70b790d16fde4c973566c848231079
+    home: https://github.com/kubewarden/policies
+    name: missing-owner-label
+    sources:
+    - ghcr.io/kubewarden/policies/missing-owner-label:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/missing-owner-label-1.0.6/missing-owner-label-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Missing Owner Label
+      kubewarden/mutation: "false"
+      kubewarden/resources: Deployment, Job, ReplicationController, ReplicaSet, DaemonSet,
+        StatefulSet, CronJob
+      kubewarden/rules: |
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - daemonsets
+          - statefulsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T14:35:07.152552488Z"
     description: 'Custom labels can help enforce organizational standards for each
@@ -55424,4 +55576,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-11-12T18:24:17.171419752Z"
+generated: "2026-11-12T18:24:35.853130474Z"
