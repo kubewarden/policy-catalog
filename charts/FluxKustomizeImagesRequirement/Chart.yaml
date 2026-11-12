@@ -16,7 +16,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 1.0.5
+appVersion: 1.0.6
 description: The 'spec.images' field in a Kustomization object must be enabled or
   disabled based on the policy input images_required.
 home: https://github.com/kubewarden/policies
@@ -24,5 +24,5 @@ keywords:
 - flux
 name: kustomization-images-requirement
 sources:
-- ghcr.io/kubewarden/policies/kustomization-images-requirement:v1.0.5
-version: 1.0.5
+- ghcr.io/kubewarden/policies/kustomization-images-requirement:v1.0.6
+version: 1.0.6
