@@ -35616,6 +35616,37 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.7
+    created: "2026-11-12T18:29:02.83557246Z"
+    description: 'When using a pod quota ensure setting the proper value for the quantity
+      of pods you wish to have in your namespace.  '
+    digest: 9830d900a8424292fa6ad0e6a23eefaf49cd053ca855f3b6db09a25e54c7895f
+    home: https://github.com/kubewarden/policies
+    name: namespace-pod-quota
+    sources:
+    - ghcr.io/kubewarden/policies/namespace-pod-quota:v1.0.7
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/namespace-pod-quota-1.0.7/namespace-pod-quota-1.0.7.tgz
+    version: 1.0.7
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Namespace Pod Quota
+      kubewarden/mutation: "false"
+      kubewarden/resources: ResourceQuota
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - resourcequotas
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.6
     created: "2026-10-14T14:59:11.141778018Z"
     description: 'When using a pod quota ensure setting the proper value for the quantity
@@ -45041,6 +45072,38 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/rbac-prohibit-watch-secrets-1.0.0/rbac-prohibit-watch-secrets-1.0.0.tgz
     version: 1.0.0
   rbac-prohibit-wildcard-secrets:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Rbac Prohibit Wildcard On Secrets
+      kubewarden/mutation: "false"
+      kubewarden/resources: Role, ClusterRole
+      kubewarden/rules: |
+        - apiGroups:
+          - rbac.authorization.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - roles
+          - clusterroles
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:29:03.017732958Z"
+    description: 'This Policy will violate if any RBAC ClusterRoles or Roles are designated
+      with ''wildcard'' verb on ''secrets'' resource. '
+    digest: 8647f56dcb9d668847c13ae3fe7c1316a61d0f910b5d757f2265602ddd89a4df
+    home: https://github.com/kubewarden/policies
+    name: rbac-prohibit-wildcard-secrets
+    sources:
+    - ghcr.io/kubewarden/policies/rbac-prohibit-wildcard-secrets:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/rbac-prohibit-wildcard-secrets-1.0.6/rbac-prohibit-wildcard-secrets-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -56990,4 +57053,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-11-12T18:28:46.811439029Z"
+generated: "2026-11-12T18:29:03.019538924Z"
