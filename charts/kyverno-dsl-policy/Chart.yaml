@@ -16,7 +16,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 0.1.13
+appVersion: 0.1.14
 description: An experimental Kubewarden policy that runs Kyverno policies
 home: https://github.com/kubewarden/policies
 keywords:
@@ -25,5 +25,5 @@ keywords:
 - runtime
 name: kyverno-dsl
 sources:
-- ghcr.io/kubewarden/policies/kyverno-dsl:v0.1.13
-version: 0.1.13
+- ghcr.io/kubewarden/policies/kyverno-dsl:v0.1.14
+version: 0.1.14
