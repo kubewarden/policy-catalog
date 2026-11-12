@@ -45,7 +45,7 @@ annotations:
       - cronjobs
       operations:
       - CREATE
-appVersion: 1.0.15
+appVersion: 1.0.16
 description: Replacement for the Kubernetes Pod Security Policy that controls the
   usage of capabilities
 home: https://github.com/kubewarden/policies
@@ -56,5 +56,5 @@ keywords:
 - capabilities
 name: capabilities-psp
 sources:
-- ghcr.io/kubewarden/policies/capabilities-psp:v1.0.15
-version: 1.0.15
+- ghcr.io/kubewarden/policies/capabilities-psp:v1.0.16
+version: 1.0.16
