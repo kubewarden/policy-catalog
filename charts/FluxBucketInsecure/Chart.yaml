@@ -16,12 +16,12 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 1.0.5
+appVersion: 1.0.6
 description: Ensure that Bucket objects do not use insecure connections
 home: https://github.com/kubewarden/policies
 keywords:
 - flux
 name: bucket-insecure-connections
 sources:
-- ghcr.io/kubewarden/policies/bucket-insecure-connections:v1.0.5
-version: 1.0.5
+- ghcr.io/kubewarden/policies/bucket-insecure-connections:v1.0.6
+version: 1.0.6
