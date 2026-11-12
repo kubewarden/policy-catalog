@@ -13816,6 +13816,39 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.17
+    created: "2026-11-12T18:29:46.19286273Z"
+    description: A policy that prevents the creation of Service resources of type
+      `LoadBalancer`
+    digest: 6ac8ca8899a08d7ebbf795186909c1adc115cded7189feee64ed8cffa4ffce77
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - service
+    name: disallow-service-loadbalancer
+    sources:
+    - ghcr.io/kubewarden/policies/disallow-service-loadbalancer:v1.0.17
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/disallow-service-loadbalancer-1.0.17/disallow-service-loadbalancer-1.0.17.tgz
+    version: 1.0.17
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Disallow Service Loadbalancer
+      kubewarden/mutation: "false"
+      kubewarden/resources: Service
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - services
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.16
     created: "2026-10-14T19:40:38.884947055Z"
     description: A policy that prevents the creation of Service resources of type
@@ -14335,6 +14368,39 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/disallow-service-loadbalancer-0.1.8/disallow-service-loadbalancer-0.1.8.tgz
     version: 0.1.8
   disallow-service-nodeport:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Disallow Service Nodeport
+      kubewarden/mutation: "false"
+      kubewarden/resources: Service
+      kubewarden/rules: |
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - services
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.10
+    created: "2026-11-12T18:29:46.45144148Z"
+    description: A policy that prevents the creation of Service resources of type
+      `NodePort`
+    digest: 025b3b547051398143d001a8829c3031358cdd3a25194428828d9d3759182eb5
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - service
+    name: disallow-service-nodeport
+    sources:
+    - ghcr.io/kubewarden/policies/disallow-service-nodeport:v1.0.10
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/disallow-service-nodeport-1.0.10/disallow-service-nodeport-1.0.10.tgz
+    version: 1.0.10
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -20771,6 +20837,39 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/helm-release-post-renderer-1.0.0/helm-release-post-renderer-1.0.0.tgz
     version: 1.0.0
   helm-release-remediation-retries:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Helm Release Remediation Retries
+      kubewarden/mutation: "false"
+      kubewarden/resources: HelmRelease
+      kubewarden/rules: |
+        - apiGroups:
+          - helm.toolkit.fluxcd.io
+          apiVersions:
+          - v2
+          resources:
+          - helmreleases
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.7
+    created: "2026-11-12T18:29:46.667578296Z"
+    description: HelmRelease remediation retries must be within the specified lower
+      and upper bounds.
+    digest: d0085b8bd2ee29acd96d6410e8fd53c4465a5b35c9c6fbeeaacc50182304e268
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: helm-release-remediation-retries
+    sources:
+    - ghcr.io/kubewarden/policies/helm-release-remediation-retries:v1.0.7
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-release-remediation-retries-1.0.7/helm-release-remediation-retries-1.0.7.tgz
+    version: 1.0.7
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -28508,6 +28607,39 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-image-tag-standards-1.0.0/kustomization-image-tag-standards-1.0.0.tgz
     version: 1.0.0
   kustomization-images-requirement:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Kustomization Images Requirement
+      kubewarden/mutation: "false"
+      kubewarden/resources: Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:29:46.865266979Z"
+    description: The 'spec.images' field in a Kustomization object must be enabled
+      or disabled based on the policy input images_required.
+    digest: 91da86bd12cc2ad7c79098ff12cf4fcd55bce9f849492e43a6eb88aeb7024829
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: kustomization-images-requirement
+    sources:
+    - ghcr.io/kubewarden/policies/kustomization-images-requirement:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-images-requirement-1.0.6/kustomization-images-requirement-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -57169,4 +57301,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-11-12T18:29:24.54361781Z"
+generated: "2026-11-12T18:29:46.866675219Z"
