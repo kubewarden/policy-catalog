@@ -6710,6 +6710,67 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:22:51.738108965Z"
+    description: 'Setting sysctls can allow containers unauthorized escalated privileges
+      to a Kubernetes node.  '
+    digest: 7e799961d055c45798f9488fb0595ad496647c20a9aaa35b8ca3e9dcd8fe3673
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - pci-dss
+    - cis-benchmark
+    - mitre-attack
+    - nist800-190
+    - gdpr
+    - default
+    name: container-block-sysctl.cve-2022-0811
+    sources:
+    - ghcr.io/kubewarden/policies/container-block-sysctl.cve-2022-0811:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/container-block-sysctl.cve-2022-0811-1.0.6/container-block-sysctl.cve-2022-0811-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Container Block Sysctls CVE-2022-0811
+      kubewarden/mutation: "false"
+      kubewarden/resources: Deployment, Job, ReplicationController, ReplicaSet, DaemonSet,
+        StatefulSet, CronJob
+      kubewarden/rules: |
+        - apiGroups:
+          - apps
+          apiVersions:
+          - v1
+          resources:
+          - deployments
+          - replicasets
+          - daemonsets
+          - statefulsets
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - batch
+          apiVersions:
+          - v1
+          resources:
+          - jobs
+          - cronjobs
+          operations:
+          - CREATE
+          - UPDATE
+        - apiGroups:
+          - ''
+          apiVersions:
+          - v1
+          resources:
+          - replicationcontrollers
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T14:28:31.083162586Z"
     description: 'Setting sysctls can allow containers unauthorized escalated privileges
@@ -54588,4 +54649,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-11-12T10:26:35.156208551Z"
+generated: "2026-11-12T18:22:51.74068777Z"
