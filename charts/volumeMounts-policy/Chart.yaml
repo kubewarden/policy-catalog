@@ -47,7 +47,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 1.0.14
+appVersion: 1.0.15
 description: Policy that inspects containers, init containers, and ephemeral containers,
   and restricts their usage of volumes by  checking the `volume` name being used in
   `volumeMounts[*].name`
@@ -60,5 +60,5 @@ keywords:
 - workload resources
 name: volumemounts
 sources:
-- ghcr.io/kubewarden/policies/volumemounts:v1.0.14
-version: 1.0.14
+- ghcr.io/kubewarden/policies/volumemounts:v1.0.15
+version: 1.0.15
