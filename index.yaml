@@ -21449,6 +21449,38 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:26:18.137940716Z"
+    description: HelmRelease storageNamespace must contain a value from storage_namespaces.
+    digest: f99282af442a882c5be65f9dc529028a0974996d07400b69357280798266b0d3
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: helm-release-storage-namespace
+    sources:
+    - ghcr.io/kubewarden/policies/helm-release-storage-namespace:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-release-storage-namespace-1.0.6/helm-release-storage-namespace-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Helm Release Storage Namespace
+      kubewarden/mutation: "false"
+      kubewarden/resources: HelmRelease
+      kubewarden/rules: |
+        - apiGroups:
+          - helm.toolkit.fluxcd.io
+          apiVersions:
+          - v2
+          resources:
+          - helmreleases
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T15:57:18.466726382Z"
     description: HelmRelease storageNamespace must contain a value from storage_namespaces.
@@ -21869,6 +21901,38 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:26:18.328928847Z"
+    description: HelmRelease valuesFrom must use correctly configured ConfigMaps.
+    digest: 0c0a8590a0dc3a56ebc2938a1616c97a898de47ff8f0d509b39c862a8033d823
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: helm-release-values-from-configmaps
+    sources:
+    - ghcr.io/kubewarden/policies/helm-release-values-from-configmaps:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-release-values-from-configmaps-1.0.6/helm-release-values-from-configmaps-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Helm Release Values From
+      kubewarden/mutation: "false"
+      kubewarden/resources: HelmRelease
+      kubewarden/rules: |
+        - apiGroups:
+          - helm.toolkit.fluxcd.io
+          apiVersions:
+          - v2
+          resources:
+          - helmreleases
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T16:03:56.515968142Z"
     description: HelmRelease valuesFrom must use correctly configured ConfigMaps.
@@ -22266,6 +22330,39 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/helm-repo-type-1.0.0/helm-repo-type-1.0.0.tgz
     version: 1.0.0
   helm-repo-url:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Helm Repo URL Should Be in Organisation Domain
+      kubewarden/mutation: "false"
+      kubewarden/resources: HelmRepository
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - helmrepositories
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:26:18.56287393Z"
+    description: The URL of a Helm repository should only be from the specified organisation
+      domain.
+    digest: 0822feb6152fcb41e997062f974db463e188514c661a976866f3a4da43cb11c0
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: helm-repo-url
+    sources:
+    - ghcr.io/kubewarden/policies/helm-repo-url:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-repo-url-1.0.6/helm-repo-url-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -56026,4 +56123,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-11-12T18:25:57.173470236Z"
+generated: "2026-11-12T18:26:18.564472976Z"
