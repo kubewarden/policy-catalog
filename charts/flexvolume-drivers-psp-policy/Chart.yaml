@@ -16,7 +16,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 1.0.19
+appVersion: 1.0.20
 description: Replacement for the Kubernetes Pod Security Policy that controls the
   allowed `flexVolume` drivers
 home: https://github.com/kubewarden/policies
@@ -28,5 +28,5 @@ keywords:
 - flex
 name: flexvolume-drivers-psp
 sources:
-- ghcr.io/kubewarden/policies/flexvolume-drivers-psp:v1.0.19
-version: 1.0.19
+- ghcr.io/kubewarden/policies/flexvolume-drivers-psp:v1.0.20
+version: 1.0.20
