@@ -22141,6 +22141,38 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:26:39.965810116Z"
+    description: The type of a Helm repository should be OCI.
+    digest: 665cb0ee426d78a084cd72d72c3e517e0524cbc6f620e6d2998bc7cad88dce81
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: helm-repo-type
+    sources:
+    - ghcr.io/kubewarden/policies/helm-repo-type:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-repo-type-1.0.6/helm-repo-type-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Helm Repo Type Should Be OCI
+      kubewarden/mutation: "false"
+      kubewarden/resources: HelmRepository
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - helmrepositories
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T15:01:24.398788415Z"
     description: The type of a Helm repository should be OCI.
@@ -27987,6 +28019,38 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:26:40.11062363Z"
+    description: spec.path cannot be one of excludedPathsList[]
+    digest: 43dd3d73cd00651aba87bb66d7dc29c8ba99a424e5b1fa4a6d04b9d21111dbf7
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: kustomization-excluded-paths
+    sources:
+    - ghcr.io/kubewarden/policies/kustomization-excluded-paths:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-excluded-paths-1.0.6/kustomization-excluded-paths-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Kustomization Excluded Paths
+      kubewarden/mutation: "false"
+      kubewarden/resources: Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T16:38:21.056222741Z"
     description: spec.path cannot be one of excludedPathsList[]
@@ -28790,6 +28854,39 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:26:40.295220277Z"
+    description: The 'spec.prune' field in the Kustomization object must be set according
+      to the input parameter 'prune'.
+    digest: 44307b56468fcc4570bf277793afefa3a6b0903bcb3c60cf570a76c31636e1da
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: kustomization-prune
+    sources:
+    - ghcr.io/kubewarden/policies/kustomization-prune:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-prune-1.0.6/kustomization-prune-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Kustomization Prune
+      kubewarden/mutation: "false"
+      kubewarden/resources: Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T16:37:05.615165689Z"
     description: The 'spec.prune' field in the Kustomization object must be set according
@@ -29199,6 +29296,39 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-target-namespace-1.0.0/kustomization-target-namespace-1.0.0.tgz
     version: 1.0.0
   kustomization-var-substitution:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Kustomization Var Substitution
+      kubewarden/mutation: "false"
+      kubewarden/resources: Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:26:40.460658542Z"
+    description: The property 'spec.postBuild.substitute.var_substitution_enabled'
+      must be disabled.
+    digest: e55c1d9843ffd28ecbe65992a6b354f35f93b9c2de5f820871c946e409ac7c9d
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: kustomization-var-substitution
+    sources:
+    - ghcr.io/kubewarden/policies/kustomization-var-substitution:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-var-substitution-1.0.6/kustomization-var-substitution-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -56123,4 +56253,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-11-12T18:26:18.564472976Z"
+generated: "2026-11-12T18:26:40.461876959Z"
