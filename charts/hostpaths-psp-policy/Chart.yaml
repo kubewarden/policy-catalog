@@ -47,7 +47,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 1.1.12
+appVersion: 1.1.13
 description: A Pod Security Policy that controls usage of hostPath volumes
 home: https://github.com/kubewarden/policies
 keywords:
@@ -56,5 +56,5 @@ keywords:
 - pod
 name: hostpaths-psp
 sources:
-- ghcr.io/kubewarden/policies/hostpaths-psp:v1.1.12
-version: 1.1.12
+- ghcr.io/kubewarden/policies/hostpaths-psp:v1.1.13
+version: 1.1.13
