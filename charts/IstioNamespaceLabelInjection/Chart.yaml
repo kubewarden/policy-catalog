@@ -16,12 +16,12 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 1.0.5
+appVersion: 1.0.6
 description: "# Istio-Injected Namespaces\nSpecify namespaces you would like to be
   labeld with `istio-injected: enabled`. Namespaces with this label with automatically
   deploy a Istio sidecar with each pod. \n"
 home: https://github.com/kubewarden/policies
 name: istio-injected-namespaces
 sources:
-- ghcr.io/kubewarden/policies/istio-injected-namespaces:v1.0.5
-version: 1.0.5
+- ghcr.io/kubewarden/policies/istio-injected-namespaces:v1.0.6
+version: 1.0.6
