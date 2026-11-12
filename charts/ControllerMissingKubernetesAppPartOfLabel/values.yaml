@@ -3,4 +3,4 @@ global:
     systemDefaultRegistry: ghcr.io
 module:
   repository: kubewarden/policies/missing-kubernetes-app-part-of-label
-  tag: v1.0.5
+  tag: v1.0.6
