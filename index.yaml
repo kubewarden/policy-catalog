@@ -36292,6 +36292,39 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:28:46.499581886Z"
+    description: 'If you are using a CNI that allows for Network Policies, you can
+      use this Policy to allow Ingress traffic from one namespace to another.  By
+      default, if no policies exist in a namespace, then all ingress and egress traffic
+      is allowed to and from pods in that namespace.  '
+    digest: d254fdc32fe5b7135d3c5feb70e44e09b99d69d41c8156c5b88da4c1f1f600ef
+    home: https://github.com/kubewarden/policies
+    name: network-allow-ingress-traffic-from-namespace-to-another
+    sources:
+    - ghcr.io/kubewarden/policies/network-allow-ingress-traffic-from-namespace-to-another:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/network-allow-ingress-traffic-from-namespace-to-another-1.0.6/network-allow-ingress-traffic-from-namespace-to-another-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Network Allow Ingress Traffic From Namespace To Another
+      kubewarden/mutation: "false"
+      kubewarden/resources: NetworkPolicy
+      kubewarden/rules: |
+        - apiGroups:
+          - networking.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - networkpolicies
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T15:47:43.042177631Z"
     description: 'If you are using a CNI that allows for Network Policies, you can
@@ -38697,6 +38730,36 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/persistent-volume-access-modes-1.0.0/persistent-volume-access-modes-1.0.0.tgz
     version: 1.0.0
   persistent-volume-claim-snapshot:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Persistent Volume Claim Snapshot
+      kubewarden/mutation: "false"
+      kubewarden/resources: VolumeSnapshot
+      kubewarden/rules: |
+        - apiGroups:
+          - snapshot.storage.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - volumesnapshots
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:28:46.61316657Z"
+    description: 'This Policy checks for a PVC Snapshot.  '
+    digest: ef0dae96f5ab7685eff2c56df50d61dd20d59537ea6538be4d303a2531b2cb1e
+    home: https://github.com/kubewarden/policies
+    name: persistent-volume-claim-snapshot
+    sources:
+    - ghcr.io/kubewarden/policies/persistent-volume-claim-snapshot:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/persistent-volume-claim-snapshot-1.0.6/persistent-volume-claim-snapshot-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -44738,6 +44801,38 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/rbac-prohibit-list-secrets-1.0.0/rbac-prohibit-list-secrets-1.0.0.tgz
     version: 1.0.0
   rbac-prohibit-watch-secrets:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Rbac Prohibit Watch On Secrets
+      kubewarden/mutation: "false"
+      kubewarden/resources: Role, ClusterRole
+      kubewarden/rules: |
+        - apiGroups:
+          - rbac.authorization.k8s.io
+          apiVersions:
+          - v1
+          resources:
+          - roles
+          - clusterroles
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:28:46.810192786Z"
+    description: 'This Policy will violate if any RBAC ClusterRoles or Roles are designated
+      with ''watch'' verb on ''secrets'' resource. '
+    digest: ca74692d68a7ec88b0f97e2db95b1b7b5f865b5e445b5e2d3a915ed0a609e361
+    home: https://github.com/kubewarden/policies
+    name: rbac-prohibit-watch-secrets
+    sources:
+    - ghcr.io/kubewarden/policies/rbac-prohibit-watch-secrets:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/rbac-prohibit-watch-secrets-1.0.6/rbac-prohibit-watch-secrets-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -56895,4 +56990,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-11-12T18:28:29.131723279Z"
+generated: "2026-11-12T18:28:46.811439029Z"
