@@ -16,7 +16,7 @@ annotations:
       operations:
       - CREATE
       - UPDATE
-appVersion: 1.0.16
+appVersion: 1.0.17
 description: A Pod Security Policy that controls usage of sysctls in pods
 home: https://github.com/kubewarden/policies
 keywords:
@@ -25,5 +25,5 @@ keywords:
 - pod
 name: sysctl-psp
 sources:
-- ghcr.io/kubewarden/policies/sysctl-psp:v1.0.16
-version: 1.0.16
+- ghcr.io/kubewarden/policies/sysctl-psp:v1.0.17
+version: 1.0.17
