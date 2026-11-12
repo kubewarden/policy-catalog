@@ -19173,6 +19173,38 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:25:17.504665823Z"
+    description: GitRepository resources must reference a specific branch, e.g. 'main'.
+    digest: 8f415894a75f005b990d4fba0c574fcf12486388e14aebc358116c952bd2c66e
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: gitrepository-specific-branch
+    sources:
+    - ghcr.io/kubewarden/policies/gitrepository-specific-branch:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/gitrepository-specific-branch-1.0.6/gitrepository-specific-branch-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: GitRepository Specific Branch
+      kubewarden/mutation: "false"
+      kubewarden/resources: GitRepository
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - gitrepositories
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T19:45:32.440931476Z"
     description: GitRepository resources must reference a specific branch, e.g. 'main'.
@@ -19621,6 +19653,39 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:25:17.648935386Z"
+    description: HelmChart objects must provide cosign verification and reference
+      a secret containing the Cosign public keys of trusted authors
+    digest: 7776e92547fefd28b25900444b75d516053d256b7eaa95699bf4a3eb68f17e1e
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: helm-chart-cosign-verification
+    sources:
+    - ghcr.io/kubewarden/policies/helm-chart-cosign-verification:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-chart-cosign-verification-1.0.6/helm-chart-cosign-verification-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: HelmChart Cosign Verification
+      kubewarden/mutation: "false"
+      kubewarden/resources: HelmChart
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - helmcharts
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T16:23:01.817809773Z"
     description: HelmChart objects must provide cosign verification and reference
@@ -19816,6 +19881,38 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/helm-chart-cosign-verification-1.0.0/helm-chart-cosign-verification-1.0.0.tgz
     version: 1.0.0
   helm-chart-values-files-format:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: HelmChart Values File Format
+      kubewarden/mutation: "false"
+      kubewarden/resources: HelmChart
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - helmcharts
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:25:17.801996231Z"
+    description: 'HelmChart must reference values files in the following format: ''xxx=values.yaml''.'
+    digest: 8f3dec99156d0891505a197e0c7e656a801fadd2fba227625276e9c09d95e4c9
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: helm-chart-values-files-format
+    sources:
+    - ghcr.io/kubewarden/policies/helm-chart-values-files-format:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/helm-chart-values-files-format-1.0.6/helm-chart-values-files-format-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -55704,4 +55801,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-11-12T18:24:58.00275861Z"
+generated: "2026-11-12T18:25:17.805209253Z"
