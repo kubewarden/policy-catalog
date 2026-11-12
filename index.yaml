@@ -28224,6 +28224,38 @@ entries:
           - CREATE
           - UPDATE
     apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:26:56.977558195Z"
+    description: spec.Images must comply with image tag/semver reference standards.
+    digest: c6be9025fba1dd49814cf4c850aaef16f9fd687080cc617965166a966c9f286b
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: kustomization-image-tag-standards
+    sources:
+    - ghcr.io/kubewarden/policies/kustomization-image-tag-standards:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-image-tag-standards-1.0.6/kustomization-image-tag-standards-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Kustomization Image Tag Standards
+      kubewarden/mutation: "false"
+      kubewarden/resources: Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
     appVersion: 1.0.5
     created: "2026-10-14T14:58:06.019640284Z"
     description: spec.Images must comply with image tag/semver reference standards.
@@ -29082,6 +29114,39 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-prune-1.0.0/kustomization-prune-1.0.0.tgz
     version: 1.0.0
   kustomization-target-namespace:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: Kustomization Target Namespace
+      kubewarden/mutation: "false"
+      kubewarden/resources: Kustomization
+      kubewarden/rules: |
+        - apiGroups:
+          - kustomize.toolkit.fluxcd.io
+          apiVersions:
+          - v1
+          resources:
+          - kustomizations
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.7
+    created: "2026-11-12T18:26:57.14208028Z"
+    description: Kustomization targetNamespace must be one of the allowed targetNamespace
+      list.
+    digest: d81bfbf6a7063e9fc5a4ee411a6885a5edb86661bd358c50fd64f7bad02bd485
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: kustomization-target-namespace
+    sources:
+    - ghcr.io/kubewarden/policies/kustomization-target-namespace:v1.0.7
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/kustomization-target-namespace-1.0.7/kustomization-target-namespace-1.0.7.tgz
+    version: 1.0.7
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -36758,6 +36823,39 @@ entries:
     - https://github.com/kubewarden/policy-catalog/releases/download/ns-policyserver-mapper-0.1.0/ns-policyserver-mapper-0.1.0.tgz
     version: 0.1.0
   ocirepository-cosign-verification:
+  - annotations:
+      artifacthub.io/repository: kubewarden-policy-library
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/type: kubewarden-policy
+      catalog.cattle.io/ui-component: kubewarden
+      kubewarden/displayName: OCIRepository Cosign Verification
+      kubewarden/mutation: "false"
+      kubewarden/resources: OCIRepository
+      kubewarden/rules: |
+        - apiGroups:
+          - source.toolkit.fluxcd.io
+          apiVersions:
+          - v1beta2
+          resources:
+          - ocirepositories
+          operations:
+          - CREATE
+          - UPDATE
+    apiVersion: v1
+    appVersion: 1.0.6
+    created: "2026-11-12T18:26:57.275401472Z"
+    description: OCIRepository resources must provide Cosign verification and reference
+      a specific key.
+    digest: 950f70bd57007efa21b6adf48604469e5b132cb6182ec613748c06f99c361bfe
+    home: https://github.com/kubewarden/policies
+    keywords:
+    - flux
+    name: ocirepository-cosign-verification
+    sources:
+    - ghcr.io/kubewarden/policies/ocirepository-cosign-verification:v1.0.6
+    urls:
+    - https://github.com/kubewarden/policy-catalog/releases/download/ocirepository-cosign-verification-1.0.6/ocirepository-cosign-verification-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/repository: kubewarden-policy-library
       catalog.cattle.io/hidden: "true"
@@ -56253,4 +56351,4 @@ entries:
     urls:
     - https://github.com/kubewarden/policy-catalog/releases/download/volumes-psp-0.1.11/volumes-psp-0.1.11.tgz
     version: 0.1.11
-generated: "2026-11-12T18:26:40.461876959Z"
+generated: "2026-11-12T18:26:57.2768788Z"
